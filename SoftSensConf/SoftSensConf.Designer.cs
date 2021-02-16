@@ -72,7 +72,7 @@ namespace SoftSensConf
             this.tabPageConnection.Location = new System.Drawing.Point(4, 22);
             this.tabPageConnection.Name = "tabPageConnection";
             this.tabPageConnection.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPageConnection.Size = new System.Drawing.Size(654, 424);
+            this.tabPageConnection.Size = new System.Drawing.Size(524, 304);
             this.tabPageConnection.TabIndex = 0;
             this.tabPageConnection.Text = "Connection";
             this.tabPageConnection.UseVisualStyleBackColor = true;
@@ -173,11 +173,11 @@ namespace SoftSensConf
             // 
             // button1
             // 
-            this.button1.Location = new System.Drawing.Point(19, 222);
+            this.button1.Location = new System.Drawing.Point(19, 81);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(75, 23);
             this.button1.TabIndex = 1;
-            this.button1.Text = "buttonOpen";
+            this.button1.Text = "Open";
             this.button1.UseVisualStyleBackColor = true;
             // 
             // SoftSensConf
