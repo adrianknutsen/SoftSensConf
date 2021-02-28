@@ -19,7 +19,6 @@ namespace SoftSensConf
             
         }
         string[] InstrumentConfigs;
-        string passp = "password123";
         private void Form1_Load(object sender, EventArgs e)
         {
             InstrumentConfigs = new string[5];
@@ -183,7 +182,6 @@ namespace SoftSensConf
                             InstrumentConfigs[i] = textBoxAL.Text;
                             InstrumentConfigs[i] = textBoxAH.Text;
 
-
                             break;
                     }
 
@@ -203,7 +201,6 @@ namespace SoftSensConf
 
                 if (saveFileDialog.ShowDialog() == DialogResult.OK)
                 {
-
                     File.WriteAllText(saveFileDialog.FileName, string.Join(";", InstrumentConfigs));
 
                 }
@@ -232,13 +229,12 @@ namespace SoftSensConf
 
         private void buttonSend_Click(object sender, EventArgs e)
         {
-            
-           
+            this.Hide();
+            FormPassword f2 = new FormPassword();
+            f2.Show();
+            timerChart.Enabled = true;
             serialPort1.WriteLine(textBoxSend.Text);
-            
-            
- 
- 
+            textBoxSend.Text = "";
 
 
 
@@ -251,10 +247,12 @@ namespace SoftSensConf
         {
 
             textBoxReceive.Text = serialPort1.ReadLine();
-        }
-        private void buttonStart_Click(object sender, EventArgs e)
-        {
-            timerChart.Enabled = true;
+
+
+            if (textBoxSend.Text == "readconf")
+            {
+                textBoxReceive.AppendText(textBoxTag.Text + textBoxLRV.Text + textBoxURV.Text + textBoxLRV.Text + textBoxAL.Text + textBoxAH.Text);
+            }
         }
 
         private void timerReceive_Tick(object sender, EventArgs e)
@@ -263,24 +261,10 @@ namespace SoftSensConf
             {
                 string availableData = "";
                 availableData += serialPort1.ReadExisting().ToString();
-                availableData.Replace(";\r\n", "");
                 string[] analogReadings = availableData.Split(';');
-                textBox1.AppendText(availableData);
-                
-                if (analogReadings.Length == 4)
-                {
-                    
-                    //listBoxVa.Items.Add(analogReadings[0]);
-                    //chartPoints.Series[0].Points.AddXY(Convert.ToDouble(listBoxVa.Items.Count - 1), Convert.ToDouble(listBoxVa.Items[listBoxVa.Items.Count - 1]));
-                    //listBoxVb.Items.Add(analogReadings[1]);
-                    //chartPoints.Series[1].Points.AddXY(Convert.ToDouble(listBoxVb.Items.Count - 1), Convert.ToDouble(listBoxVb.Items[listBoxVb.Items.Count - 1]));
-                    listBoxVab.Items.Add(analogReadings[2]);
-                    chartPoints.Series[2].Points.AddXY(Convert.ToDouble(listBoxVab.Items.Count - 1), Convert.ToDouble(listBoxVab.Items[listBoxVab.Items.Count - 1]));
-
-                }
+                textBoxReceive.AppendText(availableData);
             }
             timerReceive.Enabled = false;
-            timerChart.Enabled = true;
         }
 
         private void timerChart_Tick(object sender, EventArgs e)
@@ -293,17 +277,6 @@ namespace SoftSensConf
             }
         }
 
-        private void buttonSendValues_Click(object sender, EventArgs e)
-        {
-            FormPassword f2 = new FormPassword();
-            f2.Show();
-            string writeString;
-            writeString = "writeconf>" + passp + ">" +string.Join(";", InstrumentConfigs);
-            serialPort1.WriteLine(writeString);
 
-
-
-
-        }
     }
 }

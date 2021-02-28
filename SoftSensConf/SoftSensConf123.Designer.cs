@@ -30,11 +30,6 @@ namespace SoftSensConf
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea1 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
-            System.Windows.Forms.DataVisualization.Charting.Legend legend1 = new System.Windows.Forms.DataVisualization.Charting.Legend();
-            System.Windows.Forms.DataVisualization.Charting.Series series1 = new System.Windows.Forms.DataVisualization.Charting.Series();
-            System.Windows.Forms.DataVisualization.Charting.Series series2 = new System.Windows.Forms.DataVisualization.Charting.Series();
-            System.Windows.Forms.DataVisualization.Charting.Series series3 = new System.Windows.Forms.DataVisualization.Charting.Series();
             this.tabPageConfiguration = new System.Windows.Forms.TabPage();
             this.buttonClear = new System.Windows.Forms.Button();
             this.statusStrip1 = new System.Windows.Forms.StatusStrip();
@@ -64,40 +59,30 @@ namespace SoftSensConf
             this.ComboBoxPorts = new System.Windows.Forms.ComboBox();
             this.tabControl = new System.Windows.Forms.TabControl();
             this.tabPageCommand = new System.Windows.Forms.TabPage();
-            this.labelInput = new System.Windows.Forms.Label();
-            this.buttonReceive = new System.Windows.Forms.Button();
-            this.buttonSend = new System.Windows.Forms.Button();
             this.textBoxSend = new System.Windows.Forms.TextBox();
             this.textBoxReceive = new System.Windows.Forms.TextBox();
-            this.tabPageGraph = new System.Windows.Forms.TabPage();
-            this.textBox1 = new System.Windows.Forms.TextBox();
-            this.listBoxVb = new System.Windows.Forms.ListBox();
-            this.listBoxVab = new System.Windows.Forms.ListBox();
-            this.listBoxVa = new System.Windows.Forms.ListBox();
-            this.buttonStart = new System.Windows.Forms.Button();
-            this.chartPoints = new System.Windows.Forms.DataVisualization.Charting.Chart();
             this.serialPort1 = new System.IO.Ports.SerialPort(this.components);
             this.toolTip = new System.Windows.Forms.ToolTip(this.components);
             this.openFileDialog = new System.Windows.Forms.OpenFileDialog();
             this.saveFileDialog = new System.Windows.Forms.SaveFileDialog();
+            this.buttonSend = new System.Windows.Forms.Button();
+            this.buttonReceive = new System.Windows.Forms.Button();
             this.notifyIcon1 = new System.Windows.Forms.NotifyIcon(this.components);
+            this.labelInput = new System.Windows.Forms.Label();
+            this.tabPageGraph = new System.Windows.Forms.TabPage();
             this.timerReceive = new System.Windows.Forms.Timer(this.components);
             this.timerChart = new System.Windows.Forms.Timer(this.components);
-            this.buttonSendValues = new System.Windows.Forms.Button();
             this.tabPageConfiguration.SuspendLayout();
             this.statusStrip1.SuspendLayout();
             this.tabPageConnection.SuspendLayout();
             this.statusStrip.SuspendLayout();
             this.tabControl.SuspendLayout();
             this.tabPageCommand.SuspendLayout();
-            this.tabPageGraph.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.chartPoints)).BeginInit();
             this.SuspendLayout();
             // 
             // tabPageConfiguration
             // 
             this.tabPageConfiguration.BackColor = System.Drawing.Color.SlateGray;
-            this.tabPageConfiguration.Controls.Add(this.buttonSendValues);
             this.tabPageConfiguration.Controls.Add(this.buttonClear);
             this.tabPageConfiguration.Controls.Add(this.statusStrip1);
             this.tabPageConfiguration.Controls.Add(this.button2);
@@ -116,7 +101,7 @@ namespace SoftSensConf
             this.tabPageConfiguration.Location = new System.Drawing.Point(4, 22);
             this.tabPageConfiguration.Name = "tabPageConfiguration";
             this.tabPageConfiguration.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPageConfiguration.Size = new System.Drawing.Size(584, 305);
+            this.tabPageConfiguration.Size = new System.Drawing.Size(524, 304);
             this.tabPageConfiguration.TabIndex = 1;
             this.tabPageConfiguration.Text = "Configuration";
             // 
@@ -134,9 +119,9 @@ namespace SoftSensConf
             // 
             this.statusStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.toolStripStatusLabel1});
-            this.statusStrip1.Location = new System.Drawing.Point(3, 280);
+            this.statusStrip1.Location = new System.Drawing.Point(3, 279);
             this.statusStrip1.Name = "statusStrip1";
-            this.statusStrip1.Size = new System.Drawing.Size(578, 22);
+            this.statusStrip1.Size = new System.Drawing.Size(518, 22);
             this.statusStrip1.TabIndex = 15;
             this.statusStrip1.Text = "statusStrip1";
             // 
@@ -275,7 +260,7 @@ namespace SoftSensConf
             this.tabPageConnection.Location = new System.Drawing.Point(4, 22);
             this.tabPageConnection.Name = "tabPageConnection";
             this.tabPageConnection.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPageConnection.Size = new System.Drawing.Size(584, 305);
+            this.tabPageConnection.Size = new System.Drawing.Size(524, 304);
             this.tabPageConnection.TabIndex = 0;
             this.tabPageConnection.Text = "Connection";
             this.tabPageConnection.Enter += new System.EventHandler(this.tabPageConnection_Enter);
@@ -284,9 +269,9 @@ namespace SoftSensConf
             // 
             this.statusStrip.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.toolStripStatusLabel});
-            this.statusStrip.Location = new System.Drawing.Point(3, 280);
+            this.statusStrip.Location = new System.Drawing.Point(3, 279);
             this.statusStrip.Name = "statusStrip";
-            this.statusStrip.Size = new System.Drawing.Size(578, 22);
+            this.statusStrip.Size = new System.Drawing.Size(518, 22);
             this.statusStrip.TabIndex = 7;
             this.statusStrip.Text = "statusStrip1";
             // 
@@ -388,7 +373,7 @@ namespace SoftSensConf
             this.tabControl.Location = new System.Drawing.Point(0, 0);
             this.tabControl.Name = "tabControl";
             this.tabControl.SelectedIndex = 0;
-            this.tabControl.Size = new System.Drawing.Size(592, 331);
+            this.tabControl.Size = new System.Drawing.Size(532, 330);
             this.tabControl.TabIndex = 0;
             // 
             // tabPageCommand
@@ -400,39 +385,10 @@ namespace SoftSensConf
             this.tabPageCommand.Controls.Add(this.textBoxReceive);
             this.tabPageCommand.Location = new System.Drawing.Point(4, 22);
             this.tabPageCommand.Name = "tabPageCommand";
-            this.tabPageCommand.Size = new System.Drawing.Size(584, 305);
+            this.tabPageCommand.Size = new System.Drawing.Size(524, 304);
             this.tabPageCommand.TabIndex = 2;
             this.tabPageCommand.Text = "Command";
             this.tabPageCommand.UseVisualStyleBackColor = true;
-            // 
-            // labelInput
-            // 
-            this.labelInput.AutoSize = true;
-            this.labelInput.Location = new System.Drawing.Point(80, 35);
-            this.labelInput.Name = "labelInput";
-            this.labelInput.Size = new System.Drawing.Size(34, 13);
-            this.labelInput.TabIndex = 4;
-            this.labelInput.Text = "Input:";
-            // 
-            // buttonReceive
-            // 
-            this.buttonReceive.Location = new System.Drawing.Point(224, 218);
-            this.buttonReceive.Name = "buttonReceive";
-            this.buttonReceive.Size = new System.Drawing.Size(91, 23);
-            this.buttonReceive.TabIndex = 3;
-            this.buttonReceive.Text = "Receive values";
-            this.buttonReceive.UseVisualStyleBackColor = true;
-            this.buttonReceive.Click += new System.EventHandler(this.buttonReceive_Click);
-            // 
-            // buttonSend
-            // 
-            this.buttonSend.Location = new System.Drawing.Point(117, 218);
-            this.buttonSend.Name = "buttonSend";
-            this.buttonSend.Size = new System.Drawing.Size(101, 23);
-            this.buttonSend.TabIndex = 2;
-            this.buttonSend.Text = "Send values";
-            this.buttonSend.UseVisualStyleBackColor = true;
-            this.buttonSend.Click += new System.EventHandler(this.buttonSend_Click);
             // 
             // textBoxSend
             // 
@@ -452,99 +408,52 @@ namespace SoftSensConf
             this.textBoxReceive.Size = new System.Drawing.Size(198, 149);
             this.textBoxReceive.TabIndex = 0;
             // 
-            // tabPageGraph
-            // 
-            this.tabPageGraph.Controls.Add(this.textBox1);
-            this.tabPageGraph.Controls.Add(this.listBoxVb);
-            this.tabPageGraph.Controls.Add(this.listBoxVab);
-            this.tabPageGraph.Controls.Add(this.listBoxVa);
-            this.tabPageGraph.Controls.Add(this.buttonStart);
-            this.tabPageGraph.Controls.Add(this.chartPoints);
-            this.tabPageGraph.Location = new System.Drawing.Point(4, 22);
-            this.tabPageGraph.Name = "tabPageGraph";
-            this.tabPageGraph.Size = new System.Drawing.Size(584, 305);
-            this.tabPageGraph.TabIndex = 3;
-            this.tabPageGraph.Text = "Gaphical view";
-            this.tabPageGraph.UseVisualStyleBackColor = true;
-            // 
-            // textBox1
-            // 
-            this.textBox1.Location = new System.Drawing.Point(18, 213);
-            this.textBox1.Multiline = true;
-            this.textBox1.Name = "textBox1";
-            this.textBox1.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
-            this.textBox1.Size = new System.Drawing.Size(216, 63);
-            this.textBox1.TabIndex = 6;
-            // 
-            // listBoxVb
-            // 
-            this.listBoxVb.FormattingEnabled = true;
-            this.listBoxVb.Location = new System.Drawing.Point(92, 17);
-            this.listBoxVb.Name = "listBoxVb";
-            this.listBoxVb.Size = new System.Drawing.Size(68, 160);
-            this.listBoxVb.TabIndex = 5;
-            // 
-            // listBoxVab
-            // 
-            this.listBoxVab.FormattingEnabled = true;
-            this.listBoxVab.Location = new System.Drawing.Point(166, 17);
-            this.listBoxVab.Name = "listBoxVab";
-            this.listBoxVab.Size = new System.Drawing.Size(68, 160);
-            this.listBoxVab.TabIndex = 4;
-            // 
-            // listBoxVa
-            // 
-            this.listBoxVa.FormattingEnabled = true;
-            this.listBoxVa.Location = new System.Drawing.Point(18, 17);
-            this.listBoxVa.Name = "listBoxVa";
-            this.listBoxVa.Size = new System.Drawing.Size(68, 160);
-            this.listBoxVa.TabIndex = 3;
-            // 
-            // buttonStart
-            // 
-            this.buttonStart.Location = new System.Drawing.Point(18, 183);
-            this.buttonStart.Name = "buttonStart";
-            this.buttonStart.Size = new System.Drawing.Size(75, 23);
-            this.buttonStart.TabIndex = 2;
-            this.buttonStart.Text = "Start";
-            this.buttonStart.UseVisualStyleBackColor = true;
-            this.buttonStart.Click += new System.EventHandler(this.buttonStart_Click);
-            // 
-            // chartPoints
-            // 
-            chartArea1.Name = "ChartArea1";
-            this.chartPoints.ChartAreas.Add(chartArea1);
-            legend1.Name = "Legend1";
-            this.chartPoints.Legends.Add(legend1);
-            this.chartPoints.Location = new System.Drawing.Point(276, 5);
-            this.chartPoints.Name = "chartPoints";
-            series1.ChartArea = "ChartArea1";
-            series1.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Line;
-            series1.Legend = "Legend1";
-            series1.Name = "Va";
-            series2.ChartArea = "ChartArea1";
-            series2.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Line;
-            series2.Legend = "Legend1";
-            series2.Name = "Vb";
-            series3.ChartArea = "ChartArea1";
-            series3.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Line;
-            series3.Legend = "Legend1";
-            series3.Name = "Vab";
-            this.chartPoints.Series.Add(series1);
-            this.chartPoints.Series.Add(series2);
-            this.chartPoints.Series.Add(series3);
-            this.chartPoints.Size = new System.Drawing.Size(300, 300);
-            this.chartPoints.TabIndex = 0;
-            this.chartPoints.Text = "chart1";
-            // 
             // openFileDialog
             // 
             this.openFileDialog.FileName = "openFileDialog";
+            // 
+            // buttonSend
+            // 
+            this.buttonSend.Location = new System.Drawing.Point(117, 218);
+            this.buttonSend.Name = "buttonSend";
+            this.buttonSend.Size = new System.Drawing.Size(101, 23);
+            this.buttonSend.TabIndex = 2;
+            this.buttonSend.Text = "Send values";
+            this.buttonSend.UseVisualStyleBackColor = true;
+            this.buttonSend.Click += new System.EventHandler(this.buttonSend_Click);
+            // 
+            // buttonReceive
+            // 
+            this.buttonReceive.Location = new System.Drawing.Point(224, 218);
+            this.buttonReceive.Name = "buttonReceive";
+            this.buttonReceive.Size = new System.Drawing.Size(91, 23);
+            this.buttonReceive.TabIndex = 3;
+            this.buttonReceive.Text = "Receive values";
+            this.buttonReceive.UseVisualStyleBackColor = true;
+            this.buttonReceive.Click += new System.EventHandler(this.buttonReceive_Click);
             // 
             // notifyIcon1
             // 
             this.notifyIcon1.Text = "notifyIcon1";
             this.notifyIcon1.Visible = true;
+            // 
+            // labelInput
+            // 
+            this.labelInput.AutoSize = true;
+            this.labelInput.Location = new System.Drawing.Point(80, 35);
+            this.labelInput.Name = "labelInput";
+            this.labelInput.Size = new System.Drawing.Size(34, 13);
+            this.labelInput.TabIndex = 4;
+            this.labelInput.Text = "Input:";
+            // 
+            // tabPageGraph
+            // 
+            this.tabPageGraph.Location = new System.Drawing.Point(4, 22);
+            this.tabPageGraph.Name = "tabPageGraph";
+            this.tabPageGraph.Size = new System.Drawing.Size(524, 304);
+            this.tabPageGraph.TabIndex = 3;
+            this.tabPageGraph.Text = "Gaphical view";
+            this.tabPageGraph.UseVisualStyleBackColor = true;
             // 
             // timerReceive
             // 
@@ -552,24 +461,13 @@ namespace SoftSensConf
             // 
             // timerChart
             // 
-            this.timerChart.Interval = 1000;
             this.timerChart.Tick += new System.EventHandler(this.timerChart_Tick);
-            // 
-            // buttonSendValues
-            // 
-            this.buttonSendValues.Location = new System.Drawing.Point(110, 219);
-            this.buttonSendValues.Name = "buttonSendValues";
-            this.buttonSendValues.Size = new System.Drawing.Size(318, 23);
-            this.buttonSendValues.TabIndex = 17;
-            this.buttonSendValues.Text = "Send values to device";
-            this.buttonSendValues.UseVisualStyleBackColor = true;
-            this.buttonSendValues.Click += new System.EventHandler(this.buttonSendValues_Click);
             // 
             // SoftSensConf
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(592, 331);
+            this.ClientSize = new System.Drawing.Size(532, 330);
             this.Controls.Add(this.tabControl);
             this.Name = "SoftSensConf";
             this.Text = "SoftSensConf";
@@ -585,9 +483,6 @@ namespace SoftSensConf
             this.tabControl.ResumeLayout(false);
             this.tabPageCommand.ResumeLayout(false);
             this.tabPageCommand.PerformLayout();
-            this.tabPageGraph.ResumeLayout(false);
-            this.tabPageGraph.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.chartPoints)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -636,13 +531,6 @@ namespace SoftSensConf
         private System.Windows.Forms.TabPage tabPageGraph;
         private System.Windows.Forms.Timer timerReceive;
         private System.Windows.Forms.Timer timerChart;
-        private System.Windows.Forms.DataVisualization.Charting.Chart chartPoints;
-        private System.Windows.Forms.Button buttonStart;
-        private System.Windows.Forms.ListBox listBoxVb;
-        private System.Windows.Forms.ListBox listBoxVab;
-        private System.Windows.Forms.ListBox listBoxVa;
-        private System.Windows.Forms.TextBox textBox1;
-        private System.Windows.Forms.Button buttonSendValues;
     }
 }
 
