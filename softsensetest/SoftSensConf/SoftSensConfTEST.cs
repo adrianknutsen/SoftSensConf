@@ -113,7 +113,13 @@ namespace SoftSensConf
             radioButtonConnected.Text = "Disconnected";
             radioButtonConnected.ForeColor = Color.Red;
             buttonConnect.Enabled = true;
-            
+            textBoxConnectionP1.Text = "Disconnected";
+            textBoxConnectionP1.ForeColor = Color.Red;
+            textBoxConnectionP2.Text = "Disconnected";
+            textBoxConnectionP2.ForeColor = Color.Red;
+            textBoxConnectionP3.Text = "Disconnected";
+            textBoxConnectionP3.ForeColor = Color.Red;
+
 
 
         }
@@ -398,8 +404,6 @@ namespace SoftSensConf
         private void buttonSavetofile_Click(object sender, EventArgs e)
         {
 
-        
-
 
             if (saveFileDialog.ShowDialog() == DialogResult.OK)
             {
@@ -589,6 +593,31 @@ namespace SoftSensConf
         private void radioButtonConnected_MouseClick(object sender, MouseEventArgs e)
         {
             radioButtonConnected.Checked = false;
+        }
+
+        private void buttonRaw_MouseHover(object sender, EventArgs e)
+        {
+            toolTip.Show("View the raw data in graph", buttonRaw);
+        }
+
+        private void buttonScaled_MouseHover(object sender, EventArgs e)
+        {
+            toolTip.Show("View the scaled data in graph", buttonRaw);
+        }
+
+        private void buttonStop_MouseHover(object sender, EventArgs e)
+        {
+            toolTip.Show("stop the live graph", buttonStop);
+        }
+
+        private void buttonClearV_MouseHover(object sender, EventArgs e)
+        {
+            toolTip.Show("Clear the values", buttonClearV);
+        }
+
+        private void buttonSavetofile_MouseHover(object sender, EventArgs e)
+        {
+            toolTip.Show("Save the live data to file", buttonSavetofile);
         }
     }
 }

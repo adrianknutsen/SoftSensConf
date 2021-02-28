@@ -30,10 +30,11 @@ namespace SoftSensConf
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea10 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
-            System.Windows.Forms.DataVisualization.Charting.Legend legend10 = new System.Windows.Forms.DataVisualization.Charting.Legend();
-            System.Windows.Forms.DataVisualization.Charting.Series series10 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea5 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
+            System.Windows.Forms.DataVisualization.Charting.Legend legend5 = new System.Windows.Forms.DataVisualization.Charting.Legend();
+            System.Windows.Forms.DataVisualization.Charting.Series series5 = new System.Windows.Forms.DataVisualization.Charting.Series();
             this.tabPageConfiguration = new System.Windows.Forms.TabPage();
+            this.textBoxConnectionP1 = new System.Windows.Forms.TextBox();
             this.buttonRetrieve = new System.Windows.Forms.Button();
             this.buttonSendValues = new System.Windows.Forms.Button();
             this.buttonClear = new System.Windows.Forms.Button();
@@ -64,6 +65,7 @@ namespace SoftSensConf
             this.ComboBoxPorts = new System.Windows.Forms.ComboBox();
             this.tabControl = new System.Windows.Forms.TabControl();
             this.tabPageCommand = new System.Windows.Forms.TabPage();
+            this.textBoxConnectionP2 = new System.Windows.Forms.TextBox();
             this.statusStrip2 = new System.Windows.Forms.StatusStrip();
             this.toolStripStatusLabel2 = new System.Windows.Forms.ToolStripStatusLabel();
             this.labelInput = new System.Windows.Forms.Label();
@@ -72,6 +74,7 @@ namespace SoftSensConf
             this.textBoxSend = new System.Windows.Forms.TextBox();
             this.textBoxReceive = new System.Windows.Forms.TextBox();
             this.tabPageGraph = new System.Windows.Forms.TabPage();
+            this.textBoxConnectionP3 = new System.Windows.Forms.TextBox();
             this.statusStrip3 = new System.Windows.Forms.StatusStrip();
             this.toolStripStatusLabel3 = new System.Windows.Forms.ToolStripStatusLabel();
             this.textBoxStatus = new System.Windows.Forms.TextBox();
@@ -93,9 +96,6 @@ namespace SoftSensConf
             this.timerChartScaled = new System.Windows.Forms.Timer(this.components);
             this.bindingSource1 = new System.Windows.Forms.BindingSource(this.components);
             this.timerStatus = new System.Windows.Forms.Timer(this.components);
-            this.textBoxConnectionP1 = new System.Windows.Forms.TextBox();
-            this.textBoxConnectionP2 = new System.Windows.Forms.TextBox();
-            this.textBoxConnectionP3 = new System.Windows.Forms.TextBox();
             this.tabPageConfiguration.SuspendLayout();
             this.statusStrip1.SuspendLayout();
             this.tabPageConnection.SuspendLayout();
@@ -136,6 +136,16 @@ namespace SoftSensConf
             this.tabPageConfiguration.Size = new System.Drawing.Size(623, 334);
             this.tabPageConfiguration.TabIndex = 1;
             this.tabPageConfiguration.Text = "Configuration";
+            // 
+            // textBoxConnectionP1
+            // 
+            this.textBoxConnectionP1.BackColor = System.Drawing.Color.Gray;
+            this.textBoxConnectionP1.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.textBoxConnectionP1.ForeColor = System.Drawing.Color.Lime;
+            this.textBoxConnectionP1.Location = new System.Drawing.Point(6, 282);
+            this.textBoxConnectionP1.Name = "textBoxConnectionP1";
+            this.textBoxConnectionP1.Size = new System.Drawing.Size(109, 24);
+            this.textBoxConnectionP1.TabIndex = 19;
             // 
             // buttonRetrieve
             // 
@@ -478,6 +488,15 @@ namespace SoftSensConf
             this.tabPageCommand.TabIndex = 2;
             this.tabPageCommand.Text = "Command";
             // 
+            // textBoxConnectionP2
+            // 
+            this.textBoxConnectionP2.BackColor = System.Drawing.Color.Gray;
+            this.textBoxConnectionP2.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold);
+            this.textBoxConnectionP2.Location = new System.Drawing.Point(8, 285);
+            this.textBoxConnectionP2.Name = "textBoxConnectionP2";
+            this.textBoxConnectionP2.Size = new System.Drawing.Size(109, 24);
+            this.textBoxConnectionP2.TabIndex = 6;
+            // 
             // statusStrip2
             // 
             this.statusStrip2.BackColor = System.Drawing.Color.Lavender;
@@ -565,6 +584,15 @@ namespace SoftSensConf
             this.tabPageGraph.TabIndex = 3;
             this.tabPageGraph.Text = "Gaphical view";
             // 
+            // textBoxConnectionP3
+            // 
+            this.textBoxConnectionP3.BackColor = System.Drawing.Color.Gray;
+            this.textBoxConnectionP3.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold);
+            this.textBoxConnectionP3.Location = new System.Drawing.Point(8, 285);
+            this.textBoxConnectionP3.Name = "textBoxConnectionP3";
+            this.textBoxConnectionP3.Size = new System.Drawing.Size(109, 24);
+            this.textBoxConnectionP3.TabIndex = 14;
+            // 
             // statusStrip3
             // 
             this.statusStrip3.BackColor = System.Drawing.Color.Lavender;
@@ -609,6 +637,7 @@ namespace SoftSensConf
             this.buttonSavetofile.Text = "Save to file";
             this.buttonSavetofile.UseVisualStyleBackColor = true;
             this.buttonSavetofile.Click += new System.EventHandler(this.buttonSavetofile_Click);
+            this.buttonSavetofile.MouseHover += new System.EventHandler(this.buttonSavetofile_MouseHover);
             // 
             // buttonClearV
             // 
@@ -619,6 +648,7 @@ namespace SoftSensConf
             this.buttonClearV.Text = "Clear";
             this.buttonClearV.UseVisualStyleBackColor = true;
             this.buttonClearV.Click += new System.EventHandler(this.buttonClearV_Click);
+            this.buttonClearV.MouseHover += new System.EventHandler(this.buttonClearV_MouseHover);
             // 
             // buttonStop
             // 
@@ -629,6 +659,7 @@ namespace SoftSensConf
             this.buttonStop.Text = "Stop";
             this.buttonStop.UseVisualStyleBackColor = true;
             this.buttonStop.Click += new System.EventHandler(this.buttonStop_Click);
+            this.buttonStop.MouseHover += new System.EventHandler(this.buttonStop_MouseHover);
             // 
             // buttonScaled
             // 
@@ -639,6 +670,7 @@ namespace SoftSensConf
             this.buttonScaled.Text = "Read Scaled Data";
             this.buttonScaled.UseVisualStyleBackColor = true;
             this.buttonScaled.Click += new System.EventHandler(this.buttonScaled_Click);
+            this.buttonScaled.MouseHover += new System.EventHandler(this.buttonScaled_MouseHover);
             // 
             // listBoxReading
             // 
@@ -657,26 +689,27 @@ namespace SoftSensConf
             this.buttonRaw.Text = "Read raw data";
             this.buttonRaw.UseVisualStyleBackColor = true;
             this.buttonRaw.Click += new System.EventHandler(this.buttonStart_Click);
+            this.buttonRaw.MouseHover += new System.EventHandler(this.buttonRaw_MouseHover);
             // 
             // chartPoints
             // 
             this.chartPoints.BackColor = System.Drawing.Color.Gray;
             this.chartPoints.BorderlineColor = System.Drawing.Color.Gray;
-            chartArea10.BackColor = System.Drawing.Color.Gray;
-            chartArea10.BackSecondaryColor = System.Drawing.Color.Gray;
-            chartArea10.Name = "ChartArea1";
-            this.chartPoints.ChartAreas.Add(chartArea10);
-            legend10.BackColor = System.Drawing.Color.Gray;
-            legend10.Name = "Legend1";
-            this.chartPoints.Legends.Add(legend10);
+            chartArea5.BackColor = System.Drawing.Color.Gray;
+            chartArea5.BackSecondaryColor = System.Drawing.Color.Gray;
+            chartArea5.Name = "ChartArea1";
+            this.chartPoints.ChartAreas.Add(chartArea5);
+            legend5.BackColor = System.Drawing.Color.Gray;
+            legend5.Name = "Legend1";
+            this.chartPoints.Legends.Add(legend5);
             this.chartPoints.Location = new System.Drawing.Point(296, 3);
             this.chartPoints.Name = "chartPoints";
-            series10.ChartArea = "ChartArea1";
-            series10.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Line;
-            series10.Color = System.Drawing.Color.Red;
-            series10.Legend = "Legend1";
-            series10.Name = "Va";
-            this.chartPoints.Series.Add(series10);
+            series5.ChartArea = "ChartArea1";
+            series5.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Line;
+            series5.Color = System.Drawing.Color.Red;
+            series5.Legend = "Legend1";
+            series5.Name = "Va";
+            this.chartPoints.Series.Add(series5);
             this.chartPoints.Size = new System.Drawing.Size(300, 300);
             this.chartPoints.TabIndex = 0;
             this.chartPoints.Text = "chart1";
@@ -708,34 +741,6 @@ namespace SoftSensConf
             // 
             this.timerStatus.Interval = 5000;
             this.timerStatus.Tick += new System.EventHandler(this.timerStatus_Tick);
-            // 
-            // textBoxConnectionP1
-            // 
-            this.textBoxConnectionP1.BackColor = System.Drawing.Color.Gray;
-            this.textBoxConnectionP1.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBoxConnectionP1.ForeColor = System.Drawing.Color.Lime;
-            this.textBoxConnectionP1.Location = new System.Drawing.Point(6, 282);
-            this.textBoxConnectionP1.Name = "textBoxConnectionP1";
-            this.textBoxConnectionP1.Size = new System.Drawing.Size(109, 24);
-            this.textBoxConnectionP1.TabIndex = 19;
-            // 
-            // textBoxConnectionP2
-            // 
-            this.textBoxConnectionP2.BackColor = System.Drawing.Color.Gray;
-            this.textBoxConnectionP2.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold);
-            this.textBoxConnectionP2.Location = new System.Drawing.Point(8, 285);
-            this.textBoxConnectionP2.Name = "textBoxConnectionP2";
-            this.textBoxConnectionP2.Size = new System.Drawing.Size(109, 24);
-            this.textBoxConnectionP2.TabIndex = 6;
-            // 
-            // textBoxConnectionP3
-            // 
-            this.textBoxConnectionP3.BackColor = System.Drawing.Color.Gray;
-            this.textBoxConnectionP3.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold);
-            this.textBoxConnectionP3.Location = new System.Drawing.Point(8, 285);
-            this.textBoxConnectionP3.Name = "textBoxConnectionP3";
-            this.textBoxConnectionP3.Size = new System.Drawing.Size(109, 24);
-            this.textBoxConnectionP3.TabIndex = 14;
             // 
             // SoftSensConf
             // 
