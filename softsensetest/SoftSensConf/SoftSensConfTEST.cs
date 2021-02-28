@@ -279,6 +279,7 @@ namespace SoftSensConf
             if (serialPort1.IsOpen)
             {
                 serialPort1.WriteLine(textBoxSend.Text);
+                textBoxSend.Clear();
             }
 
 
@@ -428,24 +429,28 @@ namespace SoftSensConf
                 serialPort1.WriteLine("readstatus");
                 var Flagnumber = string.Empty;
                 Flagnumber = serialPort1.ReadLine();
-                int result = Int32.Parse(Flagnumber);
+                if (Flagnumber.Length == 2)
+                {
+                    int result = Int32.Parse(Flagnumber);
+                    if (result == 0)
+                    {
+                        textBoxStatus.Text = "OK";
+                    }
+                    if (result == 1)
+                    {
+                        textBoxStatus.Text = "Fail";
+                    }
+                    if (result == 2)
+                    {
+                        textBoxStatus.Text = "Alarml";
+                    }
+                    if (result == 3)
+                    {
+                        textBoxStatus.Text = "Alarmh";
+                    }
+                }
 
-                if (result == 0)
-                {
-                    textBoxStatus.Text = "OK";
-                }
-                if (result == 1)
-                {
-                    textBoxStatus.Text = "Fail";
-                }
-                if (result == 2)
-                {
-                    textBoxStatus.Text = "Alarml";
-                }
-                if (result == 3)
-                {
-                    textBoxStatus.Text = "Alarmh";
-                }
+                
             }
         }
 
