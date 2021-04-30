@@ -26,6 +26,7 @@ namespace SoftSensConf
         string Sendingdata = "";
         private void Form1_Load(object sender, EventArgs e)
         {
+            // TODO: This line of code loads data into the 'sOFTSENSECONF_DATABASE_FINALDataSet.RDC1' table. You can move, or remove it, as needed.
             // TODO: This line of code loads data into the 'sOFTSENSECONF_DATABASE_FINALDataSet.Instrument_Measure_Id' table. You can move, or remove it, as needed.
             this.instrument_Measure_IdTableAdapter.Fill(this.sOFTSENSECONF_DATABASE_FINALDataSet.Instrument_Measure_Id);
             // TODO: This line of code loads data into the 'sOFTSENSECONF_DATABASE_FINALDataSet.AI_LOG' table. You can move, or remove it, as needed.
@@ -41,10 +42,24 @@ namespace SoftSensConf
             // TODO: This line of code loads data into the 'sOFTSENSECONF_DATABASE_FINALDataSet.AI_LOG' table. You can move, or remove it, as needed.
             // TODO: This line of code loads data into the 'sOFTSENSECONF_DATABASE_FINALDataSet.AI_LOG' table. You can move, or remove it, as needed.
 
-            this.dAU_OnlyIdDesTableAdapter.Fill(this.sOFTSENSECONF_DATABASE_FINALDataSet.DAU_OnlyIdDes);
+
+
+
+
+
+            int filterRDC = Convert.ToInt32(comboBoxFindingDeviceRDC.SelectedValue.ToString());
+            this.dAU_OnlyIdDesTableAdapter.FillbyDAU_ID(this.sOFTSENSECONF_DATABASE_FINALDataSet.DAU_OnlyIdDes, filterRDC);
             comboBoxFindDevice.DisplayMember = "Description";
             comboBoxFindDevice.ValueMember = "DAU_Id";
             comboBoxFindDevice.DataSource = sOFTSENSECONF_DATABASE_FINALDataSet.DAU_OnlyIdDes;
+
+
+
+
+
+            //comboBoxFindingDeviceRDC.DisplayMember = "Description";
+            //comboBoxFindingDeviceRDC.ValueMember = "DAU_Id";
+            // comboBoxFindingDeviceRDC.DataSource = 
 
 
 
@@ -63,7 +78,7 @@ namespace SoftSensConf
             // TODO: This line of code loads data into the 'sOFTSENSECONF_DATABASE_FINALDataSet.RDC' table. You can move, or remove it, as needed.
             this.rDCTableAdapter.Fill(this.sOFTSENSECONF_DATABASE_FINALDataSet.RDC);
             // TODO: This line of code loads data into the 'sOFTSENSECONF_DATABASE_FINALDataSet.DAU_OnlyIdDes' table. You can move, or remove it, as needed.
-            this.dAU_OnlyIdDesTableAdapter.Fill(this.sOFTSENSECONF_DATABASE_FINALDataSet.DAU_OnlyIdDes);
+            this.dAU_OnlyIdDesTableAdapter.FillbyDAU_ID(this.sOFTSENSECONF_DATABASE_FINALDataSet.DAU_OnlyIdDes, filterRDC);
             // TODO: This line of code loads data into the 'sOFTSENSECONF_DATABASE_FINALDataSet.INSTRUMENT' table. You can move, or remove it, as needed.
             // TODO: This line of code loads data into the 'sOFTSENSECONF_DATABASE_FINALDataSet.DAU' table. You can move, or remove it, as needed.
             this.dAUTableAdapter.Fill(this.sOFTSENSECONF_DATABASE_FINALDataSet.DAU);
@@ -76,15 +91,11 @@ namespace SoftSensConf
                 buttonSendValues.Enabled = false;
                 buttonRetrieve.Enabled = false;
                 buttonReceive.Enabled = false;
-                buttonRaw.Enabled = false;
-                buttonScaled.Enabled = false;
                 buttonDisconnect.Enabled = false;
                 textBoxConnectionP1.Text = "Disconnected";
                 textBoxConnectionP1.ForeColor = Color.Red;
                 textBoxConnectionP2.Text = "Disconnected";
                 textBoxConnectionP2.ForeColor = Color.Red;
-                textBoxConnectionP3.Text = "Disconnected";
-                textBoxConnectionP3.ForeColor = Color.Red;
             }
 
         }
@@ -120,14 +131,10 @@ namespace SoftSensConf
                         textBoxConnectionP1.ForeColor = Color.Green;
                         textBoxConnectionP2.Text = "Connected";
                         textBoxConnectionP2.ForeColor = Color.Green;
-                        textBoxConnectionP3.Text = "Connected";
-                        textBoxConnectionP3.ForeColor = Color.Green;
                         buttonSend.Enabled = true;
                         buttonSendValues.Enabled = true;
                         buttonRetrieve.Enabled = true;
                         buttonReceive.Enabled = true;
-                        buttonRaw.Enabled = true;
-                        buttonScaled.Enabled = true;
                         buttonDisconnect.Enabled = true;
                         timerStatus.Enabled = true;
 
@@ -159,8 +166,6 @@ namespace SoftSensConf
             textBoxConnectionP1.ForeColor = Color.Red;
             textBoxConnectionP2.Text = "Disconnected";
             textBoxConnectionP2.ForeColor = Color.Red;
-            textBoxConnectionP3.Text = "Disconnected";
-            textBoxConnectionP3.ForeColor = Color.Red;
 
 
 
@@ -364,19 +369,23 @@ namespace SoftSensConf
 
                 if (analogReadings.Length == 1)
                 {
-                    listBoxReading.Items.Add(analogReadings[0]);
                     string valuetodb = analogReadings[0];
                     aI_LOGBindingSource.AddNew();
                     aI_LOGBindingSource.MoveLast();
                     valueTextBox.Text = valuetodb;
                     instrument_Log_IdTextBox.Text = instrument_Log_IdTextBox1.Text;
+                    string datetime = DateTime.Now.ToString();
+                    //textBox1.Text = datetime;
+                    timeDateTimePicker.Text = datetime;
                     aI_LOGBindingSource.EndEdit();
                     this.aI_LOGTableAdapter.Update(this.sOFTSENSECONF_DATABASE_FINALDataSet.AI_LOG);
 
+
+
                     //valueTextBox.Text = analogReadings[0];
 
-
-                    //chartPoints.Series[0].Points.AddXY((listBoxReading.Items.Count - 1), (listBoxReading.Items[listBoxReading.Items.Count - 1]));
+                    chartPoints.Series[0].Points.AddXY(DateTime.Now, valuetodb);
+                    //chartPoints.Series[0].Points.AddXY((listBoxValueAI.Items.Count - 1), (listBoxValueAI.Items[listBoxReading.Items.Count - 1]));
                 }
             }
             timerReceive.Enabled = false;
@@ -439,7 +448,6 @@ namespace SoftSensConf
 
         private void buttonClearV_Click(object sender, EventArgs e)
         {
-            listBoxReading.Items.Clear();
             chartPoints.Series[0].Points.Clear();
         }
 
@@ -463,25 +471,9 @@ namespace SoftSensConf
         {
 
 
-            if (saveFileDialog.ShowDialog() == DialogResult.OK)
-            {
-
-                {
-
-                    StreamWriter writer = new StreamWriter(saveFileDialog.FileName);
-
-                    for (int i = 0; i < listBoxReading.Items.Count; i++)
-                    {
-                        writer.WriteLine(i);
-                        writer.WriteLine((string)listBoxReading.Items[i]);
-                    }
-                    writer.Close();
 
 
-                }
 
-
-            }
         }
 
         private void timerStatus_Tick(object sender, EventArgs e)
@@ -496,19 +488,19 @@ namespace SoftSensConf
                     int result = Int32.Parse(Flagnumber);
                     if (result == 0)
                     {
-                        textBoxStatus.Text = "OK";
+                        textBoxConnectionP2.Text = "OK";
                     }
                     if (result == 1)
                     {
-                        textBoxStatus.Text = "Fail";
+                        textBoxConnectionP2.Text = "Fail";
                     }
                     if (result == 2)
                     {
-                        textBoxStatus.Text = "Alarml";
+                        textBoxConnectionP2.Text = "Alarml";
                     }
                     if (result == 3)
                     {
-                        textBoxStatus.Text = "Alarmh";
+                        textBoxConnectionP2.Text = "Alarmh";
                     }
                 }
 
@@ -655,27 +647,22 @@ namespace SoftSensConf
 
         private void buttonRaw_MouseHover(object sender, EventArgs e)
         {
-            toolTip.Show("View the raw data in graph", buttonRaw);
         }
 
         private void buttonScaled_MouseHover(object sender, EventArgs e)
         {
-            toolTip.Show("View the scaled data in graph", buttonRaw);
         }
 
         private void buttonStop_MouseHover(object sender, EventArgs e)
         {
-            toolTip.Show("stop the live graph", buttonStop);
         }
 
         private void buttonClearV_MouseHover(object sender, EventArgs e)
         {
-            toolTip.Show("Clear the values", buttonClearV);
         }
 
         private void buttonSavetofile_MouseHover(object sender, EventArgs e)
         {
-            toolTip.Show("Save the live data to file", buttonSavetofile);
         }
 
         private void listBoxReading_SelectedIndexChanged(object sender, EventArgs e)
@@ -815,7 +802,7 @@ namespace SoftSensConf
                 {
                     string TagNameFilter = comboBoxFindInstrument.SelectedValue.ToString();
                     iNSTRUMENTTableAdapter.FillByInstrument(this.sOFTSENSECONF_DATABASE_FINALDataSet.INSTRUMENT, TagNameFilter);
-                    
+
                 }
                 catch (Exception ex)
                 {
@@ -866,8 +853,6 @@ namespace SoftSensConf
 
             comboBoxFindDevice.Text = "";
             comboBoxFindDevice.Enabled = true;
-            this.dAU_OnlyIdDesTableAdapter.Fill(this.sOFTSENSECONF_DATABASE_FINALDataSet.DAU_OnlyIdDes);
-
         }
 
         private void buttonNEW_Click(object sender, EventArgs e)
@@ -948,12 +933,109 @@ namespace SoftSensConf
 
         private void buttonReadAnalog_Click(object sender, EventArgs e)
         {
-            string tagname = tagNameTextBox1.Text;
-            instrument_Measure_IdBindingSource.AddNew();
-            instrument_Measure_IdBindingSource.MoveLast();
-            tagNameTextBox1.Text = tagname;
-            instrument_Measure_IdBindingSource.EndEdit();
-            this.instrument_Measure_IdTableAdapter.Update(this.sOFTSENSECONF_DATABASE_FINALDataSet.Instrument_Measure_Id);
+            //string tagname = tagNameTextBox1.Text;
+            //instrument_Measure_IdBindingSource.AddNew();
+            //instrument_Measure_IdBindingSource.MoveLast();
+            //tagNameTextBox1.Text = tagname;
+            //instrument_Measure_IdBindingSource.EndEdit();
+            //this.instrument_Measure_IdTableAdapter.Update(this.sOFTSENSECONF_DATABASE_FINALDataSet.Instrument_Measure_Id);
+        }
+
+        private void button1_Click_1(object sender, EventArgs e)
+        {
+            tabControl.Visible = true;
+        }
+
+        private void buttonConnectFromDB_Click(object sender, EventArgs e)
+        {
+            serialPort1.PortName = "COM" + cOMPortTextBox.Text;
+            serialPort1.BaudRate = Convert.ToInt32(bAUDRateTextBox.Text);
+            serialPort1.Open();
+            if (serialPort1.IsOpen == true)
+            {
+                MessageBox.Show("Successfully Connected To the Instrument");
+                pictureBoxCONNECTED.Visible = true;
+                pictureBoxDisconnected.Visible = false;
+                buttonRetrieve.Enabled = true;
+                buttonConnectFromDB.Visible = false;
+                buttonDisconnectInstrument.Visible = true;
+                pictureBox2.Visible = true;
+                pictureBox1.Visible = true;
+            }
+        }
+
+
+
+        private void buttonDisconnectInstrument_Click_1(object sender, EventArgs e)
+        {
+            serialPort1.Close();
+            if (serialPort1.IsOpen == false)
+            {
+                pictureBoxDisconnected.Visible = true;
+                pictureBoxCONNECTED.Visible = false;
+                buttonConnectFromDB.Visible = true;
+                buttonDisconnectInstrument.Visible = false;
+                MessageBox.Show("Disconnected!");
+
+            }
+        }
+
+        private void tabPageConfiguration_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void buttonGraphstart_Click(object sender, EventArgs e)
+        {
+            timerChartRaw.Enabled = true;
+            timerStatus.Enabled = false;
+        }
+
+        private void buttonstopgraph_Click(object sender, EventArgs e)
+        {
+            timerChartScaled.Enabled = false;
+            timerChartRaw.Enabled = false;
+            timerStatus.Enabled = true;
+        }
+
+        private void tabPageCommand_Enter(object sender, EventArgs e)
+        {
+            if (comboBoxFindInstrument.SelectedIndex > -1)
+            {
+                try
+                {
+                    tagNameTextBox1.Text = tagNameTextBox.Text;
+                    
+
+
+                }
+                catch (Exception ex)
+                {
+
+                    MessageBox.Show("ERROR!" + ex);
+                }
+            }
+        }
+
+        private void comboBoxFindingDeviceRDC_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if (comboBoxFindingDeviceRDC.SelectedIndex > -1)
+            {
+                try
+                {
+                    int RDC_IdFilter = Convert.ToInt32(comboBoxFindingDeviceRDC.SelectedValue.ToString());
+                    rDCTableAdapter.FillByRDCID(this.sOFTSENSECONF_DATABASE_FINALDataSet.RDC, RDC_IdFilter);
+                    
+
+                }
+                catch (Exception ex)
+                {
+
+                    MessageBox.Show("ERROR!" + ex);
+                }
+
+
+            }
         }
     }
 }
