@@ -26,6 +26,10 @@ namespace SoftSensConf
         string Sendingdata = "";
         private void Form1_Load(object sender, EventArgs e)
         {
+            // TODO: This line of code loads data into the 'sOFTSENSECONF_DATABASE_FINALDataSet.Innput_Output' table. You can move, or remove it, as needed.
+            this.innput_OutputTableAdapter.Fill(this.sOFTSENSECONF_DATABASE_FINALDataSet.Innput_Output);
+            // TODO: This line of code loads data into the 'sOFTSENSECONF_DATABASE_FINALDataSet.RDCOnlyIdDes' table. You can move, or remove it, as needed.
+            this.rDCOnlyIdDesTableAdapter.FillRDCOnlyIDdES(this.sOFTSENSECONF_DATABASE_FINALDataSet.RDCOnlyIdDes);
             // TODO: This line of code loads data into the 'sOFTSENSECONF_DATABASE_FINALDataSet.RDC1' table. You can move, or remove it, as needed.
             // TODO: This line of code loads data into the 'sOFTSENSECONF_DATABASE_FINALDataSet.Instrument_Measure_Id' table. You can move, or remove it, as needed.
             this.instrument_Measure_IdTableAdapter.Fill(this.sOFTSENSECONF_DATABASE_FINALDataSet.Instrument_Measure_Id);
@@ -43,23 +47,17 @@ namespace SoftSensConf
             // TODO: This line of code loads data into the 'sOFTSENSECONF_DATABASE_FINALDataSet.AI_LOG' table. You can move, or remove it, as needed.
 
 
+            //rdc
+            this.rDCOnlyIdDesTableAdapter.FillRDCOnlyIDdES(this.sOFTSENSECONF_DATABASE_FINALDataSet.RDCOnlyIdDes);
+            comboBoxFindingDeviceRDC.DisplayMember = "Description";
+            comboBoxFindingDeviceRDC.ValueMember = "RDC_Id";
+            comboBoxFindingDeviceRDC.DataSource = sOFTSENSECONF_DATABASE_FINALDataSet.RDCOnlyIdDes;
+
+            ///dau
+    
 
 
 
-
-            int filterRDC = Convert.ToInt32(comboBoxFindingDeviceRDC.SelectedValue.ToString());
-            this.dAU_OnlyIdDesTableAdapter.FillbyDAU_ID(this.sOFTSENSECONF_DATABASE_FINALDataSet.DAU_OnlyIdDes, filterRDC);
-            comboBoxFindDevice.DisplayMember = "Description";
-            comboBoxFindDevice.ValueMember = "DAU_Id";
-            comboBoxFindDevice.DataSource = sOFTSENSECONF_DATABASE_FINALDataSet.DAU_OnlyIdDes;
-
-
-
-
-
-            //comboBoxFindingDeviceRDC.DisplayMember = "Description";
-            //comboBoxFindingDeviceRDC.ValueMember = "DAU_Id";
-            // comboBoxFindingDeviceRDC.DataSource = 
 
 
 
@@ -78,7 +76,7 @@ namespace SoftSensConf
             // TODO: This line of code loads data into the 'sOFTSENSECONF_DATABASE_FINALDataSet.RDC' table. You can move, or remove it, as needed.
             this.rDCTableAdapter.Fill(this.sOFTSENSECONF_DATABASE_FINALDataSet.RDC);
             // TODO: This line of code loads data into the 'sOFTSENSECONF_DATABASE_FINALDataSet.DAU_OnlyIdDes' table. You can move, or remove it, as needed.
-            this.dAU_OnlyIdDesTableAdapter.FillbyDAU_ID(this.sOFTSENSECONF_DATABASE_FINALDataSet.DAU_OnlyIdDes, filterRDC);
+            this.dAU_OnlyIdDesTableAdapter.Fill(this.sOFTSENSECONF_DATABASE_FINALDataSet.DAU_OnlyIdDes);
             // TODO: This line of code loads data into the 'sOFTSENSECONF_DATABASE_FINALDataSet.INSTRUMENT' table. You can move, or remove it, as needed.
             // TODO: This line of code loads data into the 'sOFTSENSECONF_DATABASE_FINALDataSet.DAU' table. You can move, or remove it, as needed.
             this.dAUTableAdapter.Fill(this.sOFTSENSECONF_DATABASE_FINALDataSet.DAU);
@@ -87,7 +85,7 @@ namespace SoftSensConf
             Flagnumber = new string[1];
             if (serialPort1.IsOpen == false)
             {
-                buttonSend.Enabled = false;
+                buttonSendValuesToInstrument.Enabled = false;
                 buttonSendValues.Enabled = false;
                 buttonRetrieve.Enabled = false;
                 buttonReceive.Enabled = false;
@@ -131,7 +129,7 @@ namespace SoftSensConf
                         textBoxConnectionP1.ForeColor = Color.Green;
                         textBoxConnectionP2.Text = "Connected";
                         textBoxConnectionP2.ForeColor = Color.Green;
-                        buttonSend.Enabled = true;
+                        buttonSendValuesToInstrument.Enabled = true;
                         buttonSendValues.Enabled = true;
                         buttonRetrieve.Enabled = true;
                         buttonReceive.Enabled = true;
@@ -187,6 +185,14 @@ namespace SoftSensConf
         private void tabPageConnection_Enter(object sender, EventArgs e)
         {
             toolStripback.Text = "Ready";
+            int filterRDC = Convert.ToInt32(comboBoxFindingDeviceRDC.SelectedValue.ToString());
+
+            this.dAU_OnlyIdDesTableAdapter.FillByrdc(this.sOFTSENSECONF_DATABASE_FINALDataSet.DAU_OnlyIdDes, filterRDC);
+            comboBoxFindDevice.DisplayMember = "Description";
+            comboBoxFindDevice.ValueMember = "DAU_Id";
+            comboBoxFindDevice.DataSource = sOFTSENSECONF_DATABASE_FINALDataSet.DAU_OnlyIdDes;
+
+
 
         }
 
@@ -210,7 +216,7 @@ namespace SoftSensConf
             var filecontent = string.Empty;
             string Name = "";
             openFileDialog.InitialDirectory = ":c\\";
-            //openFileDialog.Filter = "ssc files (*.ssc)|*.ssc|all files (*.*|*.*";
+            openFileDialog.Filter = "ssc files (*.ssc)|*.ssc|all files (*.*|*.*";
             openFileDialog.RestoreDirectory = true;
             openFileDialog.FileName = "";
 
@@ -238,14 +244,14 @@ namespace SoftSensConf
                     switch (i)
                     {
                         case 0:
-                            if (textBoxTag.Text == "")
+                            if (tagNameTextBox.Text == "")
                             {
                                 MessageBox.Show("Tagname is required!");
                                 textBoxTag.Focus();
                             }
                             break;
                         case 1:
-                            if (textBoxLRV.Text == "")
+                            if (lower_range_valueTextBox.Text == "")
                             {
                                 MessageBox.Show("Lower range value is required!");
                                 textBoxLRV.Focus();
@@ -253,7 +259,7 @@ namespace SoftSensConf
 
                             break;
                         case 2:
-                            if (textBoxURV.Text == "")
+                            if (upper_range_valueTextBox.Text == "")
                             {
                                 MessageBox.Show("Upper range value is required!");
                                 textBoxURV.Focus();
@@ -261,14 +267,14 @@ namespace SoftSensConf
 
                             break;
                         case 3:
-                            if (textBoxAL.Text == "")
+                            if (alarm_LowTextBox.Text == "")
                             {
                                 MessageBox.Show("Alarm low value is required!");
                                 textBoxAL.Focus();
                             }
                             break;
                         case 4:
-                            if (textBoxAH.Text == "")
+                            if (alarm_highTextBox.Text == "")
                             {
                                 MessageBox.Show("Alarm high value is required!");
                                 textBoxAH.Focus();
@@ -278,11 +284,11 @@ namespace SoftSensConf
 
 
                         default:
-                            InstrumentConfigs[i] = textBoxTag.Text;
-                            InstrumentConfigs[i] = textBoxLRV.Text;
-                            InstrumentConfigs[i] = textBoxURV.Text;
-                            InstrumentConfigs[i] = textBoxAL.Text;
-                            InstrumentConfigs[i] = textBoxAH.Text;
+                            InstrumentConfigs[i] = tagNameTextBox.Text;
+                            InstrumentConfigs[i] = lower_range_valueTextBox.Text;
+                            InstrumentConfigs[i] = upper_range_valueTextBox.Text;
+                            InstrumentConfigs[i] = alarm_LowTextBox.Text;
+                            InstrumentConfigs[i] = alarm_highTextBox.Text;
 
 
                             break;
@@ -373,18 +379,23 @@ namespace SoftSensConf
                     aI_LOGBindingSource.AddNew();
                     aI_LOGBindingSource.MoveLast();
                     valueTextBox.Text = valuetodb;
-                    instrument_Log_IdTextBox.Text = instrument_Log_IdTextBox1.Text;
+                    instrument_Log_IdTextBox.Text = instrument_Log_IdTextBox2.Text;
+                    
+
                     string datetime = DateTime.Now.ToString();
                     //textBox1.Text = datetime;
                     timeDateTimePicker.Text = datetime;
                     aI_LOGBindingSource.EndEdit();
                     this.aI_LOGTableAdapter.Update(this.sOFTSENSECONF_DATABASE_FINALDataSet.AI_LOG);
-
+                    //chartPoints.Series[0].Points.AddXY(DateTime.Now, valuetodb);
 
 
                     //valueTextBox.Text = analogReadings[0];
-
-                    chartPoints.Series[0].Points.AddXY(DateTime.Now, valuetodb);
+                    if (buttonstopgraph.Visible == true)
+                    {
+                        chartPoints.Series[0].Points.AddXY(DateTime.Now, valuetodb);
+                    }
+                    
                     //chartPoints.Series[0].Points.AddXY((listBoxValueAI.Items.Count - 1), (listBoxValueAI.Items[listBoxReading.Items.Count - 1]));
                 }
             }
@@ -459,11 +470,11 @@ namespace SoftSensConf
                 var Instrumentdata = string.Empty;
                 Instrumentdata = serialPort1.ReadLine();
                 InstrumentValues = Instrumentdata.Split(';');
-                textBoxTag.Text = InstrumentValues[0];
-                textBoxLRV.Text = InstrumentValues[1];
-                textBoxURV.Text = InstrumentValues[2];
-                textBoxAL.Text = InstrumentValues[3];
-                textBoxAH.Text = InstrumentValues[4];
+                tagNameTextBox.Text = InstrumentValues[0];
+                lower_range_valueTextBox.Text = InstrumentValues[1];
+                upper_range_valueTextBox.Text = InstrumentValues[2];
+                alarm_LowTextBox.Text = InstrumentValues[3];
+                alarm_highTextBox.Text = InstrumentValues[4];
             }
         }
 
@@ -637,7 +648,7 @@ namespace SoftSensConf
 
         private void labelInput_MouseHover(object sender, EventArgs e)
         {
-            toolTip.Show("Enter the input you want to send to the instrument", labelInput);
+            //toolTip.Show("Enter the input you want to send to the instrument", labelInput);
         }
 
         private void radioButtonConnected_MouseClick(object sender, MouseEventArgs e)
@@ -749,7 +760,7 @@ namespace SoftSensConf
                 textBoxMatch.Text = "OK";
             }
             else
-                textBoxMatch.Text = "Not matching!";
+                textBoxMatch.Text = "Not1 matching!";
         }
 
         private void textBoxURV_TextChanged(object sender, EventArgs e)
@@ -759,7 +770,7 @@ namespace SoftSensConf
                 textBoxMatch.Text = "OK";
             }
             else
-                textBoxMatch.Text = "Not matching!";
+                textBoxMatch.Text = "Not2 matching!";
 
         }
 
@@ -770,18 +781,20 @@ namespace SoftSensConf
                 textBoxMatch.Text = "OK";
             }
             else
-                textBoxMatch.Text = "Not matching!";
+                textBoxMatch.Text = "Not3 matching!";
 
         }
 
         private void textBoxAH_TextChanged(object sender, EventArgs e)
         {
-            if (alarm_highTextBox.Text == textBoxAH.Text)
+            string ah = textBoxAH.Text.ToString();
+            textBoxAH.Text = ah.Replace('\r', ' ');
+            if (alarm_highTextBox == textBoxAH)
             {
                 textBoxMatch.Text = "OK";
             }
             else
-                textBoxMatch.Text = "Not matching!";
+                textBoxMatch.Text = "Not4 matching!";
         }
 
         private void tabPageConfiguration_Enter(object sender, EventArgs e)
@@ -792,6 +805,7 @@ namespace SoftSensConf
             comboBoxFindInstrument.ValueMember = "TagName";
             comboBoxFindInstrument.DataSource = sOFTSENSECONF_DATABASE_FINALDataSet.INSTRUMENTtoComboBox;
             comboBoxFindInstrument.Text = tagNameTextBox.Text;
+            
         }
 
         private void comboBoxFindInstrument_SelectedIndexChanged(object sender, EventArgs e)
@@ -851,8 +865,9 @@ namespace SoftSensConf
             dAUBindingSource.EndEdit();
             this.dAUTableAdapter.Update(this.sOFTSENSECONF_DATABASE_FINALDataSet.DAU);
 
-            comboBoxFindDevice.Text = "";
+            
             comboBoxFindDevice.Enabled = true;
+            comboBoxFindDevice.Text = descriptionTextBox.Text;
         }
 
         private void buttonNEW_Click(object sender, EventArgs e)
@@ -959,8 +974,15 @@ namespace SoftSensConf
                 buttonRetrieve.Enabled = true;
                 buttonConnectFromDB.Visible = false;
                 buttonDisconnectInstrument.Visible = true;
-                pictureBox2.Visible = true;
+                
                 pictureBox1.Visible = true;
+                pictureBoxDisconnected2.Visible = false;
+                pictureBoxDisconnected3.Visible = false;
+                pictureBox4.Visible = true;
+                pictureBox5.Visible = true;
+                buttonSendValuesToInstrument.Enabled = true;
+                buttonReceive.Enabled = true;
+                buttonSendValues.Enabled = true;
             }
         }
 
@@ -976,6 +998,9 @@ namespace SoftSensConf
                 buttonConnectFromDB.Visible = true;
                 buttonDisconnectInstrument.Visible = false;
                 MessageBox.Show("Disconnected!");
+                pictureBoxDisconnected2.Visible = true;
+                pictureBoxDisconnected3.Visible = true;
+                pictureBoxCONNECTED.Visible = false;
 
             }
         }
@@ -989,13 +1014,15 @@ namespace SoftSensConf
         {
             timerChartRaw.Enabled = true;
             timerStatus.Enabled = false;
+            chartPoints.Visible = true;
+            buttonstopgraph.Visible = true;
+
         }
 
         private void buttonstopgraph_Click(object sender, EventArgs e)
         {
-            timerChartScaled.Enabled = false;
-            timerChartRaw.Enabled = false;
-            timerStatus.Enabled = true;
+            buttonstopgraph.Visible = false;
+            
         }
 
         private void tabPageCommand_Enter(object sender, EventArgs e)
@@ -1019,14 +1046,18 @@ namespace SoftSensConf
 
         private void comboBoxFindingDeviceRDC_SelectedIndexChanged(object sender, EventArgs e)
         {
+           
+        }
+
+        private void comboBoxFindingDeviceRDC_SelectedIndexChanged_1(object sender, EventArgs e)
+        {
             if (comboBoxFindingDeviceRDC.SelectedIndex > -1)
             {
                 try
                 {
-                    int RDC_IdFilter = Convert.ToInt32(comboBoxFindingDeviceRDC.SelectedValue.ToString());
-                    rDCTableAdapter.FillByRDCID(this.sOFTSENSECONF_DATABASE_FINALDataSet.RDC, RDC_IdFilter);
+                    int RDC_idFilter = Convert.ToInt32(comboBoxFindingDeviceRDC.SelectedValue.ToString());
+                    rDCTableAdapter.FillByRDCID(this.sOFTSENSECONF_DATABASE_FINALDataSet.RDC, RDC_idFilter);
                     
-
                 }
                 catch (Exception ex)
                 {
@@ -1036,6 +1067,276 @@ namespace SoftSensConf
 
 
             }
+        }
+
+        private void buttonView_Click(object sender, EventArgs e)
+        {
+            listBoxDBreadings.Visible = true;
+        }
+
+        private void buttonSending_Click(object sender, EventArgs e)
+        {
+            textBoxSend.Visible = true;
+            textBoxReceive.Visible = true;
+            buttonSendValuesToInstrument.Visible = true;
+            buttonReceive.Visible = true;
+            //labelInput.Visible = true;
+        }
+
+        private void buttonSendValuestodb_Click(object sender, EventArgs e)
+        {
+            
+            
+            //instrument_Measure_IdBindingSource.AddNew();
+            //instrument_Measure_IdBindingSource.MoveLast();
+            //tagNameTextBox2.Text = tagNameTextBox.Text;
+            //textBoxMeasure_ID.Text = "";
+            //this.instrument_Measure_IdTableAdapter.Update(this.sOFTSENSECONF_DATABASE_FINALDataSet.Instrument_Measure_Id);
+
+
+            //timerChartRaw.Enabled = true;
+           // timerStatus.Enabled = false;
+            buttonSTopsendingdata.Enabled = true;
+            buttonSTopsendingdata.Visible = true;
+            buttonSendValuestodb.Visible = false;
+
+
+        }
+
+        private void buttonNEWRDC_Click(object sender, EventArgs e)
+        {
+            buttonNEWRDC.Enabled = false;
+            buttonChangeRDC.Enabled = false;
+
+
+            descriptionTextBoxRDC.Enabled = true;
+            comboBoxAReaRDC.Enabled = true;
+            comboBoxMOdelRDC.Enabled = true;
+            comboBoxManuRDC.Enabled = true;
+            configuration_Edit_DateDateTimePickerRDC.Enabled = true;
+
+            rDCBindingSource.AddNew();
+            rDCBindingSource.MoveLast();
+        }
+
+        private void buttonChangeRDC_Click(object sender, EventArgs e)
+        {
+            buttonChangeRDC.Enabled = false;
+            buttonNEWRDC.Enabled = false;
+            descriptionTextBoxRDC.Enabled = true;
+            comboBoxAReaRDC.Enabled = true;
+            comboBoxMOdelRDC.Enabled = true;
+            comboBoxManuRDC.Enabled = true;
+            configuration_Edit_DateDateTimePickerRDC.Enabled = true;
+            comboBoxFindingDeviceRDC.Text = "";
+        }
+
+        private void buttonSaveRDC_Click(object sender, EventArgs e)
+        {
+            buttonChangeRDC.Enabled = true;
+            buttonNEWRDC.Enabled = true;
+            descriptionTextBoxRDC.Enabled = false;
+            comboBoxAReaRDC.Enabled = false;
+            comboBoxMOdelRDC.Enabled = false;
+            comboBoxManuRDC.Enabled = false;
+            configuration_Edit_DateDateTimePickerRDC.Enabled = false;
+
+
+
+            rDCBindingSource.EndEdit();
+            this.rDCTableAdapter.Update(this.sOFTSENSECONF_DATABASE_FINALDataSet.RDC);
+
+            comboBoxFindingDeviceRDC.Text = descriptionTextBoxRDC.Text;
+            comboBoxFindingDeviceRDC.Enabled = true;
+
+
+
+
+
+        }
+
+        private void buttonCancelRDC_Click(object sender, EventArgs e)
+        {
+            buttonNEWRDC.Enabled = true;
+            buttonChangeRDC.Enabled = true;
+            buttonSaveRDC.Enabled = true;
+
+
+            descriptionTextBoxRDC.Enabled = false;
+            comboBoxAReaRDC.Enabled = false;
+            comboBoxMOdelRDC.Enabled = false;
+            comboBoxManuRDC.Enabled = false;
+            configuration_Edit_DateDateTimePickerRDC.Enabled = false;
+            rDCBindingSource.CancelEdit();
+
+
+            comboBoxFindingDeviceRDC.Enabled = true;
+            comboBoxFindingDeviceRDC.Text = descriptionTextBoxRDC.Text;
+        }
+
+        private void frequencyTextBox_TextChanged(object sender, EventArgs e)
+        {
+
+            try
+            {
+                if (frequencyTextBox.Text.Length > 0)
+                {
+                    int frequency = Convert.ToInt32(frequencyTextBox.Text);
+                    timerChartRaw.Interval = frequency;
+                }
+                else
+                    timerChartRaw.Enabled = false;
+                    
+
+            }
+            catch (Exception ex)
+            {
+
+                MessageBox.Show("ERROR!" + ex);
+            }
+            
+        }
+
+        private void button1_Click_2(object sender, EventArgs e)
+        {
+
+            comboBoxAreaInstrument.Enabled = false;
+            comboBoxCOMMInstrument.Enabled = false;
+            comboBoxDAUinstrument.Enabled = false;
+            comboBoxInnputOutputInstrument.Enabled = false;
+            comboBoxModelinstrument.Enabled = false;
+            comboBoxManu_DAU.Enabled = false;
+            frequencyTextBox.Enabled = false;
+            configuration_Edit_DateDateTimePickerInstrument.Enabled = false;
+            descriptionTextBoxInstrument.Enabled = false;
+            comboBoxCategoryInstrument.Enabled = false;
+            tagNameTextBox.Enabled = false;
+            upper_range_valueTextBox.Enabled = false;
+            lower_range_valueTextBox.Enabled = false;
+            alarm_highTextBox.Enabled = false;
+            alarm_LowTextBox.Enabled = false;
+            buttonChangeInstrument.Enabled = true;
+            buttonCancelInstrument.Enabled = true;
+            buttonNEWInstrument.Enabled = true;
+
+            iNSTRUMENTBindingSource.EndEdit();
+            this.iNSTRUMENTTableAdapter.Update(sOFTSENSECONF_DATABASE_FINALDataSet.INSTRUMENT);
+            comboBoxFindInstrument.Text = tagNameTextBox.Text;
+
+            comboBoxFindInstrument.Text = tagNameTextBox.Text;
+            comboBoxFindInstrument.Enabled = true;
+
+        }
+
+        private void buttonNEWInstrument_Click(object sender, EventArgs e)
+        {
+            comboBoxAreaInstrument.Enabled = true;
+            comboBoxCOMMInstrument.Enabled = true;
+            comboBoxDAUinstrument.Enabled = true;
+            comboBoxInnputOutputInstrument.Enabled = true;
+            comboBoxModelinstrument.Enabled = true;
+            comboBoxManu_DAU.Enabled = true;
+            frequencyTextBox.Enabled = true;
+            configuration_Edit_DateDateTimePickerInstrument.Enabled = true;
+            descriptionTextBoxInstrument.Enabled = true;
+            comboBoxCategoryInstrument.Enabled = true;
+            tagNameTextBox.Enabled = true;
+            upper_range_valueTextBox.Enabled = true;
+            lower_range_valueTextBox.Enabled = true;
+            alarm_highTextBox.Enabled = true;
+            alarm_LowTextBox.Enabled = true;
+            buttonChangeInstrument.Enabled = false;
+
+
+
+
+
+            iNSTRUMENTBindingSource.AddNew();
+            iNSTRUMENTBindingSource.MoveLast();
+
+            comboBoxFindInstrument.Enabled = false;
+            comboBoxFindInstrument.Text = "";
+        }
+
+        private void buttonCancelInstrument_Click(object sender, EventArgs e)
+        {
+            comboBoxAreaInstrument.Enabled = false;
+            comboBoxCOMMInstrument.Enabled = false;
+            comboBoxDAUinstrument.Enabled = false;
+            comboBoxInnputOutputInstrument.Enabled = false;
+            comboBoxModelinstrument.Enabled = false;
+            comboBoxManu_DAU.Enabled = false;
+            frequencyTextBox.Enabled = false;
+            configuration_Edit_DateDateTimePickerInstrument.Enabled = false;
+            descriptionTextBoxInstrument.Enabled = false;
+            comboBoxCategoryInstrument.Enabled = false;
+            tagNameTextBox.Enabled = false;
+            upper_range_valueTextBox.Enabled = false;
+            lower_range_valueTextBox.Enabled = false;
+            alarm_highTextBox.Enabled = false;
+            alarm_LowTextBox.Enabled = false;
+            buttonChangeInstrument.Enabled = true;
+            buttonCancelInstrument.Enabled = true;
+            buttonNEWInstrument.Enabled = true;
+
+
+
+            iNSTRUMENTBindingSource.CancelEdit();
+            comboBoxFindInstrument.Enabled = true;
+            comboBoxFindInstrument.Text = tagNameTextBox.Text;
+
+        }
+
+        private void buttonChangeInstrument_Click(object sender, EventArgs e)
+        {
+            comboBoxAreaInstrument.Enabled = true;
+            comboBoxCOMMInstrument.Enabled = true;
+            comboBoxDAUinstrument.Enabled = true;
+            comboBoxInnputOutputInstrument.Enabled = true;
+            comboBoxModelinstrument.Enabled = true;
+            comboBoxManu_DAU.Enabled = true;
+            frequencyTextBox.Enabled = true;
+            configuration_Edit_DateDateTimePickerInstrument.Enabled = true;
+            descriptionTextBoxInstrument.Enabled = true;
+            comboBoxCategoryInstrument.Enabled = true;
+            tagNameTextBox.Enabled = true;
+            upper_range_valueTextBox.Enabled = true;
+            lower_range_valueTextBox.Enabled = true;
+            alarm_highTextBox.Enabled = true;
+            alarm_LowTextBox.Enabled = true;
+            buttonChangeInstrument.Enabled = false;
+            buttonNEWInstrument.Enabled = false;
+            comboBoxFindInstrument.Enabled = false;
+            comboBoxFindInstrument.Text = "";
+        }
+
+        private void buttonSTopsendingdata_Click(object sender, EventArgs e)
+        {
+            timerChartRaw.Enabled = false;
+            buttonSTopsendingdata.Enabled = false;
+            buttonSTopsendingdata.Visible = false;
+            buttonSendValuestodb.Enabled = true;
+            buttonSendValuestodb.Visible = true;
+        }
+
+        private void buttonAnalog_Click(object sender, EventArgs e)
+        {
+            timerChartRaw.Enabled = true;
+        }
+
+        private void buttonNEWLOGID_Click(object sender, EventArgs e)
+        {
+            instrument_Measure_IdBindingSource.AddNew();
+            instrument_Measure_IdBindingSource.MoveLast();
+            tagNameTextBox2.Text = tagNameTextBox.Text;
+        }
+
+        private void buttonSAVELOGID_Click(object sender, EventArgs e)
+        {
+
+            
+            instrument_Measure_IdBindingSource.EndEdit();
+            this.instrument_Measure_IdTableAdapter.Update(this.sOFTSENSECONF_DATABASE_FINALDataSet.Instrument_Measure_Id);
         }
     }
 }

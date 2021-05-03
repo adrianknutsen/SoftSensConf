@@ -60,8 +60,6 @@ namespace SoftSensConf {
         
         private INSTRUMENTtoComboBoxDataTable tableINSTRUMENTtoComboBox;
         
-        private RDConlyRDCDesDataTable tableRDConlyRDCDes;
-        
         private global::System.Data.DataRelation relationR_36;
         
         private global::System.Data.DataRelation relationR_1;
@@ -113,8 +111,6 @@ namespace SoftSensConf {
         private global::System.Data.DataRelation relationR_172;
         
         private global::System.Data.DataRelation relationR_173;
-        
-        private global::System.Data.DataRelation relationR_13;
         
         private global::System.Data.SchemaSerializationMode _schemaSerializationMode = global::System.Data.SchemaSerializationMode.IncludeSchema;
         
@@ -197,9 +193,6 @@ namespace SoftSensConf {
                 }
                 if ((ds.Tables["INSTRUMENTtoComboBox"] != null)) {
                     base.Tables.Add(new INSTRUMENTtoComboBoxDataTable(ds.Tables["INSTRUMENTtoComboBox"]));
-                }
-                if ((ds.Tables["RDConlyRDCDes"] != null)) {
-                    base.Tables.Add(new RDConlyRDCDesDataTable(ds.Tables["RDConlyRDCDes"]));
                 }
                 this.DataSetName = ds.DataSetName;
                 this.Prefix = ds.Prefix;
@@ -401,16 +394,6 @@ namespace SoftSensConf {
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-        [global::System.ComponentModel.Browsable(false)]
-        [global::System.ComponentModel.DesignerSerializationVisibility(global::System.ComponentModel.DesignerSerializationVisibility.Content)]
-        public RDConlyRDCDesDataTable RDConlyRDCDes {
-            get {
-                return this.tableRDConlyRDCDes;
-            }
-        }
-        
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         [global::System.ComponentModel.BrowsableAttribute(true)]
         [global::System.ComponentModel.DesignerSerializationVisibilityAttribute(global::System.ComponentModel.DesignerSerializationVisibility.Visible)]
         public override global::System.Data.SchemaSerializationMode SchemaSerializationMode {
@@ -529,9 +512,6 @@ namespace SoftSensConf {
                 }
                 if ((ds.Tables["INSTRUMENTtoComboBox"] != null)) {
                     base.Tables.Add(new INSTRUMENTtoComboBoxDataTable(ds.Tables["INSTRUMENTtoComboBox"]));
-                }
-                if ((ds.Tables["RDConlyRDCDes"] != null)) {
-                    base.Tables.Add(new RDConlyRDCDesDataTable(ds.Tables["RDConlyRDCDes"]));
                 }
                 this.DataSetName = ds.DataSetName;
                 this.Prefix = ds.Prefix;
@@ -674,12 +654,6 @@ namespace SoftSensConf {
                     this.tableINSTRUMENTtoComboBox.InitVars();
                 }
             }
-            this.tableRDConlyRDCDes = ((RDConlyRDCDesDataTable)(base.Tables["RDConlyRDCDes"]));
-            if ((initTable == true)) {
-                if ((this.tableRDConlyRDCDes != null)) {
-                    this.tableRDConlyRDCDes.InitVars();
-                }
-            }
             this.relationR_36 = this.Relations["R_36"];
             this.relationR_1 = this.Relations["R_1"];
             this.relationR_27 = this.Relations["R_27"];
@@ -706,7 +680,6 @@ namespace SoftSensConf {
             this.relationR_21 = this.Relations["R_21"];
             this.relationR_172 = this.Relations["R_172"];
             this.relationR_173 = this.Relations["R_173"];
-            this.relationR_13 = this.Relations["R_13"];
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -753,8 +726,6 @@ namespace SoftSensConf {
             base.Tables.Add(this.tableRDCOnlyIdDes);
             this.tableINSTRUMENTtoComboBox = new INSTRUMENTtoComboBoxDataTable();
             base.Tables.Add(this.tableINSTRUMENTtoComboBox);
-            this.tableRDConlyRDCDes = new RDConlyRDCDesDataTable();
-            base.Tables.Add(this.tableRDConlyRDCDes);
             this.relationR_36 = new global::System.Data.DataRelation("R_36", new global::System.Data.DataColumn[] {
                         this.tableInstrument_Measure_Id.TagNameColumn,
                         this.tableInstrument_Measure_Id.Instrument_Log_IdColumn}, new global::System.Data.DataColumn[] {
@@ -865,10 +836,6 @@ namespace SoftSensConf {
                         this.tableDAU_OnlyIdDes.DAU_IdColumn}, new global::System.Data.DataColumn[] {
                         this.tableINSTRUMENTtoComboBox.DAU_IdColumn}, false);
             this.Relations.Add(this.relationR_173);
-            this.relationR_13 = new global::System.Data.DataRelation("R_13", new global::System.Data.DataColumn[] {
-                        this.tableRDConlyRDCDes.RDC_IdColumn}, new global::System.Data.DataColumn[] {
-                        this.tableDAU.RDC_IdColumn}, false);
-            this.Relations.Add(this.relationR_13);
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -981,12 +948,6 @@ namespace SoftSensConf {
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-        private bool ShouldSerializeRDConlyRDCDes() {
-            return false;
-        }
-        
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         private void SchemaChanged(object sender, global::System.ComponentModel.CollectionChangeEventArgs e) {
             if ((e.Action == global::System.ComponentModel.CollectionChangeAction.Remove)) {
                 this.InitVars();
@@ -1093,9 +1054,6 @@ namespace SoftSensConf {
         
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         public delegate void INSTRUMENTtoComboBoxRowChangeEventHandler(object sender, INSTRUMENTtoComboBoxRowChangeEvent e);
-        
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-        public delegate void RDConlyRDCDesRowChangeEventHandler(object sender, RDConlyRDCDesRowChangeEvent e);
         
         /// <summary>
         ///Represents the strongly named DataTable class.
@@ -6555,279 +6513,6 @@ namespace SoftSensConf {
         }
         
         /// <summary>
-        ///Represents the strongly named DataTable class.
-        ///</summary>
-        [global::System.Serializable()]
-        [global::System.Xml.Serialization.XmlSchemaProviderAttribute("GetTypedTableSchema")]
-        public partial class RDConlyRDCDesDataTable : global::System.Data.TypedTableBase<RDConlyRDCDesRow> {
-            
-            private global::System.Data.DataColumn columnRDC_Id;
-            
-            private global::System.Data.DataColumn columnDescription;
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public RDConlyRDCDesDataTable() {
-                this.TableName = "RDConlyRDCDes";
-                this.BeginInit();
-                this.InitClass();
-                this.EndInit();
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            internal RDConlyRDCDesDataTable(global::System.Data.DataTable table) {
-                this.TableName = table.TableName;
-                if ((table.CaseSensitive != table.DataSet.CaseSensitive)) {
-                    this.CaseSensitive = table.CaseSensitive;
-                }
-                if ((table.Locale.ToString() != table.DataSet.Locale.ToString())) {
-                    this.Locale = table.Locale;
-                }
-                if ((table.Namespace != table.DataSet.Namespace)) {
-                    this.Namespace = table.Namespace;
-                }
-                this.Prefix = table.Prefix;
-                this.MinimumCapacity = table.MinimumCapacity;
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            protected RDConlyRDCDesDataTable(global::System.Runtime.Serialization.SerializationInfo info, global::System.Runtime.Serialization.StreamingContext context) : 
-                    base(info, context) {
-                this.InitVars();
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public global::System.Data.DataColumn RDC_IdColumn {
-                get {
-                    return this.columnRDC_Id;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public global::System.Data.DataColumn DescriptionColumn {
-                get {
-                    return this.columnDescription;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            [global::System.ComponentModel.Browsable(false)]
-            public int Count {
-                get {
-                    return this.Rows.Count;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public RDConlyRDCDesRow this[int index] {
-                get {
-                    return ((RDConlyRDCDesRow)(this.Rows[index]));
-                }
-            }
-            
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public event RDConlyRDCDesRowChangeEventHandler RDConlyRDCDesRowChanging;
-            
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public event RDConlyRDCDesRowChangeEventHandler RDConlyRDCDesRowChanged;
-            
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public event RDConlyRDCDesRowChangeEventHandler RDConlyRDCDesRowDeleting;
-            
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public event RDConlyRDCDesRowChangeEventHandler RDConlyRDCDesRowDeleted;
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public void AddRDConlyRDCDesRow(RDConlyRDCDesRow row) {
-                this.Rows.Add(row);
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public RDConlyRDCDesRow AddRDConlyRDCDesRow(int RDC_Id, string Description) {
-                RDConlyRDCDesRow rowRDConlyRDCDesRow = ((RDConlyRDCDesRow)(this.NewRow()));
-                object[] columnValuesArray = new object[] {
-                        RDC_Id,
-                        Description};
-                rowRDConlyRDCDesRow.ItemArray = columnValuesArray;
-                this.Rows.Add(rowRDConlyRDCDesRow);
-                return rowRDConlyRDCDesRow;
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public RDConlyRDCDesRow FindByRDC_Id(int RDC_Id) {
-                return ((RDConlyRDCDesRow)(this.Rows.Find(new object[] {
-                            RDC_Id})));
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public override global::System.Data.DataTable Clone() {
-                RDConlyRDCDesDataTable cln = ((RDConlyRDCDesDataTable)(base.Clone()));
-                cln.InitVars();
-                return cln;
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            protected override global::System.Data.DataTable CreateInstance() {
-                return new RDConlyRDCDesDataTable();
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            internal void InitVars() {
-                this.columnRDC_Id = base.Columns["RDC_Id"];
-                this.columnDescription = base.Columns["Description"];
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            private void InitClass() {
-                this.columnRDC_Id = new global::System.Data.DataColumn("RDC_Id", typeof(int), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnRDC_Id);
-                this.columnDescription = new global::System.Data.DataColumn("Description", typeof(string), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnDescription);
-                this.Constraints.Add(new global::System.Data.UniqueConstraint("Constraint1", new global::System.Data.DataColumn[] {
-                                this.columnRDC_Id}, true));
-                this.columnRDC_Id.AllowDBNull = false;
-                this.columnRDC_Id.Unique = true;
-                this.columnDescription.MaxLength = 30;
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public RDConlyRDCDesRow NewRDConlyRDCDesRow() {
-                return ((RDConlyRDCDesRow)(this.NewRow()));
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            protected override global::System.Data.DataRow NewRowFromBuilder(global::System.Data.DataRowBuilder builder) {
-                return new RDConlyRDCDesRow(builder);
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            protected override global::System.Type GetRowType() {
-                return typeof(RDConlyRDCDesRow);
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            protected override void OnRowChanged(global::System.Data.DataRowChangeEventArgs e) {
-                base.OnRowChanged(e);
-                if ((this.RDConlyRDCDesRowChanged != null)) {
-                    this.RDConlyRDCDesRowChanged(this, new RDConlyRDCDesRowChangeEvent(((RDConlyRDCDesRow)(e.Row)), e.Action));
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            protected override void OnRowChanging(global::System.Data.DataRowChangeEventArgs e) {
-                base.OnRowChanging(e);
-                if ((this.RDConlyRDCDesRowChanging != null)) {
-                    this.RDConlyRDCDesRowChanging(this, new RDConlyRDCDesRowChangeEvent(((RDConlyRDCDesRow)(e.Row)), e.Action));
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            protected override void OnRowDeleted(global::System.Data.DataRowChangeEventArgs e) {
-                base.OnRowDeleted(e);
-                if ((this.RDConlyRDCDesRowDeleted != null)) {
-                    this.RDConlyRDCDesRowDeleted(this, new RDConlyRDCDesRowChangeEvent(((RDConlyRDCDesRow)(e.Row)), e.Action));
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            protected override void OnRowDeleting(global::System.Data.DataRowChangeEventArgs e) {
-                base.OnRowDeleting(e);
-                if ((this.RDConlyRDCDesRowDeleting != null)) {
-                    this.RDConlyRDCDesRowDeleting(this, new RDConlyRDCDesRowChangeEvent(((RDConlyRDCDesRow)(e.Row)), e.Action));
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public void RemoveRDConlyRDCDesRow(RDConlyRDCDesRow row) {
-                this.Rows.Remove(row);
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public static global::System.Xml.Schema.XmlSchemaComplexType GetTypedTableSchema(global::System.Xml.Schema.XmlSchemaSet xs) {
-                global::System.Xml.Schema.XmlSchemaComplexType type = new global::System.Xml.Schema.XmlSchemaComplexType();
-                global::System.Xml.Schema.XmlSchemaSequence sequence = new global::System.Xml.Schema.XmlSchemaSequence();
-                SOFTSENSECONF_DATABASE_FINALDataSet ds = new SOFTSENSECONF_DATABASE_FINALDataSet();
-                global::System.Xml.Schema.XmlSchemaAny any1 = new global::System.Xml.Schema.XmlSchemaAny();
-                any1.Namespace = "http://www.w3.org/2001/XMLSchema";
-                any1.MinOccurs = new decimal(0);
-                any1.MaxOccurs = decimal.MaxValue;
-                any1.ProcessContents = global::System.Xml.Schema.XmlSchemaContentProcessing.Lax;
-                sequence.Items.Add(any1);
-                global::System.Xml.Schema.XmlSchemaAny any2 = new global::System.Xml.Schema.XmlSchemaAny();
-                any2.Namespace = "urn:schemas-microsoft-com:xml-diffgram-v1";
-                any2.MinOccurs = new decimal(1);
-                any2.ProcessContents = global::System.Xml.Schema.XmlSchemaContentProcessing.Lax;
-                sequence.Items.Add(any2);
-                global::System.Xml.Schema.XmlSchemaAttribute attribute1 = new global::System.Xml.Schema.XmlSchemaAttribute();
-                attribute1.Name = "namespace";
-                attribute1.FixedValue = ds.Namespace;
-                type.Attributes.Add(attribute1);
-                global::System.Xml.Schema.XmlSchemaAttribute attribute2 = new global::System.Xml.Schema.XmlSchemaAttribute();
-                attribute2.Name = "tableTypeName";
-                attribute2.FixedValue = "RDConlyRDCDesDataTable";
-                type.Attributes.Add(attribute2);
-                type.Particle = sequence;
-                global::System.Xml.Schema.XmlSchema dsSchema = ds.GetSchemaSerializable();
-                if (xs.Contains(dsSchema.TargetNamespace)) {
-                    global::System.IO.MemoryStream s1 = new global::System.IO.MemoryStream();
-                    global::System.IO.MemoryStream s2 = new global::System.IO.MemoryStream();
-                    try {
-                        global::System.Xml.Schema.XmlSchema schema = null;
-                        dsSchema.Write(s1);
-                        for (global::System.Collections.IEnumerator schemas = xs.Schemas(dsSchema.TargetNamespace).GetEnumerator(); schemas.MoveNext(); ) {
-                            schema = ((global::System.Xml.Schema.XmlSchema)(schemas.Current));
-                            s2.SetLength(0);
-                            schema.Write(s2);
-                            if ((s1.Length == s2.Length)) {
-                                s1.Position = 0;
-                                s2.Position = 0;
-                                for (; ((s1.Position != s1.Length) 
-                                            && (s1.ReadByte() == s2.ReadByte())); ) {
-                                    ;
-                                }
-                                if ((s1.Position == s1.Length)) {
-                                    return type;
-                                }
-                            }
-                        }
-                    }
-                    finally {
-                        if ((s1 != null)) {
-                            s1.Close();
-                        }
-                        if ((s2 != null)) {
-                            s2.Close();
-                        }
-                    }
-                }
-                xs.Add(dsSchema);
-                return type;
-            }
-        }
-        
-        /// <summary>
         ///Represents strongly named DataRow class.
         ///</summary>
         public partial class AI_LOGRow : global::System.Data.DataRow {
@@ -7491,17 +7176,6 @@ namespace SoftSensConf {
                 }
                 set {
                     this.SetParentRow(value, this.Table.ParentRelations["R_11"]);
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public RDConlyRDCDesRow RDConlyRDCDesRow {
-                get {
-                    return ((RDConlyRDCDesRow)(this.GetParentRow(this.Table.ParentRelations["R_13"])));
-                }
-                set {
-                    this.SetParentRow(value, this.Table.ParentRelations["R_13"]);
                 }
             }
             
@@ -9081,71 +8755,6 @@ namespace SoftSensConf {
         }
         
         /// <summary>
-        ///Represents strongly named DataRow class.
-        ///</summary>
-        public partial class RDConlyRDCDesRow : global::System.Data.DataRow {
-            
-            private RDConlyRDCDesDataTable tableRDConlyRDCDes;
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            internal RDConlyRDCDesRow(global::System.Data.DataRowBuilder rb) : 
-                    base(rb) {
-                this.tableRDConlyRDCDes = ((RDConlyRDCDesDataTable)(this.Table));
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public int RDC_Id {
-                get {
-                    return ((int)(this[this.tableRDConlyRDCDes.RDC_IdColumn]));
-                }
-                set {
-                    this[this.tableRDConlyRDCDes.RDC_IdColumn] = value;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public string Description {
-                get {
-                    try {
-                        return ((string)(this[this.tableRDConlyRDCDes.DescriptionColumn]));
-                    }
-                    catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("The value for column \'Description\' in table \'RDConlyRDCDes\' is DBNull.", e);
-                    }
-                }
-                set {
-                    this[this.tableRDConlyRDCDes.DescriptionColumn] = value;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public bool IsDescriptionNull() {
-                return this.IsNull(this.tableRDConlyRDCDes.DescriptionColumn);
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public void SetDescriptionNull() {
-                this[this.tableRDConlyRDCDes.DescriptionColumn] = global::System.Convert.DBNull;
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public DAURow[] GetDAURows() {
-                if ((this.Table.ChildRelations["R_13"] == null)) {
-                    return new DAURow[0];
-                }
-                else {
-                    return ((DAURow[])(base.GetChildRows(this.Table.ChildRelations["R_13"])));
-                }
-            }
-        }
-        
-        /// <summary>
         ///Row event argument class
         ///</summary>
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
@@ -9743,40 +9352,6 @@ namespace SoftSensConf {
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             public INSTRUMENTtoComboBoxRow Row {
-                get {
-                    return this.eventRow;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public global::System.Data.DataRowAction Action {
-                get {
-                    return this.eventAction;
-                }
-            }
-        }
-        
-        /// <summary>
-        ///Row event argument class
-        ///</summary>
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-        public class RDConlyRDCDesRowChangeEvent : global::System.EventArgs {
-            
-            private RDConlyRDCDesRow eventRow;
-            
-            private global::System.Data.DataRowAction eventAction;
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public RDConlyRDCDesRowChangeEvent(RDConlyRDCDesRow row, global::System.Data.DataRowAction action) {
-                this.eventRow = row;
-                this.eventAction = action;
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public RDConlyRDCDesRow Row {
                 get {
                     return this.eventRow;
                 }
@@ -15888,22 +15463,25 @@ SELECT DAU_Id, Description FROM DAU WHERE (DAU_Id = @DAU_Id)";
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         private void InitCommandCollection() {
-            this._commandCollection = new global::System.Data.SqlClient.SqlCommand[1];
+            this._commandCollection = new global::System.Data.SqlClient.SqlCommand[2];
             this._commandCollection[0] = new global::System.Data.SqlClient.SqlCommand();
             this._commandCollection[0].Connection = this.Connection;
-            this._commandCollection[0].CommandText = "SELECT        DAU_Id, Description\r\nFROM            DAU\r\nWHERE        (DAU_Id = @F" +
-                "ilterDAU_ID)";
+            this._commandCollection[0].CommandText = "SELECT        DAU_Id, Description\r\nFROM            DAU";
             this._commandCollection[0].CommandType = global::System.Data.CommandType.Text;
-            this._commandCollection[0].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@FilterDAU_ID", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.Input, 0, 0, "DAU_Id", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._commandCollection[1] = new global::System.Data.SqlClient.SqlCommand();
+            this._commandCollection[1].Connection = this.Connection;
+            this._commandCollection[1].CommandText = "SELECT        DAU_Id, Description\r\nFROM            DAU\r\nWHERE        (DAU_Id = @R" +
+                "DCFIlter)";
+            this._commandCollection[1].CommandType = global::System.Data.CommandType.Text;
+            this._commandCollection[1].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@RDCFIlter", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.Input, 0, 0, "DAU_Id", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Fill, true)]
-        public virtual int FillbyDAU_ID(SOFTSENSECONF_DATABASE_FINALDataSet.DAU_OnlyIdDesDataTable dataTable, int FilterDAU_ID) {
+        public virtual int Fill(SOFTSENSECONF_DATABASE_FINALDataSet.DAU_OnlyIdDesDataTable dataTable) {
             this.Adapter.SelectCommand = this.CommandCollection[0];
-            this.Adapter.SelectCommand.Parameters[0].Value = ((int)(FilterDAU_ID));
             if ((this.ClearBeforeFill == true)) {
                 dataTable.Clear();
             }
@@ -15915,9 +15493,34 @@ SELECT DAU_Id, Description FROM DAU WHERE (DAU_Id = @DAU_Id)";
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Select, true)]
-        public virtual SOFTSENSECONF_DATABASE_FINALDataSet.DAU_OnlyIdDesDataTable GetData(int FilterDAU_ID) {
+        public virtual SOFTSENSECONF_DATABASE_FINALDataSet.DAU_OnlyIdDesDataTable GetData() {
             this.Adapter.SelectCommand = this.CommandCollection[0];
-            this.Adapter.SelectCommand.Parameters[0].Value = ((int)(FilterDAU_ID));
+            SOFTSENSECONF_DATABASE_FINALDataSet.DAU_OnlyIdDesDataTable dataTable = new SOFTSENSECONF_DATABASE_FINALDataSet.DAU_OnlyIdDesDataTable();
+            this.Adapter.Fill(dataTable);
+            return dataTable;
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Fill, false)]
+        public virtual int FillByrdc(SOFTSENSECONF_DATABASE_FINALDataSet.DAU_OnlyIdDesDataTable dataTable, int RDCFIlter) {
+            this.Adapter.SelectCommand = this.CommandCollection[1];
+            this.Adapter.SelectCommand.Parameters[0].Value = ((int)(RDCFIlter));
+            if ((this.ClearBeforeFill == true)) {
+                dataTable.Clear();
+            }
+            int returnValue = this.Adapter.Fill(dataTable);
+            return returnValue;
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Select, false)]
+        public virtual SOFTSENSECONF_DATABASE_FINALDataSet.DAU_OnlyIdDesDataTable GetDataBy(int RDCFIlter) {
+            this.Adapter.SelectCommand = this.CommandCollection[1];
+            this.Adapter.SelectCommand.Parameters[0].Value = ((int)(RDCFIlter));
             SOFTSENSECONF_DATABASE_FINALDataSet.DAU_OnlyIdDesDataTable dataTable = new SOFTSENSECONF_DATABASE_FINALDataSet.DAU_OnlyIdDesDataTable();
             this.Adapter.Fill(dataTable);
             return dataTable;
@@ -16475,300 +16078,6 @@ SELECT RDC_Id, Description FROM RDC WHERE (RDC_Id = @RDC_Id)";
     }
     
     /// <summary>
-    ///Represents the connection and commands used to retrieve and save data.
-    ///</summary>
-    [global::System.ComponentModel.DesignerCategoryAttribute("code")]
-    [global::System.ComponentModel.ToolboxItem(true)]
-    [global::System.ComponentModel.DataObjectAttribute(true)]
-    [global::System.ComponentModel.DesignerAttribute("Microsoft.VSDesigner.DataSource.Design.TableAdapterDesigner, Microsoft.VSDesigner" +
-        ", Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a")]
-    [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-    public partial class RDConlyRDCDesTableAdapter : global::System.ComponentModel.Component {
-        
-        private global::System.Data.SqlClient.SqlDataAdapter _adapter;
-        
-        private global::System.Data.SqlClient.SqlConnection _connection;
-        
-        private global::System.Data.SqlClient.SqlTransaction _transaction;
-        
-        private global::System.Data.SqlClient.SqlCommand[] _commandCollection;
-        
-        private bool _clearBeforeFill;
-        
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-        public RDConlyRDCDesTableAdapter() {
-            this.ClearBeforeFill = true;
-        }
-        
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-        protected internal global::System.Data.SqlClient.SqlDataAdapter Adapter {
-            get {
-                if ((this._adapter == null)) {
-                    this.InitAdapter();
-                }
-                return this._adapter;
-            }
-        }
-        
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-        internal global::System.Data.SqlClient.SqlConnection Connection {
-            get {
-                if ((this._connection == null)) {
-                    this.InitConnection();
-                }
-                return this._connection;
-            }
-            set {
-                this._connection = value;
-                if ((this.Adapter.InsertCommand != null)) {
-                    this.Adapter.InsertCommand.Connection = value;
-                }
-                if ((this.Adapter.DeleteCommand != null)) {
-                    this.Adapter.DeleteCommand.Connection = value;
-                }
-                if ((this.Adapter.UpdateCommand != null)) {
-                    this.Adapter.UpdateCommand.Connection = value;
-                }
-                for (int i = 0; (i < this.CommandCollection.Length); i = (i + 1)) {
-                    if ((this.CommandCollection[i] != null)) {
-                        ((global::System.Data.SqlClient.SqlCommand)(this.CommandCollection[i])).Connection = value;
-                    }
-                }
-            }
-        }
-        
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-        internal global::System.Data.SqlClient.SqlTransaction Transaction {
-            get {
-                return this._transaction;
-            }
-            set {
-                this._transaction = value;
-                for (int i = 0; (i < this.CommandCollection.Length); i = (i + 1)) {
-                    this.CommandCollection[i].Transaction = this._transaction;
-                }
-                if (((this.Adapter != null) 
-                            && (this.Adapter.DeleteCommand != null))) {
-                    this.Adapter.DeleteCommand.Transaction = this._transaction;
-                }
-                if (((this.Adapter != null) 
-                            && (this.Adapter.InsertCommand != null))) {
-                    this.Adapter.InsertCommand.Transaction = this._transaction;
-                }
-                if (((this.Adapter != null) 
-                            && (this.Adapter.UpdateCommand != null))) {
-                    this.Adapter.UpdateCommand.Transaction = this._transaction;
-                }
-            }
-        }
-        
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-        protected global::System.Data.SqlClient.SqlCommand[] CommandCollection {
-            get {
-                if ((this._commandCollection == null)) {
-                    this.InitCommandCollection();
-                }
-                return this._commandCollection;
-            }
-        }
-        
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-        public bool ClearBeforeFill {
-            get {
-                return this._clearBeforeFill;
-            }
-            set {
-                this._clearBeforeFill = value;
-            }
-        }
-        
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-        private void InitAdapter() {
-            this._adapter = new global::System.Data.SqlClient.SqlDataAdapter();
-            global::System.Data.Common.DataTableMapping tableMapping = new global::System.Data.Common.DataTableMapping();
-            tableMapping.SourceTable = "Table";
-            tableMapping.DataSetTable = "RDConlyRDCDes";
-            tableMapping.ColumnMappings.Add("RDC_Id", "RDC_Id");
-            tableMapping.ColumnMappings.Add("Description", "Description");
-            this._adapter.TableMappings.Add(tableMapping);
-            this._adapter.DeleteCommand = new global::System.Data.SqlClient.SqlCommand();
-            this._adapter.DeleteCommand.Connection = this.Connection;
-            this._adapter.DeleteCommand.CommandText = "DELETE FROM [RDC] WHERE (([RDC_Id] = @Original_RDC_Id) AND ((@IsNull_Description " +
-                "= 1 AND [Description] IS NULL) OR ([Description] = @Original_Description)))";
-            this._adapter.DeleteCommand.CommandType = global::System.Data.CommandType.Text;
-            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_RDC_Id", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "RDC_Id", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
-            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_Description", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Description", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
-            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Description", global::System.Data.SqlDbType.Char, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Description", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
-            this._adapter.UpdateCommand = new global::System.Data.SqlClient.SqlCommand();
-            this._adapter.UpdateCommand.Connection = this.Connection;
-            this._adapter.UpdateCommand.CommandText = @"UPDATE [RDC] SET [RDC_Id] = @RDC_Id, [Description] = @Description WHERE (([RDC_Id] = @Original_RDC_Id) AND ((@IsNull_Description = 1 AND [Description] IS NULL) OR ([Description] = @Original_Description)));
-SELECT RDC_Id, Description FROM RDC WHERE (RDC_Id = @RDC_Id)";
-            this._adapter.UpdateCommand.CommandType = global::System.Data.CommandType.Text;
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@RDC_Id", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "RDC_Id", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Description", global::System.Data.SqlDbType.Char, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Description", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_RDC_Id", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "RDC_Id", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_Description", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Description", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Description", global::System.Data.SqlDbType.Char, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Description", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
-        }
-        
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-        private void InitConnection() {
-            this._connection = new global::System.Data.SqlClient.SqlConnection();
-            this._connection.ConnectionString = global::SoftSensConf.Properties.Settings.Default.SOFTSENSECONF_DATABASE_FINALConnectionString;
-        }
-        
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-        private void InitCommandCollection() {
-            this._commandCollection = new global::System.Data.SqlClient.SqlCommand[1];
-            this._commandCollection[0] = new global::System.Data.SqlClient.SqlCommand();
-            this._commandCollection[0].Connection = this.Connection;
-            this._commandCollection[0].CommandText = "SELECT        RDC_Id, Description\r\nFROM            RDC\r\nWHERE        (RDC_Id = @R" +
-                "DCFilter)";
-            this._commandCollection[0].CommandType = global::System.Data.CommandType.Text;
-            this._commandCollection[0].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@RDCFilter", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.Input, 0, 0, "RDC_Id", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-        }
-        
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Fill, true)]
-        public virtual int FillbyRDC(SOFTSENSECONF_DATABASE_FINALDataSet.RDConlyRDCDesDataTable dataTable, int RDCFilter) {
-            this.Adapter.SelectCommand = this.CommandCollection[0];
-            this.Adapter.SelectCommand.Parameters[0].Value = ((int)(RDCFilter));
-            if ((this.ClearBeforeFill == true)) {
-                dataTable.Clear();
-            }
-            int returnValue = this.Adapter.Fill(dataTable);
-            return returnValue;
-        }
-        
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Select, true)]
-        public virtual SOFTSENSECONF_DATABASE_FINALDataSet.RDConlyRDCDesDataTable GetData(int RDCFilter) {
-            this.Adapter.SelectCommand = this.CommandCollection[0];
-            this.Adapter.SelectCommand.Parameters[0].Value = ((int)(RDCFilter));
-            SOFTSENSECONF_DATABASE_FINALDataSet.RDConlyRDCDesDataTable dataTable = new SOFTSENSECONF_DATABASE_FINALDataSet.RDConlyRDCDesDataTable();
-            this.Adapter.Fill(dataTable);
-            return dataTable;
-        }
-        
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-        public virtual int Update(SOFTSENSECONF_DATABASE_FINALDataSet.RDConlyRDCDesDataTable dataTable) {
-            return this.Adapter.Update(dataTable);
-        }
-        
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-        public virtual int Update(SOFTSENSECONF_DATABASE_FINALDataSet dataSet) {
-            return this.Adapter.Update(dataSet, "RDConlyRDCDes");
-        }
-        
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-        public virtual int Update(global::System.Data.DataRow dataRow) {
-            return this.Adapter.Update(new global::System.Data.DataRow[] {
-                        dataRow});
-        }
-        
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-        public virtual int Update(global::System.Data.DataRow[] dataRows) {
-            return this.Adapter.Update(dataRows);
-        }
-        
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Delete, true)]
-        public virtual int Delete(int Original_RDC_Id, string Original_Description) {
-            this.Adapter.DeleteCommand.Parameters[0].Value = ((int)(Original_RDC_Id));
-            if ((Original_Description == null)) {
-                this.Adapter.DeleteCommand.Parameters[1].Value = ((object)(1));
-                this.Adapter.DeleteCommand.Parameters[2].Value = global::System.DBNull.Value;
-            }
-            else {
-                this.Adapter.DeleteCommand.Parameters[1].Value = ((object)(0));
-                this.Adapter.DeleteCommand.Parameters[2].Value = ((string)(Original_Description));
-            }
-            global::System.Data.ConnectionState previousConnectionState = this.Adapter.DeleteCommand.Connection.State;
-            if (((this.Adapter.DeleteCommand.Connection.State & global::System.Data.ConnectionState.Open) 
-                        != global::System.Data.ConnectionState.Open)) {
-                this.Adapter.DeleteCommand.Connection.Open();
-            }
-            try {
-                int returnValue = this.Adapter.DeleteCommand.ExecuteNonQuery();
-                return returnValue;
-            }
-            finally {
-                if ((previousConnectionState == global::System.Data.ConnectionState.Closed)) {
-                    this.Adapter.DeleteCommand.Connection.Close();
-                }
-            }
-        }
-        
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Update, true)]
-        public virtual int Update(int RDC_Id, string Description, int Original_RDC_Id, string Original_Description) {
-            this.Adapter.UpdateCommand.Parameters[0].Value = ((int)(RDC_Id));
-            if ((Description == null)) {
-                this.Adapter.UpdateCommand.Parameters[1].Value = global::System.DBNull.Value;
-            }
-            else {
-                this.Adapter.UpdateCommand.Parameters[1].Value = ((string)(Description));
-            }
-            this.Adapter.UpdateCommand.Parameters[2].Value = ((int)(Original_RDC_Id));
-            if ((Original_Description == null)) {
-                this.Adapter.UpdateCommand.Parameters[3].Value = ((object)(1));
-                this.Adapter.UpdateCommand.Parameters[4].Value = global::System.DBNull.Value;
-            }
-            else {
-                this.Adapter.UpdateCommand.Parameters[3].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[4].Value = ((string)(Original_Description));
-            }
-            global::System.Data.ConnectionState previousConnectionState = this.Adapter.UpdateCommand.Connection.State;
-            if (((this.Adapter.UpdateCommand.Connection.State & global::System.Data.ConnectionState.Open) 
-                        != global::System.Data.ConnectionState.Open)) {
-                this.Adapter.UpdateCommand.Connection.Open();
-            }
-            try {
-                int returnValue = this.Adapter.UpdateCommand.ExecuteNonQuery();
-                return returnValue;
-            }
-            finally {
-                if ((previousConnectionState == global::System.Data.ConnectionState.Closed)) {
-                    this.Adapter.UpdateCommand.Connection.Close();
-                }
-            }
-        }
-        
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Update, true)]
-        public virtual int Update(string Description, int Original_RDC_Id, string Original_Description) {
-            return this.Update(Original_RDC_Id, Description, Original_RDC_Id, Original_Description);
-        }
-    }
-    
-    /// <summary>
     ///TableAdapterManager is used to coordinate TableAdapters in the dataset to enable Hierarchical Update scenarios
     ///</summary>
     [global::System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -16815,8 +16124,6 @@ SELECT RDC_Id, Description FROM RDC WHERE (RDC_Id = @RDC_Id)";
         private RDCOnlyIdDesTableAdapter _rDCOnlyIdDesTableAdapter;
         
         private INSTRUMENTtoComboBoxTableAdapter _iNSTRUMENTtoComboBoxTableAdapter;
-        
-        private RDConlyRDCDesTableAdapter _rDConlyRDCDesTableAdapter;
         
         private bool _backupDataSetBeforeUpdate;
         
@@ -17087,20 +16394,6 @@ SELECT RDC_Id, Description FROM RDC WHERE (RDC_Id = @RDC_Id)";
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-        [global::System.ComponentModel.EditorAttribute("Microsoft.VSDesigner.DataSource.Design.TableAdapterManagerPropertyEditor, Microso" +
-            "ft.VSDesigner, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3" +
-            "a", "System.Drawing.Design.UITypeEditor")]
-        public RDConlyRDCDesTableAdapter RDConlyRDCDesTableAdapter {
-            get {
-                return this._rDConlyRDCDesTableAdapter;
-            }
-            set {
-                this._rDConlyRDCDesTableAdapter = value;
-            }
-        }
-        
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         public bool BackupDataSetBeforeUpdate {
             get {
                 return this._backupDataSetBeforeUpdate;
@@ -17190,10 +16483,6 @@ SELECT RDC_Id, Description FROM RDC WHERE (RDC_Id = @RDC_Id)";
                             && (this._iNSTRUMENTtoComboBoxTableAdapter.Connection != null))) {
                     return this._iNSTRUMENTtoComboBoxTableAdapter.Connection;
                 }
-                if (((this._rDConlyRDCDesTableAdapter != null) 
-                            && (this._rDConlyRDCDesTableAdapter.Connection != null))) {
-                    return this._rDConlyRDCDesTableAdapter.Connection;
-                }
                 return null;
             }
             set {
@@ -17261,9 +16550,6 @@ SELECT RDC_Id, Description FROM RDC WHERE (RDC_Id = @RDC_Id)";
                 if ((this._iNSTRUMENTtoComboBoxTableAdapter != null)) {
                     count = (count + 1);
                 }
-                if ((this._rDConlyRDCDesTableAdapter != null)) {
-                    count = (count + 1);
-                }
                 return count;
             }
         }
@@ -17311,24 +16597,6 @@ SELECT RDC_Id, Description FROM RDC WHERE (RDC_Id = @RDC_Id)";
                     allChangedRows.AddRange(updatedRows);
                 }
             }
-            if ((this._rDConlyRDCDesTableAdapter != null)) {
-                global::System.Data.DataRow[] updatedRows = dataSet.RDConlyRDCDes.Select(null, null, global::System.Data.DataViewRowState.ModifiedCurrent);
-                updatedRows = this.GetRealUpdatedRows(updatedRows, allAddedRows);
-                if (((updatedRows != null) 
-                            && (0 < updatedRows.Length))) {
-                    result = (result + this._rDConlyRDCDesTableAdapter.Update(updatedRows));
-                    allChangedRows.AddRange(updatedRows);
-                }
-            }
-            if ((this._rDCOnlyIdDesTableAdapter != null)) {
-                global::System.Data.DataRow[] updatedRows = dataSet.RDCOnlyIdDes.Select(null, null, global::System.Data.DataViewRowState.ModifiedCurrent);
-                updatedRows = this.GetRealUpdatedRows(updatedRows, allAddedRows);
-                if (((updatedRows != null) 
-                            && (0 < updatedRows.Length))) {
-                    result = (result + this._rDCOnlyIdDesTableAdapter.Update(updatedRows));
-                    allChangedRows.AddRange(updatedRows);
-                }
-            }
             if ((this._categoryTableAdapter != null)) {
                 global::System.Data.DataRow[] updatedRows = dataSet.Category.Select(null, null, global::System.Data.DataViewRowState.ModifiedCurrent);
                 updatedRows = this.GetRealUpdatedRows(updatedRows, allAddedRows);
@@ -17356,21 +16624,12 @@ SELECT RDC_Id, Description FROM RDC WHERE (RDC_Id = @RDC_Id)";
                     allChangedRows.AddRange(updatedRows);
                 }
             }
-            if ((this._dAUTableAdapter != null)) {
-                global::System.Data.DataRow[] updatedRows = dataSet.DAU.Select(null, null, global::System.Data.DataViewRowState.ModifiedCurrent);
+            if ((this._rDCOnlyIdDesTableAdapter != null)) {
+                global::System.Data.DataRow[] updatedRows = dataSet.RDCOnlyIdDes.Select(null, null, global::System.Data.DataViewRowState.ModifiedCurrent);
                 updatedRows = this.GetRealUpdatedRows(updatedRows, allAddedRows);
                 if (((updatedRows != null) 
                             && (0 < updatedRows.Length))) {
-                    result = (result + this._dAUTableAdapter.Update(updatedRows));
-                    allChangedRows.AddRange(updatedRows);
-                }
-            }
-            if ((this._dAU_OnlyIdDesTableAdapter != null)) {
-                global::System.Data.DataRow[] updatedRows = dataSet.DAU_OnlyIdDes.Select(null, null, global::System.Data.DataViewRowState.ModifiedCurrent);
-                updatedRows = this.GetRealUpdatedRows(updatedRows, allAddedRows);
-                if (((updatedRows != null) 
-                            && (0 < updatedRows.Length))) {
-                    result = (result + this._dAU_OnlyIdDesTableAdapter.Update(updatedRows));
+                    result = (result + this._rDCOnlyIdDesTableAdapter.Update(updatedRows));
                     allChangedRows.AddRange(updatedRows);
                 }
             }
@@ -17383,12 +16642,21 @@ SELECT RDC_Id, Description FROM RDC WHERE (RDC_Id = @RDC_Id)";
                     allChangedRows.AddRange(updatedRows);
                 }
             }
-            if ((this._iNSTRUMENTTableAdapter != null)) {
-                global::System.Data.DataRow[] updatedRows = dataSet.INSTRUMENT.Select(null, null, global::System.Data.DataViewRowState.ModifiedCurrent);
+            if ((this._dAU_OnlyIdDesTableAdapter != null)) {
+                global::System.Data.DataRow[] updatedRows = dataSet.DAU_OnlyIdDes.Select(null, null, global::System.Data.DataViewRowState.ModifiedCurrent);
                 updatedRows = this.GetRealUpdatedRows(updatedRows, allAddedRows);
                 if (((updatedRows != null) 
                             && (0 < updatedRows.Length))) {
-                    result = (result + this._iNSTRUMENTTableAdapter.Update(updatedRows));
+                    result = (result + this._dAU_OnlyIdDesTableAdapter.Update(updatedRows));
+                    allChangedRows.AddRange(updatedRows);
+                }
+            }
+            if ((this._dAUTableAdapter != null)) {
+                global::System.Data.DataRow[] updatedRows = dataSet.DAU.Select(null, null, global::System.Data.DataViewRowState.ModifiedCurrent);
+                updatedRows = this.GetRealUpdatedRows(updatedRows, allAddedRows);
+                if (((updatedRows != null) 
+                            && (0 < updatedRows.Length))) {
+                    result = (result + this._dAUTableAdapter.Update(updatedRows));
                     allChangedRows.AddRange(updatedRows);
                 }
             }
@@ -17398,6 +16666,15 @@ SELECT RDC_Id, Description FROM RDC WHERE (RDC_Id = @RDC_Id)";
                 if (((updatedRows != null) 
                             && (0 < updatedRows.Length))) {
                     result = (result + this._iNSTRUMENTtoComboBoxTableAdapter.Update(updatedRows));
+                    allChangedRows.AddRange(updatedRows);
+                }
+            }
+            if ((this._iNSTRUMENTTableAdapter != null)) {
+                global::System.Data.DataRow[] updatedRows = dataSet.INSTRUMENT.Select(null, null, global::System.Data.DataViewRowState.ModifiedCurrent);
+                updatedRows = this.GetRealUpdatedRows(updatedRows, allAddedRows);
+                if (((updatedRows != null) 
+                            && (0 < updatedRows.Length))) {
+                    result = (result + this._iNSTRUMENTTableAdapter.Update(updatedRows));
                     allChangedRows.AddRange(updatedRows);
                 }
             }
@@ -17488,22 +16765,6 @@ SELECT RDC_Id, Description FROM RDC WHERE (RDC_Id = @RDC_Id)";
                     allAddedRows.AddRange(addedRows);
                 }
             }
-            if ((this._rDConlyRDCDesTableAdapter != null)) {
-                global::System.Data.DataRow[] addedRows = dataSet.RDConlyRDCDes.Select(null, null, global::System.Data.DataViewRowState.Added);
-                if (((addedRows != null) 
-                            && (0 < addedRows.Length))) {
-                    result = (result + this._rDConlyRDCDesTableAdapter.Update(addedRows));
-                    allAddedRows.AddRange(addedRows);
-                }
-            }
-            if ((this._rDCOnlyIdDesTableAdapter != null)) {
-                global::System.Data.DataRow[] addedRows = dataSet.RDCOnlyIdDes.Select(null, null, global::System.Data.DataViewRowState.Added);
-                if (((addedRows != null) 
-                            && (0 < addedRows.Length))) {
-                    result = (result + this._rDCOnlyIdDesTableAdapter.Update(addedRows));
-                    allAddedRows.AddRange(addedRows);
-                }
-            }
             if ((this._categoryTableAdapter != null)) {
                 global::System.Data.DataRow[] addedRows = dataSet.Category.Select(null, null, global::System.Data.DataViewRowState.Added);
                 if (((addedRows != null) 
@@ -17528,19 +16789,11 @@ SELECT RDC_Id, Description FROM RDC WHERE (RDC_Id = @RDC_Id)";
                     allAddedRows.AddRange(addedRows);
                 }
             }
-            if ((this._dAUTableAdapter != null)) {
-                global::System.Data.DataRow[] addedRows = dataSet.DAU.Select(null, null, global::System.Data.DataViewRowState.Added);
+            if ((this._rDCOnlyIdDesTableAdapter != null)) {
+                global::System.Data.DataRow[] addedRows = dataSet.RDCOnlyIdDes.Select(null, null, global::System.Data.DataViewRowState.Added);
                 if (((addedRows != null) 
                             && (0 < addedRows.Length))) {
-                    result = (result + this._dAUTableAdapter.Update(addedRows));
-                    allAddedRows.AddRange(addedRows);
-                }
-            }
-            if ((this._dAU_OnlyIdDesTableAdapter != null)) {
-                global::System.Data.DataRow[] addedRows = dataSet.DAU_OnlyIdDes.Select(null, null, global::System.Data.DataViewRowState.Added);
-                if (((addedRows != null) 
-                            && (0 < addedRows.Length))) {
-                    result = (result + this._dAU_OnlyIdDesTableAdapter.Update(addedRows));
+                    result = (result + this._rDCOnlyIdDesTableAdapter.Update(addedRows));
                     allAddedRows.AddRange(addedRows);
                 }
             }
@@ -17552,11 +16805,19 @@ SELECT RDC_Id, Description FROM RDC WHERE (RDC_Id = @RDC_Id)";
                     allAddedRows.AddRange(addedRows);
                 }
             }
-            if ((this._iNSTRUMENTTableAdapter != null)) {
-                global::System.Data.DataRow[] addedRows = dataSet.INSTRUMENT.Select(null, null, global::System.Data.DataViewRowState.Added);
+            if ((this._dAU_OnlyIdDesTableAdapter != null)) {
+                global::System.Data.DataRow[] addedRows = dataSet.DAU_OnlyIdDes.Select(null, null, global::System.Data.DataViewRowState.Added);
                 if (((addedRows != null) 
                             && (0 < addedRows.Length))) {
-                    result = (result + this._iNSTRUMENTTableAdapter.Update(addedRows));
+                    result = (result + this._dAU_OnlyIdDesTableAdapter.Update(addedRows));
+                    allAddedRows.AddRange(addedRows);
+                }
+            }
+            if ((this._dAUTableAdapter != null)) {
+                global::System.Data.DataRow[] addedRows = dataSet.DAU.Select(null, null, global::System.Data.DataViewRowState.Added);
+                if (((addedRows != null) 
+                            && (0 < addedRows.Length))) {
+                    result = (result + this._dAUTableAdapter.Update(addedRows));
                     allAddedRows.AddRange(addedRows);
                 }
             }
@@ -17565,6 +16826,14 @@ SELECT RDC_Id, Description FROM RDC WHERE (RDC_Id = @RDC_Id)";
                 if (((addedRows != null) 
                             && (0 < addedRows.Length))) {
                     result = (result + this._iNSTRUMENTtoComboBoxTableAdapter.Update(addedRows));
+                    allAddedRows.AddRange(addedRows);
+                }
+            }
+            if ((this._iNSTRUMENTTableAdapter != null)) {
+                global::System.Data.DataRow[] addedRows = dataSet.INSTRUMENT.Select(null, null, global::System.Data.DataViewRowState.Added);
+                if (((addedRows != null) 
+                            && (0 < addedRows.Length))) {
+                    result = (result + this._iNSTRUMENTTableAdapter.Update(addedRows));
                     allAddedRows.AddRange(addedRows);
                 }
             }
@@ -17658,14 +16927,6 @@ SELECT RDC_Id, Description FROM RDC WHERE (RDC_Id = @RDC_Id)";
                     allChangedRows.AddRange(deletedRows);
                 }
             }
-            if ((this._iNSTRUMENTtoComboBoxTableAdapter != null)) {
-                global::System.Data.DataRow[] deletedRows = dataSet.INSTRUMENTtoComboBox.Select(null, null, global::System.Data.DataViewRowState.Deleted);
-                if (((deletedRows != null) 
-                            && (0 < deletedRows.Length))) {
-                    result = (result + this._iNSTRUMENTtoComboBoxTableAdapter.Update(deletedRows));
-                    allChangedRows.AddRange(deletedRows);
-                }
-            }
             if ((this._iNSTRUMENTTableAdapter != null)) {
                 global::System.Data.DataRow[] deletedRows = dataSet.INSTRUMENT.Select(null, null, global::System.Data.DataViewRowState.Deleted);
                 if (((deletedRows != null) 
@@ -17674,11 +16935,19 @@ SELECT RDC_Id, Description FROM RDC WHERE (RDC_Id = @RDC_Id)";
                     allChangedRows.AddRange(deletedRows);
                 }
             }
-            if ((this._innput_OutputTableAdapter != null)) {
-                global::System.Data.DataRow[] deletedRows = dataSet.Innput_Output.Select(null, null, global::System.Data.DataViewRowState.Deleted);
+            if ((this._iNSTRUMENTtoComboBoxTableAdapter != null)) {
+                global::System.Data.DataRow[] deletedRows = dataSet.INSTRUMENTtoComboBox.Select(null, null, global::System.Data.DataViewRowState.Deleted);
                 if (((deletedRows != null) 
                             && (0 < deletedRows.Length))) {
-                    result = (result + this._innput_OutputTableAdapter.Update(deletedRows));
+                    result = (result + this._iNSTRUMENTtoComboBoxTableAdapter.Update(deletedRows));
+                    allChangedRows.AddRange(deletedRows);
+                }
+            }
+            if ((this._dAUTableAdapter != null)) {
+                global::System.Data.DataRow[] deletedRows = dataSet.DAU.Select(null, null, global::System.Data.DataViewRowState.Deleted);
+                if (((deletedRows != null) 
+                            && (0 < deletedRows.Length))) {
+                    result = (result + this._dAUTableAdapter.Update(deletedRows));
                     allChangedRows.AddRange(deletedRows);
                 }
             }
@@ -17690,11 +16959,19 @@ SELECT RDC_Id, Description FROM RDC WHERE (RDC_Id = @RDC_Id)";
                     allChangedRows.AddRange(deletedRows);
                 }
             }
-            if ((this._dAUTableAdapter != null)) {
-                global::System.Data.DataRow[] deletedRows = dataSet.DAU.Select(null, null, global::System.Data.DataViewRowState.Deleted);
+            if ((this._innput_OutputTableAdapter != null)) {
+                global::System.Data.DataRow[] deletedRows = dataSet.Innput_Output.Select(null, null, global::System.Data.DataViewRowState.Deleted);
                 if (((deletedRows != null) 
                             && (0 < deletedRows.Length))) {
-                    result = (result + this._dAUTableAdapter.Update(deletedRows));
+                    result = (result + this._innput_OutputTableAdapter.Update(deletedRows));
+                    allChangedRows.AddRange(deletedRows);
+                }
+            }
+            if ((this._rDCOnlyIdDesTableAdapter != null)) {
+                global::System.Data.DataRow[] deletedRows = dataSet.RDCOnlyIdDes.Select(null, null, global::System.Data.DataViewRowState.Deleted);
+                if (((deletedRows != null) 
+                            && (0 < deletedRows.Length))) {
+                    result = (result + this._rDCOnlyIdDesTableAdapter.Update(deletedRows));
                     allChangedRows.AddRange(deletedRows);
                 }
             }
@@ -17719,22 +16996,6 @@ SELECT RDC_Id, Description FROM RDC WHERE (RDC_Id = @RDC_Id)";
                 if (((deletedRows != null) 
                             && (0 < deletedRows.Length))) {
                     result = (result + this._categoryTableAdapter.Update(deletedRows));
-                    allChangedRows.AddRange(deletedRows);
-                }
-            }
-            if ((this._rDCOnlyIdDesTableAdapter != null)) {
-                global::System.Data.DataRow[] deletedRows = dataSet.RDCOnlyIdDes.Select(null, null, global::System.Data.DataViewRowState.Deleted);
-                if (((deletedRows != null) 
-                            && (0 < deletedRows.Length))) {
-                    result = (result + this._rDCOnlyIdDesTableAdapter.Update(deletedRows));
-                    allChangedRows.AddRange(deletedRows);
-                }
-            }
-            if ((this._rDConlyRDCDesTableAdapter != null)) {
-                global::System.Data.DataRow[] deletedRows = dataSet.RDConlyRDCDes.Select(null, null, global::System.Data.DataViewRowState.Deleted);
-                if (((deletedRows != null) 
-                            && (0 < deletedRows.Length))) {
-                    result = (result + this._rDConlyRDCDesTableAdapter.Update(deletedRows));
                     allChangedRows.AddRange(deletedRows);
                 }
             }
@@ -17896,11 +17157,6 @@ SELECT RDC_Id, Description FROM RDC WHERE (RDC_Id = @RDC_Id)";
             }
             if (((this._iNSTRUMENTtoComboBoxTableAdapter != null) 
                         && (this.MatchTableAdapterConnection(this._iNSTRUMENTtoComboBoxTableAdapter.Connection) == false))) {
-                throw new global::System.ArgumentException("All TableAdapters managed by a TableAdapterManager must use the same connection s" +
-                        "tring.");
-            }
-            if (((this._rDConlyRDCDesTableAdapter != null) 
-                        && (this.MatchTableAdapterConnection(this._rDConlyRDCDesTableAdapter.Connection) == false))) {
                 throw new global::System.ArgumentException("All TableAdapters managed by a TableAdapterManager must use the same connection s" +
                         "tring.");
             }
@@ -18098,15 +17354,6 @@ SELECT RDC_Id, Description FROM RDC WHERE (RDC_Id = @RDC_Id)";
                         adaptersWithAcceptChangesDuringUpdate.Add(this._iNSTRUMENTtoComboBoxTableAdapter.Adapter);
                     }
                 }
-                if ((this._rDConlyRDCDesTableAdapter != null)) {
-                    revertConnections.Add(this._rDConlyRDCDesTableAdapter, this._rDConlyRDCDesTableAdapter.Connection);
-                    this._rDConlyRDCDesTableAdapter.Connection = ((global::System.Data.SqlClient.SqlConnection)(workConnection));
-                    this._rDConlyRDCDesTableAdapter.Transaction = ((global::System.Data.SqlClient.SqlTransaction)(workTransaction));
-                    if (this._rDConlyRDCDesTableAdapter.Adapter.AcceptChangesDuringUpdate) {
-                        this._rDConlyRDCDesTableAdapter.Adapter.AcceptChangesDuringUpdate = false;
-                        adaptersWithAcceptChangesDuringUpdate.Add(this._rDConlyRDCDesTableAdapter.Adapter);
-                    }
-                }
                 // 
                 //---- Perform updates -----------
                 //
@@ -18236,10 +17483,6 @@ SELECT RDC_Id, Description FROM RDC WHERE (RDC_Id = @RDC_Id)";
                 if ((this._iNSTRUMENTtoComboBoxTableAdapter != null)) {
                     this._iNSTRUMENTtoComboBoxTableAdapter.Connection = ((global::System.Data.SqlClient.SqlConnection)(revertConnections[this._iNSTRUMENTtoComboBoxTableAdapter]));
                     this._iNSTRUMENTtoComboBoxTableAdapter.Transaction = null;
-                }
-                if ((this._rDConlyRDCDesTableAdapter != null)) {
-                    this._rDConlyRDCDesTableAdapter.Connection = ((global::System.Data.SqlClient.SqlConnection)(revertConnections[this._rDConlyRDCDesTableAdapter]));
-                    this._rDConlyRDCDesTableAdapter.Transaction = null;
                 }
                 if ((0 < adaptersWithAcceptChangesDuringUpdate.Count)) {
                     global::System.Data.Common.DataAdapter[] adapters = new System.Data.Common.DataAdapter[adaptersWithAcceptChangesDuringUpdate.Count];

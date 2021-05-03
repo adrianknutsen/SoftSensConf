@@ -63,9 +63,12 @@ namespace SoftSensConf
             System.Windows.Forms.Label manufactor_IdLabel2;
             System.Windows.Forms.Label model_IdLabel2;
             System.Windows.Forms.Label configuration_Edit_DateLabel2;
-            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea1 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
-            System.Windows.Forms.DataVisualization.Charting.Legend legend1 = new System.Windows.Forms.DataVisualization.Charting.Legend();
-            System.Windows.Forms.DataVisualization.Charting.Series series1 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(SoftSensConfig));
+            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea5 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
+            System.Windows.Forms.DataVisualization.Charting.Legend legend5 = new System.Windows.Forms.DataVisualization.Charting.Legend();
+            System.Windows.Forms.DataVisualization.Charting.Series series5 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            System.Windows.Forms.Label tagNameLabel1;
+            System.Windows.Forms.Label instrument_Log_IdLabel;
             this.serialPort1 = new System.IO.Ports.SerialPort(this.components);
             this.toolTip = new System.Windows.Forms.ToolTip(this.components);
             this.openFileDialog = new System.Windows.Forms.OpenFileDialog();
@@ -99,14 +102,31 @@ namespace SoftSensConf
             this.instrument_Measure_IdBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.aI_LOGBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.tabPageCommand = new System.Windows.Forms.TabPage();
-            this.pictureBox2 = new System.Windows.Forms.PictureBox();
+            this.buttonSAVELOGID = new System.Windows.Forms.Button();
+            this.buttonNEWLOGID = new System.Windows.Forms.Button();
+            this.bindingNavigator1 = new System.Windows.Forms.BindingNavigator(this.components);
+            this.bindingNavigatorAddNewItem = new System.Windows.Forms.ToolStripButton();
+            this.bindingNavigatorCountItem = new System.Windows.Forms.ToolStripLabel();
+            this.bindingNavigatorDeleteItem = new System.Windows.Forms.ToolStripButton();
+            this.bindingNavigatorMoveFirstItem = new System.Windows.Forms.ToolStripButton();
+            this.bindingNavigatorMovePreviousItem = new System.Windows.Forms.ToolStripButton();
+            this.bindingNavigatorSeparator = new System.Windows.Forms.ToolStripSeparator();
+            this.bindingNavigatorPositionItem = new System.Windows.Forms.ToolStripTextBox();
+            this.bindingNavigatorSeparator1 = new System.Windows.Forms.ToolStripSeparator();
+            this.bindingNavigatorMoveNextItem = new System.Windows.Forms.ToolStripButton();
+            this.bindingNavigatorMoveLastItem = new System.Windows.Forms.ToolStripButton();
+            this.bindingNavigatorSeparator2 = new System.Windows.Forms.ToolStripSeparator();
+            this.buttonAnalogInn = new System.Windows.Forms.Button();
+            this.buttonSendValuestodb = new System.Windows.Forms.Button();
+            this.buttonSending = new System.Windows.Forms.Button();
+            this.buttonView = new System.Windows.Forms.Button();
             this.tagNameTextBox1 = new System.Windows.Forms.TextBox();
             this.instrument_Log_IdTextBox1 = new System.Windows.Forms.TextBox();
             this.valueTextBox = new System.Windows.Forms.TextBox();
             this.timeDateTimePicker = new System.Windows.Forms.DateTimePicker();
             this.instrument_Log_IdTextBox = new System.Windows.Forms.TextBox();
             this.buttonstopgraph = new System.Windows.Forms.Button();
-            this.listBox1 = new System.Windows.Forms.ListBox();
+            this.listBoxDBreadings = new System.Windows.Forms.ListBox();
             this.buttonGraphstart = new System.Windows.Forms.Button();
             this.chartPoints = new System.Windows.Forms.DataVisualization.Charting.Chart();
             this.textBoxConnectionP2 = new System.Windows.Forms.TextBox();
@@ -114,37 +134,49 @@ namespace SoftSensConf
             this.textBoxReceive = new System.Windows.Forms.TextBox();
             this.statusStrip2 = new System.Windows.Forms.StatusStrip();
             this.toolStripStatusLabel2 = new System.Windows.Forms.ToolStripStatusLabel();
-            this.labelInput = new System.Windows.Forms.Label();
             this.buttonReceive = new System.Windows.Forms.Button();
-            this.buttonSend = new System.Windows.Forms.Button();
+            this.buttonSendValuesToInstrument = new System.Windows.Forms.Button();
+            this.pictureBoxDisconnected3 = new System.Windows.Forms.PictureBox();
+            this.pictureBox5 = new System.Windows.Forms.PictureBox();
+            this.buttonSTopsendingdata = new System.Windows.Forms.Button();
             this.tabPageConfiguration = new System.Windows.Forms.TabPage();
+            this.buttonChangeInstrument = new System.Windows.Forms.Button();
+            this.buttonCancelInstrument = new System.Windows.Forms.Button();
+            this.buttonNEWInstrument = new System.Windows.Forms.Button();
+            this.buttonUpdateInstrument = new System.Windows.Forms.Button();
+            this.comboBoxInnputOutputInstrument = new System.Windows.Forms.ComboBox();
+            this.innput_OutputBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.comboBoxAreaInstrument = new System.Windows.Forms.ComboBox();
+            this.areaBindingSource2 = new System.Windows.Forms.BindingSource(this.components);
+            this.comboBoxCOMMInstrument = new System.Windows.Forms.ComboBox();
+            this.communicationBindingSource1 = new System.Windows.Forms.BindingSource(this.components);
+            this.comboBoxDAUinstrument = new System.Windows.Forms.ComboBox();
+            this.dAUBindingSource1 = new System.Windows.Forms.BindingSource(this.components);
+            this.comboBoxManuInstrument = new System.Windows.Forms.ComboBox();
+            this.manufactorBindingSource2 = new System.Windows.Forms.BindingSource(this.components);
+            this.comboBoxModelinstrument = new System.Windows.Forms.ComboBox();
+            this.modelBindingSource2 = new System.Windows.Forms.BindingSource(this.components);
+            this.comboBoxCategoryInstrument = new System.Windows.Forms.ComboBox();
+            this.categoryBindingSource1 = new System.Windows.Forms.BindingSource(this.components);
+            this.labelfinding = new System.Windows.Forms.Label();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.comboBoxFindInstrument = new System.Windows.Forms.ComboBox();
             this.labelMatching = new System.Windows.Forms.Label();
             this.textBoxMatch = new System.Windows.Forms.TextBox();
-            this.label1 = new System.Windows.Forms.Label();
-            this.labelDataBaseInstrument = new System.Windows.Forms.Label();
             this.tagNameTextBox = new System.Windows.Forms.TextBox();
-            this.descriptionTextBox1 = new System.Windows.Forms.TextBox();
+            this.descriptionTextBoxInstrument = new System.Windows.Forms.TextBox();
             this.lower_range_valueTextBox = new System.Windows.Forms.TextBox();
             this.upper_range_valueTextBox = new System.Windows.Forms.TextBox();
             this.alarm_LowTextBox = new System.Windows.Forms.TextBox();
             this.alarm_highTextBox = new System.Windows.Forms.TextBox();
-            this.category_IdTextBox = new System.Windows.Forms.TextBox();
-            this.model_IdTextBox = new System.Windows.Forms.TextBox();
-            this.manufactor_IdTextBox = new System.Windows.Forms.TextBox();
-            this.dAU_IdTextBox1 = new System.Windows.Forms.TextBox();
-            this.communication_IdTextBox = new System.Windows.Forms.TextBox();
             this.frequencyTextBox = new System.Windows.Forms.TextBox();
-            this.area_IdTextBox = new System.Windows.Forms.TextBox();
-            this.innput_Output_IdTextBox = new System.Windows.Forms.TextBox();
             this.textBoxConnectionP1 = new System.Windows.Forms.TextBox();
             this.textBoxAH = new System.Windows.Forms.TextBox();
             this.textBoxAL = new System.Windows.Forms.TextBox();
             this.textBoxURV = new System.Windows.Forms.TextBox();
             this.textBoxLRV = new System.Windows.Forms.TextBox();
             this.textBoxTag = new System.Windows.Forms.TextBox();
-            this.configuration_Edit_DateDateTimePicker1 = new System.Windows.Forms.DateTimePicker();
+            this.configuration_Edit_DateDateTimePickerInstrument = new System.Windows.Forms.DateTimePicker();
             this.buttonRetrieve = new System.Windows.Forms.Button();
             this.buttonSendValues = new System.Windows.Forms.Button();
             this.buttonClear = new System.Windows.Forms.Button();
@@ -158,19 +190,10 @@ namespace SoftSensConf
             this.labelURV = new System.Windows.Forms.Label();
             this.labelLRV = new System.Windows.Forms.Label();
             this.labelTag = new System.Windows.Forms.Label();
+            this.pictureBoxDisconnected2 = new System.Windows.Forms.PictureBox();
+            this.pictureBox4 = new System.Windows.Forms.PictureBox();
             this.tabPageConnection = new System.Windows.Forms.TabPage();
-            this.comboBoxFindingDeviceRDC = new System.Windows.Forms.ComboBox();
-            this.RDCFIND = new System.Windows.Forms.Label();
-            this.pictureBoxDisconnected = new System.Windows.Forms.PictureBox();
-            this.pictureBoxCONNECTED = new System.Windows.Forms.PictureBox();
-            this.rDC_IdTextBox = new System.Windows.Forms.TextBox();
-            this.descriptionTextBox2 = new System.Windows.Forms.TextBox();
-            this.mCU_IdTextBox = new System.Windows.Forms.TextBox();
-            this.area_IdTextBox1 = new System.Windows.Forms.TextBox();
-            this.manufactor_IdTextBox1 = new System.Windows.Forms.TextBox();
-            this.model_IdTextBox1 = new System.Windows.Forms.TextBox();
-            this.configuration_Edit_DateDateTimePicker2 = new System.Windows.Forms.DateTimePicker();
-            this.buttonDisconnectInstrument = new System.Windows.Forms.Button();
+            this.labelheader = new System.Windows.Forms.Label();
             this.buttonConnectFromDB = new System.Windows.Forms.Button();
             this.comboBoxCategory_DAU = new System.Windows.Forms.ComboBox();
             this.comboBoxManu_DAU = new System.Windows.Forms.ComboBox();
@@ -178,16 +201,12 @@ namespace SoftSensConf
             this.comboBoxModel_DAU = new System.Windows.Forms.ComboBox();
             this.comboBoxAREA_DAU = new System.Windows.Forms.ComboBox();
             this.comboBoxRDC_DAU = new System.Windows.Forms.ComboBox();
-            this.dAU_IdTextBox = new System.Windows.Forms.TextBox();
             this.descriptionTextBox = new System.Windows.Forms.TextBox();
             this.cOMPortTextBox = new System.Windows.Forms.TextBox();
             this.bAUDRateTextBox = new System.Windows.Forms.TextBox();
             this.configuration_edit_dateDateTimePicker = new System.Windows.Forms.DateTimePicker();
             this.comboBoxFindDevice = new System.Windows.Forms.ComboBox();
-            this.labelFindDevice = new System.Windows.Forms.Label();
-            this.buttonCancelDAU = new System.Windows.Forms.Button();
             this.buttonNEW = new System.Windows.Forms.Button();
-            this.buttonDAU_Save = new System.Windows.Forms.Button();
             this.buttonChange = new System.Windows.Forms.Button();
             this.toolStripback = new System.Windows.Forms.ToolStrip();
             this.toolStripLabel1 = new System.Windows.Forms.ToolStripLabel();
@@ -198,13 +217,45 @@ namespace SoftSensConf
             this.buttonConnect = new System.Windows.Forms.Button();
             this.ComboBoxBaud = new System.Windows.Forms.ComboBox();
             this.ComboBoxPorts = new System.Windows.Forms.ComboBox();
+            this.panel2 = new System.Windows.Forms.Panel();
+            this.buttonDisconnectInstrument = new System.Windows.Forms.Button();
+            this.labelFindDevice = new System.Windows.Forms.Label();
+            this.buttonDAU_Save = new System.Windows.Forms.Button();
+            this.buttonCancelDAU = new System.Windows.Forms.Button();
+            this.pictureBoxDisconnected = new System.Windows.Forms.PictureBox();
+            this.pictureBoxCONNECTED = new System.Windows.Forms.PictureBox();
+            this.panel1 = new System.Windows.Forms.Panel();
+            this.buttonSaveRDC = new System.Windows.Forms.Button();
+            this.rDC_IdTextBox = new System.Windows.Forms.TextBox();
+            this.buttonCancelRDC = new System.Windows.Forms.Button();
+            this.buttonNEWRDC = new System.Windows.Forms.Button();
+            this.mCU_IdTextBox = new System.Windows.Forms.TextBox();
+            this.buttonChangeRDC = new System.Windows.Forms.Button();
+            this.dAU_IdTextBox = new System.Windows.Forms.TextBox();
+            this.comboBoxAReaRDC = new System.Windows.Forms.ComboBox();
+            this.areaBindingSource1 = new System.Windows.Forms.BindingSource(this.components);
+            this.labelFIND = new System.Windows.Forms.Label();
+            this.comboBoxMOdelRDC = new System.Windows.Forms.ComboBox();
+            this.modelBindingSource1 = new System.Windows.Forms.BindingSource(this.components);
+            this.comboBoxManuRDC = new System.Windows.Forms.ComboBox();
+            this.manufactorBindingSource1 = new System.Windows.Forms.BindingSource(this.components);
+            this.comboBoxFindingDeviceRDC = new System.Windows.Forms.ComboBox();
+            this.descriptionTextBoxRDC = new System.Windows.Forms.TextBox();
+            this.configuration_Edit_DateDateTimePickerRDC = new System.Windows.Forms.DateTimePicker();
+            this.rDCOnlyIdDesBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.tabControl = new System.Windows.Forms.TabControl();
             this.iNSTRUMENTtoComboBoxBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.iNSTRUMENTtoComboBoxTableAdapter = new SoftSensConf.SOFTSENSECONF_DATABASE_FINALDataSetTableAdapters.INSTRUMENTtoComboBoxTableAdapter();
             this.aI_LOGTableAdapter = new SoftSensConf.SOFTSENSECONF_DATABASE_FINALDataSetTableAdapters.AI_LOGTableAdapter();
             this.instrument_Measure_IdTableAdapter = new SoftSensConf.SOFTSENSECONF_DATABASE_FINALDataSetTableAdapters.Instrument_Measure_IdTableAdapter();
             this.buttonExit = new System.Windows.Forms.Button();
-            this.rDC1BindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.rDCOnlyIdDesTableAdapter = new SoftSensConf.SOFTSENSECONF_DATABASE_FINALDataSetTableAdapters.RDCOnlyIdDesTableAdapter();
+            this.innput_OutputTableAdapter = new SoftSensConf.SOFTSENSECONF_DATABASE_FINALDataSetTableAdapters.Innput_OutputTableAdapter();
+            this.buttonAnalogout = new System.Windows.Forms.Button();
+            this.buttonDigitalInn = new System.Windows.Forms.Button();
+            this.buttonDigitalout = new System.Windows.Forms.Button();
+            this.tagNameTextBox2 = new System.Windows.Forms.TextBox();
+            this.instrument_Log_IdTextBox2 = new System.Windows.Forms.TextBox();
             configuration_Edit_DateLabel1 = new System.Windows.Forms.Label();
             innput_Output_IdLabel = new System.Windows.Forms.Label();
             area_IdLabel1 = new System.Windows.Forms.Label();
@@ -238,6 +289,8 @@ namespace SoftSensConf
             manufactor_IdLabel2 = new System.Windows.Forms.Label();
             model_IdLabel2 = new System.Windows.Forms.Label();
             configuration_Edit_DateLabel2 = new System.Windows.Forms.Label();
+            tagNameLabel1 = new System.Windows.Forms.Label();
+            instrument_Log_IdLabel = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.sOFTSENSECONF_DATABASE_FINALDataSet)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.iNSTRUMENTBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dAUBindingSource)).BeginInit();
@@ -252,26 +305,43 @@ namespace SoftSensConf
             ((System.ComponentModel.ISupportInitialize)(this.instrument_Measure_IdBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.aI_LOGBindingSource)).BeginInit();
             this.tabPageCommand.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.bindingNavigator1)).BeginInit();
+            this.bindingNavigator1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.chartPoints)).BeginInit();
             this.statusStrip2.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxDisconnected3)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).BeginInit();
             this.tabPageConfiguration.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.innput_OutputBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.areaBindingSource2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.communicationBindingSource1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dAUBindingSource1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.manufactorBindingSource2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.modelBindingSource2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.categoryBindingSource1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.statusStrip1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxDisconnected2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).BeginInit();
             this.tabPageConnection.SuspendLayout();
+            this.toolStripback.SuspendLayout();
+            this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxDisconnected)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxCONNECTED)).BeginInit();
-            this.toolStripback.SuspendLayout();
+            this.panel1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.areaBindingSource1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.modelBindingSource1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.manufactorBindingSource1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.rDCOnlyIdDesBindingSource)).BeginInit();
             this.tabControl.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.iNSTRUMENTtoComboBoxBindingSource)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.rDC1BindingSource)).BeginInit();
             this.SuspendLayout();
             // 
             // configuration_Edit_DateLabel1
             // 
             configuration_Edit_DateLabel1.AutoSize = true;
             configuration_Edit_DateLabel1.Font = new System.Drawing.Font("Nirmala UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            configuration_Edit_DateLabel1.Location = new System.Drawing.Point(21, 515);
+            configuration_Edit_DateLabel1.Location = new System.Drawing.Point(111, 478);
             configuration_Edit_DateLabel1.Name = "configuration_Edit_DateLabel1";
             configuration_Edit_DateLabel1.Size = new System.Drawing.Size(106, 17);
             configuration_Edit_DateLabel1.TabIndex = 47;
@@ -281,7 +351,7 @@ namespace SoftSensConf
             // 
             innput_Output_IdLabel.AutoSize = true;
             innput_Output_IdLabel.Font = new System.Drawing.Font("Nirmala UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            innput_Output_IdLabel.Location = new System.Drawing.Point(18, 493);
+            innput_Output_IdLabel.Location = new System.Drawing.Point(111, 444);
             innput_Output_IdLabel.Name = "innput_Output_IdLabel";
             innput_Output_IdLabel.Size = new System.Drawing.Size(106, 17);
             innput_Output_IdLabel.TabIndex = 45;
@@ -291,7 +361,7 @@ namespace SoftSensConf
             // 
             area_IdLabel1.AutoSize = true;
             area_IdLabel1.Font = new System.Drawing.Font("Nirmala UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            area_IdLabel1.Location = new System.Drawing.Point(71, 467);
+            area_IdLabel1.Location = new System.Drawing.Point(164, 413);
             area_IdLabel1.Name = "area_IdLabel1";
             area_IdLabel1.Size = new System.Drawing.Size(53, 17);
             area_IdLabel1.TabIndex = 43;
@@ -301,7 +371,7 @@ namespace SoftSensConf
             // 
             frequencyLabel.AutoSize = true;
             frequencyLabel.Font = new System.Drawing.Font("Nirmala UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            frequencyLabel.Location = new System.Drawing.Point(52, 441);
+            frequencyLabel.Location = new System.Drawing.Point(147, 382);
             frequencyLabel.Name = "frequencyLabel";
             frequencyLabel.Size = new System.Drawing.Size(70, 17);
             frequencyLabel.TabIndex = 41;
@@ -311,7 +381,7 @@ namespace SoftSensConf
             // 
             communication_IdLabel1.AutoSize = true;
             communication_IdLabel1.Font = new System.Drawing.Font("Nirmala UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            communication_IdLabel1.Location = new System.Drawing.Point(8, 412);
+            communication_IdLabel1.Location = new System.Drawing.Point(101, 351);
             communication_IdLabel1.Name = "communication_IdLabel1";
             communication_IdLabel1.Size = new System.Drawing.Size(116, 17);
             communication_IdLabel1.TabIndex = 39;
@@ -321,7 +391,7 @@ namespace SoftSensConf
             // 
             dAU_IdLabel1.AutoSize = true;
             dAU_IdLabel1.Font = new System.Drawing.Font("Nirmala UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dAU_IdLabel1.Location = new System.Drawing.Point(72, 389);
+            dAU_IdLabel1.Location = new System.Drawing.Point(165, 320);
             dAU_IdLabel1.Name = "dAU_IdLabel1";
             dAU_IdLabel1.Size = new System.Drawing.Size(52, 17);
             dAU_IdLabel1.TabIndex = 37;
@@ -331,7 +401,7 @@ namespace SoftSensConf
             // 
             manufactor_IdLabel1.AutoSize = true;
             manufactor_IdLabel1.Font = new System.Drawing.Font("Nirmala UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            manufactor_IdLabel1.Location = new System.Drawing.Point(33, 363);
+            manufactor_IdLabel1.Location = new System.Drawing.Point(124, 289);
             manufactor_IdLabel1.Name = "manufactor_IdLabel1";
             manufactor_IdLabel1.Size = new System.Drawing.Size(93, 17);
             manufactor_IdLabel1.TabIndex = 35;
@@ -341,7 +411,7 @@ namespace SoftSensConf
             // 
             model_IdLabel1.AutoSize = true;
             model_IdLabel1.Font = new System.Drawing.Font("Nirmala UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            model_IdLabel1.Location = new System.Drawing.Point(60, 336);
+            model_IdLabel1.Location = new System.Drawing.Point(153, 258);
             model_IdLabel1.Name = "model_IdLabel1";
             model_IdLabel1.Size = new System.Drawing.Size(64, 17);
             model_IdLabel1.TabIndex = 33;
@@ -351,7 +421,7 @@ namespace SoftSensConf
             // 
             category_IdLabel1.AutoSize = true;
             category_IdLabel1.Font = new System.Drawing.Font("Nirmala UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            category_IdLabel1.Location = new System.Drawing.Point(47, 308);
+            category_IdLabel1.Location = new System.Drawing.Point(137, 227);
             category_IdLabel1.Name = "category_IdLabel1";
             category_IdLabel1.Size = new System.Drawing.Size(80, 17);
             category_IdLabel1.TabIndex = 31;
@@ -361,7 +431,7 @@ namespace SoftSensConf
             // 
             alarm_highLabel.AutoSize = true;
             alarm_highLabel.Font = new System.Drawing.Font("Nirmala UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            alarm_highLabel.Location = new System.Drawing.Point(53, 280);
+            alarm_highLabel.Location = new System.Drawing.Point(529, 284);
             alarm_highLabel.Name = "alarm_highLabel";
             alarm_highLabel.Size = new System.Drawing.Size(74, 17);
             alarm_highLabel.TabIndex = 29;
@@ -371,7 +441,7 @@ namespace SoftSensConf
             // 
             alarm_LowLabel.AutoSize = true;
             alarm_LowLabel.Font = new System.Drawing.Font("Nirmala UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            alarm_LowLabel.Location = new System.Drawing.Point(52, 254);
+            alarm_LowLabel.Location = new System.Drawing.Point(531, 315);
             alarm_LowLabel.Name = "alarm_LowLabel";
             alarm_LowLabel.Size = new System.Drawing.Size(72, 17);
             alarm_LowLabel.TabIndex = 27;
@@ -381,7 +451,7 @@ namespace SoftSensConf
             // 
             upper_range_valueLabel.AutoSize = true;
             upper_range_valueLabel.Font = new System.Drawing.Font("Nirmala UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            upper_range_valueLabel.Location = new System.Drawing.Point(8, 230);
+            upper_range_valueLabel.Location = new System.Drawing.Point(483, 222);
             upper_range_valueLabel.Name = "upper_range_valueLabel";
             upper_range_valueLabel.Size = new System.Drawing.Size(120, 17);
             upper_range_valueLabel.TabIndex = 25;
@@ -391,7 +461,7 @@ namespace SoftSensConf
             // 
             lower_range_valueLabel.AutoSize = true;
             lower_range_valueLabel.Font = new System.Drawing.Font("Nirmala UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            lower_range_valueLabel.Location = new System.Drawing.Point(8, 204);
+            lower_range_valueLabel.Location = new System.Drawing.Point(485, 253);
             lower_range_valueLabel.Name = "lower_range_valueLabel";
             lower_range_valueLabel.Size = new System.Drawing.Size(118, 17);
             lower_range_valueLabel.TabIndex = 23;
@@ -401,7 +471,7 @@ namespace SoftSensConf
             // 
             descriptionLabel1.AutoSize = true;
             descriptionLabel1.Font = new System.Drawing.Font("Nirmala UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            descriptionLabel1.Location = new System.Drawing.Point(47, 177);
+            descriptionLabel1.Location = new System.Drawing.Point(140, 196);
             descriptionLabel1.Name = "descriptionLabel1";
             descriptionLabel1.Size = new System.Drawing.Size(77, 17);
             descriptionLabel1.TabIndex = 21;
@@ -411,7 +481,7 @@ namespace SoftSensConf
             // 
             tagNameLabel.AutoSize = true;
             tagNameLabel.Font = new System.Drawing.Font("Nirmala UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            tagNameLabel.Location = new System.Drawing.Point(53, 155);
+            tagNameLabel.Location = new System.Drawing.Point(532, 191);
             tagNameLabel.Name = "tagNameLabel";
             tagNameLabel.Size = new System.Drawing.Size(71, 17);
             tagNameLabel.TabIndex = 19;
@@ -420,8 +490,9 @@ namespace SoftSensConf
             // configuration_edit_dateLabel
             // 
             configuration_edit_dateLabel.AutoSize = true;
+            configuration_edit_dateLabel.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(61)))), ((int)(((byte)(74)))));
             configuration_edit_dateLabel.Font = new System.Drawing.Font("Nirmala UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            configuration_edit_dateLabel.Location = new System.Drawing.Point(504, 538);
+            configuration_edit_dateLabel.Location = new System.Drawing.Point(534, 531);
             configuration_edit_dateLabel.Name = "configuration_edit_dateLabel";
             configuration_edit_dateLabel.Size = new System.Drawing.Size(146, 17);
             configuration_edit_dateLabel.TabIndex = 55;
@@ -430,8 +501,9 @@ namespace SoftSensConf
             // bAUDRateLabel
             // 
             bAUDRateLabel.AutoSize = true;
+            bAUDRateLabel.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(61)))), ((int)(((byte)(74)))));
             bAUDRateLabel.Font = new System.Drawing.Font("Nirmala UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            bAUDRateLabel.Location = new System.Drawing.Point(557, 509);
+            bAUDRateLabel.Location = new System.Drawing.Point(610, 497);
             bAUDRateLabel.Name = "bAUDRateLabel";
             bAUDRateLabel.Size = new System.Drawing.Size(70, 17);
             bAUDRateLabel.TabIndex = 53;
@@ -440,8 +512,9 @@ namespace SoftSensConf
             // cOMPortLabel
             // 
             cOMPortLabel.AutoSize = true;
+            cOMPortLabel.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(61)))), ((int)(((byte)(74)))));
             cOMPortLabel.Font = new System.Drawing.Font("Nirmala UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            cOMPortLabel.Location = new System.Drawing.Point(567, 483);
+            cOMPortLabel.Location = new System.Drawing.Point(615, 466);
             cOMPortLabel.Name = "cOMPortLabel";
             cOMPortLabel.Size = new System.Drawing.Size(65, 17);
             cOMPortLabel.TabIndex = 51;
@@ -450,8 +523,9 @@ namespace SoftSensConf
             // category_IdLabel
             // 
             category_IdLabel.AutoSize = true;
+            category_IdLabel.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(61)))), ((int)(((byte)(74)))));
             category_IdLabel.Font = new System.Drawing.Font("Nirmala UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            category_IdLabel.Location = new System.Drawing.Point(569, 456);
+            category_IdLabel.Location = new System.Drawing.Point(615, 437);
             category_IdLabel.Name = "category_IdLabel";
             category_IdLabel.Size = new System.Drawing.Size(65, 17);
             category_IdLabel.TabIndex = 49;
@@ -460,8 +534,9 @@ namespace SoftSensConf
             // manufactor_IdLabel
             // 
             manufactor_IdLabel.AutoSize = true;
+            manufactor_IdLabel.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(61)))), ((int)(((byte)(74)))));
             manufactor_IdLabel.Font = new System.Drawing.Font("Nirmala UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            manufactor_IdLabel.Location = new System.Drawing.Point(557, 430);
+            manufactor_IdLabel.Location = new System.Drawing.Point(601, 408);
             manufactor_IdLabel.Name = "manufactor_IdLabel";
             manufactor_IdLabel.Size = new System.Drawing.Size(79, 17);
             manufactor_IdLabel.TabIndex = 47;
@@ -470,8 +545,9 @@ namespace SoftSensConf
             // communication_IdLabel
             // 
             communication_IdLabel.AutoSize = true;
+            communication_IdLabel.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(61)))), ((int)(((byte)(74)))));
             communication_IdLabel.Font = new System.Drawing.Font("Nirmala UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            communication_IdLabel.Location = new System.Drawing.Point(539, 404);
+            communication_IdLabel.Location = new System.Drawing.Point(579, 377);
             communication_IdLabel.Name = "communication_IdLabel";
             communication_IdLabel.Size = new System.Drawing.Size(101, 17);
             communication_IdLabel.TabIndex = 45;
@@ -480,8 +556,9 @@ namespace SoftSensConf
             // model_IdLabel
             // 
             model_IdLabel.AutoSize = true;
+            model_IdLabel.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(61)))), ((int)(((byte)(74)))));
             model_IdLabel.Font = new System.Drawing.Font("Nirmala UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            model_IdLabel.Location = new System.Drawing.Point(582, 378);
+            model_IdLabel.Location = new System.Drawing.Point(631, 346);
             model_IdLabel.Name = "model_IdLabel";
             model_IdLabel.Size = new System.Drawing.Size(49, 17);
             model_IdLabel.TabIndex = 43;
@@ -490,8 +567,9 @@ namespace SoftSensConf
             // area_IdLabel
             // 
             area_IdLabel.AutoSize = true;
+            area_IdLabel.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(61)))), ((int)(((byte)(74)))));
             area_IdLabel.Font = new System.Drawing.Font("Nirmala UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            area_IdLabel.Location = new System.Drawing.Point(589, 353);
+            area_IdLabel.Location = new System.Drawing.Point(642, 315);
             area_IdLabel.Name = "area_IdLabel";
             area_IdLabel.Size = new System.Drawing.Size(38, 17);
             area_IdLabel.TabIndex = 41;
@@ -500,8 +578,9 @@ namespace SoftSensConf
             // rDC_IdLabel
             // 
             rDC_IdLabel.AutoSize = true;
+            rDC_IdLabel.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(61)))), ((int)(((byte)(74)))));
             rDC_IdLabel.Font = new System.Drawing.Font("Nirmala UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            rDC_IdLabel.Location = new System.Drawing.Point(507, 326);
+            rDC_IdLabel.Location = new System.Drawing.Point(540, 284);
             rDC_IdLabel.Name = "rDC_IdLabel";
             rDC_IdLabel.Size = new System.Drawing.Size(140, 17);
             rDC_IdLabel.TabIndex = 39;
@@ -510,8 +589,9 @@ namespace SoftSensConf
             // descriptionLabel
             // 
             descriptionLabel.AutoSize = true;
+            descriptionLabel.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(61)))), ((int)(((byte)(74)))));
             descriptionLabel.Font = new System.Drawing.Font("Nirmala UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            descriptionLabel.Location = new System.Drawing.Point(557, 301);
+            descriptionLabel.Location = new System.Drawing.Point(603, 253);
             descriptionLabel.Name = "descriptionLabel";
             descriptionLabel.Size = new System.Drawing.Size(77, 17);
             descriptionLabel.TabIndex = 37;
@@ -520,8 +600,10 @@ namespace SoftSensConf
             // dAU_IdLabel
             // 
             dAU_IdLabel.AutoSize = true;
+            dAU_IdLabel.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(46)))), ((int)(((byte)(51)))), ((int)(((byte)(60)))));
             dAU_IdLabel.Font = new System.Drawing.Font("Nirmala UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dAU_IdLabel.Location = new System.Drawing.Point(518, 275);
+            dAU_IdLabel.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(46)))), ((int)(((byte)(51)))), ((int)(((byte)(60)))));
+            dAU_IdLabel.Location = new System.Drawing.Point(7, 509);
             dAU_IdLabel.Name = "dAU_IdLabel";
             dAU_IdLabel.Size = new System.Drawing.Size(126, 17);
             dAU_IdLabel.TabIndex = 35;
@@ -530,72 +612,79 @@ namespace SoftSensConf
             // rDC_IdLabel1
             // 
             rDC_IdLabel1.AutoSize = true;
-            rDC_IdLabel1.Font = new System.Drawing.Font("Nirmala UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            rDC_IdLabel1.Location = new System.Drawing.Point(17, 278);
+            rDC_IdLabel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(46)))), ((int)(((byte)(51)))), ((int)(((byte)(60)))));
+            rDC_IdLabel1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(46)))), ((int)(((byte)(51)))), ((int)(((byte)(60)))));
+            rDC_IdLabel1.Location = new System.Drawing.Point(11, 500);
             rDC_IdLabel1.Name = "rDC_IdLabel1";
-            rDC_IdLabel1.Size = new System.Drawing.Size(51, 17);
-            rDC_IdLabel1.TabIndex = 65;
+            rDC_IdLabel1.Size = new System.Drawing.Size(61, 21);
+            rDC_IdLabel1.TabIndex = 80;
             rDC_IdLabel1.Text = "RDC Id:";
             // 
             // descriptionLabel2
             // 
             descriptionLabel2.AutoSize = true;
+            descriptionLabel2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(46)))), ((int)(((byte)(51)))), ((int)(((byte)(60)))));
             descriptionLabel2.Font = new System.Drawing.Font("Nirmala UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            descriptionLabel2.Location = new System.Drawing.Point(17, 313);
+            descriptionLabel2.Location = new System.Drawing.Point(118, 173);
             descriptionLabel2.Name = "descriptionLabel2";
             descriptionLabel2.Size = new System.Drawing.Size(77, 17);
-            descriptionLabel2.TabIndex = 67;
+            descriptionLabel2.TabIndex = 82;
             descriptionLabel2.Text = "Description:";
             // 
             // mCU_IdLabel
             // 
             mCU_IdLabel.AutoSize = true;
-            mCU_IdLabel.Font = new System.Drawing.Font("Nirmala UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            mCU_IdLabel.Location = new System.Drawing.Point(17, 348);
+            mCU_IdLabel.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(46)))), ((int)(((byte)(51)))), ((int)(((byte)(60)))));
+            mCU_IdLabel.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(46)))), ((int)(((byte)(51)))), ((int)(((byte)(60)))));
+            mCU_IdLabel.Location = new System.Drawing.Point(7, 504);
             mCU_IdLabel.Name = "mCU_IdLabel";
-            mCU_IdLabel.Size = new System.Drawing.Size(55, 17);
-            mCU_IdLabel.TabIndex = 69;
+            mCU_IdLabel.Size = new System.Drawing.Size(65, 21);
+            mCU_IdLabel.TabIndex = 84;
             mCU_IdLabel.Text = "MCU Id:";
             // 
             // area_IdLabel2
             // 
             area_IdLabel2.AutoSize = true;
+            area_IdLabel2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(46)))), ((int)(((byte)(51)))), ((int)(((byte)(60)))));
             area_IdLabel2.Font = new System.Drawing.Font("Nirmala UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            area_IdLabel2.Location = new System.Drawing.Point(17, 383);
+            area_IdLabel2.Location = new System.Drawing.Point(142, 207);
             area_IdLabel2.Name = "area_IdLabel2";
             area_IdLabel2.Size = new System.Drawing.Size(53, 17);
-            area_IdLabel2.TabIndex = 71;
+            area_IdLabel2.TabIndex = 86;
             area_IdLabel2.Text = "Area Id:";
             // 
             // manufactor_IdLabel2
             // 
             manufactor_IdLabel2.AutoSize = true;
+            manufactor_IdLabel2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(46)))), ((int)(((byte)(51)))), ((int)(((byte)(60)))));
             manufactor_IdLabel2.Font = new System.Drawing.Font("Nirmala UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            manufactor_IdLabel2.Location = new System.Drawing.Point(17, 418);
+            manufactor_IdLabel2.Location = new System.Drawing.Point(102, 238);
             manufactor_IdLabel2.Name = "manufactor_IdLabel2";
             manufactor_IdLabel2.Size = new System.Drawing.Size(93, 17);
-            manufactor_IdLabel2.TabIndex = 73;
+            manufactor_IdLabel2.TabIndex = 88;
             manufactor_IdLabel2.Text = "Manufactor Id:";
             // 
             // model_IdLabel2
             // 
             model_IdLabel2.AutoSize = true;
+            model_IdLabel2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(46)))), ((int)(((byte)(51)))), ((int)(((byte)(60)))));
             model_IdLabel2.Font = new System.Drawing.Font("Nirmala UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            model_IdLabel2.Location = new System.Drawing.Point(17, 453);
+            model_IdLabel2.Location = new System.Drawing.Point(131, 269);
             model_IdLabel2.Name = "model_IdLabel2";
             model_IdLabel2.Size = new System.Drawing.Size(64, 17);
-            model_IdLabel2.TabIndex = 75;
+            model_IdLabel2.TabIndex = 90;
             model_IdLabel2.Text = "Model Id:";
             // 
             // configuration_Edit_DateLabel2
             // 
             configuration_Edit_DateLabel2.AutoSize = true;
+            configuration_Edit_DateLabel2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(46)))), ((int)(((byte)(51)))), ((int)(((byte)(60)))));
             configuration_Edit_DateLabel2.Font = new System.Drawing.Font("Nirmala UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            configuration_Edit_DateLabel2.Location = new System.Drawing.Point(17, 489);
+            configuration_Edit_DateLabel2.Location = new System.Drawing.Point(89, 300);
             configuration_Edit_DateLabel2.Name = "configuration_Edit_DateLabel2";
-            configuration_Edit_DateLabel2.Size = new System.Drawing.Size(147, 17);
-            configuration_Edit_DateLabel2.TabIndex = 77;
-            configuration_Edit_DateLabel2.Text = "Configuration Edit Date:";
+            configuration_Edit_DateLabel2.Size = new System.Drawing.Size(106, 17);
+            configuration_Edit_DateLabel2.TabIndex = 92;
+            configuration_Edit_DateLabel2.Text = "Config Edit Date:";
             // 
             // openFileDialog
             // 
@@ -694,7 +783,6 @@ namespace SoftSensConf
             this.tableAdapterManager.MCUTableAdapter = null;
             this.tableAdapterManager.ModelTableAdapter = null;
             this.tableAdapterManager.RDCOnlyIdDesTableAdapter = null;
-            this.tableAdapterManager.RDConlyRDCDesTableAdapter = null;
             this.tableAdapterManager.RDCTableAdapter = null;
             this.tableAdapterManager.UpdateOrder = SoftSensConf.SOFTSENSECONF_DATABASE_FINALDataSetTableAdapters.TableAdapterManager.UpdateOrderOption.InsertUpdateDelete;
             // 
@@ -753,41 +841,222 @@ namespace SoftSensConf
             // 
             // tabPageCommand
             // 
-            this.tabPageCommand.BackColor = System.Drawing.Color.Gray;
-            this.tabPageCommand.Controls.Add(this.pictureBox2);
+            this.tabPageCommand.AutoScroll = true;
+            this.tabPageCommand.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(46)))), ((int)(((byte)(51)))), ((int)(((byte)(73)))));
+            this.tabPageCommand.Controls.Add(tagNameLabel1);
+            this.tabPageCommand.Controls.Add(this.tagNameTextBox2);
+            this.tabPageCommand.Controls.Add(instrument_Log_IdLabel);
+            this.tabPageCommand.Controls.Add(this.instrument_Log_IdTextBox2);
+            this.tabPageCommand.Controls.Add(this.buttonDigitalout);
+            this.tabPageCommand.Controls.Add(this.buttonDigitalInn);
+            this.tabPageCommand.Controls.Add(this.buttonAnalogout);
+            this.tabPageCommand.Controls.Add(this.buttonSAVELOGID);
+            this.tabPageCommand.Controls.Add(this.buttonNEWLOGID);
+            this.tabPageCommand.Controls.Add(this.bindingNavigator1);
+            this.tabPageCommand.Controls.Add(this.buttonAnalogInn);
+            this.tabPageCommand.Controls.Add(this.buttonSendValuestodb);
+            this.tabPageCommand.Controls.Add(this.buttonSending);
+            this.tabPageCommand.Controls.Add(this.buttonView);
             this.tabPageCommand.Controls.Add(this.tagNameTextBox1);
             this.tabPageCommand.Controls.Add(this.instrument_Log_IdTextBox1);
             this.tabPageCommand.Controls.Add(this.valueTextBox);
             this.tabPageCommand.Controls.Add(this.timeDateTimePicker);
             this.tabPageCommand.Controls.Add(this.instrument_Log_IdTextBox);
             this.tabPageCommand.Controls.Add(this.buttonstopgraph);
-            this.tabPageCommand.Controls.Add(this.listBox1);
+            this.tabPageCommand.Controls.Add(this.listBoxDBreadings);
             this.tabPageCommand.Controls.Add(this.buttonGraphstart);
             this.tabPageCommand.Controls.Add(this.chartPoints);
             this.tabPageCommand.Controls.Add(this.textBoxConnectionP2);
             this.tabPageCommand.Controls.Add(this.textBoxSend);
             this.tabPageCommand.Controls.Add(this.textBoxReceive);
             this.tabPageCommand.Controls.Add(this.statusStrip2);
-            this.tabPageCommand.Controls.Add(this.labelInput);
             this.tabPageCommand.Controls.Add(this.buttonReceive);
-            this.tabPageCommand.Controls.Add(this.buttonSend);
+            this.tabPageCommand.Controls.Add(this.buttonSendValuesToInstrument);
+            this.tabPageCommand.Controls.Add(this.pictureBoxDisconnected3);
+            this.tabPageCommand.Controls.Add(this.pictureBox5);
+            this.tabPageCommand.Controls.Add(this.buttonSTopsendingdata);
             this.tabPageCommand.Location = new System.Drawing.Point(4, 34);
             this.tabPageCommand.Name = "tabPageCommand";
-            this.tabPageCommand.Size = new System.Drawing.Size(1191, 750);
+            this.tabPageCommand.Size = new System.Drawing.Size(991, 750);
             this.tabPageCommand.TabIndex = 2;
-            this.tabPageCommand.Text = "Command";
+            this.tabPageCommand.Text = "Online";
             this.tabPageCommand.Enter += new System.EventHandler(this.tabPageCommand_Enter);
             // 
-            // pictureBox2
+            // buttonSAVELOGID
             // 
-            this.pictureBox2.Image = global::SoftSensConf.Properties.Resources.iconfinder_wifi_Symbol_925808;
-            this.pictureBox2.Location = new System.Drawing.Point(1065, 13);
-            this.pictureBox2.Name = "pictureBox2";
-            this.pictureBox2.Size = new System.Drawing.Size(120, 68);
-            this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBox2.TabIndex = 80;
-            this.pictureBox2.TabStop = false;
-            this.pictureBox2.Visible = false;
+            this.buttonSAVELOGID.Location = new System.Drawing.Point(705, 153);
+            this.buttonSAVELOGID.Name = "buttonSAVELOGID";
+            this.buttonSAVELOGID.Size = new System.Drawing.Size(73, 36);
+            this.buttonSAVELOGID.TabIndex = 102;
+            this.buttonSAVELOGID.Text = "Save";
+            this.buttonSAVELOGID.UseVisualStyleBackColor = true;
+            this.buttonSAVELOGID.Click += new System.EventHandler(this.buttonSAVELOGID_Click);
+            // 
+            // buttonNEWLOGID
+            // 
+            this.buttonNEWLOGID.Location = new System.Drawing.Point(617, 153);
+            this.buttonNEWLOGID.Name = "buttonNEWLOGID";
+            this.buttonNEWLOGID.Size = new System.Drawing.Size(82, 39);
+            this.buttonNEWLOGID.TabIndex = 101;
+            this.buttonNEWLOGID.Text = "new";
+            this.buttonNEWLOGID.UseVisualStyleBackColor = true;
+            this.buttonNEWLOGID.Click += new System.EventHandler(this.buttonNEWLOGID_Click);
+            // 
+            // bindingNavigator1
+            // 
+            this.bindingNavigator1.AddNewItem = this.bindingNavigatorAddNewItem;
+            this.bindingNavigator1.BindingSource = this.instrument_Measure_IdBindingSource;
+            this.bindingNavigator1.CountItem = this.bindingNavigatorCountItem;
+            this.bindingNavigator1.DeleteItem = this.bindingNavigatorDeleteItem;
+            this.bindingNavigator1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.bindingNavigatorMoveFirstItem,
+            this.bindingNavigatorMovePreviousItem,
+            this.bindingNavigatorSeparator,
+            this.bindingNavigatorPositionItem,
+            this.bindingNavigatorCountItem,
+            this.bindingNavigatorSeparator1,
+            this.bindingNavigatorMoveNextItem,
+            this.bindingNavigatorMoveLastItem,
+            this.bindingNavigatorSeparator2,
+            this.bindingNavigatorAddNewItem,
+            this.bindingNavigatorDeleteItem});
+            this.bindingNavigator1.Location = new System.Drawing.Point(0, 0);
+            this.bindingNavigator1.MoveFirstItem = this.bindingNavigatorMoveFirstItem;
+            this.bindingNavigator1.MoveLastItem = this.bindingNavigatorMoveLastItem;
+            this.bindingNavigator1.MoveNextItem = this.bindingNavigatorMoveNextItem;
+            this.bindingNavigator1.MovePreviousItem = this.bindingNavigatorMovePreviousItem;
+            this.bindingNavigator1.Name = "bindingNavigator1";
+            this.bindingNavigator1.PositionItem = this.bindingNavigatorPositionItem;
+            this.bindingNavigator1.Size = new System.Drawing.Size(1188, 25);
+            this.bindingNavigator1.TabIndex = 100;
+            this.bindingNavigator1.Text = "bindingNavigator1";
+            // 
+            // bindingNavigatorAddNewItem
+            // 
+            this.bindingNavigatorAddNewItem.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.bindingNavigatorAddNewItem.Image = ((System.Drawing.Image)(resources.GetObject("bindingNavigatorAddNewItem.Image")));
+            this.bindingNavigatorAddNewItem.Name = "bindingNavigatorAddNewItem";
+            this.bindingNavigatorAddNewItem.RightToLeftAutoMirrorImage = true;
+            this.bindingNavigatorAddNewItem.Size = new System.Drawing.Size(23, 22);
+            this.bindingNavigatorAddNewItem.Text = "Add new";
+            // 
+            // bindingNavigatorCountItem
+            // 
+            this.bindingNavigatorCountItem.Name = "bindingNavigatorCountItem";
+            this.bindingNavigatorCountItem.Size = new System.Drawing.Size(35, 22);
+            this.bindingNavigatorCountItem.Text = "of {0}";
+            this.bindingNavigatorCountItem.ToolTipText = "Total number of items";
+            // 
+            // bindingNavigatorDeleteItem
+            // 
+            this.bindingNavigatorDeleteItem.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.bindingNavigatorDeleteItem.Image = ((System.Drawing.Image)(resources.GetObject("bindingNavigatorDeleteItem.Image")));
+            this.bindingNavigatorDeleteItem.Name = "bindingNavigatorDeleteItem";
+            this.bindingNavigatorDeleteItem.RightToLeftAutoMirrorImage = true;
+            this.bindingNavigatorDeleteItem.Size = new System.Drawing.Size(23, 22);
+            this.bindingNavigatorDeleteItem.Text = "Delete";
+            // 
+            // bindingNavigatorMoveFirstItem
+            // 
+            this.bindingNavigatorMoveFirstItem.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.bindingNavigatorMoveFirstItem.Image = ((System.Drawing.Image)(resources.GetObject("bindingNavigatorMoveFirstItem.Image")));
+            this.bindingNavigatorMoveFirstItem.Name = "bindingNavigatorMoveFirstItem";
+            this.bindingNavigatorMoveFirstItem.RightToLeftAutoMirrorImage = true;
+            this.bindingNavigatorMoveFirstItem.Size = new System.Drawing.Size(23, 22);
+            this.bindingNavigatorMoveFirstItem.Text = "Move first";
+            // 
+            // bindingNavigatorMovePreviousItem
+            // 
+            this.bindingNavigatorMovePreviousItem.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.bindingNavigatorMovePreviousItem.Image = ((System.Drawing.Image)(resources.GetObject("bindingNavigatorMovePreviousItem.Image")));
+            this.bindingNavigatorMovePreviousItem.Name = "bindingNavigatorMovePreviousItem";
+            this.bindingNavigatorMovePreviousItem.RightToLeftAutoMirrorImage = true;
+            this.bindingNavigatorMovePreviousItem.Size = new System.Drawing.Size(23, 22);
+            this.bindingNavigatorMovePreviousItem.Text = "Move previous";
+            // 
+            // bindingNavigatorSeparator
+            // 
+            this.bindingNavigatorSeparator.Name = "bindingNavigatorSeparator";
+            this.bindingNavigatorSeparator.Size = new System.Drawing.Size(6, 25);
+            // 
+            // bindingNavigatorPositionItem
+            // 
+            this.bindingNavigatorPositionItem.AccessibleName = "Position";
+            this.bindingNavigatorPositionItem.AutoSize = false;
+            this.bindingNavigatorPositionItem.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.bindingNavigatorPositionItem.Name = "bindingNavigatorPositionItem";
+            this.bindingNavigatorPositionItem.Size = new System.Drawing.Size(50, 23);
+            this.bindingNavigatorPositionItem.Text = "0";
+            this.bindingNavigatorPositionItem.ToolTipText = "Current position";
+            // 
+            // bindingNavigatorSeparator1
+            // 
+            this.bindingNavigatorSeparator1.Name = "bindingNavigatorSeparator1";
+            this.bindingNavigatorSeparator1.Size = new System.Drawing.Size(6, 25);
+            // 
+            // bindingNavigatorMoveNextItem
+            // 
+            this.bindingNavigatorMoveNextItem.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.bindingNavigatorMoveNextItem.Image = ((System.Drawing.Image)(resources.GetObject("bindingNavigatorMoveNextItem.Image")));
+            this.bindingNavigatorMoveNextItem.Name = "bindingNavigatorMoveNextItem";
+            this.bindingNavigatorMoveNextItem.RightToLeftAutoMirrorImage = true;
+            this.bindingNavigatorMoveNextItem.Size = new System.Drawing.Size(23, 22);
+            this.bindingNavigatorMoveNextItem.Text = "Move next";
+            // 
+            // bindingNavigatorMoveLastItem
+            // 
+            this.bindingNavigatorMoveLastItem.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.bindingNavigatorMoveLastItem.Image = ((System.Drawing.Image)(resources.GetObject("bindingNavigatorMoveLastItem.Image")));
+            this.bindingNavigatorMoveLastItem.Name = "bindingNavigatorMoveLastItem";
+            this.bindingNavigatorMoveLastItem.RightToLeftAutoMirrorImage = true;
+            this.bindingNavigatorMoveLastItem.Size = new System.Drawing.Size(23, 22);
+            this.bindingNavigatorMoveLastItem.Text = "Move last";
+            // 
+            // bindingNavigatorSeparator2
+            // 
+            this.bindingNavigatorSeparator2.Name = "bindingNavigatorSeparator2";
+            this.bindingNavigatorSeparator2.Size = new System.Drawing.Size(6, 25);
+            // 
+            // buttonAnalogInn
+            // 
+            this.buttonAnalogInn.Font = new System.Drawing.Font("Nirmala UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.buttonAnalogInn.Location = new System.Drawing.Point(184, 67);
+            this.buttonAnalogInn.Name = "buttonAnalogInn";
+            this.buttonAnalogInn.Size = new System.Drawing.Size(82, 26);
+            this.buttonAnalogInn.TabIndex = 99;
+            this.buttonAnalogInn.Text = "Analog Inn";
+            this.buttonAnalogInn.UseVisualStyleBackColor = true;
+            this.buttonAnalogInn.Click += new System.EventHandler(this.buttonAnalog_Click);
+            // 
+            // buttonSendValuestodb
+            // 
+            this.buttonSendValuestodb.Location = new System.Drawing.Point(235, 26);
+            this.buttonSendValuestodb.Name = "buttonSendValuestodb";
+            this.buttonSendValuestodb.Size = new System.Drawing.Size(203, 33);
+            this.buttonSendValuestodb.TabIndex = 83;
+            this.buttonSendValuestodb.Text = "Send data to database";
+            this.buttonSendValuestodb.UseVisualStyleBackColor = true;
+            this.buttonSendValuestodb.Click += new System.EventHandler(this.buttonSendValuestodb_Click);
+            // 
+            // buttonSending
+            // 
+            this.buttonSending.Location = new System.Drawing.Point(653, 26);
+            this.buttonSending.Name = "buttonSending";
+            this.buttonSending.Size = new System.Drawing.Size(203, 33);
+            this.buttonSending.TabIndex = 82;
+            this.buttonSending.Text = "Send values to device";
+            this.buttonSending.UseVisualStyleBackColor = true;
+            this.buttonSending.Click += new System.EventHandler(this.buttonSending_Click);
+            // 
+            // buttonView
+            // 
+            this.buttonView.Location = new System.Drawing.Point(444, 26);
+            this.buttonView.Name = "buttonView";
+            this.buttonView.Size = new System.Drawing.Size(203, 33);
+            this.buttonView.TabIndex = 81;
+            this.buttonView.Text = "View Data from db";
+            this.buttonView.UseVisualStyleBackColor = true;
+            this.buttonView.Click += new System.EventHandler(this.buttonView_Click);
             // 
             // tagNameTextBox1
             // 
@@ -854,32 +1123,38 @@ namespace SoftSensConf
             // 
             // buttonstopgraph
             // 
-            this.buttonstopgraph.Location = new System.Drawing.Point(194, 245);
+            this.buttonstopgraph.Location = new System.Drawing.Point(0, 585);
+            this.buttonstopgraph.Margin = new System.Windows.Forms.Padding(0);
             this.buttonstopgraph.Name = "buttonstopgraph";
-            this.buttonstopgraph.Size = new System.Drawing.Size(112, 29);
+            this.buttonstopgraph.Size = new System.Drawing.Size(150, 32);
             this.buttonstopgraph.TabIndex = 14;
             this.buttonstopgraph.Text = "Stop";
             this.buttonstopgraph.UseVisualStyleBackColor = true;
+            this.buttonstopgraph.Visible = false;
             this.buttonstopgraph.Click += new System.EventHandler(this.buttonstopgraph_Click);
             // 
-            // listBox1
+            // listBoxDBreadings
             // 
-            this.listBox1.DataSource = this.aI_LOGBindingSource;
-            this.listBox1.DisplayMember = "Value";
-            this.listBox1.Font = new System.Drawing.Font("Nirmala UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.listBox1.FormattingEnabled = true;
-            this.listBox1.ItemHeight = 17;
-            this.listBox1.Location = new System.Drawing.Point(68, 303);
-            this.listBox1.Name = "listBox1";
-            this.listBox1.Size = new System.Drawing.Size(125, 157);
-            this.listBox1.TabIndex = 13;
-            this.listBox1.ValueMember = "Value";
+            this.listBoxDBreadings.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(74)))), ((int)(((byte)(79)))), ((int)(((byte)(99)))));
+            this.listBoxDBreadings.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.listBoxDBreadings.DataSource = this.aI_LOGBindingSource;
+            this.listBoxDBreadings.DisplayMember = "Value";
+            this.listBoxDBreadings.Font = new System.Drawing.Font("Nirmala UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.listBoxDBreadings.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(200)))), ((int)(((byte)(200)))), ((int)(((byte)(200)))));
+            this.listBoxDBreadings.FormattingEnabled = true;
+            this.listBoxDBreadings.ItemHeight = 17;
+            this.listBoxDBreadings.Location = new System.Drawing.Point(26, 99);
+            this.listBoxDBreadings.Name = "listBoxDBreadings";
+            this.listBoxDBreadings.Size = new System.Drawing.Size(339, 136);
+            this.listBoxDBreadings.TabIndex = 13;
+            this.listBoxDBreadings.ValueMember = "Value";
+            this.listBoxDBreadings.Visible = false;
             // 
             // buttonGraphstart
             // 
-            this.buttonGraphstart.Location = new System.Drawing.Point(45, 245);
+            this.buttonGraphstart.Location = new System.Drawing.Point(26, 26);
             this.buttonGraphstart.Name = "buttonGraphstart";
-            this.buttonGraphstart.Size = new System.Drawing.Size(148, 29);
+            this.buttonGraphstart.Size = new System.Drawing.Size(203, 33);
             this.buttonGraphstart.TabIndex = 8;
             this.buttonGraphstart.Text = "View in graph";
             this.buttonGraphstart.UseVisualStyleBackColor = true;
@@ -887,63 +1162,75 @@ namespace SoftSensConf
             // 
             // chartPoints
             // 
-            this.chartPoints.BackColor = System.Drawing.Color.Gray;
-            this.chartPoints.BorderlineColor = System.Drawing.Color.Gray;
-            chartArea1.BackColor = System.Drawing.Color.Gray;
-            chartArea1.BackSecondaryColor = System.Drawing.Color.Gray;
-            chartArea1.Name = "ChartArea1";
-            this.chartPoints.ChartAreas.Add(chartArea1);
-            legend1.BackColor = System.Drawing.Color.Gray;
-            legend1.Name = "Legend1";
-            this.chartPoints.Legends.Add(legend1);
-            this.chartPoints.Location = new System.Drawing.Point(324, 3);
+            this.chartPoints.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(46)))), ((int)(((byte)(51)))), ((int)(((byte)(73)))));
+            this.chartPoints.BorderlineColor = System.Drawing.Color.FromArgb(((int)(((byte)(46)))), ((int)(((byte)(51)))), ((int)(((byte)(73)))));
+            this.chartPoints.BorderSkin.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(46)))), ((int)(((byte)(51)))), ((int)(((byte)(73)))));
+            chartArea5.AxisX.TitleForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(46)))), ((int)(((byte)(51)))), ((int)(((byte)(73)))));
+            chartArea5.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(46)))), ((int)(((byte)(51)))), ((int)(((byte)(73)))));
+            chartArea5.BackSecondaryColor = System.Drawing.Color.FromArgb(((int)(((byte)(46)))), ((int)(((byte)(51)))), ((int)(((byte)(73)))));
+            chartArea5.Name = "ChartArea1";
+            this.chartPoints.ChartAreas.Add(chartArea5);
+            legend5.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(46)))), ((int)(((byte)(51)))), ((int)(((byte)(73)))));
+            legend5.Name = "Legend1";
+            legend5.ShadowColor = System.Drawing.Color.FromArgb(((int)(((byte)(46)))), ((int)(((byte)(51)))), ((int)(((byte)(73)))));
+            this.chartPoints.Legends.Add(legend5);
+            this.chartPoints.Location = new System.Drawing.Point(3, 244);
             this.chartPoints.Name = "chartPoints";
-            series1.ChartArea = "ChartArea1";
-            series1.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Line;
-            series1.Color = System.Drawing.Color.Red;
-            series1.Legend = "Legend1";
-            series1.Name = "Va";
-            this.chartPoints.Series.Add(series1);
-            this.chartPoints.Size = new System.Drawing.Size(747, 300);
+            this.chartPoints.Palette = System.Windows.Forms.DataVisualization.Charting.ChartColorPalette.SeaGreen;
+            series5.ChartArea = "ChartArea1";
+            series5.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Line;
+            series5.Color = System.Drawing.Color.Red;
+            series5.Legend = "Legend1";
+            series5.Name = "Va";
+            this.chartPoints.Series.Add(series5);
+            this.chartPoints.Size = new System.Drawing.Size(979, 354);
             this.chartPoints.TabIndex = 7;
             this.chartPoints.Text = "chart1";
+            this.chartPoints.Visible = false;
             // 
             // textBoxConnectionP2
             // 
             this.textBoxConnectionP2.BackColor = System.Drawing.Color.Gray;
             this.textBoxConnectionP2.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold);
-            this.textBoxConnectionP2.Location = new System.Drawing.Point(22, 563);
+            this.textBoxConnectionP2.Location = new System.Drawing.Point(720, 3);
             this.textBoxConnectionP2.Name = "textBoxConnectionP2";
             this.textBoxConnectionP2.Size = new System.Drawing.Size(109, 24);
             this.textBoxConnectionP2.TabIndex = 6;
+            this.textBoxConnectionP2.Visible = false;
             // 
             // textBoxSend
             // 
-            this.textBoxSend.Location = new System.Drawing.Point(67, 32);
+            this.textBoxSend.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(74)))), ((int)(((byte)(79)))), ((int)(((byte)(99)))));
+            this.textBoxSend.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.textBoxSend.Location = new System.Drawing.Point(392, 171);
             this.textBoxSend.Multiline = true;
             this.textBoxSend.Name = "textBoxSend";
-            this.textBoxSend.Size = new System.Drawing.Size(251, 23);
+            this.textBoxSend.Size = new System.Drawing.Size(358, 23);
             this.textBoxSend.TabIndex = 1;
+            this.textBoxSend.Visible = false;
             this.textBoxSend.Enter += new System.EventHandler(this.textBoxSend_Enter);
             // 
             // textBoxReceive
             // 
-            this.textBoxReceive.Location = new System.Drawing.Point(67, 61);
+            this.textBoxReceive.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(74)))), ((int)(((byte)(79)))), ((int)(((byte)(99)))));
+            this.textBoxReceive.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.textBoxReceive.Location = new System.Drawing.Point(392, 201);
             this.textBoxReceive.Multiline = true;
             this.textBoxReceive.Name = "textBoxReceive";
             this.textBoxReceive.ReadOnly = true;
             this.textBoxReceive.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
-            this.textBoxReceive.Size = new System.Drawing.Size(251, 149);
+            this.textBoxReceive.Size = new System.Drawing.Size(358, 103);
             this.textBoxReceive.TabIndex = 0;
+            this.textBoxReceive.Visible = false;
             // 
             // statusStrip2
             // 
             this.statusStrip2.BackColor = System.Drawing.Color.Lavender;
             this.statusStrip2.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.toolStripStatusLabel2});
-            this.statusStrip2.Location = new System.Drawing.Point(0, 728);
+            this.statusStrip2.Location = new System.Drawing.Point(0, 711);
             this.statusStrip2.Name = "statusStrip2";
-            this.statusStrip2.Size = new System.Drawing.Size(1191, 22);
+            this.statusStrip2.Size = new System.Drawing.Size(1188, 22);
             this.statusStrip2.TabIndex = 5;
             this.statusStrip2.Text = "statusStrip2";
             // 
@@ -953,62 +1240,91 @@ namespace SoftSensConf
             this.toolStripStatusLabel2.Size = new System.Drawing.Size(39, 17);
             this.toolStripStatusLabel2.Text = "Ready";
             // 
-            // labelInput
-            // 
-            this.labelInput.AutoSize = true;
-            this.labelInput.Font = new System.Drawing.Font("Franklin Gothic Medium", 9F, System.Drawing.FontStyle.Bold);
-            this.labelInput.Location = new System.Drawing.Point(19, 34);
-            this.labelInput.Name = "labelInput";
-            this.labelInput.Size = new System.Drawing.Size(42, 16);
-            this.labelInput.TabIndex = 4;
-            this.labelInput.Text = "Input:";
-            this.labelInput.MouseHover += new System.EventHandler(this.labelInput_MouseHover);
-            // 
             // buttonReceive
             // 
-            this.buttonReceive.Location = new System.Drawing.Point(199, 216);
+            this.buttonReceive.Location = new System.Drawing.Point(607, 255);
             this.buttonReceive.Name = "buttonReceive";
-            this.buttonReceive.Size = new System.Drawing.Size(117, 23);
+            this.buttonReceive.Size = new System.Drawing.Size(104, 31);
             this.buttonReceive.TabIndex = 3;
             this.buttonReceive.Text = "Receive values";
             this.buttonReceive.UseVisualStyleBackColor = true;
+            this.buttonReceive.Visible = false;
             this.buttonReceive.Click += new System.EventHandler(this.buttonReceive_Click);
             // 
-            // buttonSend
+            // buttonSendValuesToInstrument
             // 
-            this.buttonSend.Location = new System.Drawing.Point(67, 216);
-            this.buttonSend.Name = "buttonSend";
-            this.buttonSend.Size = new System.Drawing.Size(126, 23);
-            this.buttonSend.TabIndex = 2;
-            this.buttonSend.Text = "Send values";
-            this.buttonSend.UseVisualStyleBackColor = true;
-            this.buttonSend.Click += new System.EventHandler(this.buttonSend_Click);
+            this.buttonSendValuesToInstrument.Location = new System.Drawing.Point(475, 255);
+            this.buttonSendValuesToInstrument.Name = "buttonSendValuesToInstrument";
+            this.buttonSendValuesToInstrument.Size = new System.Drawing.Size(126, 31);
+            this.buttonSendValuesToInstrument.TabIndex = 2;
+            this.buttonSendValuesToInstrument.Text = "Send values";
+            this.buttonSendValuesToInstrument.UseVisualStyleBackColor = true;
+            this.buttonSendValuesToInstrument.Visible = false;
+            this.buttonSendValuesToInstrument.Click += new System.EventHandler(this.buttonSend_Click);
+            // 
+            // pictureBoxDisconnected3
+            // 
+            this.pictureBoxDisconnected3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(46)))), ((int)(((byte)(51)))), ((int)(((byte)(73)))));
+            this.pictureBoxDisconnected3.Image = global::SoftSensConf.Properties.Resources.iconfinder_wifi_off_2561213;
+            this.pictureBoxDisconnected3.Location = new System.Drawing.Point(841, 16);
+            this.pictureBoxDisconnected3.Name = "pictureBoxDisconnected3";
+            this.pictureBoxDisconnected3.Size = new System.Drawing.Size(131, 77);
+            this.pictureBoxDisconnected3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBoxDisconnected3.TabIndex = 96;
+            this.pictureBoxDisconnected3.TabStop = false;
+            // 
+            // pictureBox5
+            // 
+            this.pictureBox5.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(46)))), ((int)(((byte)(51)))), ((int)(((byte)(73)))));
+            this.pictureBox5.Image = global::SoftSensConf.Properties.Resources.iconfinder_wifi_Symbol_925808;
+            this.pictureBox5.Location = new System.Drawing.Point(841, 16);
+            this.pictureBox5.Name = "pictureBox5";
+            this.pictureBox5.Size = new System.Drawing.Size(131, 77);
+            this.pictureBox5.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox5.TabIndex = 95;
+            this.pictureBox5.TabStop = false;
+            this.pictureBox5.Visible = false;
+            // 
+            // buttonSTopsendingdata
+            // 
+            this.buttonSTopsendingdata.Enabled = false;
+            this.buttonSTopsendingdata.Location = new System.Drawing.Point(234, 26);
+            this.buttonSTopsendingdata.Name = "buttonSTopsendingdata";
+            this.buttonSTopsendingdata.Size = new System.Drawing.Size(203, 33);
+            this.buttonSTopsendingdata.TabIndex = 84;
+            this.buttonSTopsendingdata.Text = "Stop dataflow to database";
+            this.buttonSTopsendingdata.UseVisualStyleBackColor = true;
+            this.buttonSTopsendingdata.Visible = false;
+            this.buttonSTopsendingdata.Click += new System.EventHandler(this.buttonSTopsendingdata_Click);
             // 
             // tabPageConfiguration
             // 
             this.tabPageConfiguration.AutoScroll = true;
-            this.tabPageConfiguration.BackColor = System.Drawing.Color.Gray;
+            this.tabPageConfiguration.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(46)))), ((int)(((byte)(51)))), ((int)(((byte)(73)))));
+            this.tabPageConfiguration.Controls.Add(this.buttonChangeInstrument);
+            this.tabPageConfiguration.Controls.Add(this.buttonCancelInstrument);
+            this.tabPageConfiguration.Controls.Add(this.buttonNEWInstrument);
+            this.tabPageConfiguration.Controls.Add(this.buttonUpdateInstrument);
+            this.tabPageConfiguration.Controls.Add(this.comboBoxInnputOutputInstrument);
+            this.tabPageConfiguration.Controls.Add(this.comboBoxAreaInstrument);
+            this.tabPageConfiguration.Controls.Add(this.comboBoxCOMMInstrument);
+            this.tabPageConfiguration.Controls.Add(this.comboBoxDAUinstrument);
+            this.tabPageConfiguration.Controls.Add(this.comboBoxManuInstrument);
+            this.tabPageConfiguration.Controls.Add(this.comboBoxModelinstrument);
+            this.tabPageConfiguration.Controls.Add(this.comboBoxCategoryInstrument);
+            this.tabPageConfiguration.Controls.Add(this.labelfinding);
             this.tabPageConfiguration.Controls.Add(this.pictureBox1);
             this.tabPageConfiguration.Controls.Add(this.comboBoxFindInstrument);
             this.tabPageConfiguration.Controls.Add(this.labelMatching);
             this.tabPageConfiguration.Controls.Add(this.textBoxMatch);
-            this.tabPageConfiguration.Controls.Add(this.label1);
-            this.tabPageConfiguration.Controls.Add(this.labelDataBaseInstrument);
             this.tabPageConfiguration.Controls.Add(tagNameLabel);
             this.tabPageConfiguration.Controls.Add(this.tagNameTextBox);
-            this.tabPageConfiguration.Controls.Add(this.descriptionTextBox1);
+            this.tabPageConfiguration.Controls.Add(this.descriptionTextBoxInstrument);
             this.tabPageConfiguration.Controls.Add(this.lower_range_valueTextBox);
             this.tabPageConfiguration.Controls.Add(this.upper_range_valueTextBox);
             this.tabPageConfiguration.Controls.Add(this.alarm_LowTextBox);
             this.tabPageConfiguration.Controls.Add(this.alarm_highTextBox);
-            this.tabPageConfiguration.Controls.Add(this.category_IdTextBox);
-            this.tabPageConfiguration.Controls.Add(this.model_IdTextBox);
-            this.tabPageConfiguration.Controls.Add(this.manufactor_IdTextBox);
-            this.tabPageConfiguration.Controls.Add(this.dAU_IdTextBox1);
-            this.tabPageConfiguration.Controls.Add(this.communication_IdTextBox);
             this.tabPageConfiguration.Controls.Add(this.frequencyTextBox);
-            this.tabPageConfiguration.Controls.Add(this.area_IdTextBox);
-            this.tabPageConfiguration.Controls.Add(this.innput_Output_IdTextBox);
             this.tabPageConfiguration.Controls.Add(this.textBoxConnectionP1);
             this.tabPageConfiguration.Controls.Add(this.textBoxAH);
             this.tabPageConfiguration.Controls.Add(this.textBoxAL);
@@ -1029,7 +1345,7 @@ namespace SoftSensConf
             this.tabPageConfiguration.Controls.Add(area_IdLabel1);
             this.tabPageConfiguration.Controls.Add(innput_Output_IdLabel);
             this.tabPageConfiguration.Controls.Add(configuration_Edit_DateLabel1);
-            this.tabPageConfiguration.Controls.Add(this.configuration_Edit_DateDateTimePicker1);
+            this.tabPageConfiguration.Controls.Add(this.configuration_Edit_DateDateTimePickerInstrument);
             this.tabPageConfiguration.Controls.Add(this.buttonRetrieve);
             this.tabPageConfiguration.Controls.Add(this.buttonSendValues);
             this.tabPageConfiguration.Controls.Add(this.buttonClear);
@@ -1042,14 +1358,209 @@ namespace SoftSensConf
             this.tabPageConfiguration.Controls.Add(this.labelURV);
             this.tabPageConfiguration.Controls.Add(this.labelLRV);
             this.tabPageConfiguration.Controls.Add(this.labelTag);
+            this.tabPageConfiguration.Controls.Add(this.pictureBoxDisconnected2);
+            this.tabPageConfiguration.Controls.Add(this.pictureBox4);
             this.tabPageConfiguration.Location = new System.Drawing.Point(4, 34);
             this.tabPageConfiguration.Name = "tabPageConfiguration";
             this.tabPageConfiguration.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPageConfiguration.Size = new System.Drawing.Size(1191, 750);
+            this.tabPageConfiguration.Size = new System.Drawing.Size(991, 750);
             this.tabPageConfiguration.TabIndex = 1;
             this.tabPageConfiguration.Text = "Configuration";
             this.tabPageConfiguration.Click += new System.EventHandler(this.tabPageConfiguration_Click);
             this.tabPageConfiguration.Enter += new System.EventHandler(this.tabPageConfiguration_Enter);
+            // 
+            // buttonChangeInstrument
+            // 
+            this.buttonChangeInstrument.Font = new System.Drawing.Font("Nirmala UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.buttonChangeInstrument.Location = new System.Drawing.Point(336, 103);
+            this.buttonChangeInstrument.Name = "buttonChangeInstrument";
+            this.buttonChangeInstrument.Size = new System.Drawing.Size(90, 24);
+            this.buttonChangeInstrument.TabIndex = 92;
+            this.buttonChangeInstrument.Text = "Change";
+            this.buttonChangeInstrument.UseVisualStyleBackColor = true;
+            this.buttonChangeInstrument.Click += new System.EventHandler(this.buttonChangeInstrument_Click);
+            // 
+            // buttonCancelInstrument
+            // 
+            this.buttonCancelInstrument.Font = new System.Drawing.Font("Nirmala UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.buttonCancelInstrument.Location = new System.Drawing.Point(336, 133);
+            this.buttonCancelInstrument.Name = "buttonCancelInstrument";
+            this.buttonCancelInstrument.Size = new System.Drawing.Size(90, 24);
+            this.buttonCancelInstrument.TabIndex = 91;
+            this.buttonCancelInstrument.Text = "Cancel";
+            this.buttonCancelInstrument.UseVisualStyleBackColor = true;
+            this.buttonCancelInstrument.Click += new System.EventHandler(this.buttonCancelInstrument_Click);
+            // 
+            // buttonNEWInstrument
+            // 
+            this.buttonNEWInstrument.Font = new System.Drawing.Font("Nirmala UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.buttonNEWInstrument.Location = new System.Drawing.Point(223, 104);
+            this.buttonNEWInstrument.Name = "buttonNEWInstrument";
+            this.buttonNEWInstrument.Size = new System.Drawing.Size(90, 24);
+            this.buttonNEWInstrument.TabIndex = 90;
+            this.buttonNEWInstrument.Text = "New";
+            this.buttonNEWInstrument.UseVisualStyleBackColor = true;
+            this.buttonNEWInstrument.Click += new System.EventHandler(this.buttonNEWInstrument_Click);
+            // 
+            // buttonUpdateInstrument
+            // 
+            this.buttonUpdateInstrument.Font = new System.Drawing.Font("Nirmala UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.buttonUpdateInstrument.Location = new System.Drawing.Point(223, 133);
+            this.buttonUpdateInstrument.Name = "buttonUpdateInstrument";
+            this.buttonUpdateInstrument.Size = new System.Drawing.Size(90, 24);
+            this.buttonUpdateInstrument.TabIndex = 89;
+            this.buttonUpdateInstrument.Text = "Update";
+            this.buttonUpdateInstrument.UseVisualStyleBackColor = true;
+            this.buttonUpdateInstrument.Click += new System.EventHandler(this.button1_Click_2);
+            // 
+            // comboBoxInnputOutputInstrument
+            // 
+            this.comboBoxInnputOutputInstrument.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
+            this.comboBoxInnputOutputInstrument.DataBindings.Add(new System.Windows.Forms.Binding("SelectedValue", this.iNSTRUMENTBindingSource, "Innput_Output_Id", true));
+            this.comboBoxInnputOutputInstrument.DataSource = this.innput_OutputBindingSource;
+            this.comboBoxInnputOutputInstrument.DisplayMember = "Innput_Output_Digital_Analog";
+            this.comboBoxInnputOutputInstrument.Enabled = false;
+            this.comboBoxInnputOutputInstrument.Font = new System.Drawing.Font("Nirmala UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.comboBoxInnputOutputInstrument.FormattingEnabled = true;
+            this.comboBoxInnputOutputInstrument.Location = new System.Drawing.Point(227, 441);
+            this.comboBoxInnputOutputInstrument.Name = "comboBoxInnputOutputInstrument";
+            this.comboBoxInnputOutputInstrument.Size = new System.Drawing.Size(199, 25);
+            this.comboBoxInnputOutputInstrument.TabIndex = 88;
+            this.comboBoxInnputOutputInstrument.ValueMember = "Innput_Output_Id";
+            // 
+            // innput_OutputBindingSource
+            // 
+            this.innput_OutputBindingSource.DataMember = "Innput_Output";
+            this.innput_OutputBindingSource.DataSource = this.sOFTSENSECONF_DATABASE_FINALDataSet;
+            // 
+            // comboBoxAreaInstrument
+            // 
+            this.comboBoxAreaInstrument.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
+            this.comboBoxAreaInstrument.DataBindings.Add(new System.Windows.Forms.Binding("SelectedValue", this.iNSTRUMENTBindingSource, "Area_Id", true));
+            this.comboBoxAreaInstrument.DataSource = this.areaBindingSource2;
+            this.comboBoxAreaInstrument.DisplayMember = "Area";
+            this.comboBoxAreaInstrument.Enabled = false;
+            this.comboBoxAreaInstrument.Font = new System.Drawing.Font("Nirmala UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.comboBoxAreaInstrument.FormattingEnabled = true;
+            this.comboBoxAreaInstrument.Location = new System.Drawing.Point(227, 410);
+            this.comboBoxAreaInstrument.Name = "comboBoxAreaInstrument";
+            this.comboBoxAreaInstrument.Size = new System.Drawing.Size(199, 25);
+            this.comboBoxAreaInstrument.TabIndex = 87;
+            this.comboBoxAreaInstrument.ValueMember = "Area_Id";
+            // 
+            // areaBindingSource2
+            // 
+            this.areaBindingSource2.DataMember = "Area";
+            this.areaBindingSource2.DataSource = this.sOFTSENSECONF_DATABASE_FINALDataSet;
+            // 
+            // comboBoxCOMMInstrument
+            // 
+            this.comboBoxCOMMInstrument.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
+            this.comboBoxCOMMInstrument.DataBindings.Add(new System.Windows.Forms.Binding("SelectedValue", this.iNSTRUMENTBindingSource, "Communication_Id", true));
+            this.comboBoxCOMMInstrument.DataSource = this.communicationBindingSource1;
+            this.comboBoxCOMMInstrument.DisplayMember = "Communication";
+            this.comboBoxCOMMInstrument.Enabled = false;
+            this.comboBoxCOMMInstrument.Font = new System.Drawing.Font("Nirmala UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.comboBoxCOMMInstrument.FormattingEnabled = true;
+            this.comboBoxCOMMInstrument.Location = new System.Drawing.Point(226, 348);
+            this.comboBoxCOMMInstrument.Name = "comboBoxCOMMInstrument";
+            this.comboBoxCOMMInstrument.Size = new System.Drawing.Size(200, 25);
+            this.comboBoxCOMMInstrument.TabIndex = 86;
+            this.comboBoxCOMMInstrument.ValueMember = "Communication_Id";
+            // 
+            // communicationBindingSource1
+            // 
+            this.communicationBindingSource1.DataMember = "Communication";
+            this.communicationBindingSource1.DataSource = this.sOFTSENSECONF_DATABASE_FINALDataSet;
+            // 
+            // comboBoxDAUinstrument
+            // 
+            this.comboBoxDAUinstrument.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
+            this.comboBoxDAUinstrument.DataBindings.Add(new System.Windows.Forms.Binding("SelectedValue", this.iNSTRUMENTBindingSource, "DAU_Id", true));
+            this.comboBoxDAUinstrument.DataSource = this.dAUBindingSource1;
+            this.comboBoxDAUinstrument.DisplayMember = "Description";
+            this.comboBoxDAUinstrument.Enabled = false;
+            this.comboBoxDAUinstrument.Font = new System.Drawing.Font("Nirmala UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.comboBoxDAUinstrument.FormattingEnabled = true;
+            this.comboBoxDAUinstrument.Location = new System.Drawing.Point(227, 317);
+            this.comboBoxDAUinstrument.Name = "comboBoxDAUinstrument";
+            this.comboBoxDAUinstrument.Size = new System.Drawing.Size(199, 25);
+            this.comboBoxDAUinstrument.TabIndex = 85;
+            this.comboBoxDAUinstrument.ValueMember = "DAU_Id";
+            // 
+            // dAUBindingSource1
+            // 
+            this.dAUBindingSource1.DataMember = "DAU";
+            this.dAUBindingSource1.DataSource = this.sOFTSENSECONF_DATABASE_FINALDataSet;
+            // 
+            // comboBoxManuInstrument
+            // 
+            this.comboBoxManuInstrument.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
+            this.comboBoxManuInstrument.DataBindings.Add(new System.Windows.Forms.Binding("SelectedValue", this.iNSTRUMENTBindingSource, "Manufactor_Id", true));
+            this.comboBoxManuInstrument.DataSource = this.manufactorBindingSource2;
+            this.comboBoxManuInstrument.DisplayMember = "Manufactor";
+            this.comboBoxManuInstrument.Enabled = false;
+            this.comboBoxManuInstrument.Font = new System.Drawing.Font("Nirmala UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.comboBoxManuInstrument.FormattingEnabled = true;
+            this.comboBoxManuInstrument.Location = new System.Drawing.Point(227, 286);
+            this.comboBoxManuInstrument.Name = "comboBoxManuInstrument";
+            this.comboBoxManuInstrument.Size = new System.Drawing.Size(199, 25);
+            this.comboBoxManuInstrument.TabIndex = 84;
+            this.comboBoxManuInstrument.ValueMember = "Manufactor_Id";
+            // 
+            // manufactorBindingSource2
+            // 
+            this.manufactorBindingSource2.DataMember = "Manufactor";
+            this.manufactorBindingSource2.DataSource = this.sOFTSENSECONF_DATABASE_FINALDataSet;
+            // 
+            // comboBoxModelinstrument
+            // 
+            this.comboBoxModelinstrument.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
+            this.comboBoxModelinstrument.DataBindings.Add(new System.Windows.Forms.Binding("SelectedValue", this.iNSTRUMENTBindingSource, "Model_Id", true));
+            this.comboBoxModelinstrument.DataSource = this.modelBindingSource2;
+            this.comboBoxModelinstrument.DisplayMember = "Model";
+            this.comboBoxModelinstrument.Enabled = false;
+            this.comboBoxModelinstrument.Font = new System.Drawing.Font("Nirmala UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.comboBoxModelinstrument.FormattingEnabled = true;
+            this.comboBoxModelinstrument.Location = new System.Drawing.Point(227, 255);
+            this.comboBoxModelinstrument.Name = "comboBoxModelinstrument";
+            this.comboBoxModelinstrument.Size = new System.Drawing.Size(199, 25);
+            this.comboBoxModelinstrument.TabIndex = 83;
+            this.comboBoxModelinstrument.ValueMember = "Model_Id";
+            // 
+            // modelBindingSource2
+            // 
+            this.modelBindingSource2.DataMember = "Model";
+            this.modelBindingSource2.DataSource = this.sOFTSENSECONF_DATABASE_FINALDataSet;
+            // 
+            // comboBoxCategoryInstrument
+            // 
+            this.comboBoxCategoryInstrument.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
+            this.comboBoxCategoryInstrument.DataBindings.Add(new System.Windows.Forms.Binding("SelectedValue", this.iNSTRUMENTBindingSource, "Category_Id", true));
+            this.comboBoxCategoryInstrument.DataSource = this.categoryBindingSource1;
+            this.comboBoxCategoryInstrument.DisplayMember = "Category";
+            this.comboBoxCategoryInstrument.Enabled = false;
+            this.comboBoxCategoryInstrument.Font = new System.Drawing.Font("Nirmala UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.comboBoxCategoryInstrument.FormattingEnabled = true;
+            this.comboBoxCategoryInstrument.Location = new System.Drawing.Point(226, 224);
+            this.comboBoxCategoryInstrument.Name = "comboBoxCategoryInstrument";
+            this.comboBoxCategoryInstrument.Size = new System.Drawing.Size(200, 25);
+            this.comboBoxCategoryInstrument.TabIndex = 82;
+            this.comboBoxCategoryInstrument.ValueMember = "Category_Id";
+            // 
+            // categoryBindingSource1
+            // 
+            this.categoryBindingSource1.DataMember = "Category";
+            this.categoryBindingSource1.DataSource = this.sOFTSENSECONF_DATABASE_FINALDataSet;
+            // 
+            // labelfinding
+            // 
+            this.labelfinding.AutoSize = true;
+            this.labelfinding.Location = new System.Drawing.Point(94, 64);
+            this.labelfinding.Name = "labelfinding";
+            this.labelfinding.Size = new System.Drawing.Size(123, 21);
+            this.labelfinding.TabIndex = 81;
+            this.labelfinding.Text = "Find Instrument:";
             // 
             // pictureBox1
             // 
@@ -1064,10 +1575,11 @@ namespace SoftSensConf
             // 
             // comboBoxFindInstrument
             // 
+            this.comboBoxFindInstrument.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
             this.comboBoxFindInstrument.FormattingEnabled = true;
-            this.comboBoxFindInstrument.Location = new System.Drawing.Point(132, 74);
+            this.comboBoxFindInstrument.Location = new System.Drawing.Point(226, 64);
             this.comboBoxFindInstrument.Name = "comboBoxFindInstrument";
-            this.comboBoxFindInstrument.Size = new System.Drawing.Size(201, 29);
+            this.comboBoxFindInstrument.Size = new System.Drawing.Size(200, 29);
             this.comboBoxFindInstrument.TabIndex = 54;
             this.comboBoxFindInstrument.SelectedIndexChanged += new System.EventHandler(this.comboBoxFindInstrument_SelectedIndexChanged);
             // 
@@ -1075,228 +1587,195 @@ namespace SoftSensConf
             // 
             this.labelMatching.AutoSize = true;
             this.labelMatching.Font = new System.Drawing.Font("Nirmala UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelMatching.Location = new System.Drawing.Point(380, 279);
+            this.labelMatching.Location = new System.Drawing.Point(682, 598);
             this.labelMatching.Name = "labelMatching";
-            this.labelMatching.Size = new System.Drawing.Size(194, 17);
+            this.labelMatching.Size = new System.Drawing.Size(129, 17);
             this.labelMatching.TabIndex = 53;
-            this.labelMatching.Text = "Instrument db and config match";
+            this.labelMatching.Text = "db and config match";
+            this.labelMatching.Visible = false;
             // 
             // textBoxMatch
             // 
-            this.textBoxMatch.Location = new System.Drawing.Point(580, 280);
+            this.textBoxMatch.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
+            this.textBoxMatch.Font = new System.Drawing.Font("Nirmala UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.textBoxMatch.Location = new System.Drawing.Point(828, 595);
             this.textBoxMatch.Name = "textBoxMatch";
-            this.textBoxMatch.Size = new System.Drawing.Size(156, 29);
+            this.textBoxMatch.Size = new System.Drawing.Size(154, 25);
             this.textBoxMatch.TabIndex = 52;
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Microsoft Uighur", 21.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(585, 104);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(151, 38);
-            this.label1.TabIndex = 50;
-            this.label1.Text = "Instrument Data";
-            // 
-            // labelDataBaseInstrument
-            // 
-            this.labelDataBaseInstrument.AutoSize = true;
-            this.labelDataBaseInstrument.Font = new System.Drawing.Font("Microsoft Uighur", 21.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelDataBaseInstrument.Location = new System.Drawing.Point(135, 108);
-            this.labelDataBaseInstrument.Name = "labelDataBaseInstrument";
-            this.labelDataBaseInstrument.Size = new System.Drawing.Size(188, 38);
-            this.labelDataBaseInstrument.TabIndex = 49;
-            this.labelDataBaseInstrument.Text = "Instrument DataBase";
+            this.textBoxMatch.Visible = false;
             // 
             // tagNameTextBox
             // 
+            this.tagNameTextBox.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
             this.tagNameTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.iNSTRUMENTBindingSource, "TagName", true));
-            this.tagNameTextBox.Location = new System.Drawing.Point(133, 149);
+            this.tagNameTextBox.Enabled = false;
+            this.tagNameTextBox.Font = new System.Drawing.Font("Nirmala UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.tagNameTextBox.Location = new System.Drawing.Point(618, 188);
             this.tagNameTextBox.Name = "tagNameTextBox";
-            this.tagNameTextBox.Size = new System.Drawing.Size(200, 29);
+            this.tagNameTextBox.Size = new System.Drawing.Size(200, 25);
             this.tagNameTextBox.TabIndex = 20;
             // 
-            // descriptionTextBox1
+            // descriptionTextBoxInstrument
             // 
-            this.descriptionTextBox1.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.iNSTRUMENTBindingSource, "Description", true));
-            this.descriptionTextBox1.Location = new System.Drawing.Point(133, 175);
-            this.descriptionTextBox1.Name = "descriptionTextBox1";
-            this.descriptionTextBox1.Size = new System.Drawing.Size(200, 29);
-            this.descriptionTextBox1.TabIndex = 22;
+            this.descriptionTextBoxInstrument.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
+            this.descriptionTextBoxInstrument.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.iNSTRUMENTBindingSource, "Description", true));
+            this.descriptionTextBoxInstrument.Enabled = false;
+            this.descriptionTextBoxInstrument.Font = new System.Drawing.Font("Nirmala UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.descriptionTextBoxInstrument.Location = new System.Drawing.Point(226, 193);
+            this.descriptionTextBoxInstrument.Name = "descriptionTextBoxInstrument";
+            this.descriptionTextBoxInstrument.Size = new System.Drawing.Size(200, 25);
+            this.descriptionTextBoxInstrument.TabIndex = 22;
             // 
             // lower_range_valueTextBox
             // 
+            this.lower_range_valueTextBox.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
             this.lower_range_valueTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.iNSTRUMENTBindingSource, "Lower_range_value", true));
-            this.lower_range_valueTextBox.Location = new System.Drawing.Point(133, 201);
+            this.lower_range_valueTextBox.Enabled = false;
+            this.lower_range_valueTextBox.Font = new System.Drawing.Font("Nirmala UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lower_range_valueTextBox.Location = new System.Drawing.Point(618, 250);
             this.lower_range_valueTextBox.Name = "lower_range_valueTextBox";
-            this.lower_range_valueTextBox.Size = new System.Drawing.Size(200, 29);
+            this.lower_range_valueTextBox.Size = new System.Drawing.Size(200, 25);
             this.lower_range_valueTextBox.TabIndex = 24;
             // 
             // upper_range_valueTextBox
             // 
+            this.upper_range_valueTextBox.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
             this.upper_range_valueTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.iNSTRUMENTBindingSource, "Upper_range_value", true));
-            this.upper_range_valueTextBox.Location = new System.Drawing.Point(133, 227);
+            this.upper_range_valueTextBox.Enabled = false;
+            this.upper_range_valueTextBox.Font = new System.Drawing.Font("Nirmala UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.upper_range_valueTextBox.Location = new System.Drawing.Point(618, 219);
             this.upper_range_valueTextBox.Name = "upper_range_valueTextBox";
-            this.upper_range_valueTextBox.Size = new System.Drawing.Size(200, 29);
+            this.upper_range_valueTextBox.Size = new System.Drawing.Size(200, 25);
             this.upper_range_valueTextBox.TabIndex = 26;
             // 
             // alarm_LowTextBox
             // 
+            this.alarm_LowTextBox.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
             this.alarm_LowTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.iNSTRUMENTBindingSource, "Alarm_Low", true));
-            this.alarm_LowTextBox.Location = new System.Drawing.Point(133, 253);
+            this.alarm_LowTextBox.Enabled = false;
+            this.alarm_LowTextBox.Font = new System.Drawing.Font("Nirmala UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.alarm_LowTextBox.Location = new System.Drawing.Point(618, 312);
             this.alarm_LowTextBox.Name = "alarm_LowTextBox";
-            this.alarm_LowTextBox.Size = new System.Drawing.Size(200, 29);
+            this.alarm_LowTextBox.Size = new System.Drawing.Size(200, 25);
             this.alarm_LowTextBox.TabIndex = 28;
             // 
             // alarm_highTextBox
             // 
+            this.alarm_highTextBox.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
             this.alarm_highTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.iNSTRUMENTBindingSource, "Alarm_high", true));
-            this.alarm_highTextBox.Location = new System.Drawing.Point(133, 279);
+            this.alarm_highTextBox.Enabled = false;
+            this.alarm_highTextBox.Font = new System.Drawing.Font("Nirmala UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.alarm_highTextBox.Location = new System.Drawing.Point(618, 281);
             this.alarm_highTextBox.Name = "alarm_highTextBox";
-            this.alarm_highTextBox.Size = new System.Drawing.Size(200, 29);
+            this.alarm_highTextBox.Size = new System.Drawing.Size(200, 25);
             this.alarm_highTextBox.TabIndex = 30;
-            // 
-            // category_IdTextBox
-            // 
-            this.category_IdTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.iNSTRUMENTBindingSource, "Category_Id", true));
-            this.category_IdTextBox.Location = new System.Drawing.Point(133, 305);
-            this.category_IdTextBox.Name = "category_IdTextBox";
-            this.category_IdTextBox.Size = new System.Drawing.Size(200, 29);
-            this.category_IdTextBox.TabIndex = 32;
-            // 
-            // model_IdTextBox
-            // 
-            this.model_IdTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.iNSTRUMENTBindingSource, "Model_Id", true));
-            this.model_IdTextBox.Location = new System.Drawing.Point(133, 331);
-            this.model_IdTextBox.Name = "model_IdTextBox";
-            this.model_IdTextBox.Size = new System.Drawing.Size(200, 29);
-            this.model_IdTextBox.TabIndex = 34;
-            // 
-            // manufactor_IdTextBox
-            // 
-            this.manufactor_IdTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.iNSTRUMENTBindingSource, "Manufactor_Id", true));
-            this.manufactor_IdTextBox.Location = new System.Drawing.Point(133, 357);
-            this.manufactor_IdTextBox.Name = "manufactor_IdTextBox";
-            this.manufactor_IdTextBox.Size = new System.Drawing.Size(200, 29);
-            this.manufactor_IdTextBox.TabIndex = 36;
-            // 
-            // dAU_IdTextBox1
-            // 
-            this.dAU_IdTextBox1.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.iNSTRUMENTBindingSource, "DAU_Id", true));
-            this.dAU_IdTextBox1.Location = new System.Drawing.Point(133, 383);
-            this.dAU_IdTextBox1.Name = "dAU_IdTextBox1";
-            this.dAU_IdTextBox1.Size = new System.Drawing.Size(200, 29);
-            this.dAU_IdTextBox1.TabIndex = 38;
-            // 
-            // communication_IdTextBox
-            // 
-            this.communication_IdTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.iNSTRUMENTBindingSource, "Communication_Id", true));
-            this.communication_IdTextBox.Location = new System.Drawing.Point(133, 409);
-            this.communication_IdTextBox.Name = "communication_IdTextBox";
-            this.communication_IdTextBox.Size = new System.Drawing.Size(200, 29);
-            this.communication_IdTextBox.TabIndex = 40;
             // 
             // frequencyTextBox
             // 
+            this.frequencyTextBox.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
             this.frequencyTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.iNSTRUMENTBindingSource, "Frequency", true));
-            this.frequencyTextBox.Location = new System.Drawing.Point(133, 435);
+            this.frequencyTextBox.Enabled = false;
+            this.frequencyTextBox.Font = new System.Drawing.Font("Nirmala UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.frequencyTextBox.Location = new System.Drawing.Point(226, 379);
             this.frequencyTextBox.Name = "frequencyTextBox";
-            this.frequencyTextBox.Size = new System.Drawing.Size(200, 29);
+            this.frequencyTextBox.Size = new System.Drawing.Size(200, 25);
             this.frequencyTextBox.TabIndex = 42;
-            // 
-            // area_IdTextBox
-            // 
-            this.area_IdTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.iNSTRUMENTBindingSource, "Area_Id", true));
-            this.area_IdTextBox.Location = new System.Drawing.Point(133, 461);
-            this.area_IdTextBox.Name = "area_IdTextBox";
-            this.area_IdTextBox.Size = new System.Drawing.Size(200, 29);
-            this.area_IdTextBox.TabIndex = 44;
-            // 
-            // innput_Output_IdTextBox
-            // 
-            this.innput_Output_IdTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.iNSTRUMENTBindingSource, "Innput_Output_Id", true));
-            this.innput_Output_IdTextBox.Location = new System.Drawing.Point(133, 487);
-            this.innput_Output_IdTextBox.Name = "innput_Output_IdTextBox";
-            this.innput_Output_IdTextBox.Size = new System.Drawing.Size(200, 29);
-            this.innput_Output_IdTextBox.TabIndex = 46;
+            this.frequencyTextBox.TextChanged += new System.EventHandler(this.frequencyTextBox_TextChanged);
             // 
             // textBoxConnectionP1
             // 
             this.textBoxConnectionP1.BackColor = System.Drawing.Color.Gray;
             this.textBoxConnectionP1.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.textBoxConnectionP1.ForeColor = System.Drawing.Color.Lime;
-            this.textBoxConnectionP1.Location = new System.Drawing.Point(616, 506);
+            this.textBoxConnectionP1.Location = new System.Drawing.Point(723, 499);
             this.textBoxConnectionP1.Name = "textBoxConnectionP1";
             this.textBoxConnectionP1.Size = new System.Drawing.Size(109, 24);
             this.textBoxConnectionP1.TabIndex = 19;
+            this.textBoxConnectionP1.Visible = false;
             // 
             // textBoxAH
             // 
-            this.textBoxAH.Location = new System.Drawing.Point(580, 248);
+            this.textBoxAH.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
+            this.textBoxAH.Font = new System.Drawing.Font("Nirmala UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.textBoxAH.Location = new System.Drawing.Point(828, 533);
             this.textBoxAH.MaxLength = 4;
             this.textBoxAH.Name = "textBoxAH";
-            this.textBoxAH.Size = new System.Drawing.Size(156, 29);
+            this.textBoxAH.Size = new System.Drawing.Size(154, 25);
             this.textBoxAH.TabIndex = 5;
+            this.textBoxAH.Visible = false;
             this.textBoxAH.TextChanged += new System.EventHandler(this.textBoxAH_TextChanged);
             this.textBoxAH.Enter += new System.EventHandler(this.textBoxAH_Enter);
             // 
             // textBoxAL
             // 
-            this.textBoxAL.Location = new System.Drawing.Point(580, 222);
+            this.textBoxAL.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
+            this.textBoxAL.Font = new System.Drawing.Font("Nirmala UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.textBoxAL.Location = new System.Drawing.Point(828, 564);
             this.textBoxAL.MaxLength = 4;
             this.textBoxAL.Name = "textBoxAL";
-            this.textBoxAL.Size = new System.Drawing.Size(156, 29);
+            this.textBoxAL.Size = new System.Drawing.Size(154, 25);
             this.textBoxAL.TabIndex = 4;
+            this.textBoxAL.Visible = false;
             this.textBoxAL.TextChanged += new System.EventHandler(this.textBoxAL_TextChanged);
             this.textBoxAL.Enter += new System.EventHandler(this.textBoxAL_Enter);
             this.textBoxAL.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textBoxAL_KeyPress);
             // 
             // textBoxURV
             // 
-            this.textBoxURV.Location = new System.Drawing.Point(580, 196);
+            this.textBoxURV.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
+            this.textBoxURV.Font = new System.Drawing.Font("Nirmala UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.textBoxURV.Location = new System.Drawing.Point(828, 471);
             this.textBoxURV.MaxLength = 6;
             this.textBoxURV.Name = "textBoxURV";
-            this.textBoxURV.Size = new System.Drawing.Size(156, 29);
+            this.textBoxURV.Size = new System.Drawing.Size(154, 25);
             this.textBoxURV.TabIndex = 3;
+            this.textBoxURV.Visible = false;
             this.textBoxURV.TextChanged += new System.EventHandler(this.textBoxURV_TextChanged);
             this.textBoxURV.Enter += new System.EventHandler(this.textBoxURV_Enter);
             // 
             // textBoxLRV
             // 
-            this.textBoxLRV.Location = new System.Drawing.Point(580, 171);
+            this.textBoxLRV.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
+            this.textBoxLRV.Font = new System.Drawing.Font("Nirmala UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.textBoxLRV.Location = new System.Drawing.Point(828, 502);
             this.textBoxLRV.MaxLength = 6;
             this.textBoxLRV.Name = "textBoxLRV";
-            this.textBoxLRV.Size = new System.Drawing.Size(156, 29);
+            this.textBoxLRV.Size = new System.Drawing.Size(154, 25);
             this.textBoxLRV.TabIndex = 2;
+            this.textBoxLRV.Visible = false;
             this.textBoxLRV.TextChanged += new System.EventHandler(this.textBoxLRV_TextChanged);
             this.textBoxLRV.Enter += new System.EventHandler(this.textBoxLRV_Enter);
             this.textBoxLRV.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textBoxLRV_KeyPress);
             // 
             // textBoxTag
             // 
-            this.textBoxTag.Location = new System.Drawing.Point(580, 145);
+            this.textBoxTag.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
+            this.textBoxTag.Font = new System.Drawing.Font("Nirmala UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.textBoxTag.Location = new System.Drawing.Point(828, 440);
             this.textBoxTag.MaxLength = 10;
             this.textBoxTag.Name = "textBoxTag";
-            this.textBoxTag.Size = new System.Drawing.Size(156, 29);
+            this.textBoxTag.Size = new System.Drawing.Size(154, 25);
             this.textBoxTag.TabIndex = 0;
+            this.textBoxTag.Visible = false;
             this.textBoxTag.TextChanged += new System.EventHandler(this.textBox1_TextChanged);
             this.textBoxTag.Enter += new System.EventHandler(this.textBoxTag_Enter);
             // 
-            // configuration_Edit_DateDateTimePicker1
+            // configuration_Edit_DateDateTimePickerInstrument
             // 
-            this.configuration_Edit_DateDateTimePicker1.DataBindings.Add(new System.Windows.Forms.Binding("Value", this.iNSTRUMENTBindingSource, "Configuration_Edit_Date", true));
-            this.configuration_Edit_DateDateTimePicker1.Font = new System.Drawing.Font("Nirmala UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.configuration_Edit_DateDateTimePicker1.Location = new System.Drawing.Point(133, 513);
-            this.configuration_Edit_DateDateTimePicker1.Name = "configuration_Edit_DateDateTimePicker1";
-            this.configuration_Edit_DateDateTimePicker1.Size = new System.Drawing.Size(200, 25);
-            this.configuration_Edit_DateDateTimePicker1.TabIndex = 48;
+            this.configuration_Edit_DateDateTimePickerInstrument.DataBindings.Add(new System.Windows.Forms.Binding("Value", this.iNSTRUMENTBindingSource, "Configuration_Edit_Date", true));
+            this.configuration_Edit_DateDateTimePickerInstrument.Enabled = false;
+            this.configuration_Edit_DateDateTimePickerInstrument.Font = new System.Drawing.Font("Nirmala UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.configuration_Edit_DateDateTimePickerInstrument.Location = new System.Drawing.Point(227, 472);
+            this.configuration_Edit_DateDateTimePickerInstrument.Name = "configuration_Edit_DateDateTimePickerInstrument";
+            this.configuration_Edit_DateDateTimePickerInstrument.Size = new System.Drawing.Size(199, 25);
+            this.configuration_Edit_DateDateTimePickerInstrument.TabIndex = 48;
             // 
             // buttonRetrieve
             // 
             this.buttonRetrieve.Font = new System.Drawing.Font("Nirmala UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.buttonRetrieve.Location = new System.Drawing.Point(580, 315);
+            this.buttonRetrieve.Location = new System.Drawing.Point(618, 346);
             this.buttonRetrieve.Name = "buttonRetrieve";
-            this.buttonRetrieve.Size = new System.Drawing.Size(202, 23);
+            this.buttonRetrieve.Size = new System.Drawing.Size(200, 27);
             this.buttonRetrieve.TabIndex = 18;
             this.buttonRetrieve.Text = "Retrieve data from instrument";
             this.buttonRetrieve.UseVisualStyleBackColor = true;
@@ -1306,18 +1785,18 @@ namespace SoftSensConf
             // buttonSendValues
             // 
             this.buttonSendValues.Font = new System.Drawing.Font("Nirmala UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.buttonSendValues.Location = new System.Drawing.Point(580, 389);
+            this.buttonSendValues.Location = new System.Drawing.Point(618, 408);
             this.buttonSendValues.Name = "buttonSendValues";
-            this.buttonSendValues.Size = new System.Drawing.Size(156, 23);
+            this.buttonSendValues.Size = new System.Drawing.Size(200, 27);
             this.buttonSendValues.TabIndex = 17;
-            this.buttonSendValues.Text = "Send values to device";
+            this.buttonSendValues.Text = "Send selected setup to device";
             this.buttonSendValues.UseVisualStyleBackColor = true;
             this.buttonSendValues.Click += new System.EventHandler(this.buttonSendValues_Click);
             this.buttonSendValues.MouseHover += new System.EventHandler(this.buttonSendValues_MouseHover);
             // 
             // buttonClear
             // 
-            this.buttonClear.Location = new System.Drawing.Point(367, 506);
+            this.buttonClear.Location = new System.Drawing.Point(630, 559);
             this.buttonClear.Name = "buttonClear";
             this.buttonClear.Size = new System.Drawing.Size(75, 23);
             this.buttonClear.TabIndex = 16;
@@ -1332,9 +1811,9 @@ namespace SoftSensConf
             this.statusStrip1.BackColor = System.Drawing.Color.Lavender;
             this.statusStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.toolStripStatusLabel1});
-            this.statusStrip1.Location = new System.Drawing.Point(3, 725);
+            this.statusStrip1.Location = new System.Drawing.Point(3, 708);
             this.statusStrip1.Name = "statusStrip1";
-            this.statusStrip1.Size = new System.Drawing.Size(1185, 22);
+            this.statusStrip1.Size = new System.Drawing.Size(1179, 22);
             this.statusStrip1.TabIndex = 15;
             this.statusStrip1.Text = "statusStrip1";
             // 
@@ -1347,7 +1826,7 @@ namespace SoftSensConf
             // 
             // buttonSave
             // 
-            this.buttonSave.Location = new System.Drawing.Point(448, 509);
+            this.buttonSave.Location = new System.Drawing.Point(711, 562);
             this.buttonSave.Name = "buttonSave";
             this.buttonSave.Size = new System.Drawing.Size(75, 23);
             this.buttonSave.TabIndex = 14;
@@ -1360,9 +1839,9 @@ namespace SoftSensConf
             // buttonUpdate
             // 
             this.buttonUpdate.Font = new System.Drawing.Font("Nirmala UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.buttonUpdate.Location = new System.Drawing.Point(580, 344);
+            this.buttonUpdate.Location = new System.Drawing.Point(618, 377);
             this.buttonUpdate.Name = "buttonUpdate";
-            this.buttonUpdate.Size = new System.Drawing.Size(156, 23);
+            this.buttonUpdate.Size = new System.Drawing.Size(200, 27);
             this.buttonUpdate.TabIndex = 13;
             this.buttonUpdate.Text = "Update";
             this.buttonUpdate.UseVisualStyleBackColor = true;
@@ -1371,7 +1850,7 @@ namespace SoftSensConf
             // 
             // buttonLoad
             // 
-            this.buttonLoad.Location = new System.Drawing.Point(367, 480);
+            this.buttonLoad.Location = new System.Drawing.Point(680, 547);
             this.buttonLoad.Name = "buttonLoad";
             this.buttonLoad.Size = new System.Drawing.Size(75, 23);
             this.buttonLoad.TabIndex = 12;
@@ -1384,81 +1863,91 @@ namespace SoftSensConf
             // labelAH
             // 
             this.labelAH.AutoSize = true;
-            this.labelAH.Font = new System.Drawing.Font("Franklin Gothic Medium", 9F, System.Drawing.FontStyle.Bold);
-            this.labelAH.Location = new System.Drawing.Point(489, 252);
+            this.labelAH.Font = new System.Drawing.Font("Nirmala UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelAH.Location = new System.Drawing.Point(785, 527);
             this.labelAH.Name = "labelAH";
-            this.labelAH.Size = new System.Drawing.Size(75, 16);
+            this.labelAH.Size = new System.Drawing.Size(74, 17);
             this.labelAH.TabIndex = 10;
             this.labelAH.Text = "Alarm high:";
+            this.labelAH.Visible = false;
             this.labelAH.MouseHover += new System.EventHandler(this.labelAH_MouseHover);
             // 
             // labelAL
             // 
             this.labelAL.AutoSize = true;
-            this.labelAL.Font = new System.Drawing.Font("Franklin Gothic Medium", 9F, System.Drawing.FontStyle.Bold);
-            this.labelAL.Location = new System.Drawing.Point(494, 224);
+            this.labelAL.Font = new System.Drawing.Font("Nirmala UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelAL.Location = new System.Drawing.Point(792, 570);
             this.labelAL.Name = "labelAL";
-            this.labelAL.Size = new System.Drawing.Size(70, 16);
+            this.labelAL.Size = new System.Drawing.Size(69, 17);
             this.labelAL.TabIndex = 9;
             this.labelAL.Text = "Alarm low:";
+            this.labelAL.Visible = false;
             this.labelAL.MouseHover += new System.EventHandler(this.labelAL_MouseHover);
             // 
             // labelURV
             // 
             this.labelURV.AutoSize = true;
-            this.labelURV.Font = new System.Drawing.Font("Franklin Gothic Medium", 9F, System.Drawing.FontStyle.Bold);
-            this.labelURV.Location = new System.Drawing.Point(444, 200);
+            this.labelURV.Font = new System.Drawing.Font("Nirmala UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelURV.Location = new System.Drawing.Point(741, 469);
             this.labelURV.Name = "labelURV";
-            this.labelURV.Size = new System.Drawing.Size(118, 16);
+            this.labelURV.Size = new System.Drawing.Size(120, 17);
             this.labelURV.TabIndex = 8;
             this.labelURV.Text = "Upper range value:";
+            this.labelURV.Visible = false;
             this.labelURV.MouseHover += new System.EventHandler(this.labelURV_MouseHover);
             // 
             // labelLRV
             // 
             this.labelLRV.AutoSize = true;
-            this.labelLRV.Font = new System.Drawing.Font("Franklin Gothic Medium", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelLRV.Location = new System.Drawing.Point(444, 175);
+            this.labelLRV.Font = new System.Drawing.Font("Nirmala UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelLRV.Location = new System.Drawing.Point(744, 496);
             this.labelLRV.Name = "labelLRV";
-            this.labelLRV.Size = new System.Drawing.Size(119, 16);
+            this.labelLRV.Size = new System.Drawing.Size(118, 17);
             this.labelLRV.TabIndex = 7;
             this.labelLRV.Text = "Lower range value:";
+            this.labelLRV.Visible = false;
             this.labelLRV.MouseHover += new System.EventHandler(this.labelLRV_MouseHover);
             // 
             // labelTag
             // 
             this.labelTag.AutoSize = true;
-            this.labelTag.Font = new System.Drawing.Font("Franklin Gothic Medium", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelTag.Location = new System.Drawing.Point(499, 149);
+            this.labelTag.Font = new System.Drawing.Font("Nirmala UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelTag.Location = new System.Drawing.Point(797, 434);
             this.labelTag.Name = "labelTag";
-            this.labelTag.Size = new System.Drawing.Size(63, 16);
+            this.labelTag.Size = new System.Drawing.Size(64, 17);
             this.labelTag.TabIndex = 6;
             this.labelTag.Text = "Tagname:";
+            this.labelTag.Visible = false;
             this.labelTag.MouseHover += new System.EventHandler(this.labelTag_MouseHover);
+            // 
+            // pictureBoxDisconnected2
+            // 
+            this.pictureBoxDisconnected2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(46)))), ((int)(((byte)(51)))), ((int)(((byte)(73)))));
+            this.pictureBoxDisconnected2.Image = global::SoftSensConf.Properties.Resources.iconfinder_wifi_off_2561213;
+            this.pictureBoxDisconnected2.Location = new System.Drawing.Point(841, 16);
+            this.pictureBoxDisconnected2.Name = "pictureBoxDisconnected2";
+            this.pictureBoxDisconnected2.Size = new System.Drawing.Size(131, 77);
+            this.pictureBoxDisconnected2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBoxDisconnected2.TabIndex = 94;
+            this.pictureBoxDisconnected2.TabStop = false;
+            // 
+            // pictureBox4
+            // 
+            this.pictureBox4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(46)))), ((int)(((byte)(51)))), ((int)(((byte)(73)))));
+            this.pictureBox4.Image = global::SoftSensConf.Properties.Resources.iconfinder_wifi_Symbol_925808;
+            this.pictureBox4.Location = new System.Drawing.Point(841, 16);
+            this.pictureBox4.Name = "pictureBox4";
+            this.pictureBox4.Size = new System.Drawing.Size(131, 77);
+            this.pictureBox4.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox4.TabIndex = 93;
+            this.pictureBox4.TabStop = false;
+            this.pictureBox4.Visible = false;
             // 
             // tabPageConnection
             // 
             this.tabPageConnection.AutoScroll = true;
             this.tabPageConnection.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(46)))), ((int)(((byte)(51)))), ((int)(((byte)(73)))));
-            this.tabPageConnection.Controls.Add(this.comboBoxFindingDeviceRDC);
-            this.tabPageConnection.Controls.Add(this.RDCFIND);
-            this.tabPageConnection.Controls.Add(this.pictureBoxDisconnected);
-            this.tabPageConnection.Controls.Add(this.pictureBoxCONNECTED);
-            this.tabPageConnection.Controls.Add(rDC_IdLabel1);
-            this.tabPageConnection.Controls.Add(this.rDC_IdTextBox);
-            this.tabPageConnection.Controls.Add(descriptionLabel2);
-            this.tabPageConnection.Controls.Add(this.descriptionTextBox2);
-            this.tabPageConnection.Controls.Add(mCU_IdLabel);
-            this.tabPageConnection.Controls.Add(this.mCU_IdTextBox);
-            this.tabPageConnection.Controls.Add(area_IdLabel2);
-            this.tabPageConnection.Controls.Add(this.area_IdTextBox1);
-            this.tabPageConnection.Controls.Add(manufactor_IdLabel2);
-            this.tabPageConnection.Controls.Add(this.manufactor_IdTextBox1);
-            this.tabPageConnection.Controls.Add(model_IdLabel2);
-            this.tabPageConnection.Controls.Add(this.model_IdTextBox1);
-            this.tabPageConnection.Controls.Add(configuration_Edit_DateLabel2);
-            this.tabPageConnection.Controls.Add(this.configuration_Edit_DateDateTimePicker2);
-            this.tabPageConnection.Controls.Add(this.buttonDisconnectInstrument);
+            this.tabPageConnection.Controls.Add(this.labelheader);
             this.tabPageConnection.Controls.Add(this.buttonConnectFromDB);
             this.tabPageConnection.Controls.Add(this.comboBoxCategory_DAU);
             this.tabPageConnection.Controls.Add(this.comboBoxManu_DAU);
@@ -1466,8 +1955,6 @@ namespace SoftSensConf
             this.tabPageConnection.Controls.Add(this.comboBoxModel_DAU);
             this.tabPageConnection.Controls.Add(this.comboBoxAREA_DAU);
             this.tabPageConnection.Controls.Add(this.comboBoxRDC_DAU);
-            this.tabPageConnection.Controls.Add(dAU_IdLabel);
-            this.tabPageConnection.Controls.Add(this.dAU_IdTextBox);
             this.tabPageConnection.Controls.Add(this.descriptionTextBox);
             this.tabPageConnection.Controls.Add(this.cOMPortTextBox);
             this.tabPageConnection.Controls.Add(this.bAUDRateTextBox);
@@ -1483,10 +1970,7 @@ namespace SoftSensConf
             this.tabPageConnection.Controls.Add(configuration_edit_dateLabel);
             this.tabPageConnection.Controls.Add(this.configuration_edit_dateDateTimePicker);
             this.tabPageConnection.Controls.Add(this.comboBoxFindDevice);
-            this.tabPageConnection.Controls.Add(this.labelFindDevice);
-            this.tabPageConnection.Controls.Add(this.buttonCancelDAU);
             this.tabPageConnection.Controls.Add(this.buttonNEW);
-            this.tabPageConnection.Controls.Add(this.buttonDAU_Save);
             this.tabPageConnection.Controls.Add(this.buttonChange);
             this.tabPageConnection.Controls.Add(this.toolStripback);
             this.tabPageConnection.Controls.Add(this.labelBitrate);
@@ -1496,158 +1980,52 @@ namespace SoftSensConf
             this.tabPageConnection.Controls.Add(this.buttonConnect);
             this.tabPageConnection.Controls.Add(this.ComboBoxBaud);
             this.tabPageConnection.Controls.Add(this.ComboBoxPorts);
+            this.tabPageConnection.Controls.Add(this.panel2);
+            this.tabPageConnection.Controls.Add(this.panel1);
             this.tabPageConnection.ForeColor = System.Drawing.Color.Black;
             this.tabPageConnection.Location = new System.Drawing.Point(4, 34);
             this.tabPageConnection.Name = "tabPageConnection";
             this.tabPageConnection.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPageConnection.Size = new System.Drawing.Size(1191, 750);
+            this.tabPageConnection.Size = new System.Drawing.Size(991, 750);
             this.tabPageConnection.TabIndex = 0;
             this.tabPageConnection.Text = "Connection";
             this.tabPageConnection.Enter += new System.EventHandler(this.tabPageConnection_Enter);
             // 
-            // comboBoxFindingDeviceRDC
+            // labelheader
             // 
-            this.comboBoxFindingDeviceRDC.DataSource = this.rDCBindingSource;
-            this.comboBoxFindingDeviceRDC.DisplayMember = "RDC_Id";
-            this.comboBoxFindingDeviceRDC.FormattingEnabled = true;
-            this.comboBoxFindingDeviceRDC.Location = new System.Drawing.Point(198, 224);
-            this.comboBoxFindingDeviceRDC.Name = "comboBoxFindingDeviceRDC";
-            this.comboBoxFindingDeviceRDC.Size = new System.Drawing.Size(200, 29);
-            this.comboBoxFindingDeviceRDC.TabIndex = 82;
-            this.comboBoxFindingDeviceRDC.SelectedIndexChanged += new System.EventHandler(this.comboBoxFindingDeviceRDC_SelectedIndexChanged);
-            // 
-            // RDCFIND
-            // 
-            this.RDCFIND.AutoSize = true;
-            this.RDCFIND.Location = new System.Drawing.Point(16, 224);
-            this.RDCFIND.Name = "RDCFIND";
-            this.RDCFIND.Size = new System.Drawing.Size(93, 21);
-            this.RDCFIND.TabIndex = 81;
-            this.RDCFIND.Text = "Find Device:";
-            // 
-            // pictureBoxDisconnected
-            // 
-            this.pictureBoxDisconnected.Image = global::SoftSensConf.Properties.Resources.iconfinder_wifi_off_2561213;
-            this.pictureBoxDisconnected.Location = new System.Drawing.Point(1058, 6);
-            this.pictureBoxDisconnected.Name = "pictureBoxDisconnected";
-            this.pictureBoxDisconnected.Size = new System.Drawing.Size(127, 68);
-            this.pictureBoxDisconnected.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBoxDisconnected.TabIndex = 80;
-            this.pictureBoxDisconnected.TabStop = false;
-            // 
-            // pictureBoxCONNECTED
-            // 
-            this.pictureBoxCONNECTED.Image = global::SoftSensConf.Properties.Resources.iconfinder_wifi_Symbol_925808;
-            this.pictureBoxCONNECTED.Location = new System.Drawing.Point(1065, 6);
-            this.pictureBoxCONNECTED.Name = "pictureBoxCONNECTED";
-            this.pictureBoxCONNECTED.Size = new System.Drawing.Size(120, 68);
-            this.pictureBoxCONNECTED.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBoxCONNECTED.TabIndex = 79;
-            this.pictureBoxCONNECTED.TabStop = false;
-            this.pictureBoxCONNECTED.Visible = false;
-            // 
-            // rDC_IdTextBox
-            // 
-            this.rDC_IdTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.rDCBindingSource, "RDC_Id", true));
-            this.rDC_IdTextBox.Font = new System.Drawing.Font("Nirmala UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.rDC_IdTextBox.Location = new System.Drawing.Point(198, 275);
-            this.rDC_IdTextBox.Name = "rDC_IdTextBox";
-            this.rDC_IdTextBox.Size = new System.Drawing.Size(200, 25);
-            this.rDC_IdTextBox.TabIndex = 66;
-            // 
-            // descriptionTextBox2
-            // 
-            this.descriptionTextBox2.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.rDCBindingSource, "Description", true));
-            this.descriptionTextBox2.Font = new System.Drawing.Font("Nirmala UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.descriptionTextBox2.Location = new System.Drawing.Point(198, 310);
-            this.descriptionTextBox2.Name = "descriptionTextBox2";
-            this.descriptionTextBox2.Size = new System.Drawing.Size(200, 25);
-            this.descriptionTextBox2.TabIndex = 68;
-            // 
-            // mCU_IdTextBox
-            // 
-            this.mCU_IdTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.rDCBindingSource, "MCU_Id", true));
-            this.mCU_IdTextBox.Font = new System.Drawing.Font("Nirmala UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.mCU_IdTextBox.Location = new System.Drawing.Point(198, 345);
-            this.mCU_IdTextBox.Name = "mCU_IdTextBox";
-            this.mCU_IdTextBox.Size = new System.Drawing.Size(200, 25);
-            this.mCU_IdTextBox.TabIndex = 70;
-            // 
-            // area_IdTextBox1
-            // 
-            this.area_IdTextBox1.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.rDCBindingSource, "Area_Id", true));
-            this.area_IdTextBox1.Font = new System.Drawing.Font("Nirmala UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.area_IdTextBox1.Location = new System.Drawing.Point(198, 380);
-            this.area_IdTextBox1.Name = "area_IdTextBox1";
-            this.area_IdTextBox1.Size = new System.Drawing.Size(200, 25);
-            this.area_IdTextBox1.TabIndex = 72;
-            // 
-            // manufactor_IdTextBox1
-            // 
-            this.manufactor_IdTextBox1.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.rDCBindingSource, "Manufactor_Id", true));
-            this.manufactor_IdTextBox1.Font = new System.Drawing.Font("Nirmala UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.manufactor_IdTextBox1.Location = new System.Drawing.Point(198, 415);
-            this.manufactor_IdTextBox1.Name = "manufactor_IdTextBox1";
-            this.manufactor_IdTextBox1.Size = new System.Drawing.Size(200, 25);
-            this.manufactor_IdTextBox1.TabIndex = 74;
-            // 
-            // model_IdTextBox1
-            // 
-            this.model_IdTextBox1.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.rDCBindingSource, "Model_Id", true));
-            this.model_IdTextBox1.Font = new System.Drawing.Font("Nirmala UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.model_IdTextBox1.Location = new System.Drawing.Point(198, 450);
-            this.model_IdTextBox1.Name = "model_IdTextBox1";
-            this.model_IdTextBox1.Size = new System.Drawing.Size(200, 25);
-            this.model_IdTextBox1.TabIndex = 76;
-            // 
-            // configuration_Edit_DateDateTimePicker2
-            // 
-            this.configuration_Edit_DateDateTimePicker2.DataBindings.Add(new System.Windows.Forms.Binding("Value", this.rDCBindingSource, "Configuration_Edit_Date", true));
-            this.configuration_Edit_DateDateTimePicker2.Font = new System.Drawing.Font("Nirmala UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.configuration_Edit_DateDateTimePicker2.Location = new System.Drawing.Point(198, 485);
-            this.configuration_Edit_DateDateTimePicker2.Name = "configuration_Edit_DateDateTimePicker2";
-            this.configuration_Edit_DateDateTimePicker2.Size = new System.Drawing.Size(200, 25);
-            this.configuration_Edit_DateDateTimePicker2.TabIndex = 78;
-            // 
-            // buttonDisconnectInstrument
-            // 
-            this.buttonDisconnectInstrument.FlatAppearance.BorderSize = 0;
-            this.buttonDisconnectInstrument.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.buttonDisconnectInstrument.Font = new System.Drawing.Font("Nirmala UI", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.buttonDisconnectInstrument.ForeColor = System.Drawing.Color.Red;
-            this.buttonDisconnectInstrument.Location = new System.Drawing.Point(618, 566);
-            this.buttonDisconnectInstrument.Name = "buttonDisconnectInstrument";
-            this.buttonDisconnectInstrument.Size = new System.Drawing.Size(293, 33);
-            this.buttonDisconnectInstrument.TabIndex = 65;
-            this.buttonDisconnectInstrument.Text = "Disconnect from instrument";
-            this.buttonDisconnectInstrument.UseVisualStyleBackColor = true;
-            this.buttonDisconnectInstrument.Visible = false;
-            this.buttonDisconnectInstrument.Click += new System.EventHandler(this.buttonDisconnectInstrument_Click_1);
+            this.labelheader.AutoSize = true;
+            this.labelheader.Font = new System.Drawing.Font("Nirmala UI", 27.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelheader.Location = new System.Drawing.Point(3, 16);
+            this.labelheader.Name = "labelheader";
+            this.labelheader.Size = new System.Drawing.Size(262, 50);
+            this.labelheader.TabIndex = 99;
+            this.labelheader.Text = "SoftSenseConf";
             // 
             // buttonConnectFromDB
             // 
+            this.buttonConnectFromDB.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(61)))), ((int)(((byte)(74)))));
             this.buttonConnectFromDB.FlatAppearance.BorderSize = 0;
             this.buttonConnectFromDB.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.buttonConnectFromDB.Font = new System.Drawing.Font("Nirmala UI", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.buttonConnectFromDB.ForeColor = System.Drawing.Color.Lime;
-            this.buttonConnectFromDB.Location = new System.Drawing.Point(645, 566);
+            this.buttonConnectFromDB.Location = new System.Drawing.Point(688, 558);
             this.buttonConnectFromDB.Name = "buttonConnectFromDB";
             this.buttonConnectFromDB.Size = new System.Drawing.Size(230, 33);
             this.buttonConnectFromDB.TabIndex = 63;
             this.buttonConnectFromDB.Text = "Connect to instrument";
-            this.buttonConnectFromDB.UseVisualStyleBackColor = true;
+            this.buttonConnectFromDB.UseVisualStyleBackColor = false;
             this.buttonConnectFromDB.Click += new System.EventHandler(this.buttonConnectFromDB_Click);
             // 
             // comboBoxCategory_DAU
             // 
-            this.comboBoxCategory_DAU.BackColor = System.Drawing.Color.White;
+            this.comboBoxCategory_DAU.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
             this.comboBoxCategory_DAU.DataBindings.Add(new System.Windows.Forms.Binding("SelectedValue", this.dAUBindingSource, "Category_Id", true));
             this.comboBoxCategory_DAU.DataSource = this.categoryBindingSource;
             this.comboBoxCategory_DAU.DisplayMember = "Category";
             this.comboBoxCategory_DAU.Enabled = false;
             this.comboBoxCategory_DAU.Font = new System.Drawing.Font("Nirmala UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.comboBoxCategory_DAU.FormattingEnabled = true;
-            this.comboBoxCategory_DAU.Location = new System.Drawing.Point(659, 456);
+            this.comboBoxCategory_DAU.Location = new System.Drawing.Point(702, 434);
             this.comboBoxCategory_DAU.Name = "comboBoxCategory_DAU";
             this.comboBoxCategory_DAU.Size = new System.Drawing.Size(200, 25);
             this.comboBoxCategory_DAU.TabIndex = 62;
@@ -1655,14 +2033,14 @@ namespace SoftSensConf
             // 
             // comboBoxManu_DAU
             // 
-            this.comboBoxManu_DAU.BackColor = System.Drawing.Color.White;
+            this.comboBoxManu_DAU.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
             this.comboBoxManu_DAU.DataBindings.Add(new System.Windows.Forms.Binding("SelectedValue", this.dAUBindingSource, "Manufactor_Id", true));
             this.comboBoxManu_DAU.DataSource = this.manufactorBindingSource;
             this.comboBoxManu_DAU.DisplayMember = "Manufactor";
             this.comboBoxManu_DAU.Enabled = false;
             this.comboBoxManu_DAU.Font = new System.Drawing.Font("Nirmala UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.comboBoxManu_DAU.FormattingEnabled = true;
-            this.comboBoxManu_DAU.Location = new System.Drawing.Point(659, 430);
+            this.comboBoxManu_DAU.Location = new System.Drawing.Point(702, 405);
             this.comboBoxManu_DAU.Name = "comboBoxManu_DAU";
             this.comboBoxManu_DAU.Size = new System.Drawing.Size(200, 25);
             this.comboBoxManu_DAU.TabIndex = 61;
@@ -1670,14 +2048,14 @@ namespace SoftSensConf
             // 
             // comboBoxCommunication_DAU
             // 
-            this.comboBoxCommunication_DAU.BackColor = System.Drawing.Color.White;
+            this.comboBoxCommunication_DAU.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
             this.comboBoxCommunication_DAU.DataBindings.Add(new System.Windows.Forms.Binding("SelectedValue", this.dAUBindingSource, "Communication_Id", true));
             this.comboBoxCommunication_DAU.DataSource = this.communicationBindingSource;
             this.comboBoxCommunication_DAU.DisplayMember = "Communication";
             this.comboBoxCommunication_DAU.Enabled = false;
             this.comboBoxCommunication_DAU.Font = new System.Drawing.Font("Nirmala UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.comboBoxCommunication_DAU.FormattingEnabled = true;
-            this.comboBoxCommunication_DAU.Location = new System.Drawing.Point(659, 404);
+            this.comboBoxCommunication_DAU.Location = new System.Drawing.Point(702, 374);
             this.comboBoxCommunication_DAU.Name = "comboBoxCommunication_DAU";
             this.comboBoxCommunication_DAU.Size = new System.Drawing.Size(200, 25);
             this.comboBoxCommunication_DAU.TabIndex = 60;
@@ -1685,14 +2063,14 @@ namespace SoftSensConf
             // 
             // comboBoxModel_DAU
             // 
-            this.comboBoxModel_DAU.BackColor = System.Drawing.Color.White;
+            this.comboBoxModel_DAU.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
             this.comboBoxModel_DAU.DataBindings.Add(new System.Windows.Forms.Binding("SelectedValue", this.dAUBindingSource, "Model_Id", true));
             this.comboBoxModel_DAU.DataSource = this.modelBindingSource;
             this.comboBoxModel_DAU.DisplayMember = "Model";
             this.comboBoxModel_DAU.Enabled = false;
             this.comboBoxModel_DAU.Font = new System.Drawing.Font("Nirmala UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.comboBoxModel_DAU.FormattingEnabled = true;
-            this.comboBoxModel_DAU.Location = new System.Drawing.Point(659, 378);
+            this.comboBoxModel_DAU.Location = new System.Drawing.Point(702, 343);
             this.comboBoxModel_DAU.Name = "comboBoxModel_DAU";
             this.comboBoxModel_DAU.Size = new System.Drawing.Size(200, 25);
             this.comboBoxModel_DAU.TabIndex = 59;
@@ -1700,14 +2078,14 @@ namespace SoftSensConf
             // 
             // comboBoxAREA_DAU
             // 
-            this.comboBoxAREA_DAU.BackColor = System.Drawing.Color.White;
+            this.comboBoxAREA_DAU.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
             this.comboBoxAREA_DAU.DataBindings.Add(new System.Windows.Forms.Binding("SelectedValue", this.dAUBindingSource, "Area_Id", true));
             this.comboBoxAREA_DAU.DataSource = this.areaBindingSource;
             this.comboBoxAREA_DAU.DisplayMember = "Area";
             this.comboBoxAREA_DAU.Enabled = false;
             this.comboBoxAREA_DAU.Font = new System.Drawing.Font("Nirmala UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.comboBoxAREA_DAU.FormattingEnabled = true;
-            this.comboBoxAREA_DAU.Location = new System.Drawing.Point(659, 353);
+            this.comboBoxAREA_DAU.Location = new System.Drawing.Point(702, 312);
             this.comboBoxAREA_DAU.Name = "comboBoxAREA_DAU";
             this.comboBoxAREA_DAU.Size = new System.Drawing.Size(200, 25);
             this.comboBoxAREA_DAU.TabIndex = 58;
@@ -1715,59 +2093,48 @@ namespace SoftSensConf
             // 
             // comboBoxRDC_DAU
             // 
-            this.comboBoxRDC_DAU.BackColor = System.Drawing.Color.White;
+            this.comboBoxRDC_DAU.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
             this.comboBoxRDC_DAU.DataBindings.Add(new System.Windows.Forms.Binding("SelectedValue", this.dAUBindingSource, "RDC_Id", true));
             this.comboBoxRDC_DAU.DataSource = this.rDCBindingSource;
             this.comboBoxRDC_DAU.DisplayMember = "Description";
             this.comboBoxRDC_DAU.Enabled = false;
             this.comboBoxRDC_DAU.Font = new System.Drawing.Font("Nirmala UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.comboBoxRDC_DAU.FormattingEnabled = true;
-            this.comboBoxRDC_DAU.Location = new System.Drawing.Point(659, 326);
+            this.comboBoxRDC_DAU.Location = new System.Drawing.Point(702, 281);
             this.comboBoxRDC_DAU.Name = "comboBoxRDC_DAU";
             this.comboBoxRDC_DAU.Size = new System.Drawing.Size(200, 25);
             this.comboBoxRDC_DAU.TabIndex = 57;
             this.comboBoxRDC_DAU.ValueMember = "RDC_Id";
             // 
-            // dAU_IdTextBox
-            // 
-            this.dAU_IdTextBox.BackColor = System.Drawing.Color.White;
-            this.dAU_IdTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.dAUBindingSource, "DAU_Id", true));
-            this.dAU_IdTextBox.Enabled = false;
-            this.dAU_IdTextBox.Font = new System.Drawing.Font("Nirmala UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.dAU_IdTextBox.Location = new System.Drawing.Point(659, 270);
-            this.dAU_IdTextBox.Name = "dAU_IdTextBox";
-            this.dAU_IdTextBox.Size = new System.Drawing.Size(200, 25);
-            this.dAU_IdTextBox.TabIndex = 36;
-            // 
             // descriptionTextBox
             // 
-            this.descriptionTextBox.BackColor = System.Drawing.Color.White;
+            this.descriptionTextBox.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
             this.descriptionTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.dAUBindingSource, "Description", true));
             this.descriptionTextBox.Enabled = false;
             this.descriptionTextBox.Font = new System.Drawing.Font("Nirmala UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.descriptionTextBox.Location = new System.Drawing.Point(659, 298);
+            this.descriptionTextBox.Location = new System.Drawing.Point(702, 250);
             this.descriptionTextBox.Name = "descriptionTextBox";
             this.descriptionTextBox.Size = new System.Drawing.Size(200, 25);
             this.descriptionTextBox.TabIndex = 38;
             // 
             // cOMPortTextBox
             // 
-            this.cOMPortTextBox.BackColor = System.Drawing.Color.White;
+            this.cOMPortTextBox.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
             this.cOMPortTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.dAUBindingSource, "COMPort", true));
             this.cOMPortTextBox.Enabled = false;
             this.cOMPortTextBox.Font = new System.Drawing.Font("Nirmala UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.cOMPortTextBox.Location = new System.Drawing.Point(659, 483);
+            this.cOMPortTextBox.Location = new System.Drawing.Point(702, 463);
             this.cOMPortTextBox.Name = "cOMPortTextBox";
             this.cOMPortTextBox.Size = new System.Drawing.Size(200, 25);
             this.cOMPortTextBox.TabIndex = 52;
             // 
             // bAUDRateTextBox
             // 
-            this.bAUDRateTextBox.BackColor = System.Drawing.Color.White;
+            this.bAUDRateTextBox.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
             this.bAUDRateTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.dAUBindingSource, "BAUDRate", true));
             this.bAUDRateTextBox.Enabled = false;
             this.bAUDRateTextBox.Font = new System.Drawing.Font("Nirmala UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.bAUDRateTextBox.Location = new System.Drawing.Point(659, 509);
+            this.bAUDRateTextBox.Location = new System.Drawing.Point(702, 494);
             this.bAUDRateTextBox.Name = "bAUDRateTextBox";
             this.bAUDRateTextBox.Size = new System.Drawing.Size(200, 25);
             this.bAUDRateTextBox.TabIndex = 54;
@@ -1778,75 +2145,43 @@ namespace SoftSensConf
             this.configuration_edit_dateDateTimePicker.DataBindings.Add(new System.Windows.Forms.Binding("Value", this.dAUBindingSource, "Configuration_edit_date", true));
             this.configuration_edit_dateDateTimePicker.Enabled = false;
             this.configuration_edit_dateDateTimePicker.Font = new System.Drawing.Font("Nirmala UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.configuration_edit_dateDateTimePicker.Location = new System.Drawing.Point(659, 535);
+            this.configuration_edit_dateDateTimePicker.Location = new System.Drawing.Point(702, 525);
             this.configuration_edit_dateDateTimePicker.Name = "configuration_edit_dateDateTimePicker";
             this.configuration_edit_dateDateTimePicker.Size = new System.Drawing.Size(200, 25);
             this.configuration_edit_dateDateTimePicker.TabIndex = 56;
             // 
             // comboBoxFindDevice
             // 
-            this.comboBoxFindDevice.BackColor = System.Drawing.Color.White;
+            this.comboBoxFindDevice.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
             this.comboBoxFindDevice.DataSource = this.dAU_OnlyIdDesBindingSource;
             this.comboBoxFindDevice.DisplayMember = "DAU_Id";
             this.comboBoxFindDevice.Font = new System.Drawing.Font("Nirmala UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.comboBoxFindDevice.ForeColor = System.Drawing.Color.Black;
             this.comboBoxFindDevice.FormattingEnabled = true;
-            this.comboBoxFindDevice.Location = new System.Drawing.Point(659, 168);
+            this.comboBoxFindDevice.Location = new System.Drawing.Point(702, 120);
             this.comboBoxFindDevice.Name = "comboBoxFindDevice";
             this.comboBoxFindDevice.Size = new System.Drawing.Size(200, 25);
             this.comboBoxFindDevice.TabIndex = 35;
             this.comboBoxFindDevice.ValueMember = "DAU_Id";
             this.comboBoxFindDevice.SelectedIndexChanged += new System.EventHandler(this.comboBoxFindDevice_SelectedIndexChanged);
             // 
-            // labelFindDevice
-            // 
-            this.labelFindDevice.AutoSize = true;
-            this.labelFindDevice.Font = new System.Drawing.Font("Nirmala UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelFindDevice.Location = new System.Drawing.Point(563, 174);
-            this.labelFindDevice.Name = "labelFindDevice";
-            this.labelFindDevice.Size = new System.Drawing.Size(74, 17);
-            this.labelFindDevice.TabIndex = 34;
-            this.labelFindDevice.Text = "Find Device";
-            // 
-            // buttonCancelDAU
-            // 
-            this.buttonCancelDAU.Font = new System.Drawing.Font("Nirmala UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.buttonCancelDAU.Location = new System.Drawing.Point(769, 232);
-            this.buttonCancelDAU.Name = "buttonCancelDAU";
-            this.buttonCancelDAU.Size = new System.Drawing.Size(90, 23);
-            this.buttonCancelDAU.TabIndex = 33;
-            this.buttonCancelDAU.Text = "Cancel";
-            this.buttonCancelDAU.UseVisualStyleBackColor = true;
-            this.buttonCancelDAU.Click += new System.EventHandler(this.buttonCancelDAU_Click);
-            // 
             // buttonNEW
             // 
             this.buttonNEW.Font = new System.Drawing.Font("Nirmala UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.buttonNEW.Location = new System.Drawing.Point(659, 232);
+            this.buttonNEW.Location = new System.Drawing.Point(702, 155);
             this.buttonNEW.Name = "buttonNEW";
-            this.buttonNEW.Size = new System.Drawing.Size(89, 23);
+            this.buttonNEW.Size = new System.Drawing.Size(90, 24);
             this.buttonNEW.TabIndex = 32;
             this.buttonNEW.Text = "New";
             this.buttonNEW.UseVisualStyleBackColor = true;
             this.buttonNEW.Click += new System.EventHandler(this.buttonNEW_Click);
             // 
-            // buttonDAU_Save
-            // 
-            this.buttonDAU_Save.Font = new System.Drawing.Font("Nirmala UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.buttonDAU_Save.Location = new System.Drawing.Point(769, 203);
-            this.buttonDAU_Save.Name = "buttonDAU_Save";
-            this.buttonDAU_Save.Size = new System.Drawing.Size(90, 23);
-            this.buttonDAU_Save.TabIndex = 31;
-            this.buttonDAU_Save.Text = "Save";
-            this.buttonDAU_Save.UseVisualStyleBackColor = true;
-            this.buttonDAU_Save.Click += new System.EventHandler(this.buttonDAU_Save_Click);
-            // 
             // buttonChange
             // 
             this.buttonChange.Font = new System.Drawing.Font("Nirmala UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.buttonChange.Location = new System.Drawing.Point(659, 203);
+            this.buttonChange.Location = new System.Drawing.Point(811, 155);
             this.buttonChange.Name = "buttonChange";
-            this.buttonChange.Size = new System.Drawing.Size(89, 23);
+            this.buttonChange.Size = new System.Drawing.Size(90, 24);
             this.buttonChange.TabIndex = 30;
             this.buttonChange.Text = "Change";
             this.buttonChange.UseVisualStyleBackColor = true;
@@ -1857,9 +2192,9 @@ namespace SoftSensConf
             this.toolStripback.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.toolStripback.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.toolStripLabel1});
-            this.toolStripback.Location = new System.Drawing.Point(3, 722);
+            this.toolStripback.Location = new System.Drawing.Point(3, 705);
             this.toolStripback.Name = "toolStripback";
-            this.toolStripback.Size = new System.Drawing.Size(1185, 25);
+            this.toolStripback.Size = new System.Drawing.Size(989, 25);
             this.toolStripback.TabIndex = 7;
             this.toolStripback.Text = "toolStrip1";
             // 
@@ -1873,7 +2208,7 @@ namespace SoftSensConf
             // 
             this.labelBitrate.AutoSize = true;
             this.labelBitrate.Font = new System.Drawing.Font("Nirmala UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelBitrate.Location = new System.Drawing.Point(811, 116);
+            this.labelBitrate.Location = new System.Drawing.Point(262, 49);
             this.labelBitrate.Name = "labelBitrate";
             this.labelBitrate.Size = new System.Drawing.Size(48, 17);
             this.labelBitrate.TabIndex = 6;
@@ -1885,7 +2220,7 @@ namespace SoftSensConf
             // 
             this.labelCom.AutoSize = true;
             this.labelCom.Font = new System.Drawing.Font("Nirmala UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelCom.Location = new System.Drawing.Point(802, 80);
+            this.labelCom.Location = new System.Drawing.Point(253, 13);
             this.labelCom.Name = "labelCom";
             this.labelCom.Size = new System.Drawing.Size(62, 17);
             this.labelCom.TabIndex = 5;
@@ -1899,7 +2234,7 @@ namespace SoftSensConf
             this.radioButtonConnected.BackColor = System.Drawing.Color.Transparent;
             this.radioButtonConnected.Font = new System.Drawing.Font("Nirmala UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.radioButtonConnected.ForeColor = System.Drawing.Color.LimeGreen;
-            this.radioButtonConnected.Location = new System.Drawing.Point(1004, 152);
+            this.radioButtonConnected.Location = new System.Drawing.Point(593, 18);
             this.radioButtonConnected.Name = "radioButtonConnected";
             this.radioButtonConnected.Size = new System.Drawing.Size(14, 13);
             this.radioButtonConnected.TabIndex = 4;
@@ -1912,7 +2247,7 @@ namespace SoftSensConf
             // buttonDisconnect
             // 
             this.buttonDisconnect.Font = new System.Drawing.Font("Nirmala UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.buttonDisconnect.Location = new System.Drawing.Point(886, 181);
+            this.buttonDisconnect.Location = new System.Drawing.Point(475, 47);
             this.buttonDisconnect.Name = "buttonDisconnect";
             this.buttonDisconnect.Size = new System.Drawing.Size(112, 23);
             this.buttonDisconnect.TabIndex = 3;
@@ -1928,7 +2263,7 @@ namespace SoftSensConf
             this.buttonConnect.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.buttonConnect.Font = new System.Drawing.Font("Nirmala UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.buttonConnect.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(126)))), ((int)(((byte)(249)))));
-            this.buttonConnect.Location = new System.Drawing.Point(886, 147);
+            this.buttonConnect.Location = new System.Drawing.Point(475, 13);
             this.buttonConnect.Name = "buttonConnect";
             this.buttonConnect.Size = new System.Drawing.Size(112, 23);
             this.buttonConnect.TabIndex = 2;
@@ -1950,7 +2285,7 @@ namespace SoftSensConf
             "38400",
             "76800",
             "153600"});
-            this.ComboBoxBaud.Location = new System.Drawing.Point(870, 116);
+            this.ComboBoxBaud.Location = new System.Drawing.Point(321, 49);
             this.ComboBoxBaud.Name = "ComboBoxBaud";
             this.ComboBoxBaud.Size = new System.Drawing.Size(148, 25);
             this.ComboBoxBaud.TabIndex = 1;
@@ -1961,13 +2296,327 @@ namespace SoftSensConf
             // 
             this.ComboBoxPorts.Font = new System.Drawing.Font("Nirmala UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.ComboBoxPorts.FormattingEnabled = true;
-            this.ComboBoxPorts.Location = new System.Drawing.Point(870, 78);
+            this.ComboBoxPorts.Location = new System.Drawing.Point(321, 11);
             this.ComboBoxPorts.Name = "ComboBoxPorts";
             this.ComboBoxPorts.Size = new System.Drawing.Size(148, 25);
             this.ComboBoxPorts.TabIndex = 0;
             this.ComboBoxPorts.Visible = false;
             this.ComboBoxPorts.Enter += new System.EventHandler(this.comboBoxPorts_Enter);
             this.ComboBoxPorts.MouseHover += new System.EventHandler(this.ComboBoxPorts_MouseHover);
+            // 
+            // panel2
+            // 
+            this.panel2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(61)))), ((int)(((byte)(74)))));
+            this.panel2.Controls.Add(this.buttonDisconnectInstrument);
+            this.panel2.Controls.Add(this.labelFindDevice);
+            this.panel2.Controls.Add(this.buttonDAU_Save);
+            this.panel2.Controls.Add(this.buttonCancelDAU);
+            this.panel2.Controls.Add(this.pictureBoxDisconnected);
+            this.panel2.Controls.Add(this.pictureBoxCONNECTED);
+            this.panel2.Location = new System.Drawing.Point(482, 3);
+            this.panel2.Name = "panel2";
+            this.panel2.Size = new System.Drawing.Size(513, 609);
+            this.panel2.TabIndex = 106;
+            // 
+            // buttonDisconnectInstrument
+            // 
+            this.buttonDisconnectInstrument.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(61)))), ((int)(((byte)(74)))));
+            this.buttonDisconnectInstrument.FlatAppearance.BorderSize = 0;
+            this.buttonDisconnectInstrument.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.buttonDisconnectInstrument.Font = new System.Drawing.Font("Nirmala UI", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.buttonDisconnectInstrument.ForeColor = System.Drawing.Color.Red;
+            this.buttonDisconnectInstrument.Location = new System.Drawing.Point(177, 553);
+            this.buttonDisconnectInstrument.Name = "buttonDisconnectInstrument";
+            this.buttonDisconnectInstrument.Size = new System.Drawing.Size(293, 33);
+            this.buttonDisconnectInstrument.TabIndex = 65;
+            this.buttonDisconnectInstrument.Text = "Disconnect from instrument";
+            this.buttonDisconnectInstrument.UseVisualStyleBackColor = false;
+            this.buttonDisconnectInstrument.Visible = false;
+            this.buttonDisconnectInstrument.Click += new System.EventHandler(this.buttonDisconnectInstrument_Click_1);
+            // 
+            // labelFindDevice
+            // 
+            this.labelFindDevice.AutoSize = true;
+            this.labelFindDevice.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(61)))), ((int)(((byte)(74)))));
+            this.labelFindDevice.Font = new System.Drawing.Font("Nirmala UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelFindDevice.Location = new System.Drawing.Point(50, 120);
+            this.labelFindDevice.Name = "labelFindDevice";
+            this.labelFindDevice.Size = new System.Drawing.Size(148, 17);
+            this.labelFindDevice.TabIndex = 34;
+            this.labelFindDevice.Text = "Find Data Aqusition Unit";
+            // 
+            // buttonDAU_Save
+            // 
+            this.buttonDAU_Save.Font = new System.Drawing.Font("Nirmala UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.buttonDAU_Save.Location = new System.Drawing.Point(220, 182);
+            this.buttonDAU_Save.Name = "buttonDAU_Save";
+            this.buttonDAU_Save.Size = new System.Drawing.Size(90, 24);
+            this.buttonDAU_Save.TabIndex = 31;
+            this.buttonDAU_Save.Text = "Save";
+            this.buttonDAU_Save.UseVisualStyleBackColor = true;
+            this.buttonDAU_Save.Click += new System.EventHandler(this.buttonDAU_Save_Click);
+            // 
+            // buttonCancelDAU
+            // 
+            this.buttonCancelDAU.Font = new System.Drawing.Font("Nirmala UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.buttonCancelDAU.Location = new System.Drawing.Point(330, 184);
+            this.buttonCancelDAU.Name = "buttonCancelDAU";
+            this.buttonCancelDAU.Size = new System.Drawing.Size(90, 24);
+            this.buttonCancelDAU.TabIndex = 33;
+            this.buttonCancelDAU.Text = "Cancel";
+            this.buttonCancelDAU.UseVisualStyleBackColor = true;
+            this.buttonCancelDAU.Click += new System.EventHandler(this.buttonCancelDAU_Click);
+            // 
+            // pictureBoxDisconnected
+            // 
+            this.pictureBoxDisconnected.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(61)))), ((int)(((byte)(74)))));
+            this.pictureBoxDisconnected.Image = global::SoftSensConf.Properties.Resources.iconfinder_wifi_off_2561213;
+            this.pictureBoxDisconnected.Location = new System.Drawing.Point(359, 10);
+            this.pictureBoxDisconnected.Name = "pictureBoxDisconnected";
+            this.pictureBoxDisconnected.Size = new System.Drawing.Size(131, 76);
+            this.pictureBoxDisconnected.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBoxDisconnected.TabIndex = 80;
+            this.pictureBoxDisconnected.TabStop = false;
+            // 
+            // pictureBoxCONNECTED
+            // 
+            this.pictureBoxCONNECTED.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(61)))), ((int)(((byte)(74)))));
+            this.pictureBoxCONNECTED.Image = global::SoftSensConf.Properties.Resources.iconfinder_wifi_Symbol_925808;
+            this.pictureBoxCONNECTED.Location = new System.Drawing.Point(359, 10);
+            this.pictureBoxCONNECTED.Name = "pictureBoxCONNECTED";
+            this.pictureBoxCONNECTED.Size = new System.Drawing.Size(131, 77);
+            this.pictureBoxCONNECTED.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBoxCONNECTED.TabIndex = 79;
+            this.pictureBoxCONNECTED.TabStop = false;
+            this.pictureBoxCONNECTED.Visible = false;
+            // 
+            // panel1
+            // 
+            this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(46)))), ((int)(((byte)(51)))), ((int)(((byte)(60)))));
+            this.panel1.Controls.Add(this.buttonSaveRDC);
+            this.panel1.Controls.Add(this.rDC_IdTextBox);
+            this.panel1.Controls.Add(rDC_IdLabel1);
+            this.panel1.Controls.Add(this.buttonCancelRDC);
+            this.panel1.Controls.Add(this.buttonNEWRDC);
+            this.panel1.Controls.Add(mCU_IdLabel);
+            this.panel1.Controls.Add(this.mCU_IdTextBox);
+            this.panel1.Controls.Add(configuration_Edit_DateLabel2);
+            this.panel1.Controls.Add(model_IdLabel2);
+            this.panel1.Controls.Add(manufactor_IdLabel2);
+            this.panel1.Controls.Add(area_IdLabel2);
+            this.panel1.Controls.Add(dAU_IdLabel);
+            this.panel1.Controls.Add(this.buttonChangeRDC);
+            this.panel1.Controls.Add(this.dAU_IdTextBox);
+            this.panel1.Controls.Add(this.comboBoxAReaRDC);
+            this.panel1.Controls.Add(this.labelFIND);
+            this.panel1.Controls.Add(this.comboBoxMOdelRDC);
+            this.panel1.Controls.Add(this.comboBoxManuRDC);
+            this.panel1.Controls.Add(descriptionLabel2);
+            this.panel1.Controls.Add(this.comboBoxFindingDeviceRDC);
+            this.panel1.Controls.Add(this.descriptionTextBoxRDC);
+            this.panel1.Controls.Add(this.configuration_Edit_DateDateTimePickerRDC);
+            this.panel1.Location = new System.Drawing.Point(-4, 80);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(488, 529);
+            this.panel1.TabIndex = 105;
+            // 
+            // buttonSaveRDC
+            // 
+            this.buttonSaveRDC.Font = new System.Drawing.Font("Nirmala UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.buttonSaveRDC.Location = new System.Drawing.Point(218, 104);
+            this.buttonSaveRDC.Name = "buttonSaveRDC";
+            this.buttonSaveRDC.Size = new System.Drawing.Size(90, 24);
+            this.buttonSaveRDC.TabIndex = 103;
+            this.buttonSaveRDC.Text = "Save";
+            this.buttonSaveRDC.UseVisualStyleBackColor = true;
+            this.buttonSaveRDC.Click += new System.EventHandler(this.buttonSaveRDC_Click);
+            // 
+            // rDC_IdTextBox
+            // 
+            this.rDC_IdTextBox.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(46)))), ((int)(((byte)(51)))), ((int)(((byte)(60)))));
+            this.rDC_IdTextBox.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.rDC_IdTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.rDCBindingSource, "RDC_Id", true));
+            this.rDC_IdTextBox.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(46)))), ((int)(((byte)(51)))), ((int)(((byte)(60)))));
+            this.rDC_IdTextBox.Location = new System.Drawing.Point(4, 504);
+            this.rDC_IdTextBox.Name = "rDC_IdTextBox";
+            this.rDC_IdTextBox.Size = new System.Drawing.Size(200, 22);
+            this.rDC_IdTextBox.TabIndex = 81;
+            // 
+            // buttonCancelRDC
+            // 
+            this.buttonCancelRDC.Font = new System.Drawing.Font("Nirmala UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.buttonCancelRDC.Location = new System.Drawing.Point(328, 103);
+            this.buttonCancelRDC.Name = "buttonCancelRDC";
+            this.buttonCancelRDC.Size = new System.Drawing.Size(90, 24);
+            this.buttonCancelRDC.TabIndex = 104;
+            this.buttonCancelRDC.Text = "Cancel";
+            this.buttonCancelRDC.UseVisualStyleBackColor = true;
+            this.buttonCancelRDC.Click += new System.EventHandler(this.buttonCancelRDC_Click);
+            // 
+            // buttonNEWRDC
+            // 
+            this.buttonNEWRDC.Font = new System.Drawing.Font("Nirmala UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.buttonNEWRDC.Location = new System.Drawing.Point(218, 75);
+            this.buttonNEWRDC.Name = "buttonNEWRDC";
+            this.buttonNEWRDC.Size = new System.Drawing.Size(90, 24);
+            this.buttonNEWRDC.TabIndex = 101;
+            this.buttonNEWRDC.Text = "New";
+            this.buttonNEWRDC.UseVisualStyleBackColor = true;
+            this.buttonNEWRDC.Click += new System.EventHandler(this.buttonNEWRDC_Click);
+            // 
+            // mCU_IdTextBox
+            // 
+            this.mCU_IdTextBox.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(46)))), ((int)(((byte)(51)))), ((int)(((byte)(60)))));
+            this.mCU_IdTextBox.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.mCU_IdTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.rDCBindingSource, "MCU_Id", true));
+            this.mCU_IdTextBox.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(46)))), ((int)(((byte)(51)))), ((int)(((byte)(60)))));
+            this.mCU_IdTextBox.Location = new System.Drawing.Point(4, 494);
+            this.mCU_IdTextBox.Name = "mCU_IdTextBox";
+            this.mCU_IdTextBox.Size = new System.Drawing.Size(200, 22);
+            this.mCU_IdTextBox.TabIndex = 85;
+            // 
+            // buttonChangeRDC
+            // 
+            this.buttonChangeRDC.Font = new System.Drawing.Font("Nirmala UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.buttonChangeRDC.Location = new System.Drawing.Point(328, 75);
+            this.buttonChangeRDC.Name = "buttonChangeRDC";
+            this.buttonChangeRDC.Size = new System.Drawing.Size(90, 24);
+            this.buttonChangeRDC.TabIndex = 102;
+            this.buttonChangeRDC.Text = "Change";
+            this.buttonChangeRDC.UseVisualStyleBackColor = true;
+            this.buttonChangeRDC.Click += new System.EventHandler(this.buttonChangeRDC_Click);
+            // 
+            // dAU_IdTextBox
+            // 
+            this.dAU_IdTextBox.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(46)))), ((int)(((byte)(51)))), ((int)(((byte)(60)))));
+            this.dAU_IdTextBox.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.dAU_IdTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.dAUBindingSource, "DAU_Id", true));
+            this.dAU_IdTextBox.Font = new System.Drawing.Font("Nirmala UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.dAU_IdTextBox.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(46)))), ((int)(((byte)(51)))), ((int)(((byte)(60)))));
+            this.dAU_IdTextBox.Location = new System.Drawing.Point(3, 507);
+            this.dAU_IdTextBox.Name = "dAU_IdTextBox";
+            this.dAU_IdTextBox.Size = new System.Drawing.Size(200, 18);
+            this.dAU_IdTextBox.TabIndex = 36;
+            // 
+            // comboBoxAReaRDC
+            // 
+            this.comboBoxAReaRDC.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.comboBoxAReaRDC.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
+            this.comboBoxAReaRDC.DataBindings.Add(new System.Windows.Forms.Binding("SelectedValue", this.rDCBindingSource, "Area_Id", true));
+            this.comboBoxAReaRDC.DataSource = this.areaBindingSource1;
+            this.comboBoxAReaRDC.DisplayMember = "Area";
+            this.comboBoxAReaRDC.Enabled = false;
+            this.comboBoxAReaRDC.Font = new System.Drawing.Font("Nirmala UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.comboBoxAReaRDC.ForeColor = System.Drawing.Color.Black;
+            this.comboBoxAReaRDC.FormattingEnabled = true;
+            this.comboBoxAReaRDC.Location = new System.Drawing.Point(218, 201);
+            this.comboBoxAReaRDC.Name = "comboBoxAReaRDC";
+            this.comboBoxAReaRDC.Size = new System.Drawing.Size(200, 25);
+            this.comboBoxAReaRDC.TabIndex = 96;
+            this.comboBoxAReaRDC.ValueMember = "Area_Id";
+            // 
+            // areaBindingSource1
+            // 
+            this.areaBindingSource1.DataMember = "Area";
+            this.areaBindingSource1.DataSource = this.sOFTSENSECONF_DATABASE_FINALDataSet;
+            // 
+            // labelFIND
+            // 
+            this.labelFIND.AutoSize = true;
+            this.labelFIND.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(46)))), ((int)(((byte)(51)))), ((int)(((byte)(60)))));
+            this.labelFIND.Font = new System.Drawing.Font("Nirmala UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelFIND.Location = new System.Drawing.Point(23, 43);
+            this.labelFIND.Name = "labelFIND";
+            this.labelFIND.Size = new System.Drawing.Size(172, 17);
+            this.labelFIND.TabIndex = 100;
+            this.labelFIND.Text = "Find Remote Data Collector:";
+            // 
+            // comboBoxMOdelRDC
+            // 
+            this.comboBoxMOdelRDC.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
+            this.comboBoxMOdelRDC.DataBindings.Add(new System.Windows.Forms.Binding("SelectedValue", this.rDCBindingSource, "Model_Id", true));
+            this.comboBoxMOdelRDC.DataSource = this.modelBindingSource1;
+            this.comboBoxMOdelRDC.DisplayMember = "Model";
+            this.comboBoxMOdelRDC.Enabled = false;
+            this.comboBoxMOdelRDC.Font = new System.Drawing.Font("Nirmala UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.comboBoxMOdelRDC.ForeColor = System.Drawing.Color.Black;
+            this.comboBoxMOdelRDC.FormattingEnabled = true;
+            this.comboBoxMOdelRDC.Location = new System.Drawing.Point(218, 263);
+            this.comboBoxMOdelRDC.Name = "comboBoxMOdelRDC";
+            this.comboBoxMOdelRDC.Size = new System.Drawing.Size(200, 25);
+            this.comboBoxMOdelRDC.TabIndex = 97;
+            this.comboBoxMOdelRDC.ValueMember = "Model_Id";
+            // 
+            // modelBindingSource1
+            // 
+            this.modelBindingSource1.DataMember = "Model";
+            this.modelBindingSource1.DataSource = this.sOFTSENSECONF_DATABASE_FINALDataSet;
+            // 
+            // comboBoxManuRDC
+            // 
+            this.comboBoxManuRDC.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
+            this.comboBoxManuRDC.DataBindings.Add(new System.Windows.Forms.Binding("SelectedValue", this.rDCBindingSource, "Manufactor_Id", true));
+            this.comboBoxManuRDC.DataSource = this.manufactorBindingSource1;
+            this.comboBoxManuRDC.DisplayMember = "Manufactor";
+            this.comboBoxManuRDC.Enabled = false;
+            this.comboBoxManuRDC.Font = new System.Drawing.Font("Nirmala UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.comboBoxManuRDC.ForeColor = System.Drawing.Color.Black;
+            this.comboBoxManuRDC.FormattingEnabled = true;
+            this.comboBoxManuRDC.Location = new System.Drawing.Point(218, 232);
+            this.comboBoxManuRDC.Name = "comboBoxManuRDC";
+            this.comboBoxManuRDC.Size = new System.Drawing.Size(200, 25);
+            this.comboBoxManuRDC.TabIndex = 98;
+            this.comboBoxManuRDC.ValueMember = "Manufactor_Id";
+            // 
+            // manufactorBindingSource1
+            // 
+            this.manufactorBindingSource1.DataMember = "Manufactor";
+            this.manufactorBindingSource1.DataSource = this.sOFTSENSECONF_DATABASE_FINALDataSet;
+            // 
+            // comboBoxFindingDeviceRDC
+            // 
+            this.comboBoxFindingDeviceRDC.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
+            this.comboBoxFindingDeviceRDC.Font = new System.Drawing.Font("Nirmala UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.comboBoxFindingDeviceRDC.ForeColor = System.Drawing.Color.Black;
+            this.comboBoxFindingDeviceRDC.FormattingEnabled = true;
+            this.comboBoxFindingDeviceRDC.Location = new System.Drawing.Point(218, 40);
+            this.comboBoxFindingDeviceRDC.Name = "comboBoxFindingDeviceRDC";
+            this.comboBoxFindingDeviceRDC.Size = new System.Drawing.Size(200, 25);
+            this.comboBoxFindingDeviceRDC.TabIndex = 95;
+            this.comboBoxFindingDeviceRDC.SelectedIndexChanged += new System.EventHandler(this.comboBoxFindingDeviceRDC_SelectedIndexChanged_1);
+            // 
+            // descriptionTextBoxRDC
+            // 
+            this.descriptionTextBoxRDC.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
+            this.descriptionTextBoxRDC.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.rDCBindingSource, "Description", true));
+            this.descriptionTextBoxRDC.Enabled = false;
+            this.descriptionTextBoxRDC.Font = new System.Drawing.Font("Nirmala UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.descriptionTextBoxRDC.ForeColor = System.Drawing.Color.Black;
+            this.descriptionTextBoxRDC.Location = new System.Drawing.Point(218, 170);
+            this.descriptionTextBoxRDC.Multiline = true;
+            this.descriptionTextBoxRDC.Name = "descriptionTextBoxRDC";
+            this.descriptionTextBoxRDC.Size = new System.Drawing.Size(200, 25);
+            this.descriptionTextBoxRDC.TabIndex = 83;
+            // 
+            // configuration_Edit_DateDateTimePickerRDC
+            // 
+            this.configuration_Edit_DateDateTimePickerRDC.CalendarForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(200)))), ((int)(((byte)(200)))), ((int)(((byte)(200)))));
+            this.configuration_Edit_DateDateTimePickerRDC.CalendarMonthBackground = System.Drawing.Color.FromArgb(((int)(((byte)(74)))), ((int)(((byte)(79)))), ((int)(((byte)(99)))));
+            this.configuration_Edit_DateDateTimePickerRDC.CalendarTitleBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(74)))), ((int)(((byte)(79)))), ((int)(((byte)(99)))));
+            this.configuration_Edit_DateDateTimePickerRDC.CalendarTitleForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(200)))), ((int)(((byte)(200)))), ((int)(((byte)(200)))));
+            this.configuration_Edit_DateDateTimePickerRDC.CalendarTrailingForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(200)))), ((int)(((byte)(200)))), ((int)(((byte)(200)))));
+            this.configuration_Edit_DateDateTimePickerRDC.DataBindings.Add(new System.Windows.Forms.Binding("Value", this.rDCBindingSource, "Configuration_Edit_Date", true));
+            this.configuration_Edit_DateDateTimePickerRDC.Enabled = false;
+            this.configuration_Edit_DateDateTimePickerRDC.Font = new System.Drawing.Font("Nirmala UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.configuration_Edit_DateDateTimePickerRDC.Location = new System.Drawing.Point(218, 295);
+            this.configuration_Edit_DateDateTimePickerRDC.Name = "configuration_Edit_DateDateTimePickerRDC";
+            this.configuration_Edit_DateDateTimePickerRDC.Size = new System.Drawing.Size(200, 25);
+            this.configuration_Edit_DateDateTimePickerRDC.TabIndex = 93;
+            // 
+            // rDCOnlyIdDesBindingSource
+            // 
+            this.rDCOnlyIdDesBindingSource.DataMember = "RDCOnlyIdDes";
+            this.rDCOnlyIdDesBindingSource.DataSource = this.sOFTSENSECONF_DATABASE_FINALDataSet;
             // 
             // tabControl
             // 
@@ -1981,9 +2630,9 @@ namespace SoftSensConf
             this.tabControl.ItemSize = new System.Drawing.Size(500, 30);
             this.tabControl.Location = new System.Drawing.Point(12, 12);
             this.tabControl.Name = "tabControl";
-            this.tabControl.Padding = new System.Drawing.Point(151, 5);
+            this.tabControl.Padding = new System.Drawing.Point(115, 5);
             this.tabControl.SelectedIndex = 0;
-            this.tabControl.Size = new System.Drawing.Size(1199, 788);
+            this.tabControl.Size = new System.Drawing.Size(999, 788);
             this.tabControl.TabIndex = 0;
             // 
             // iNSTRUMENTtoComboBoxBindingSource
@@ -2005,24 +2654,91 @@ namespace SoftSensConf
             // 
             // buttonExit
             // 
-            this.buttonExit.Location = new System.Drawing.Point(901, 0);
+            this.buttonExit.Location = new System.Drawing.Point(950, -3);
             this.buttonExit.Name = "buttonExit";
             this.buttonExit.Size = new System.Drawing.Size(48, 23);
             this.buttonExit.TabIndex = 1;
             this.buttonExit.Text = "X";
             this.buttonExit.UseVisualStyleBackColor = true;
             // 
-            // rDC1BindingSource
+            // rDCOnlyIdDesTableAdapter
             // 
-            this.rDC1BindingSource.DataMember = "RDC1";
-            this.rDC1BindingSource.DataSource = this.sOFTSENSECONF_DATABASE_FINALDataSet;
+            this.rDCOnlyIdDesTableAdapter.ClearBeforeFill = true;
+            // 
+            // innput_OutputTableAdapter
+            // 
+            this.innput_OutputTableAdapter.ClearBeforeFill = true;
+            // 
+            // buttonAnalogout
+            // 
+            this.buttonAnalogout.Font = new System.Drawing.Font("Nirmala UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.buttonAnalogout.Location = new System.Drawing.Point(272, 67);
+            this.buttonAnalogout.Name = "buttonAnalogout";
+            this.buttonAnalogout.Size = new System.Drawing.Size(82, 26);
+            this.buttonAnalogout.TabIndex = 103;
+            this.buttonAnalogout.Text = "Analog Out";
+            this.buttonAnalogout.UseVisualStyleBackColor = true;
+            // 
+            // buttonDigitalInn
+            // 
+            this.buttonDigitalInn.Font = new System.Drawing.Font("Nirmala UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.buttonDigitalInn.Location = new System.Drawing.Point(360, 67);
+            this.buttonDigitalInn.Name = "buttonDigitalInn";
+            this.buttonDigitalInn.Size = new System.Drawing.Size(82, 26);
+            this.buttonDigitalInn.TabIndex = 104;
+            this.buttonDigitalInn.Text = "Digital Inn";
+            this.buttonDigitalInn.UseVisualStyleBackColor = true;
+            // 
+            // buttonDigitalout
+            // 
+            this.buttonDigitalout.Font = new System.Drawing.Font("Nirmala UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.buttonDigitalout.Location = new System.Drawing.Point(448, 67);
+            this.buttonDigitalout.Name = "buttonDigitalout";
+            this.buttonDigitalout.Size = new System.Drawing.Size(82, 26);
+            this.buttonDigitalout.TabIndex = 105;
+            this.buttonDigitalout.Text = "Digital Out";
+            this.buttonDigitalout.UseVisualStyleBackColor = true;
+            // 
+            // tagNameLabel1
+            // 
+            tagNameLabel1.AutoSize = true;
+            tagNameLabel1.Location = new System.Drawing.Point(536, 83);
+            tagNameLabel1.Name = "tagNameLabel1";
+            tagNameLabel1.Size = new System.Drawing.Size(82, 21);
+            tagNameLabel1.TabIndex = 105;
+            tagNameLabel1.Text = "Tag Name:";
+            // 
+            // tagNameTextBox2
+            // 
+            this.tagNameTextBox2.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.instrument_Measure_IdBindingSource, "TagName", true));
+            this.tagNameTextBox2.Location = new System.Drawing.Point(678, 80);
+            this.tagNameTextBox2.Name = "tagNameTextBox2";
+            this.tagNameTextBox2.Size = new System.Drawing.Size(100, 29);
+            this.tagNameTextBox2.TabIndex = 106;
+            // 
+            // instrument_Log_IdLabel
+            // 
+            instrument_Log_IdLabel.AutoSize = true;
+            instrument_Log_IdLabel.Location = new System.Drawing.Point(536, 118);
+            instrument_Log_IdLabel.Name = "instrument_Log_IdLabel";
+            instrument_Log_IdLabel.Size = new System.Drawing.Size(136, 21);
+            instrument_Log_IdLabel.TabIndex = 107;
+            instrument_Log_IdLabel.Text = "Instrument Log Id:";
+            // 
+            // instrument_Log_IdTextBox2
+            // 
+            this.instrument_Log_IdTextBox2.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.instrument_Measure_IdBindingSource, "Instrument_Log_Id", true));
+            this.instrument_Log_IdTextBox2.Location = new System.Drawing.Point(678, 115);
+            this.instrument_Log_IdTextBox2.Name = "instrument_Log_IdTextBox2";
+            this.instrument_Log_IdTextBox2.Size = new System.Drawing.Size(100, 29);
+            this.instrument_Log_IdTextBox2.TabIndex = 108;
             // 
             // SoftSensConfig
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(46)))), ((int)(((byte)(51)))), ((int)(((byte)(73)))));
-            this.ClientSize = new System.Drawing.Size(1200, 667);
+            this.ClientSize = new System.Drawing.Size(1000, 667);
             this.Controls.Add(this.buttonExit);
             this.Controls.Add(this.tabControl);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
@@ -2045,24 +2761,44 @@ namespace SoftSensConf
             ((System.ComponentModel.ISupportInitialize)(this.aI_LOGBindingSource)).EndInit();
             this.tabPageCommand.ResumeLayout(false);
             this.tabPageCommand.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.bindingNavigator1)).EndInit();
+            this.bindingNavigator1.ResumeLayout(false);
+            this.bindingNavigator1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.chartPoints)).EndInit();
             this.statusStrip2.ResumeLayout(false);
             this.statusStrip2.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxDisconnected3)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).EndInit();
             this.tabPageConfiguration.ResumeLayout(false);
             this.tabPageConfiguration.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.innput_OutputBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.areaBindingSource2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.communicationBindingSource1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dAUBindingSource1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.manufactorBindingSource2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.modelBindingSource2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.categoryBindingSource1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.statusStrip1.ResumeLayout(false);
             this.statusStrip1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxDisconnected2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).EndInit();
             this.tabPageConnection.ResumeLayout(false);
             this.tabPageConnection.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxDisconnected)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxCONNECTED)).EndInit();
             this.toolStripback.ResumeLayout(false);
             this.toolStripback.PerformLayout();
+            this.panel2.ResumeLayout(false);
+            this.panel2.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxDisconnected)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxCONNECTED)).EndInit();
+            this.panel1.ResumeLayout(false);
+            this.panel1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.areaBindingSource1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.modelBindingSource1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.manufactorBindingSource1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.rDCOnlyIdDesBindingSource)).EndInit();
             this.tabControl.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.iNSTRUMENTtoComboBoxBindingSource)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.rDC1BindingSource)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -2099,38 +2835,22 @@ namespace SoftSensConf
         private System.Windows.Forms.BindingSource iNSTRUMENTBindingSource;
         private SOFTSENSECONF_DATABASE_FINALDataSetTableAdapters.INSTRUMENTTableAdapter iNSTRUMENTTableAdapter;
         private System.Windows.Forms.TabPage tabPageCommand;
-        private System.Windows.Forms.TextBox textBoxConnectionP2;
         private System.Windows.Forms.TextBox textBoxSend;
         private System.Windows.Forms.TextBox textBoxReceive;
         private System.Windows.Forms.StatusStrip statusStrip2;
         private System.Windows.Forms.ToolStripStatusLabel toolStripStatusLabel2;
-        private System.Windows.Forms.Label labelInput;
         private System.Windows.Forms.Button buttonReceive;
-        private System.Windows.Forms.Button buttonSend;
+        private System.Windows.Forms.Button buttonSendValuesToInstrument;
         private System.Windows.Forms.TabPage tabPageConfiguration;
-        private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.Label labelDataBaseInstrument;
         private System.Windows.Forms.TextBox tagNameTextBox;
-        private System.Windows.Forms.TextBox descriptionTextBox1;
+        private System.Windows.Forms.TextBox descriptionTextBoxInstrument;
         private System.Windows.Forms.TextBox lower_range_valueTextBox;
         private System.Windows.Forms.TextBox upper_range_valueTextBox;
         private System.Windows.Forms.TextBox alarm_LowTextBox;
         private System.Windows.Forms.TextBox alarm_highTextBox;
-        private System.Windows.Forms.TextBox category_IdTextBox;
-        private System.Windows.Forms.TextBox model_IdTextBox;
-        private System.Windows.Forms.TextBox manufactor_IdTextBox;
-        private System.Windows.Forms.TextBox dAU_IdTextBox1;
-        private System.Windows.Forms.TextBox communication_IdTextBox;
         private System.Windows.Forms.TextBox frequencyTextBox;
-        private System.Windows.Forms.TextBox area_IdTextBox;
-        private System.Windows.Forms.TextBox innput_Output_IdTextBox;
         private System.Windows.Forms.TextBox textBoxConnectionP1;
-        private System.Windows.Forms.TextBox textBoxAH;
-        private System.Windows.Forms.TextBox textBoxAL;
-        private System.Windows.Forms.TextBox textBoxURV;
-        private System.Windows.Forms.TextBox textBoxLRV;
-        private System.Windows.Forms.TextBox textBoxTag;
-        private System.Windows.Forms.DateTimePicker configuration_Edit_DateDateTimePicker1;
+        private System.Windows.Forms.DateTimePicker configuration_Edit_DateDateTimePickerInstrument;
         private System.Windows.Forms.Button buttonRetrieve;
         private System.Windows.Forms.Button buttonSendValues;
         private System.Windows.Forms.Button buttonClear;
@@ -2139,11 +2859,6 @@ namespace SoftSensConf
         private System.Windows.Forms.Button buttonSave;
         private System.Windows.Forms.Button buttonUpdate;
         private System.Windows.Forms.Button buttonLoad;
-        private System.Windows.Forms.Label labelAH;
-        private System.Windows.Forms.Label labelAL;
-        private System.Windows.Forms.Label labelURV;
-        private System.Windows.Forms.Label labelLRV;
-        private System.Windows.Forms.Label labelTag;
         private System.Windows.Forms.TabPage tabPageConnection;
         private System.Windows.Forms.ComboBox comboBoxCategory_DAU;
         private System.Windows.Forms.ComboBox comboBoxManu_DAU;
@@ -2172,8 +2887,6 @@ namespace SoftSensConf
         private System.Windows.Forms.ComboBox ComboBoxBaud;
         private System.Windows.Forms.ComboBox ComboBoxPorts;
         private System.Windows.Forms.TabControl tabControl;
-        private System.Windows.Forms.Label labelMatching;
-        private System.Windows.Forms.TextBox textBoxMatch;
         private System.Windows.Forms.BindingSource iNSTRUMENTtoComboBoxBindingSource;
         private SOFTSENSECONF_DATABASE_FINALDataSetTableAdapters.INSTRUMENTtoComboBoxTableAdapter iNSTRUMENTtoComboBoxTableAdapter;
         private System.Windows.Forms.ComboBox comboBoxFindInstrument;
@@ -2184,16 +2897,9 @@ namespace SoftSensConf
         private System.Windows.Forms.Button buttonExit;
         private System.Windows.Forms.Button buttonConnectFromDB;
         private System.Windows.Forms.Button buttonDisconnectInstrument;
-        private System.Windows.Forms.TextBox rDC_IdTextBox;
-        private System.Windows.Forms.TextBox descriptionTextBox2;
-        private System.Windows.Forms.TextBox mCU_IdTextBox;
-        private System.Windows.Forms.TextBox area_IdTextBox1;
-        private System.Windows.Forms.TextBox manufactor_IdTextBox1;
-        private System.Windows.Forms.TextBox model_IdTextBox1;
-        private System.Windows.Forms.DateTimePicker configuration_Edit_DateDateTimePicker2;
         private System.Windows.Forms.DataVisualization.Charting.Chart chartPoints;
         private System.Windows.Forms.Button buttonGraphstart;
-        private System.Windows.Forms.ListBox listBox1;
+        private System.Windows.Forms.ListBox listBoxDBreadings;
         private System.Windows.Forms.Button buttonstopgraph;
         private System.Windows.Forms.TextBox tagNameTextBox1;
         private System.Windows.Forms.TextBox instrument_Log_IdTextBox1;
@@ -2202,11 +2908,89 @@ namespace SoftSensConf
         private System.Windows.Forms.TextBox instrument_Log_IdTextBox;
         private System.Windows.Forms.PictureBox pictureBoxCONNECTED;
         private System.Windows.Forms.PictureBox pictureBoxDisconnected;
-        private System.Windows.Forms.PictureBox pictureBox2;
         private System.Windows.Forms.PictureBox pictureBox1;
+        private System.Windows.Forms.TextBox rDC_IdTextBox;
+        private System.Windows.Forms.TextBox descriptionTextBoxRDC;
+        private System.Windows.Forms.TextBox mCU_IdTextBox;
+        private System.Windows.Forms.DateTimePicker configuration_Edit_DateDateTimePickerRDC;
         private System.Windows.Forms.ComboBox comboBoxFindingDeviceRDC;
-        private System.Windows.Forms.Label RDCFIND;
-        private System.Windows.Forms.BindingSource rDC1BindingSource;
+        private System.Windows.Forms.BindingSource rDCOnlyIdDesBindingSource;
+        private SOFTSENSECONF_DATABASE_FINALDataSetTableAdapters.RDCOnlyIdDesTableAdapter rDCOnlyIdDesTableAdapter;
+        private System.Windows.Forms.ComboBox comboBoxManuRDC;
+        private System.Windows.Forms.BindingSource manufactorBindingSource1;
+        private System.Windows.Forms.ComboBox comboBoxMOdelRDC;
+        private System.Windows.Forms.BindingSource modelBindingSource1;
+        private System.Windows.Forms.ComboBox comboBoxAReaRDC;
+        private System.Windows.Forms.BindingSource areaBindingSource1;
+        private System.Windows.Forms.Label labelheader;
+        private System.Windows.Forms.Button buttonView;
+        private System.Windows.Forms.Button buttonSending;
+        private System.Windows.Forms.TextBox textBoxConnectionP2;
+        private System.Windows.Forms.Label labelFIND;
+        private System.Windows.Forms.Label labelfinding;
+        private System.Windows.Forms.ComboBox comboBoxCOMMInstrument;
+        private System.Windows.Forms.BindingSource communicationBindingSource1;
+        private System.Windows.Forms.ComboBox comboBoxDAUinstrument;
+        private System.Windows.Forms.BindingSource dAUBindingSource1;
+        private System.Windows.Forms.ComboBox comboBoxManuInstrument;
+        private System.Windows.Forms.BindingSource manufactorBindingSource2;
+        private System.Windows.Forms.ComboBox comboBoxModelinstrument;
+        private System.Windows.Forms.ComboBox comboBoxCategoryInstrument;
+        private System.Windows.Forms.BindingSource categoryBindingSource1;
+        private System.Windows.Forms.ComboBox comboBoxInnputOutputInstrument;
+        private System.Windows.Forms.ComboBox comboBoxAreaInstrument;
+        private System.Windows.Forms.BindingSource areaBindingSource2;
+        private System.Windows.Forms.BindingSource innput_OutputBindingSource;
+        private SOFTSENSECONF_DATABASE_FINALDataSetTableAdapters.Innput_OutputTableAdapter innput_OutputTableAdapter;
+        private System.Windows.Forms.BindingSource modelBindingSource2;
+        private System.Windows.Forms.Button buttonSendValuestodb;
+        private System.Windows.Forms.Button buttonCancelRDC;
+        private System.Windows.Forms.Button buttonSaveRDC;
+        private System.Windows.Forms.Button buttonChangeRDC;
+        private System.Windows.Forms.Button buttonNEWRDC;
+        private System.Windows.Forms.Button buttonUpdateInstrument;
+        private System.Windows.Forms.TextBox textBoxMatch;
+        private System.Windows.Forms.TextBox textBoxAH;
+        private System.Windows.Forms.TextBox textBoxAL;
+        private System.Windows.Forms.TextBox textBoxURV;
+        private System.Windows.Forms.TextBox textBoxLRV;
+        private System.Windows.Forms.TextBox textBoxTag;
+        private System.Windows.Forms.Button buttonChangeInstrument;
+        private System.Windows.Forms.Button buttonCancelInstrument;
+        private System.Windows.Forms.Button buttonNEWInstrument;
+        private System.Windows.Forms.Label labelMatching;
+        private System.Windows.Forms.Label labelAH;
+        private System.Windows.Forms.Label labelAL;
+        private System.Windows.Forms.Label labelURV;
+        private System.Windows.Forms.Label labelLRV;
+        private System.Windows.Forms.Label labelTag;
+        private System.Windows.Forms.Panel panel1;
+        private System.Windows.Forms.Panel panel2;
+        private System.Windows.Forms.Button buttonSTopsendingdata;
+        private System.Windows.Forms.PictureBox pictureBoxDisconnected3;
+        private System.Windows.Forms.PictureBox pictureBox5;
+        private System.Windows.Forms.PictureBox pictureBoxDisconnected2;
+        private System.Windows.Forms.PictureBox pictureBox4;
+        private System.Windows.Forms.Button buttonAnalogInn;
+        private System.Windows.Forms.BindingNavigator bindingNavigator1;
+        private System.Windows.Forms.ToolStripButton bindingNavigatorAddNewItem;
+        private System.Windows.Forms.ToolStripLabel bindingNavigatorCountItem;
+        private System.Windows.Forms.ToolStripButton bindingNavigatorDeleteItem;
+        private System.Windows.Forms.ToolStripButton bindingNavigatorMoveFirstItem;
+        private System.Windows.Forms.ToolStripButton bindingNavigatorMovePreviousItem;
+        private System.Windows.Forms.ToolStripSeparator bindingNavigatorSeparator;
+        private System.Windows.Forms.ToolStripTextBox bindingNavigatorPositionItem;
+        private System.Windows.Forms.ToolStripSeparator bindingNavigatorSeparator1;
+        private System.Windows.Forms.ToolStripButton bindingNavigatorMoveNextItem;
+        private System.Windows.Forms.ToolStripButton bindingNavigatorMoveLastItem;
+        private System.Windows.Forms.ToolStripSeparator bindingNavigatorSeparator2;
+        private System.Windows.Forms.Button buttonSAVELOGID;
+        private System.Windows.Forms.Button buttonNEWLOGID;
+        private System.Windows.Forms.Button buttonDigitalout;
+        private System.Windows.Forms.Button buttonDigitalInn;
+        private System.Windows.Forms.Button buttonAnalogout;
+        private System.Windows.Forms.TextBox tagNameTextBox2;
+        private System.Windows.Forms.TextBox instrument_Log_IdTextBox2;
     }
 }
 

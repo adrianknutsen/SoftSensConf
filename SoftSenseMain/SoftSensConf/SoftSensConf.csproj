@@ -175,5 +175,11 @@
   <ItemGroup>
     <None Include="Resources\iconfinder_wifi-off_2561213.png" />
   </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\iconfinder_save_3325027.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\iconfinder_download_2561424.png" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

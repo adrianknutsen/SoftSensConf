@@ -63,6 +63,26 @@ namespace SoftSensConf.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap iconfinder_download_2561424 {
+            get {
+                object obj = ResourceManager.GetObject("iconfinder_download_2561424", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap iconfinder_save_3325027 {
+            get {
+                object obj = ResourceManager.GetObject("iconfinder_save_3325027", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap iconfinder_wifi_off_2561213 {
             get {
                 object obj = ResourceManager.GetObject("iconfinder_wifi-off_2561213", resourceCulture);
