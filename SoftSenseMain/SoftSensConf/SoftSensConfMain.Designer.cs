@@ -63,12 +63,9 @@ namespace SoftSensConf
             System.Windows.Forms.Label manufactor_IdLabel2;
             System.Windows.Forms.Label model_IdLabel2;
             System.Windows.Forms.Label configuration_Edit_DateLabel2;
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(SoftSensConfig));
-            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea5 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
-            System.Windows.Forms.DataVisualization.Charting.Legend legend5 = new System.Windows.Forms.DataVisualization.Charting.Legend();
-            System.Windows.Forms.DataVisualization.Charting.Series series5 = new System.Windows.Forms.DataVisualization.Charting.Series();
-            System.Windows.Forms.Label tagNameLabel1;
-            System.Windows.Forms.Label instrument_Log_IdLabel;
+            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea1 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
+            System.Windows.Forms.DataVisualization.Charting.Legend legend1 = new System.Windows.Forms.DataVisualization.Charting.Legend();
+            System.Windows.Forms.DataVisualization.Charting.Series series1 = new System.Windows.Forms.DataVisualization.Charting.Series();
             this.serialPort1 = new System.IO.Ports.SerialPort(this.components);
             this.toolTip = new System.Windows.Forms.ToolTip(this.components);
             this.openFileDialog = new System.Windows.Forms.OpenFileDialog();
@@ -102,22 +99,10 @@ namespace SoftSensConf
             this.instrument_Measure_IdBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.aI_LOGBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.tabPageCommand = new System.Windows.Forms.TabPage();
-            this.buttonSAVELOGID = new System.Windows.Forms.Button();
-            this.buttonNEWLOGID = new System.Windows.Forms.Button();
-            this.bindingNavigator1 = new System.Windows.Forms.BindingNavigator(this.components);
-            this.bindingNavigatorAddNewItem = new System.Windows.Forms.ToolStripButton();
-            this.bindingNavigatorCountItem = new System.Windows.Forms.ToolStripLabel();
-            this.bindingNavigatorDeleteItem = new System.Windows.Forms.ToolStripButton();
-            this.bindingNavigatorMoveFirstItem = new System.Windows.Forms.ToolStripButton();
-            this.bindingNavigatorMovePreviousItem = new System.Windows.Forms.ToolStripButton();
-            this.bindingNavigatorSeparator = new System.Windows.Forms.ToolStripSeparator();
-            this.bindingNavigatorPositionItem = new System.Windows.Forms.ToolStripTextBox();
-            this.bindingNavigatorSeparator1 = new System.Windows.Forms.ToolStripSeparator();
-            this.bindingNavigatorMoveNextItem = new System.Windows.Forms.ToolStripButton();
-            this.bindingNavigatorMoveLastItem = new System.Windows.Forms.ToolStripButton();
-            this.bindingNavigatorSeparator2 = new System.Windows.Forms.ToolStripSeparator();
+            this.buttonDigitalout = new System.Windows.Forms.Button();
+            this.buttonDigitalInn = new System.Windows.Forms.Button();
+            this.buttonAnalogout = new System.Windows.Forms.Button();
             this.buttonAnalogInn = new System.Windows.Forms.Button();
-            this.buttonSendValuestodb = new System.Windows.Forms.Button();
             this.buttonSending = new System.Windows.Forms.Button();
             this.buttonView = new System.Windows.Forms.Button();
             this.tagNameTextBox1 = new System.Windows.Forms.TextBox();
@@ -131,13 +116,17 @@ namespace SoftSensConf
             this.chartPoints = new System.Windows.Forms.DataVisualization.Charting.Chart();
             this.textBoxConnectionP2 = new System.Windows.Forms.TextBox();
             this.textBoxSend = new System.Windows.Forms.TextBox();
-            this.textBoxReceive = new System.Windows.Forms.TextBox();
             this.statusStrip2 = new System.Windows.Forms.StatusStrip();
             this.toolStripStatusLabel2 = new System.Windows.Forms.ToolStripStatusLabel();
             this.buttonReceive = new System.Windows.Forms.Button();
             this.buttonSendValuesToInstrument = new System.Windows.Forms.Button();
             this.pictureBoxDisconnected3 = new System.Windows.Forms.PictureBox();
             this.pictureBox5 = new System.Windows.Forms.PictureBox();
+            this.textBoxReceive = new System.Windows.Forms.TextBox();
+            this.timeDateTimePickerAILOG = new System.Windows.Forms.DateTimePicker();
+            this.instrument_Log_IdTextBox2 = new System.Windows.Forms.TextBox();
+            this.tagNameTextBox2 = new System.Windows.Forms.TextBox();
+            this.buttonSendValuestodb = new System.Windows.Forms.Button();
             this.buttonSTopsendingdata = new System.Windows.Forms.Button();
             this.tabPageConfiguration = new System.Windows.Forms.TabPage();
             this.buttonChangeInstrument = new System.Windows.Forms.Button();
@@ -193,37 +182,8 @@ namespace SoftSensConf
             this.pictureBoxDisconnected2 = new System.Windows.Forms.PictureBox();
             this.pictureBox4 = new System.Windows.Forms.PictureBox();
             this.tabPageConnection = new System.Windows.Forms.TabPage();
-            this.labelheader = new System.Windows.Forms.Label();
-            this.buttonConnectFromDB = new System.Windows.Forms.Button();
-            this.comboBoxCategory_DAU = new System.Windows.Forms.ComboBox();
-            this.comboBoxManu_DAU = new System.Windows.Forms.ComboBox();
-            this.comboBoxCommunication_DAU = new System.Windows.Forms.ComboBox();
-            this.comboBoxModel_DAU = new System.Windows.Forms.ComboBox();
-            this.comboBoxAREA_DAU = new System.Windows.Forms.ComboBox();
-            this.comboBoxRDC_DAU = new System.Windows.Forms.ComboBox();
-            this.descriptionTextBox = new System.Windows.Forms.TextBox();
-            this.cOMPortTextBox = new System.Windows.Forms.TextBox();
-            this.bAUDRateTextBox = new System.Windows.Forms.TextBox();
-            this.configuration_edit_dateDateTimePicker = new System.Windows.Forms.DateTimePicker();
-            this.comboBoxFindDevice = new System.Windows.Forms.ComboBox();
-            this.buttonNEW = new System.Windows.Forms.Button();
-            this.buttonChange = new System.Windows.Forms.Button();
-            this.toolStripback = new System.Windows.Forms.ToolStrip();
-            this.toolStripLabel1 = new System.Windows.Forms.ToolStripLabel();
-            this.labelBitrate = new System.Windows.Forms.Label();
-            this.labelCom = new System.Windows.Forms.Label();
-            this.radioButtonConnected = new System.Windows.Forms.RadioButton();
-            this.buttonDisconnect = new System.Windows.Forms.Button();
-            this.buttonConnect = new System.Windows.Forms.Button();
-            this.ComboBoxBaud = new System.Windows.Forms.ComboBox();
-            this.ComboBoxPorts = new System.Windows.Forms.ComboBox();
-            this.panel2 = new System.Windows.Forms.Panel();
-            this.buttonDisconnectInstrument = new System.Windows.Forms.Button();
-            this.labelFindDevice = new System.Windows.Forms.Label();
-            this.buttonDAU_Save = new System.Windows.Forms.Button();
-            this.buttonCancelDAU = new System.Windows.Forms.Button();
-            this.pictureBoxDisconnected = new System.Windows.Forms.PictureBox();
-            this.pictureBoxCONNECTED = new System.Windows.Forms.PictureBox();
+            this.panel3 = new System.Windows.Forms.Panel();
+            this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.panel1 = new System.Windows.Forms.Panel();
             this.buttonSaveRDC = new System.Windows.Forms.Button();
             this.rDC_IdTextBox = new System.Windows.Forms.TextBox();
@@ -242,6 +202,36 @@ namespace SoftSensConf
             this.comboBoxFindingDeviceRDC = new System.Windows.Forms.ComboBox();
             this.descriptionTextBoxRDC = new System.Windows.Forms.TextBox();
             this.configuration_Edit_DateDateTimePickerRDC = new System.Windows.Forms.DateTimePicker();
+            this.buttonConnectFromDB = new System.Windows.Forms.Button();
+            this.comboBoxCategory_DAU = new System.Windows.Forms.ComboBox();
+            this.comboBoxManu_DAU = new System.Windows.Forms.ComboBox();
+            this.comboBoxCommunication_DAU = new System.Windows.Forms.ComboBox();
+            this.comboBoxModel_DAU = new System.Windows.Forms.ComboBox();
+            this.comboBoxAREA_DAU = new System.Windows.Forms.ComboBox();
+            this.comboBoxRDC_DAU = new System.Windows.Forms.ComboBox();
+            this.descriptionTextBox = new System.Windows.Forms.TextBox();
+            this.cOMPortTextBox = new System.Windows.Forms.TextBox();
+            this.bAUDRateTextBox = new System.Windows.Forms.TextBox();
+            this.configuration_edit_dateDateTimePicker = new System.Windows.Forms.DateTimePicker();
+            this.comboBoxFindDevice = new System.Windows.Forms.ComboBox();
+            this.buttonNEW = new System.Windows.Forms.Button();
+            this.buttonChange = new System.Windows.Forms.Button();
+            this.toolStripback = new System.Windows.Forms.ToolStrip();
+            this.toolStripLabel1 = new System.Windows.Forms.ToolStripLabel();
+            this.panel2 = new System.Windows.Forms.Panel();
+            this.buttonDisconnectInstrument = new System.Windows.Forms.Button();
+            this.labelFindDevice = new System.Windows.Forms.Label();
+            this.buttonDAU_Save = new System.Windows.Forms.Button();
+            this.buttonCancelDAU = new System.Windows.Forms.Button();
+            this.pictureBoxDisconnected = new System.Windows.Forms.PictureBox();
+            this.pictureBoxCONNECTED = new System.Windows.Forms.PictureBox();
+            this.buttonDisconnect = new System.Windows.Forms.Button();
+            this.buttonConnect = new System.Windows.Forms.Button();
+            this.radioButtonConnected = new System.Windows.Forms.RadioButton();
+            this.ComboBoxBaud = new System.Windows.Forms.ComboBox();
+            this.ComboBoxPorts = new System.Windows.Forms.ComboBox();
+            this.labelBitrate = new System.Windows.Forms.Label();
+            this.labelCom = new System.Windows.Forms.Label();
             this.rDCOnlyIdDesBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.tabControl = new System.Windows.Forms.TabControl();
             this.iNSTRUMENTtoComboBoxBindingSource = new System.Windows.Forms.BindingSource(this.components);
@@ -251,11 +241,6 @@ namespace SoftSensConf
             this.buttonExit = new System.Windows.Forms.Button();
             this.rDCOnlyIdDesTableAdapter = new SoftSensConf.SOFTSENSECONF_DATABASE_FINALDataSetTableAdapters.RDCOnlyIdDesTableAdapter();
             this.innput_OutputTableAdapter = new SoftSensConf.SOFTSENSECONF_DATABASE_FINALDataSetTableAdapters.Innput_OutputTableAdapter();
-            this.buttonAnalogout = new System.Windows.Forms.Button();
-            this.buttonDigitalInn = new System.Windows.Forms.Button();
-            this.buttonDigitalout = new System.Windows.Forms.Button();
-            this.tagNameTextBox2 = new System.Windows.Forms.TextBox();
-            this.instrument_Log_IdTextBox2 = new System.Windows.Forms.TextBox();
             configuration_Edit_DateLabel1 = new System.Windows.Forms.Label();
             innput_Output_IdLabel = new System.Windows.Forms.Label();
             area_IdLabel1 = new System.Windows.Forms.Label();
@@ -289,8 +274,6 @@ namespace SoftSensConf
             manufactor_IdLabel2 = new System.Windows.Forms.Label();
             model_IdLabel2 = new System.Windows.Forms.Label();
             configuration_Edit_DateLabel2 = new System.Windows.Forms.Label();
-            tagNameLabel1 = new System.Windows.Forms.Label();
-            instrument_Log_IdLabel = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.sOFTSENSECONF_DATABASE_FINALDataSet)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.iNSTRUMENTBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dAUBindingSource)).BeginInit();
@@ -305,8 +288,6 @@ namespace SoftSensConf
             ((System.ComponentModel.ISupportInitialize)(this.instrument_Measure_IdBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.aI_LOGBindingSource)).BeginInit();
             this.tabPageCommand.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.bindingNavigator1)).BeginInit();
-            this.bindingNavigator1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.chartPoints)).BeginInit();
             this.statusStrip2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxDisconnected3)).BeginInit();
@@ -324,14 +305,15 @@ namespace SoftSensConf
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxDisconnected2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).BeginInit();
             this.tabPageConnection.SuspendLayout();
-            this.toolStripback.SuspendLayout();
-            this.panel2.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxDisconnected)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxCONNECTED)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.areaBindingSource1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.modelBindingSource1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.manufactorBindingSource1)).BeginInit();
+            this.toolStripback.SuspendLayout();
+            this.panel2.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxDisconnected)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxCONNECTED)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.rDCOnlyIdDesBindingSource)).BeginInit();
             this.tabControl.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.iNSTRUMENTtoComboBoxBindingSource)).BeginInit();
@@ -351,27 +333,27 @@ namespace SoftSensConf
             // 
             innput_Output_IdLabel.AutoSize = true;
             innput_Output_IdLabel.Font = new System.Drawing.Font("Nirmala UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            innput_Output_IdLabel.Location = new System.Drawing.Point(111, 444);
+            innput_Output_IdLabel.Location = new System.Drawing.Point(120, 444);
             innput_Output_IdLabel.Name = "innput_Output_IdLabel";
-            innput_Output_IdLabel.Size = new System.Drawing.Size(106, 17);
+            innput_Output_IdLabel.Size = new System.Drawing.Size(92, 17);
             innput_Output_IdLabel.TabIndex = 45;
-            innput_Output_IdLabel.Text = "Innput Output Id:";
+            innput_Output_IdLabel.Text = "Innput/Output:";
             // 
             // area_IdLabel1
             // 
             area_IdLabel1.AutoSize = true;
             area_IdLabel1.Font = new System.Drawing.Font("Nirmala UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            area_IdLabel1.Location = new System.Drawing.Point(164, 413);
+            area_IdLabel1.Location = new System.Drawing.Point(174, 413);
             area_IdLabel1.Name = "area_IdLabel1";
-            area_IdLabel1.Size = new System.Drawing.Size(53, 17);
+            area_IdLabel1.Size = new System.Drawing.Size(38, 17);
             area_IdLabel1.TabIndex = 43;
-            area_IdLabel1.Text = "Area Id:";
+            area_IdLabel1.Text = "Area:";
             // 
             // frequencyLabel
             // 
             frequencyLabel.AutoSize = true;
             frequencyLabel.Font = new System.Drawing.Font("Nirmala UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            frequencyLabel.Location = new System.Drawing.Point(147, 382);
+            frequencyLabel.Location = new System.Drawing.Point(142, 382);
             frequencyLabel.Name = "frequencyLabel";
             frequencyLabel.Size = new System.Drawing.Size(70, 17);
             frequencyLabel.TabIndex = 41;
@@ -381,51 +363,51 @@ namespace SoftSensConf
             // 
             communication_IdLabel1.AutoSize = true;
             communication_IdLabel1.Font = new System.Drawing.Font("Nirmala UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            communication_IdLabel1.Location = new System.Drawing.Point(101, 351);
+            communication_IdLabel1.Location = new System.Drawing.Point(111, 351);
             communication_IdLabel1.Name = "communication_IdLabel1";
-            communication_IdLabel1.Size = new System.Drawing.Size(116, 17);
+            communication_IdLabel1.Size = new System.Drawing.Size(101, 17);
             communication_IdLabel1.TabIndex = 39;
-            communication_IdLabel1.Text = "Communication Id:";
+            communication_IdLabel1.Text = "Communication:";
             // 
             // dAU_IdLabel1
             // 
             dAU_IdLabel1.AutoSize = true;
             dAU_IdLabel1.Font = new System.Drawing.Font("Nirmala UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dAU_IdLabel1.Location = new System.Drawing.Point(165, 320);
+            dAU_IdLabel1.Location = new System.Drawing.Point(89, 320);
             dAU_IdLabel1.Name = "dAU_IdLabel1";
-            dAU_IdLabel1.Size = new System.Drawing.Size(52, 17);
+            dAU_IdLabel1.Size = new System.Drawing.Size(123, 17);
             dAU_IdLabel1.TabIndex = 37;
-            dAU_IdLabel1.Text = "DAU Id:";
+            dAU_IdLabel1.Text = "Data Aqusition Unit:";
             // 
             // manufactor_IdLabel1
             // 
             manufactor_IdLabel1.AutoSize = true;
             manufactor_IdLabel1.Font = new System.Drawing.Font("Nirmala UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            manufactor_IdLabel1.Location = new System.Drawing.Point(124, 289);
+            manufactor_IdLabel1.Location = new System.Drawing.Point(133, 289);
             manufactor_IdLabel1.Name = "manufactor_IdLabel1";
-            manufactor_IdLabel1.Size = new System.Drawing.Size(93, 17);
+            manufactor_IdLabel1.Size = new System.Drawing.Size(79, 17);
             manufactor_IdLabel1.TabIndex = 35;
-            manufactor_IdLabel1.Text = "Manufactor Id:";
+            manufactor_IdLabel1.Text = "Manufactor:";
             // 
             // model_IdLabel1
             // 
             model_IdLabel1.AutoSize = true;
             model_IdLabel1.Font = new System.Drawing.Font("Nirmala UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            model_IdLabel1.Location = new System.Drawing.Point(153, 258);
+            model_IdLabel1.Location = new System.Drawing.Point(163, 258);
             model_IdLabel1.Name = "model_IdLabel1";
-            model_IdLabel1.Size = new System.Drawing.Size(64, 17);
+            model_IdLabel1.Size = new System.Drawing.Size(49, 17);
             model_IdLabel1.TabIndex = 33;
-            model_IdLabel1.Text = "Model Id:";
+            model_IdLabel1.Text = "Model:";
             // 
             // category_IdLabel1
             // 
             category_IdLabel1.AutoSize = true;
             category_IdLabel1.Font = new System.Drawing.Font("Nirmala UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            category_IdLabel1.Location = new System.Drawing.Point(137, 227);
+            category_IdLabel1.Location = new System.Drawing.Point(147, 227);
             category_IdLabel1.Name = "category_IdLabel1";
-            category_IdLabel1.Size = new System.Drawing.Size(80, 17);
+            category_IdLabel1.Size = new System.Drawing.Size(65, 17);
             category_IdLabel1.TabIndex = 31;
-            category_IdLabel1.Text = "Category Id:";
+            category_IdLabel1.Text = "Category:";
             // 
             // alarm_highLabel
             // 
@@ -471,7 +453,7 @@ namespace SoftSensConf
             // 
             descriptionLabel1.AutoSize = true;
             descriptionLabel1.Font = new System.Drawing.Font("Nirmala UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            descriptionLabel1.Location = new System.Drawing.Point(140, 196);
+            descriptionLabel1.Location = new System.Drawing.Point(135, 196);
             descriptionLabel1.Name = "descriptionLabel1";
             descriptionLabel1.Size = new System.Drawing.Size(77, 17);
             descriptionLabel1.TabIndex = 21;
@@ -490,7 +472,7 @@ namespace SoftSensConf
             // configuration_edit_dateLabel
             // 
             configuration_edit_dateLabel.AutoSize = true;
-            configuration_edit_dateLabel.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(61)))), ((int)(((byte)(74)))));
+            configuration_edit_dateLabel.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(46)))), ((int)(((byte)(51)))), ((int)(((byte)(73)))));
             configuration_edit_dateLabel.Font = new System.Drawing.Font("Nirmala UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             configuration_edit_dateLabel.Location = new System.Drawing.Point(534, 531);
             configuration_edit_dateLabel.Name = "configuration_edit_dateLabel";
@@ -501,7 +483,7 @@ namespace SoftSensConf
             // bAUDRateLabel
             // 
             bAUDRateLabel.AutoSize = true;
-            bAUDRateLabel.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(61)))), ((int)(((byte)(74)))));
+            bAUDRateLabel.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(46)))), ((int)(((byte)(51)))), ((int)(((byte)(73)))));
             bAUDRateLabel.Font = new System.Drawing.Font("Nirmala UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             bAUDRateLabel.Location = new System.Drawing.Point(610, 497);
             bAUDRateLabel.Name = "bAUDRateLabel";
@@ -512,7 +494,7 @@ namespace SoftSensConf
             // cOMPortLabel
             // 
             cOMPortLabel.AutoSize = true;
-            cOMPortLabel.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(61)))), ((int)(((byte)(74)))));
+            cOMPortLabel.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(46)))), ((int)(((byte)(51)))), ((int)(((byte)(73)))));
             cOMPortLabel.Font = new System.Drawing.Font("Nirmala UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             cOMPortLabel.Location = new System.Drawing.Point(615, 466);
             cOMPortLabel.Name = "cOMPortLabel";
@@ -523,7 +505,7 @@ namespace SoftSensConf
             // category_IdLabel
             // 
             category_IdLabel.AutoSize = true;
-            category_IdLabel.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(61)))), ((int)(((byte)(74)))));
+            category_IdLabel.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(46)))), ((int)(((byte)(51)))), ((int)(((byte)(73)))));
             category_IdLabel.Font = new System.Drawing.Font("Nirmala UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             category_IdLabel.Location = new System.Drawing.Point(615, 437);
             category_IdLabel.Name = "category_IdLabel";
@@ -534,7 +516,7 @@ namespace SoftSensConf
             // manufactor_IdLabel
             // 
             manufactor_IdLabel.AutoSize = true;
-            manufactor_IdLabel.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(61)))), ((int)(((byte)(74)))));
+            manufactor_IdLabel.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(46)))), ((int)(((byte)(51)))), ((int)(((byte)(73)))));
             manufactor_IdLabel.Font = new System.Drawing.Font("Nirmala UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             manufactor_IdLabel.Location = new System.Drawing.Point(601, 408);
             manufactor_IdLabel.Name = "manufactor_IdLabel";
@@ -545,7 +527,7 @@ namespace SoftSensConf
             // communication_IdLabel
             // 
             communication_IdLabel.AutoSize = true;
-            communication_IdLabel.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(61)))), ((int)(((byte)(74)))));
+            communication_IdLabel.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(46)))), ((int)(((byte)(51)))), ((int)(((byte)(73)))));
             communication_IdLabel.Font = new System.Drawing.Font("Nirmala UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             communication_IdLabel.Location = new System.Drawing.Point(579, 377);
             communication_IdLabel.Name = "communication_IdLabel";
@@ -556,7 +538,7 @@ namespace SoftSensConf
             // model_IdLabel
             // 
             model_IdLabel.AutoSize = true;
-            model_IdLabel.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(61)))), ((int)(((byte)(74)))));
+            model_IdLabel.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(46)))), ((int)(((byte)(51)))), ((int)(((byte)(73)))));
             model_IdLabel.Font = new System.Drawing.Font("Nirmala UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             model_IdLabel.Location = new System.Drawing.Point(631, 346);
             model_IdLabel.Name = "model_IdLabel";
@@ -567,7 +549,7 @@ namespace SoftSensConf
             // area_IdLabel
             // 
             area_IdLabel.AutoSize = true;
-            area_IdLabel.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(61)))), ((int)(((byte)(74)))));
+            area_IdLabel.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(46)))), ((int)(((byte)(51)))), ((int)(((byte)(73)))));
             area_IdLabel.Font = new System.Drawing.Font("Nirmala UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             area_IdLabel.Location = new System.Drawing.Point(642, 315);
             area_IdLabel.Name = "area_IdLabel";
@@ -578,7 +560,7 @@ namespace SoftSensConf
             // rDC_IdLabel
             // 
             rDC_IdLabel.AutoSize = true;
-            rDC_IdLabel.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(61)))), ((int)(((byte)(74)))));
+            rDC_IdLabel.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(46)))), ((int)(((byte)(51)))), ((int)(((byte)(73)))));
             rDC_IdLabel.Font = new System.Drawing.Font("Nirmala UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             rDC_IdLabel.Location = new System.Drawing.Point(540, 284);
             rDC_IdLabel.Name = "rDC_IdLabel";
@@ -589,7 +571,7 @@ namespace SoftSensConf
             // descriptionLabel
             // 
             descriptionLabel.AutoSize = true;
-            descriptionLabel.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(61)))), ((int)(((byte)(74)))));
+            descriptionLabel.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(46)))), ((int)(((byte)(51)))), ((int)(((byte)(73)))));
             descriptionLabel.Font = new System.Drawing.Font("Nirmala UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             descriptionLabel.Location = new System.Drawing.Point(603, 253);
             descriptionLabel.Name = "descriptionLabel";
@@ -623,7 +605,7 @@ namespace SoftSensConf
             // descriptionLabel2
             // 
             descriptionLabel2.AutoSize = true;
-            descriptionLabel2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(46)))), ((int)(((byte)(51)))), ((int)(((byte)(60)))));
+            descriptionLabel2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(46)))), ((int)(((byte)(51)))), ((int)(((byte)(73)))));
             descriptionLabel2.Font = new System.Drawing.Font("Nirmala UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             descriptionLabel2.Location = new System.Drawing.Point(118, 173);
             descriptionLabel2.Name = "descriptionLabel2";
@@ -645,46 +627,46 @@ namespace SoftSensConf
             // area_IdLabel2
             // 
             area_IdLabel2.AutoSize = true;
-            area_IdLabel2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(46)))), ((int)(((byte)(51)))), ((int)(((byte)(60)))));
+            area_IdLabel2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(46)))), ((int)(((byte)(51)))), ((int)(((byte)(73)))));
             area_IdLabel2.Font = new System.Drawing.Font("Nirmala UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            area_IdLabel2.Location = new System.Drawing.Point(142, 207);
+            area_IdLabel2.Location = new System.Drawing.Point(157, 204);
             area_IdLabel2.Name = "area_IdLabel2";
-            area_IdLabel2.Size = new System.Drawing.Size(53, 17);
+            area_IdLabel2.Size = new System.Drawing.Size(38, 17);
             area_IdLabel2.TabIndex = 86;
-            area_IdLabel2.Text = "Area Id:";
+            area_IdLabel2.Text = "Area:";
             // 
             // manufactor_IdLabel2
             // 
             manufactor_IdLabel2.AutoSize = true;
-            manufactor_IdLabel2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(46)))), ((int)(((byte)(51)))), ((int)(((byte)(60)))));
+            manufactor_IdLabel2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(46)))), ((int)(((byte)(51)))), ((int)(((byte)(73)))));
             manufactor_IdLabel2.Font = new System.Drawing.Font("Nirmala UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            manufactor_IdLabel2.Location = new System.Drawing.Point(102, 238);
+            manufactor_IdLabel2.Location = new System.Drawing.Point(116, 235);
             manufactor_IdLabel2.Name = "manufactor_IdLabel2";
-            manufactor_IdLabel2.Size = new System.Drawing.Size(93, 17);
+            manufactor_IdLabel2.Size = new System.Drawing.Size(79, 17);
             manufactor_IdLabel2.TabIndex = 88;
-            manufactor_IdLabel2.Text = "Manufactor Id:";
+            manufactor_IdLabel2.Text = "Manufactor:";
             // 
             // model_IdLabel2
             // 
             model_IdLabel2.AutoSize = true;
-            model_IdLabel2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(46)))), ((int)(((byte)(51)))), ((int)(((byte)(60)))));
+            model_IdLabel2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(46)))), ((int)(((byte)(51)))), ((int)(((byte)(73)))));
             model_IdLabel2.Font = new System.Drawing.Font("Nirmala UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            model_IdLabel2.Location = new System.Drawing.Point(131, 269);
+            model_IdLabel2.Location = new System.Drawing.Point(146, 266);
             model_IdLabel2.Name = "model_IdLabel2";
-            model_IdLabel2.Size = new System.Drawing.Size(64, 17);
+            model_IdLabel2.Size = new System.Drawing.Size(49, 17);
             model_IdLabel2.TabIndex = 90;
-            model_IdLabel2.Text = "Model Id:";
+            model_IdLabel2.Text = "Model:";
             // 
             // configuration_Edit_DateLabel2
             // 
             configuration_Edit_DateLabel2.AutoSize = true;
-            configuration_Edit_DateLabel2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(46)))), ((int)(((byte)(51)))), ((int)(((byte)(60)))));
+            configuration_Edit_DateLabel2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(46)))), ((int)(((byte)(51)))), ((int)(((byte)(73)))));
             configuration_Edit_DateLabel2.Font = new System.Drawing.Font("Nirmala UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            configuration_Edit_DateLabel2.Location = new System.Drawing.Point(89, 300);
+            configuration_Edit_DateLabel2.Location = new System.Drawing.Point(48, 297);
             configuration_Edit_DateLabel2.Name = "configuration_Edit_DateLabel2";
-            configuration_Edit_DateLabel2.Size = new System.Drawing.Size(106, 17);
+            configuration_Edit_DateLabel2.Size = new System.Drawing.Size(147, 17);
             configuration_Edit_DateLabel2.TabIndex = 92;
-            configuration_Edit_DateLabel2.Text = "Config Edit Date:";
+            configuration_Edit_DateLabel2.Text = "Configuration Edit Date:";
             // 
             // openFileDialog
             // 
@@ -843,18 +825,10 @@ namespace SoftSensConf
             // 
             this.tabPageCommand.AutoScroll = true;
             this.tabPageCommand.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(46)))), ((int)(((byte)(51)))), ((int)(((byte)(73)))));
-            this.tabPageCommand.Controls.Add(tagNameLabel1);
-            this.tabPageCommand.Controls.Add(this.tagNameTextBox2);
-            this.tabPageCommand.Controls.Add(instrument_Log_IdLabel);
-            this.tabPageCommand.Controls.Add(this.instrument_Log_IdTextBox2);
             this.tabPageCommand.Controls.Add(this.buttonDigitalout);
             this.tabPageCommand.Controls.Add(this.buttonDigitalInn);
             this.tabPageCommand.Controls.Add(this.buttonAnalogout);
-            this.tabPageCommand.Controls.Add(this.buttonSAVELOGID);
-            this.tabPageCommand.Controls.Add(this.buttonNEWLOGID);
-            this.tabPageCommand.Controls.Add(this.bindingNavigator1);
             this.tabPageCommand.Controls.Add(this.buttonAnalogInn);
-            this.tabPageCommand.Controls.Add(this.buttonSendValuestodb);
             this.tabPageCommand.Controls.Add(this.buttonSending);
             this.tabPageCommand.Controls.Add(this.buttonView);
             this.tabPageCommand.Controls.Add(this.tagNameTextBox1);
@@ -868,12 +842,16 @@ namespace SoftSensConf
             this.tabPageCommand.Controls.Add(this.chartPoints);
             this.tabPageCommand.Controls.Add(this.textBoxConnectionP2);
             this.tabPageCommand.Controls.Add(this.textBoxSend);
-            this.tabPageCommand.Controls.Add(this.textBoxReceive);
             this.tabPageCommand.Controls.Add(this.statusStrip2);
             this.tabPageCommand.Controls.Add(this.buttonReceive);
             this.tabPageCommand.Controls.Add(this.buttonSendValuesToInstrument);
             this.tabPageCommand.Controls.Add(this.pictureBoxDisconnected3);
             this.tabPageCommand.Controls.Add(this.pictureBox5);
+            this.tabPageCommand.Controls.Add(this.textBoxReceive);
+            this.tabPageCommand.Controls.Add(this.timeDateTimePickerAILOG);
+            this.tabPageCommand.Controls.Add(this.instrument_Log_IdTextBox2);
+            this.tabPageCommand.Controls.Add(this.tagNameTextBox2);
+            this.tabPageCommand.Controls.Add(this.buttonSendValuestodb);
             this.tabPageCommand.Controls.Add(this.buttonSTopsendingdata);
             this.tabPageCommand.Location = new System.Drawing.Point(4, 34);
             this.tabPageCommand.Name = "tabPageCommand";
@@ -882,143 +860,45 @@ namespace SoftSensConf
             this.tabPageCommand.Text = "Online";
             this.tabPageCommand.Enter += new System.EventHandler(this.tabPageCommand_Enter);
             // 
-            // buttonSAVELOGID
+            // buttonDigitalout
             // 
-            this.buttonSAVELOGID.Location = new System.Drawing.Point(705, 153);
-            this.buttonSAVELOGID.Name = "buttonSAVELOGID";
-            this.buttonSAVELOGID.Size = new System.Drawing.Size(73, 36);
-            this.buttonSAVELOGID.TabIndex = 102;
-            this.buttonSAVELOGID.Text = "Save";
-            this.buttonSAVELOGID.UseVisualStyleBackColor = true;
-            this.buttonSAVELOGID.Click += new System.EventHandler(this.buttonSAVELOGID_Click);
+            this.buttonDigitalout.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.buttonDigitalout.Font = new System.Drawing.Font("Nirmala UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.buttonDigitalout.Location = new System.Drawing.Point(453, 67);
+            this.buttonDigitalout.Name = "buttonDigitalout";
+            this.buttonDigitalout.Size = new System.Drawing.Size(82, 26);
+            this.buttonDigitalout.TabIndex = 105;
+            this.buttonDigitalout.Text = "Digital Out";
+            this.buttonDigitalout.UseVisualStyleBackColor = true;
+            this.buttonDigitalout.Visible = false;
             // 
-            // buttonNEWLOGID
+            // buttonDigitalInn
             // 
-            this.buttonNEWLOGID.Location = new System.Drawing.Point(617, 153);
-            this.buttonNEWLOGID.Name = "buttonNEWLOGID";
-            this.buttonNEWLOGID.Size = new System.Drawing.Size(82, 39);
-            this.buttonNEWLOGID.TabIndex = 101;
-            this.buttonNEWLOGID.Text = "new";
-            this.buttonNEWLOGID.UseVisualStyleBackColor = true;
-            this.buttonNEWLOGID.Click += new System.EventHandler(this.buttonNEWLOGID_Click);
+            this.buttonDigitalInn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.buttonDigitalInn.Font = new System.Drawing.Font("Nirmala UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.buttonDigitalInn.Location = new System.Drawing.Point(365, 67);
+            this.buttonDigitalInn.Name = "buttonDigitalInn";
+            this.buttonDigitalInn.Size = new System.Drawing.Size(82, 26);
+            this.buttonDigitalInn.TabIndex = 104;
+            this.buttonDigitalInn.Text = "Digital Inn";
+            this.buttonDigitalInn.UseVisualStyleBackColor = true;
+            this.buttonDigitalInn.Visible = false;
             // 
-            // bindingNavigator1
+            // buttonAnalogout
             // 
-            this.bindingNavigator1.AddNewItem = this.bindingNavigatorAddNewItem;
-            this.bindingNavigator1.BindingSource = this.instrument_Measure_IdBindingSource;
-            this.bindingNavigator1.CountItem = this.bindingNavigatorCountItem;
-            this.bindingNavigator1.DeleteItem = this.bindingNavigatorDeleteItem;
-            this.bindingNavigator1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.bindingNavigatorMoveFirstItem,
-            this.bindingNavigatorMovePreviousItem,
-            this.bindingNavigatorSeparator,
-            this.bindingNavigatorPositionItem,
-            this.bindingNavigatorCountItem,
-            this.bindingNavigatorSeparator1,
-            this.bindingNavigatorMoveNextItem,
-            this.bindingNavigatorMoveLastItem,
-            this.bindingNavigatorSeparator2,
-            this.bindingNavigatorAddNewItem,
-            this.bindingNavigatorDeleteItem});
-            this.bindingNavigator1.Location = new System.Drawing.Point(0, 0);
-            this.bindingNavigator1.MoveFirstItem = this.bindingNavigatorMoveFirstItem;
-            this.bindingNavigator1.MoveLastItem = this.bindingNavigatorMoveLastItem;
-            this.bindingNavigator1.MoveNextItem = this.bindingNavigatorMoveNextItem;
-            this.bindingNavigator1.MovePreviousItem = this.bindingNavigatorMovePreviousItem;
-            this.bindingNavigator1.Name = "bindingNavigator1";
-            this.bindingNavigator1.PositionItem = this.bindingNavigatorPositionItem;
-            this.bindingNavigator1.Size = new System.Drawing.Size(1188, 25);
-            this.bindingNavigator1.TabIndex = 100;
-            this.bindingNavigator1.Text = "bindingNavigator1";
-            // 
-            // bindingNavigatorAddNewItem
-            // 
-            this.bindingNavigatorAddNewItem.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.bindingNavigatorAddNewItem.Image = ((System.Drawing.Image)(resources.GetObject("bindingNavigatorAddNewItem.Image")));
-            this.bindingNavigatorAddNewItem.Name = "bindingNavigatorAddNewItem";
-            this.bindingNavigatorAddNewItem.RightToLeftAutoMirrorImage = true;
-            this.bindingNavigatorAddNewItem.Size = new System.Drawing.Size(23, 22);
-            this.bindingNavigatorAddNewItem.Text = "Add new";
-            // 
-            // bindingNavigatorCountItem
-            // 
-            this.bindingNavigatorCountItem.Name = "bindingNavigatorCountItem";
-            this.bindingNavigatorCountItem.Size = new System.Drawing.Size(35, 22);
-            this.bindingNavigatorCountItem.Text = "of {0}";
-            this.bindingNavigatorCountItem.ToolTipText = "Total number of items";
-            // 
-            // bindingNavigatorDeleteItem
-            // 
-            this.bindingNavigatorDeleteItem.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.bindingNavigatorDeleteItem.Image = ((System.Drawing.Image)(resources.GetObject("bindingNavigatorDeleteItem.Image")));
-            this.bindingNavigatorDeleteItem.Name = "bindingNavigatorDeleteItem";
-            this.bindingNavigatorDeleteItem.RightToLeftAutoMirrorImage = true;
-            this.bindingNavigatorDeleteItem.Size = new System.Drawing.Size(23, 22);
-            this.bindingNavigatorDeleteItem.Text = "Delete";
-            // 
-            // bindingNavigatorMoveFirstItem
-            // 
-            this.bindingNavigatorMoveFirstItem.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.bindingNavigatorMoveFirstItem.Image = ((System.Drawing.Image)(resources.GetObject("bindingNavigatorMoveFirstItem.Image")));
-            this.bindingNavigatorMoveFirstItem.Name = "bindingNavigatorMoveFirstItem";
-            this.bindingNavigatorMoveFirstItem.RightToLeftAutoMirrorImage = true;
-            this.bindingNavigatorMoveFirstItem.Size = new System.Drawing.Size(23, 22);
-            this.bindingNavigatorMoveFirstItem.Text = "Move first";
-            // 
-            // bindingNavigatorMovePreviousItem
-            // 
-            this.bindingNavigatorMovePreviousItem.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.bindingNavigatorMovePreviousItem.Image = ((System.Drawing.Image)(resources.GetObject("bindingNavigatorMovePreviousItem.Image")));
-            this.bindingNavigatorMovePreviousItem.Name = "bindingNavigatorMovePreviousItem";
-            this.bindingNavigatorMovePreviousItem.RightToLeftAutoMirrorImage = true;
-            this.bindingNavigatorMovePreviousItem.Size = new System.Drawing.Size(23, 22);
-            this.bindingNavigatorMovePreviousItem.Text = "Move previous";
-            // 
-            // bindingNavigatorSeparator
-            // 
-            this.bindingNavigatorSeparator.Name = "bindingNavigatorSeparator";
-            this.bindingNavigatorSeparator.Size = new System.Drawing.Size(6, 25);
-            // 
-            // bindingNavigatorPositionItem
-            // 
-            this.bindingNavigatorPositionItem.AccessibleName = "Position";
-            this.bindingNavigatorPositionItem.AutoSize = false;
-            this.bindingNavigatorPositionItem.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.bindingNavigatorPositionItem.Name = "bindingNavigatorPositionItem";
-            this.bindingNavigatorPositionItem.Size = new System.Drawing.Size(50, 23);
-            this.bindingNavigatorPositionItem.Text = "0";
-            this.bindingNavigatorPositionItem.ToolTipText = "Current position";
-            // 
-            // bindingNavigatorSeparator1
-            // 
-            this.bindingNavigatorSeparator1.Name = "bindingNavigatorSeparator1";
-            this.bindingNavigatorSeparator1.Size = new System.Drawing.Size(6, 25);
-            // 
-            // bindingNavigatorMoveNextItem
-            // 
-            this.bindingNavigatorMoveNextItem.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.bindingNavigatorMoveNextItem.Image = ((System.Drawing.Image)(resources.GetObject("bindingNavigatorMoveNextItem.Image")));
-            this.bindingNavigatorMoveNextItem.Name = "bindingNavigatorMoveNextItem";
-            this.bindingNavigatorMoveNextItem.RightToLeftAutoMirrorImage = true;
-            this.bindingNavigatorMoveNextItem.Size = new System.Drawing.Size(23, 22);
-            this.bindingNavigatorMoveNextItem.Text = "Move next";
-            // 
-            // bindingNavigatorMoveLastItem
-            // 
-            this.bindingNavigatorMoveLastItem.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.bindingNavigatorMoveLastItem.Image = ((System.Drawing.Image)(resources.GetObject("bindingNavigatorMoveLastItem.Image")));
-            this.bindingNavigatorMoveLastItem.Name = "bindingNavigatorMoveLastItem";
-            this.bindingNavigatorMoveLastItem.RightToLeftAutoMirrorImage = true;
-            this.bindingNavigatorMoveLastItem.Size = new System.Drawing.Size(23, 22);
-            this.bindingNavigatorMoveLastItem.Text = "Move last";
-            // 
-            // bindingNavigatorSeparator2
-            // 
-            this.bindingNavigatorSeparator2.Name = "bindingNavigatorSeparator2";
-            this.bindingNavigatorSeparator2.Size = new System.Drawing.Size(6, 25);
+            this.buttonAnalogout.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.buttonAnalogout.Font = new System.Drawing.Font("Nirmala UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.buttonAnalogout.Location = new System.Drawing.Point(272, 67);
+            this.buttonAnalogout.Name = "buttonAnalogout";
+            this.buttonAnalogout.Size = new System.Drawing.Size(87, 26);
+            this.buttonAnalogout.TabIndex = 103;
+            this.buttonAnalogout.Text = "Analog Out";
+            this.buttonAnalogout.UseVisualStyleBackColor = true;
+            this.buttonAnalogout.Visible = false;
             // 
             // buttonAnalogInn
             // 
+            this.buttonAnalogInn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.buttonAnalogInn.Font = new System.Drawing.Font("Nirmala UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.buttonAnalogInn.Location = new System.Drawing.Point(184, 67);
             this.buttonAnalogInn.Name = "buttonAnalogInn";
@@ -1026,35 +906,28 @@ namespace SoftSensConf
             this.buttonAnalogInn.TabIndex = 99;
             this.buttonAnalogInn.Text = "Analog Inn";
             this.buttonAnalogInn.UseVisualStyleBackColor = true;
+            this.buttonAnalogInn.Visible = false;
             this.buttonAnalogInn.Click += new System.EventHandler(this.buttonAnalog_Click);
-            // 
-            // buttonSendValuestodb
-            // 
-            this.buttonSendValuestodb.Location = new System.Drawing.Point(235, 26);
-            this.buttonSendValuestodb.Name = "buttonSendValuestodb";
-            this.buttonSendValuestodb.Size = new System.Drawing.Size(203, 33);
-            this.buttonSendValuestodb.TabIndex = 83;
-            this.buttonSendValuestodb.Text = "Send data to database";
-            this.buttonSendValuestodb.UseVisualStyleBackColor = true;
-            this.buttonSendValuestodb.Click += new System.EventHandler(this.buttonSendValuestodb_Click);
             // 
             // buttonSending
             // 
-            this.buttonSending.Location = new System.Drawing.Point(653, 26);
+            this.buttonSending.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.buttonSending.Location = new System.Drawing.Point(630, 26);
             this.buttonSending.Name = "buttonSending";
-            this.buttonSending.Size = new System.Drawing.Size(203, 33);
+            this.buttonSending.Size = new System.Drawing.Size(230, 33);
             this.buttonSending.TabIndex = 82;
-            this.buttonSending.Text = "Send values to device";
+            this.buttonSending.Text = "Send Command to Instrument";
             this.buttonSending.UseVisualStyleBackColor = true;
             this.buttonSending.Click += new System.EventHandler(this.buttonSending_Click);
             // 
             // buttonView
             // 
-            this.buttonView.Location = new System.Drawing.Point(444, 26);
+            this.buttonView.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.buttonView.Location = new System.Drawing.Point(421, 26);
             this.buttonView.Name = "buttonView";
             this.buttonView.Size = new System.Drawing.Size(203, 33);
             this.buttonView.TabIndex = 81;
-            this.buttonView.Text = "View Data from db";
+            this.buttonView.Text = "View Data from Database";
             this.buttonView.UseVisualStyleBackColor = true;
             this.buttonView.Click += new System.EventHandler(this.buttonView_Click);
             // 
@@ -1123,7 +996,8 @@ namespace SoftSensConf
             // 
             // buttonstopgraph
             // 
-            this.buttonstopgraph.Location = new System.Drawing.Point(0, 585);
+            this.buttonstopgraph.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.buttonstopgraph.Location = new System.Drawing.Point(78, 590);
             this.buttonstopgraph.Margin = new System.Windows.Forms.Padding(0);
             this.buttonstopgraph.Name = "buttonstopgraph";
             this.buttonstopgraph.Size = new System.Drawing.Size(150, 32);
@@ -1143,20 +1017,21 @@ namespace SoftSensConf
             this.listBoxDBreadings.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(200)))), ((int)(((byte)(200)))), ((int)(((byte)(200)))));
             this.listBoxDBreadings.FormattingEnabled = true;
             this.listBoxDBreadings.ItemHeight = 17;
-            this.listBoxDBreadings.Location = new System.Drawing.Point(26, 99);
+            this.listBoxDBreadings.Location = new System.Drawing.Point(78, 140);
             this.listBoxDBreadings.Name = "listBoxDBreadings";
-            this.listBoxDBreadings.Size = new System.Drawing.Size(339, 136);
+            this.listBoxDBreadings.Size = new System.Drawing.Size(364, 102);
             this.listBoxDBreadings.TabIndex = 13;
             this.listBoxDBreadings.ValueMember = "Value";
             this.listBoxDBreadings.Visible = false;
             // 
             // buttonGraphstart
             // 
-            this.buttonGraphstart.Location = new System.Drawing.Point(26, 26);
+            this.buttonGraphstart.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.buttonGraphstart.Location = new System.Drawing.Point(3, 26);
             this.buttonGraphstart.Name = "buttonGraphstart";
             this.buttonGraphstart.Size = new System.Drawing.Size(203, 33);
             this.buttonGraphstart.TabIndex = 8;
-            this.buttonGraphstart.Text = "View in graph";
+            this.buttonGraphstart.Text = "View Data in Graph";
             this.buttonGraphstart.UseVisualStyleBackColor = true;
             this.buttonGraphstart.Click += new System.EventHandler(this.buttonGraphstart_Click);
             // 
@@ -1165,25 +1040,25 @@ namespace SoftSensConf
             this.chartPoints.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(46)))), ((int)(((byte)(51)))), ((int)(((byte)(73)))));
             this.chartPoints.BorderlineColor = System.Drawing.Color.FromArgb(((int)(((byte)(46)))), ((int)(((byte)(51)))), ((int)(((byte)(73)))));
             this.chartPoints.BorderSkin.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(46)))), ((int)(((byte)(51)))), ((int)(((byte)(73)))));
-            chartArea5.AxisX.TitleForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(46)))), ((int)(((byte)(51)))), ((int)(((byte)(73)))));
-            chartArea5.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(46)))), ((int)(((byte)(51)))), ((int)(((byte)(73)))));
-            chartArea5.BackSecondaryColor = System.Drawing.Color.FromArgb(((int)(((byte)(46)))), ((int)(((byte)(51)))), ((int)(((byte)(73)))));
-            chartArea5.Name = "ChartArea1";
-            this.chartPoints.ChartAreas.Add(chartArea5);
-            legend5.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(46)))), ((int)(((byte)(51)))), ((int)(((byte)(73)))));
-            legend5.Name = "Legend1";
-            legend5.ShadowColor = System.Drawing.Color.FromArgb(((int)(((byte)(46)))), ((int)(((byte)(51)))), ((int)(((byte)(73)))));
-            this.chartPoints.Legends.Add(legend5);
-            this.chartPoints.Location = new System.Drawing.Point(3, 244);
+            chartArea1.AxisX.TitleForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(46)))), ((int)(((byte)(51)))), ((int)(((byte)(73)))));
+            chartArea1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(46)))), ((int)(((byte)(51)))), ((int)(((byte)(73)))));
+            chartArea1.BackSecondaryColor = System.Drawing.Color.FromArgb(((int)(((byte)(46)))), ((int)(((byte)(51)))), ((int)(((byte)(73)))));
+            chartArea1.Name = "ChartArea1";
+            this.chartPoints.ChartAreas.Add(chartArea1);
+            legend1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(46)))), ((int)(((byte)(51)))), ((int)(((byte)(73)))));
+            legend1.Name = "Legend1";
+            legend1.ShadowColor = System.Drawing.Color.FromArgb(((int)(((byte)(46)))), ((int)(((byte)(51)))), ((int)(((byte)(73)))));
+            this.chartPoints.Legends.Add(legend1);
+            this.chartPoints.Location = new System.Drawing.Point(0, 292);
             this.chartPoints.Name = "chartPoints";
             this.chartPoints.Palette = System.Windows.Forms.DataVisualization.Charting.ChartColorPalette.SeaGreen;
-            series5.ChartArea = "ChartArea1";
-            series5.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Line;
-            series5.Color = System.Drawing.Color.Red;
-            series5.Legend = "Legend1";
-            series5.Name = "Va";
-            this.chartPoints.Series.Add(series5);
-            this.chartPoints.Size = new System.Drawing.Size(979, 354);
+            series1.ChartArea = "ChartArea1";
+            series1.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Line;
+            series1.Color = System.Drawing.Color.Red;
+            series1.Legend = "Legend1";
+            series1.Name = "Va";
+            this.chartPoints.Series.Add(series1);
+            this.chartPoints.Size = new System.Drawing.Size(982, 306);
             this.chartPoints.TabIndex = 7;
             this.chartPoints.Text = "chart1";
             this.chartPoints.Visible = false;
@@ -1202,26 +1077,13 @@ namespace SoftSensConf
             // 
             this.textBoxSend.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(74)))), ((int)(((byte)(79)))), ((int)(((byte)(99)))));
             this.textBoxSend.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.textBoxSend.Location = new System.Drawing.Point(392, 171);
+            this.textBoxSend.Location = new System.Drawing.Point(495, 107);
             this.textBoxSend.Multiline = true;
             this.textBoxSend.Name = "textBoxSend";
             this.textBoxSend.Size = new System.Drawing.Size(358, 23);
             this.textBoxSend.TabIndex = 1;
             this.textBoxSend.Visible = false;
             this.textBoxSend.Enter += new System.EventHandler(this.textBoxSend_Enter);
-            // 
-            // textBoxReceive
-            // 
-            this.textBoxReceive.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(74)))), ((int)(((byte)(79)))), ((int)(((byte)(99)))));
-            this.textBoxReceive.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.textBoxReceive.Location = new System.Drawing.Point(392, 201);
-            this.textBoxReceive.Multiline = true;
-            this.textBoxReceive.Name = "textBoxReceive";
-            this.textBoxReceive.ReadOnly = true;
-            this.textBoxReceive.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
-            this.textBoxReceive.Size = new System.Drawing.Size(358, 103);
-            this.textBoxReceive.TabIndex = 0;
-            this.textBoxReceive.Visible = false;
             // 
             // statusStrip2
             // 
@@ -1242,22 +1104,28 @@ namespace SoftSensConf
             // 
             // buttonReceive
             // 
-            this.buttonReceive.Location = new System.Drawing.Point(607, 255);
+            this.buttonReceive.BackgroundImage = global::SoftSensConf.Properties.Resources.iconfinder_16_Input_2123951;
+            this.buttonReceive.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.buttonReceive.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.buttonReceive.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(46)))), ((int)(((byte)(51)))), ((int)(((byte)(73)))));
+            this.buttonReceive.Location = new System.Drawing.Point(548, 248);
             this.buttonReceive.Name = "buttonReceive";
-            this.buttonReceive.Size = new System.Drawing.Size(104, 31);
+            this.buttonReceive.Size = new System.Drawing.Size(64, 38);
             this.buttonReceive.TabIndex = 3;
-            this.buttonReceive.Text = "Receive values";
             this.buttonReceive.UseVisualStyleBackColor = true;
             this.buttonReceive.Visible = false;
             this.buttonReceive.Click += new System.EventHandler(this.buttonReceive_Click);
             // 
             // buttonSendValuesToInstrument
             // 
-            this.buttonSendValuesToInstrument.Location = new System.Drawing.Point(475, 255);
+            this.buttonSendValuesToInstrument.BackgroundImage = global::SoftSensConf.Properties.Resources.iconfinder_11_Upload_2123924;
+            this.buttonSendValuesToInstrument.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.buttonSendValuesToInstrument.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.buttonSendValuesToInstrument.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(46)))), ((int)(((byte)(51)))), ((int)(((byte)(73)))));
+            this.buttonSendValuesToInstrument.Location = new System.Drawing.Point(495, 248);
             this.buttonSendValuesToInstrument.Name = "buttonSendValuesToInstrument";
-            this.buttonSendValuesToInstrument.Size = new System.Drawing.Size(126, 31);
+            this.buttonSendValuesToInstrument.Size = new System.Drawing.Size(47, 38);
             this.buttonSendValuesToInstrument.TabIndex = 2;
-            this.buttonSendValuesToInstrument.Text = "Send values";
             this.buttonSendValuesToInstrument.UseVisualStyleBackColor = true;
             this.buttonSendValuesToInstrument.Visible = false;
             this.buttonSendValuesToInstrument.Click += new System.EventHandler(this.buttonSend_Click);
@@ -1285,14 +1153,69 @@ namespace SoftSensConf
             this.pictureBox5.TabStop = false;
             this.pictureBox5.Visible = false;
             // 
+            // textBoxReceive
+            // 
+            this.textBoxReceive.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(74)))), ((int)(((byte)(79)))), ((int)(((byte)(99)))));
+            this.textBoxReceive.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.textBoxReceive.Location = new System.Drawing.Point(495, 140);
+            this.textBoxReceive.Multiline = true;
+            this.textBoxReceive.Name = "textBoxReceive";
+            this.textBoxReceive.ReadOnly = true;
+            this.textBoxReceive.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
+            this.textBoxReceive.Size = new System.Drawing.Size(360, 102);
+            this.textBoxReceive.TabIndex = 0;
+            this.textBoxReceive.Visible = false;
+            // 
+            // timeDateTimePickerAILOG
+            // 
+            this.timeDateTimePickerAILOG.DataBindings.Add(new System.Windows.Forms.Binding("Value", this.aI_LOGBindingSource, "Time", true));
+            this.timeDateTimePickerAILOG.Location = new System.Drawing.Point(802, 30);
+            this.timeDateTimePickerAILOG.Name = "timeDateTimePickerAILOG";
+            this.timeDateTimePickerAILOG.Size = new System.Drawing.Size(10, 29);
+            this.timeDateTimePickerAILOG.TabIndex = 109;
+            // 
+            // instrument_Log_IdTextBox2
+            // 
+            this.instrument_Log_IdTextBox2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(46)))), ((int)(((byte)(51)))), ((int)(((byte)(73)))));
+            this.instrument_Log_IdTextBox2.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.instrument_Log_IdTextBox2.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.instrument_Measure_IdBindingSource, "Instrument_Log_Id", true));
+            this.instrument_Log_IdTextBox2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(46)))), ((int)(((byte)(51)))), ((int)(((byte)(73)))));
+            this.instrument_Log_IdTextBox2.Location = new System.Drawing.Point(735, 32);
+            this.instrument_Log_IdTextBox2.Name = "instrument_Log_IdTextBox2";
+            this.instrument_Log_IdTextBox2.Size = new System.Drawing.Size(100, 22);
+            this.instrument_Log_IdTextBox2.TabIndex = 108;
+            // 
+            // tagNameTextBox2
+            // 
+            this.tagNameTextBox2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(46)))), ((int)(((byte)(51)))), ((int)(((byte)(73)))));
+            this.tagNameTextBox2.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.tagNameTextBox2.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.instrument_Measure_IdBindingSource, "TagName", true));
+            this.tagNameTextBox2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(46)))), ((int)(((byte)(51)))), ((int)(((byte)(73)))));
+            this.tagNameTextBox2.Location = new System.Drawing.Point(653, 33);
+            this.tagNameTextBox2.Name = "tagNameTextBox2";
+            this.tagNameTextBox2.Size = new System.Drawing.Size(100, 22);
+            this.tagNameTextBox2.TabIndex = 106;
+            // 
+            // buttonSendValuestodb
+            // 
+            this.buttonSendValuestodb.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.buttonSendValuestodb.Location = new System.Drawing.Point(212, 26);
+            this.buttonSendValuestodb.Name = "buttonSendValuestodb";
+            this.buttonSendValuestodb.Size = new System.Drawing.Size(203, 33);
+            this.buttonSendValuestodb.TabIndex = 83;
+            this.buttonSendValuestodb.Text = "Send data to database";
+            this.buttonSendValuestodb.UseVisualStyleBackColor = true;
+            this.buttonSendValuestodb.Click += new System.EventHandler(this.buttonSendValuestodb_Click);
+            // 
             // buttonSTopsendingdata
             // 
             this.buttonSTopsendingdata.Enabled = false;
-            this.buttonSTopsendingdata.Location = new System.Drawing.Point(234, 26);
+            this.buttonSTopsendingdata.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.buttonSTopsendingdata.Location = new System.Drawing.Point(212, 26);
             this.buttonSTopsendingdata.Name = "buttonSTopsendingdata";
             this.buttonSTopsendingdata.Size = new System.Drawing.Size(203, 33);
             this.buttonSTopsendingdata.TabIndex = 84;
-            this.buttonSTopsendingdata.Text = "Stop dataflow to database";
+            this.buttonSTopsendingdata.Text = "Stop Dataflow to Database";
             this.buttonSTopsendingdata.UseVisualStyleBackColor = true;
             this.buttonSTopsendingdata.Visible = false;
             this.buttonSTopsendingdata.Click += new System.EventHandler(this.buttonSTopsendingdata_Click);
@@ -1366,7 +1289,6 @@ namespace SoftSensConf
             this.tabPageConfiguration.Size = new System.Drawing.Size(991, 750);
             this.tabPageConfiguration.TabIndex = 1;
             this.tabPageConfiguration.Text = "Configuration";
-            this.tabPageConfiguration.Click += new System.EventHandler(this.tabPageConfiguration_Click);
             this.tabPageConfiguration.Enter += new System.EventHandler(this.tabPageConfiguration_Enter);
             // 
             // buttonChangeInstrument
@@ -1556,7 +1478,7 @@ namespace SoftSensConf
             // labelfinding
             // 
             this.labelfinding.AutoSize = true;
-            this.labelfinding.Location = new System.Drawing.Point(94, 64);
+            this.labelfinding.Location = new System.Drawing.Point(89, 64);
             this.labelfinding.Name = "labelfinding";
             this.labelfinding.Size = new System.Drawing.Size(123, 21);
             this.labelfinding.TabIndex = 81;
@@ -1772,6 +1694,7 @@ namespace SoftSensConf
             // 
             // buttonRetrieve
             // 
+            this.buttonRetrieve.Enabled = false;
             this.buttonRetrieve.Font = new System.Drawing.Font("Nirmala UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.buttonRetrieve.Location = new System.Drawing.Point(618, 346);
             this.buttonRetrieve.Name = "buttonRetrieve";
@@ -1784,6 +1707,7 @@ namespace SoftSensConf
             // 
             // buttonSendValues
             // 
+            this.buttonSendValues.Enabled = false;
             this.buttonSendValues.Font = new System.Drawing.Font("Nirmala UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.buttonSendValues.Location = new System.Drawing.Point(618, 408);
             this.buttonSendValues.Name = "buttonSendValues";
@@ -1838,6 +1762,7 @@ namespace SoftSensConf
             // 
             // buttonUpdate
             // 
+            this.buttonUpdate.Enabled = false;
             this.buttonUpdate.Font = new System.Drawing.Font("Nirmala UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.buttonUpdate.Location = new System.Drawing.Point(618, 377);
             this.buttonUpdate.Name = "buttonUpdate";
@@ -1947,7 +1872,9 @@ namespace SoftSensConf
             // 
             this.tabPageConnection.AutoScroll = true;
             this.tabPageConnection.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(46)))), ((int)(((byte)(51)))), ((int)(((byte)(73)))));
-            this.tabPageConnection.Controls.Add(this.labelheader);
+            this.tabPageConnection.Controls.Add(this.panel3);
+            this.tabPageConnection.Controls.Add(this.pictureBox2);
+            this.tabPageConnection.Controls.Add(this.panel1);
             this.tabPageConnection.Controls.Add(this.buttonConnectFromDB);
             this.tabPageConnection.Controls.Add(this.comboBoxCategory_DAU);
             this.tabPageConnection.Controls.Add(this.comboBoxManu_DAU);
@@ -1973,15 +1900,7 @@ namespace SoftSensConf
             this.tabPageConnection.Controls.Add(this.buttonNEW);
             this.tabPageConnection.Controls.Add(this.buttonChange);
             this.tabPageConnection.Controls.Add(this.toolStripback);
-            this.tabPageConnection.Controls.Add(this.labelBitrate);
-            this.tabPageConnection.Controls.Add(this.labelCom);
-            this.tabPageConnection.Controls.Add(this.radioButtonConnected);
-            this.tabPageConnection.Controls.Add(this.buttonDisconnect);
-            this.tabPageConnection.Controls.Add(this.buttonConnect);
-            this.tabPageConnection.Controls.Add(this.ComboBoxBaud);
-            this.tabPageConnection.Controls.Add(this.ComboBoxPorts);
             this.tabPageConnection.Controls.Add(this.panel2);
-            this.tabPageConnection.Controls.Add(this.panel1);
             this.tabPageConnection.ForeColor = System.Drawing.Color.Black;
             this.tabPageConnection.Location = new System.Drawing.Point(4, 34);
             this.tabPageConnection.Name = "tabPageConnection";
@@ -1991,19 +1910,250 @@ namespace SoftSensConf
             this.tabPageConnection.Text = "Connection";
             this.tabPageConnection.Enter += new System.EventHandler(this.tabPageConnection_Enter);
             // 
-            // labelheader
+            // panel3
             // 
-            this.labelheader.AutoSize = true;
-            this.labelheader.Font = new System.Drawing.Font("Nirmala UI", 27.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelheader.Location = new System.Drawing.Point(3, 16);
-            this.labelheader.Name = "labelheader";
-            this.labelheader.Size = new System.Drawing.Size(262, 50);
-            this.labelheader.TabIndex = 99;
-            this.labelheader.Text = "SoftSenseConf";
+            this.panel3.BackColor = System.Drawing.Color.Black;
+            this.panel3.Location = new System.Drawing.Point(484, 3);
+            this.panel3.Name = "panel3";
+            this.panel3.Size = new System.Drawing.Size(10, 628);
+            this.panel3.TabIndex = 108;
+            // 
+            // pictureBox2
+            // 
+            this.pictureBox2.Image = global::SoftSensConf.Properties.Resources._8c066b5377aa447cb1219435ed984ace;
+            this.pictureBox2.Location = new System.Drawing.Point(-89, -24);
+            this.pictureBox2.Name = "pictureBox2";
+            this.pictureBox2.Size = new System.Drawing.Size(417, 79);
+            this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
+            this.pictureBox2.TabIndex = 107;
+            this.pictureBox2.TabStop = false;
+            // 
+            // panel1
+            // 
+            this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(46)))), ((int)(((byte)(51)))), ((int)(((byte)(73)))));
+            this.panel1.Controls.Add(this.buttonSaveRDC);
+            this.panel1.Controls.Add(this.rDC_IdTextBox);
+            this.panel1.Controls.Add(rDC_IdLabel1);
+            this.panel1.Controls.Add(this.buttonCancelRDC);
+            this.panel1.Controls.Add(this.buttonNEWRDC);
+            this.panel1.Controls.Add(mCU_IdLabel);
+            this.panel1.Controls.Add(this.mCU_IdTextBox);
+            this.panel1.Controls.Add(configuration_Edit_DateLabel2);
+            this.panel1.Controls.Add(model_IdLabel2);
+            this.panel1.Controls.Add(manufactor_IdLabel2);
+            this.panel1.Controls.Add(area_IdLabel2);
+            this.panel1.Controls.Add(dAU_IdLabel);
+            this.panel1.Controls.Add(this.buttonChangeRDC);
+            this.panel1.Controls.Add(this.dAU_IdTextBox);
+            this.panel1.Controls.Add(this.comboBoxAReaRDC);
+            this.panel1.Controls.Add(this.labelFIND);
+            this.panel1.Controls.Add(this.comboBoxMOdelRDC);
+            this.panel1.Controls.Add(this.comboBoxManuRDC);
+            this.panel1.Controls.Add(descriptionLabel2);
+            this.panel1.Controls.Add(this.comboBoxFindingDeviceRDC);
+            this.panel1.Controls.Add(this.descriptionTextBoxRDC);
+            this.panel1.Controls.Add(this.configuration_Edit_DateDateTimePickerRDC);
+            this.panel1.Location = new System.Drawing.Point(-4, 80);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(488, 529);
+            this.panel1.TabIndex = 105;
+            // 
+            // buttonSaveRDC
+            // 
+            this.buttonSaveRDC.Font = new System.Drawing.Font("Nirmala UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.buttonSaveRDC.Location = new System.Drawing.Point(218, 104);
+            this.buttonSaveRDC.Name = "buttonSaveRDC";
+            this.buttonSaveRDC.Size = new System.Drawing.Size(90, 24);
+            this.buttonSaveRDC.TabIndex = 103;
+            this.buttonSaveRDC.Text = "Update";
+            this.buttonSaveRDC.UseVisualStyleBackColor = true;
+            this.buttonSaveRDC.Click += new System.EventHandler(this.buttonSaveRDC_Click);
+            // 
+            // rDC_IdTextBox
+            // 
+            this.rDC_IdTextBox.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(46)))), ((int)(((byte)(51)))), ((int)(((byte)(73)))));
+            this.rDC_IdTextBox.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.rDC_IdTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.rDCBindingSource, "RDC_Id", true));
+            this.rDC_IdTextBox.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(46)))), ((int)(((byte)(51)))), ((int)(((byte)(60)))));
+            this.rDC_IdTextBox.Location = new System.Drawing.Point(4, 504);
+            this.rDC_IdTextBox.Name = "rDC_IdTextBox";
+            this.rDC_IdTextBox.Size = new System.Drawing.Size(200, 22);
+            this.rDC_IdTextBox.TabIndex = 81;
+            // 
+            // buttonCancelRDC
+            // 
+            this.buttonCancelRDC.Font = new System.Drawing.Font("Nirmala UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.buttonCancelRDC.Location = new System.Drawing.Point(328, 103);
+            this.buttonCancelRDC.Name = "buttonCancelRDC";
+            this.buttonCancelRDC.Size = new System.Drawing.Size(90, 24);
+            this.buttonCancelRDC.TabIndex = 104;
+            this.buttonCancelRDC.Text = "Cancel";
+            this.buttonCancelRDC.UseVisualStyleBackColor = true;
+            this.buttonCancelRDC.Click += new System.EventHandler(this.buttonCancelRDC_Click);
+            // 
+            // buttonNEWRDC
+            // 
+            this.buttonNEWRDC.Font = new System.Drawing.Font("Nirmala UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.buttonNEWRDC.Location = new System.Drawing.Point(218, 75);
+            this.buttonNEWRDC.Name = "buttonNEWRDC";
+            this.buttonNEWRDC.Size = new System.Drawing.Size(90, 24);
+            this.buttonNEWRDC.TabIndex = 101;
+            this.buttonNEWRDC.Text = "New";
+            this.buttonNEWRDC.UseVisualStyleBackColor = true;
+            this.buttonNEWRDC.Click += new System.EventHandler(this.buttonNEWRDC_Click);
+            // 
+            // mCU_IdTextBox
+            // 
+            this.mCU_IdTextBox.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(46)))), ((int)(((byte)(51)))), ((int)(((byte)(73)))));
+            this.mCU_IdTextBox.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.mCU_IdTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.rDCBindingSource, "MCU_Id", true));
+            this.mCU_IdTextBox.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(46)))), ((int)(((byte)(51)))), ((int)(((byte)(60)))));
+            this.mCU_IdTextBox.Location = new System.Drawing.Point(4, 494);
+            this.mCU_IdTextBox.Name = "mCU_IdTextBox";
+            this.mCU_IdTextBox.Size = new System.Drawing.Size(200, 22);
+            this.mCU_IdTextBox.TabIndex = 85;
+            // 
+            // buttonChangeRDC
+            // 
+            this.buttonChangeRDC.Font = new System.Drawing.Font("Nirmala UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.buttonChangeRDC.Location = new System.Drawing.Point(328, 75);
+            this.buttonChangeRDC.Name = "buttonChangeRDC";
+            this.buttonChangeRDC.Size = new System.Drawing.Size(90, 24);
+            this.buttonChangeRDC.TabIndex = 102;
+            this.buttonChangeRDC.Text = "Change";
+            this.buttonChangeRDC.UseVisualStyleBackColor = true;
+            this.buttonChangeRDC.Click += new System.EventHandler(this.buttonChangeRDC_Click);
+            // 
+            // dAU_IdTextBox
+            // 
+            this.dAU_IdTextBox.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(46)))), ((int)(((byte)(51)))), ((int)(((byte)(73)))));
+            this.dAU_IdTextBox.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.dAU_IdTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.dAUBindingSource, "DAU_Id", true));
+            this.dAU_IdTextBox.Font = new System.Drawing.Font("Nirmala UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.dAU_IdTextBox.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(46)))), ((int)(((byte)(51)))), ((int)(((byte)(60)))));
+            this.dAU_IdTextBox.Location = new System.Drawing.Point(3, 507);
+            this.dAU_IdTextBox.Name = "dAU_IdTextBox";
+            this.dAU_IdTextBox.Size = new System.Drawing.Size(200, 18);
+            this.dAU_IdTextBox.TabIndex = 36;
+            // 
+            // comboBoxAReaRDC
+            // 
+            this.comboBoxAReaRDC.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.comboBoxAReaRDC.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
+            this.comboBoxAReaRDC.DataBindings.Add(new System.Windows.Forms.Binding("SelectedValue", this.rDCBindingSource, "Area_Id", true));
+            this.comboBoxAReaRDC.DataSource = this.areaBindingSource1;
+            this.comboBoxAReaRDC.DisplayMember = "Area";
+            this.comboBoxAReaRDC.Enabled = false;
+            this.comboBoxAReaRDC.Font = new System.Drawing.Font("Nirmala UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.comboBoxAReaRDC.ForeColor = System.Drawing.Color.Black;
+            this.comboBoxAReaRDC.FormattingEnabled = true;
+            this.comboBoxAReaRDC.Location = new System.Drawing.Point(218, 201);
+            this.comboBoxAReaRDC.Name = "comboBoxAReaRDC";
+            this.comboBoxAReaRDC.Size = new System.Drawing.Size(200, 25);
+            this.comboBoxAReaRDC.TabIndex = 96;
+            this.comboBoxAReaRDC.ValueMember = "Area_Id";
+            // 
+            // areaBindingSource1
+            // 
+            this.areaBindingSource1.DataMember = "Area";
+            this.areaBindingSource1.DataSource = this.sOFTSENSECONF_DATABASE_FINALDataSet;
+            // 
+            // labelFIND
+            // 
+            this.labelFIND.AutoSize = true;
+            this.labelFIND.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(46)))), ((int)(((byte)(51)))), ((int)(((byte)(73)))));
+            this.labelFIND.Font = new System.Drawing.Font("Nirmala UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelFIND.Location = new System.Drawing.Point(23, 43);
+            this.labelFIND.Name = "labelFIND";
+            this.labelFIND.Size = new System.Drawing.Size(172, 17);
+            this.labelFIND.TabIndex = 100;
+            this.labelFIND.Text = "Find Remote Data Collector:";
+            // 
+            // comboBoxMOdelRDC
+            // 
+            this.comboBoxMOdelRDC.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
+            this.comboBoxMOdelRDC.DataBindings.Add(new System.Windows.Forms.Binding("SelectedValue", this.rDCBindingSource, "Model_Id", true));
+            this.comboBoxMOdelRDC.DataSource = this.modelBindingSource1;
+            this.comboBoxMOdelRDC.DisplayMember = "Model";
+            this.comboBoxMOdelRDC.Enabled = false;
+            this.comboBoxMOdelRDC.Font = new System.Drawing.Font("Nirmala UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.comboBoxMOdelRDC.ForeColor = System.Drawing.Color.Black;
+            this.comboBoxMOdelRDC.FormattingEnabled = true;
+            this.comboBoxMOdelRDC.Location = new System.Drawing.Point(218, 263);
+            this.comboBoxMOdelRDC.Name = "comboBoxMOdelRDC";
+            this.comboBoxMOdelRDC.Size = new System.Drawing.Size(200, 25);
+            this.comboBoxMOdelRDC.TabIndex = 97;
+            this.comboBoxMOdelRDC.ValueMember = "Model_Id";
+            // 
+            // modelBindingSource1
+            // 
+            this.modelBindingSource1.DataMember = "Model";
+            this.modelBindingSource1.DataSource = this.sOFTSENSECONF_DATABASE_FINALDataSet;
+            // 
+            // comboBoxManuRDC
+            // 
+            this.comboBoxManuRDC.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
+            this.comboBoxManuRDC.DataBindings.Add(new System.Windows.Forms.Binding("SelectedValue", this.rDCBindingSource, "Manufactor_Id", true));
+            this.comboBoxManuRDC.DataSource = this.manufactorBindingSource1;
+            this.comboBoxManuRDC.DisplayMember = "Manufactor";
+            this.comboBoxManuRDC.Enabled = false;
+            this.comboBoxManuRDC.Font = new System.Drawing.Font("Nirmala UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.comboBoxManuRDC.ForeColor = System.Drawing.Color.Black;
+            this.comboBoxManuRDC.FormattingEnabled = true;
+            this.comboBoxManuRDC.Location = new System.Drawing.Point(218, 232);
+            this.comboBoxManuRDC.Name = "comboBoxManuRDC";
+            this.comboBoxManuRDC.Size = new System.Drawing.Size(200, 25);
+            this.comboBoxManuRDC.TabIndex = 98;
+            this.comboBoxManuRDC.ValueMember = "Manufactor_Id";
+            // 
+            // manufactorBindingSource1
+            // 
+            this.manufactorBindingSource1.DataMember = "Manufactor";
+            this.manufactorBindingSource1.DataSource = this.sOFTSENSECONF_DATABASE_FINALDataSet;
+            // 
+            // comboBoxFindingDeviceRDC
+            // 
+            this.comboBoxFindingDeviceRDC.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
+            this.comboBoxFindingDeviceRDC.Font = new System.Drawing.Font("Nirmala UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.comboBoxFindingDeviceRDC.ForeColor = System.Drawing.Color.Black;
+            this.comboBoxFindingDeviceRDC.FormattingEnabled = true;
+            this.comboBoxFindingDeviceRDC.Location = new System.Drawing.Point(218, 40);
+            this.comboBoxFindingDeviceRDC.Name = "comboBoxFindingDeviceRDC";
+            this.comboBoxFindingDeviceRDC.Size = new System.Drawing.Size(200, 25);
+            this.comboBoxFindingDeviceRDC.TabIndex = 95;
+            this.comboBoxFindingDeviceRDC.SelectedIndexChanged += new System.EventHandler(this.comboBoxFindingDeviceRDC_SelectedIndexChanged_1);
+            // 
+            // descriptionTextBoxRDC
+            // 
+            this.descriptionTextBoxRDC.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
+            this.descriptionTextBoxRDC.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.rDCBindingSource, "Description", true));
+            this.descriptionTextBoxRDC.Enabled = false;
+            this.descriptionTextBoxRDC.Font = new System.Drawing.Font("Nirmala UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.descriptionTextBoxRDC.ForeColor = System.Drawing.Color.Black;
+            this.descriptionTextBoxRDC.Location = new System.Drawing.Point(218, 170);
+            this.descriptionTextBoxRDC.Multiline = true;
+            this.descriptionTextBoxRDC.Name = "descriptionTextBoxRDC";
+            this.descriptionTextBoxRDC.Size = new System.Drawing.Size(200, 25);
+            this.descriptionTextBoxRDC.TabIndex = 83;
+            // 
+            // configuration_Edit_DateDateTimePickerRDC
+            // 
+            this.configuration_Edit_DateDateTimePickerRDC.CalendarForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(200)))), ((int)(((byte)(200)))), ((int)(((byte)(200)))));
+            this.configuration_Edit_DateDateTimePickerRDC.CalendarMonthBackground = System.Drawing.Color.FromArgb(((int)(((byte)(74)))), ((int)(((byte)(79)))), ((int)(((byte)(99)))));
+            this.configuration_Edit_DateDateTimePickerRDC.CalendarTitleBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(74)))), ((int)(((byte)(79)))), ((int)(((byte)(99)))));
+            this.configuration_Edit_DateDateTimePickerRDC.CalendarTitleForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(200)))), ((int)(((byte)(200)))), ((int)(((byte)(200)))));
+            this.configuration_Edit_DateDateTimePickerRDC.CalendarTrailingForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(200)))), ((int)(((byte)(200)))), ((int)(((byte)(200)))));
+            this.configuration_Edit_DateDateTimePickerRDC.DataBindings.Add(new System.Windows.Forms.Binding("Value", this.rDCBindingSource, "Configuration_Edit_Date", true));
+            this.configuration_Edit_DateDateTimePickerRDC.Enabled = false;
+            this.configuration_Edit_DateDateTimePickerRDC.Font = new System.Drawing.Font("Nirmala UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.configuration_Edit_DateDateTimePickerRDC.Location = new System.Drawing.Point(218, 295);
+            this.configuration_Edit_DateDateTimePickerRDC.Name = "configuration_Edit_DateDateTimePickerRDC";
+            this.configuration_Edit_DateDateTimePickerRDC.Size = new System.Drawing.Size(200, 25);
+            this.configuration_Edit_DateDateTimePickerRDC.TabIndex = 93;
             // 
             // buttonConnectFromDB
             // 
-            this.buttonConnectFromDB.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(61)))), ((int)(((byte)(74)))));
+            this.buttonConnectFromDB.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(46)))), ((int)(((byte)(51)))), ((int)(((byte)(73)))));
             this.buttonConnectFromDB.FlatAppearance.BorderSize = 0;
             this.buttonConnectFromDB.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.buttonConnectFromDB.Font = new System.Drawing.Font("Nirmala UI", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -2204,123 +2354,30 @@ namespace SoftSensConf
             this.toolStripLabel1.Size = new System.Drawing.Size(39, 22);
             this.toolStripLabel1.Text = "Ready";
             // 
-            // labelBitrate
-            // 
-            this.labelBitrate.AutoSize = true;
-            this.labelBitrate.Font = new System.Drawing.Font("Nirmala UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelBitrate.Location = new System.Drawing.Point(262, 49);
-            this.labelBitrate.Name = "labelBitrate";
-            this.labelBitrate.Size = new System.Drawing.Size(48, 17);
-            this.labelBitrate.TabIndex = 6;
-            this.labelBitrate.Text = "Bitrate:";
-            this.labelBitrate.Visible = false;
-            this.labelBitrate.MouseHover += new System.EventHandler(this.labelBitrate_MouseHover);
-            // 
-            // labelCom
-            // 
-            this.labelCom.AutoSize = true;
-            this.labelCom.Font = new System.Drawing.Font("Nirmala UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelCom.Location = new System.Drawing.Point(253, 13);
-            this.labelCom.Name = "labelCom";
-            this.labelCom.Size = new System.Drawing.Size(62, 17);
-            this.labelCom.TabIndex = 5;
-            this.labelCom.Text = "ComPort:";
-            this.labelCom.Visible = false;
-            this.labelCom.MouseHover += new System.EventHandler(this.labelCom_MouseHover);
-            // 
-            // radioButtonConnected
-            // 
-            this.radioButtonConnected.AutoSize = true;
-            this.radioButtonConnected.BackColor = System.Drawing.Color.Transparent;
-            this.radioButtonConnected.Font = new System.Drawing.Font("Nirmala UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.radioButtonConnected.ForeColor = System.Drawing.Color.LimeGreen;
-            this.radioButtonConnected.Location = new System.Drawing.Point(593, 18);
-            this.radioButtonConnected.Name = "radioButtonConnected";
-            this.radioButtonConnected.Size = new System.Drawing.Size(14, 13);
-            this.radioButtonConnected.TabIndex = 4;
-            this.radioButtonConnected.TabStop = true;
-            this.radioButtonConnected.UseVisualStyleBackColor = false;
-            this.radioButtonConnected.Visible = false;
-            this.radioButtonConnected.MouseClick += new System.Windows.Forms.MouseEventHandler(this.radioButtonConnected_MouseClick);
-            this.radioButtonConnected.MouseHover += new System.EventHandler(this.radioButtonConnected_MouseHover);
-            // 
-            // buttonDisconnect
-            // 
-            this.buttonDisconnect.Font = new System.Drawing.Font("Nirmala UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.buttonDisconnect.Location = new System.Drawing.Point(475, 47);
-            this.buttonDisconnect.Name = "buttonDisconnect";
-            this.buttonDisconnect.Size = new System.Drawing.Size(112, 23);
-            this.buttonDisconnect.TabIndex = 3;
-            this.buttonDisconnect.Text = "Disconnect";
-            this.buttonDisconnect.UseVisualStyleBackColor = true;
-            this.buttonDisconnect.Visible = false;
-            this.buttonDisconnect.Click += new System.EventHandler(this.buttonDisconnect_Click);
-            this.buttonDisconnect.MouseHover += new System.EventHandler(this.buttonDisconnect_MouseHover);
-            // 
-            // buttonConnect
-            // 
-            this.buttonConnect.FlatAppearance.BorderSize = 0;
-            this.buttonConnect.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.buttonConnect.Font = new System.Drawing.Font("Nirmala UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.buttonConnect.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(126)))), ((int)(((byte)(249)))));
-            this.buttonConnect.Location = new System.Drawing.Point(475, 13);
-            this.buttonConnect.Name = "buttonConnect";
-            this.buttonConnect.Size = new System.Drawing.Size(112, 23);
-            this.buttonConnect.TabIndex = 2;
-            this.buttonConnect.Text = "Connect";
-            this.buttonConnect.UseVisualStyleBackColor = true;
-            this.buttonConnect.Visible = false;
-            this.buttonConnect.Click += new System.EventHandler(this.buttonConnect_Click);
-            this.buttonConnect.MouseHover += new System.EventHandler(this.buttonConnect_MouseHover);
-            // 
-            // ComboBoxBaud
-            // 
-            this.ComboBoxBaud.Font = new System.Drawing.Font("Nirmala UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.ComboBoxBaud.FormattingEnabled = true;
-            this.ComboBoxBaud.Items.AddRange(new object[] {
-            "2400",
-            "4800",
-            "9600",
-            "19200",
-            "38400",
-            "76800",
-            "153600"});
-            this.ComboBoxBaud.Location = new System.Drawing.Point(321, 49);
-            this.ComboBoxBaud.Name = "ComboBoxBaud";
-            this.ComboBoxBaud.Size = new System.Drawing.Size(148, 25);
-            this.ComboBoxBaud.TabIndex = 1;
-            this.ComboBoxBaud.Visible = false;
-            this.ComboBoxBaud.Enter += new System.EventHandler(this.ComboBoxBaud_Enter);
-            // 
-            // ComboBoxPorts
-            // 
-            this.ComboBoxPorts.Font = new System.Drawing.Font("Nirmala UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.ComboBoxPorts.FormattingEnabled = true;
-            this.ComboBoxPorts.Location = new System.Drawing.Point(321, 11);
-            this.ComboBoxPorts.Name = "ComboBoxPorts";
-            this.ComboBoxPorts.Size = new System.Drawing.Size(148, 25);
-            this.ComboBoxPorts.TabIndex = 0;
-            this.ComboBoxPorts.Visible = false;
-            this.ComboBoxPorts.Enter += new System.EventHandler(this.comboBoxPorts_Enter);
-            this.ComboBoxPorts.MouseHover += new System.EventHandler(this.ComboBoxPorts_MouseHover);
-            // 
             // panel2
             // 
-            this.panel2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(61)))), ((int)(((byte)(74)))));
+            this.panel2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(46)))), ((int)(((byte)(51)))), ((int)(((byte)(73)))));
             this.panel2.Controls.Add(this.buttonDisconnectInstrument);
             this.panel2.Controls.Add(this.labelFindDevice);
             this.panel2.Controls.Add(this.buttonDAU_Save);
             this.panel2.Controls.Add(this.buttonCancelDAU);
             this.panel2.Controls.Add(this.pictureBoxDisconnected);
             this.panel2.Controls.Add(this.pictureBoxCONNECTED);
-            this.panel2.Location = new System.Drawing.Point(482, 3);
+            this.panel2.Controls.Add(this.buttonDisconnect);
+            this.panel2.Controls.Add(this.buttonConnect);
+            this.panel2.Controls.Add(this.radioButtonConnected);
+            this.panel2.Controls.Add(this.ComboBoxBaud);
+            this.panel2.Controls.Add(this.ComboBoxPorts);
+            this.panel2.Controls.Add(this.labelBitrate);
+            this.panel2.Controls.Add(this.labelCom);
+            this.panel2.Location = new System.Drawing.Point(490, 0);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(513, 609);
+            this.panel2.Size = new System.Drawing.Size(505, 630);
             this.panel2.TabIndex = 106;
             // 
             // buttonDisconnectInstrument
             // 
-            this.buttonDisconnectInstrument.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(61)))), ((int)(((byte)(74)))));
+            this.buttonDisconnectInstrument.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(46)))), ((int)(((byte)(51)))), ((int)(((byte)(73)))));
             this.buttonDisconnectInstrument.FlatAppearance.BorderSize = 0;
             this.buttonDisconnectInstrument.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.buttonDisconnectInstrument.Font = new System.Drawing.Font("Nirmala UI", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -2337,7 +2394,7 @@ namespace SoftSensConf
             // labelFindDevice
             // 
             this.labelFindDevice.AutoSize = true;
-            this.labelFindDevice.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(61)))), ((int)(((byte)(74)))));
+            this.labelFindDevice.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(46)))), ((int)(((byte)(51)))), ((int)(((byte)(73)))));
             this.labelFindDevice.Font = new System.Drawing.Font("Nirmala UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelFindDevice.Location = new System.Drawing.Point(50, 120);
             this.labelFindDevice.Name = "labelFindDevice";
@@ -2348,18 +2405,18 @@ namespace SoftSensConf
             // buttonDAU_Save
             // 
             this.buttonDAU_Save.Font = new System.Drawing.Font("Nirmala UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.buttonDAU_Save.Location = new System.Drawing.Point(220, 182);
+            this.buttonDAU_Save.Location = new System.Drawing.Point(212, 183);
             this.buttonDAU_Save.Name = "buttonDAU_Save";
             this.buttonDAU_Save.Size = new System.Drawing.Size(90, 24);
             this.buttonDAU_Save.TabIndex = 31;
-            this.buttonDAU_Save.Text = "Save";
+            this.buttonDAU_Save.Text = "Update";
             this.buttonDAU_Save.UseVisualStyleBackColor = true;
             this.buttonDAU_Save.Click += new System.EventHandler(this.buttonDAU_Save_Click);
             // 
             // buttonCancelDAU
             // 
             this.buttonCancelDAU.Font = new System.Drawing.Font("Nirmala UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.buttonCancelDAU.Location = new System.Drawing.Point(330, 184);
+            this.buttonCancelDAU.Location = new System.Drawing.Point(321, 184);
             this.buttonCancelDAU.Name = "buttonCancelDAU";
             this.buttonCancelDAU.Size = new System.Drawing.Size(90, 24);
             this.buttonCancelDAU.TabIndex = 33;
@@ -2369,9 +2426,9 @@ namespace SoftSensConf
             // 
             // pictureBoxDisconnected
             // 
-            this.pictureBoxDisconnected.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(61)))), ((int)(((byte)(74)))));
+            this.pictureBoxDisconnected.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(46)))), ((int)(((byte)(51)))), ((int)(((byte)(73)))));
             this.pictureBoxDisconnected.Image = global::SoftSensConf.Properties.Resources.iconfinder_wifi_off_2561213;
-            this.pictureBoxDisconnected.Location = new System.Drawing.Point(359, 10);
+            this.pictureBoxDisconnected.Location = new System.Drawing.Point(358, 17);
             this.pictureBoxDisconnected.Name = "pictureBoxDisconnected";
             this.pictureBoxDisconnected.Size = new System.Drawing.Size(131, 76);
             this.pictureBoxDisconnected.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -2380,9 +2437,9 @@ namespace SoftSensConf
             // 
             // pictureBoxCONNECTED
             // 
-            this.pictureBoxCONNECTED.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(61)))), ((int)(((byte)(74)))));
+            this.pictureBoxCONNECTED.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(46)))), ((int)(((byte)(51)))), ((int)(((byte)(73)))));
             this.pictureBoxCONNECTED.Image = global::SoftSensConf.Properties.Resources.iconfinder_wifi_Symbol_925808;
-            this.pictureBoxCONNECTED.Location = new System.Drawing.Point(359, 10);
+            this.pictureBoxCONNECTED.Location = new System.Drawing.Point(358, 17);
             this.pictureBoxCONNECTED.Name = "pictureBoxCONNECTED";
             this.pictureBoxCONNECTED.Size = new System.Drawing.Size(131, 77);
             this.pictureBoxCONNECTED.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -2390,228 +2447,105 @@ namespace SoftSensConf
             this.pictureBoxCONNECTED.TabStop = false;
             this.pictureBoxCONNECTED.Visible = false;
             // 
-            // panel1
+            // buttonDisconnect
             // 
-            this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(46)))), ((int)(((byte)(51)))), ((int)(((byte)(60)))));
-            this.panel1.Controls.Add(this.buttonSaveRDC);
-            this.panel1.Controls.Add(this.rDC_IdTextBox);
-            this.panel1.Controls.Add(rDC_IdLabel1);
-            this.panel1.Controls.Add(this.buttonCancelRDC);
-            this.panel1.Controls.Add(this.buttonNEWRDC);
-            this.panel1.Controls.Add(mCU_IdLabel);
-            this.panel1.Controls.Add(this.mCU_IdTextBox);
-            this.panel1.Controls.Add(configuration_Edit_DateLabel2);
-            this.panel1.Controls.Add(model_IdLabel2);
-            this.panel1.Controls.Add(manufactor_IdLabel2);
-            this.panel1.Controls.Add(area_IdLabel2);
-            this.panel1.Controls.Add(dAU_IdLabel);
-            this.panel1.Controls.Add(this.buttonChangeRDC);
-            this.panel1.Controls.Add(this.dAU_IdTextBox);
-            this.panel1.Controls.Add(this.comboBoxAReaRDC);
-            this.panel1.Controls.Add(this.labelFIND);
-            this.panel1.Controls.Add(this.comboBoxMOdelRDC);
-            this.panel1.Controls.Add(this.comboBoxManuRDC);
-            this.panel1.Controls.Add(descriptionLabel2);
-            this.panel1.Controls.Add(this.comboBoxFindingDeviceRDC);
-            this.panel1.Controls.Add(this.descriptionTextBoxRDC);
-            this.panel1.Controls.Add(this.configuration_Edit_DateDateTimePickerRDC);
-            this.panel1.Location = new System.Drawing.Point(-4, 80);
-            this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(488, 529);
-            this.panel1.TabIndex = 105;
+            this.buttonDisconnect.Font = new System.Drawing.Font("Nirmala UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.buttonDisconnect.Location = new System.Drawing.Point(0, 208);
+            this.buttonDisconnect.Name = "buttonDisconnect";
+            this.buttonDisconnect.Size = new System.Drawing.Size(112, 23);
+            this.buttonDisconnect.TabIndex = 3;
+            this.buttonDisconnect.Text = "Disconnect";
+            this.buttonDisconnect.UseVisualStyleBackColor = true;
+            this.buttonDisconnect.Visible = false;
+            this.buttonDisconnect.Click += new System.EventHandler(this.buttonDisconnect_Click);
+            this.buttonDisconnect.MouseHover += new System.EventHandler(this.buttonDisconnect_MouseHover);
             // 
-            // buttonSaveRDC
+            // buttonConnect
             // 
-            this.buttonSaveRDC.Font = new System.Drawing.Font("Nirmala UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.buttonSaveRDC.Location = new System.Drawing.Point(218, 104);
-            this.buttonSaveRDC.Name = "buttonSaveRDC";
-            this.buttonSaveRDC.Size = new System.Drawing.Size(90, 24);
-            this.buttonSaveRDC.TabIndex = 103;
-            this.buttonSaveRDC.Text = "Save";
-            this.buttonSaveRDC.UseVisualStyleBackColor = true;
-            this.buttonSaveRDC.Click += new System.EventHandler(this.buttonSaveRDC_Click);
+            this.buttonConnect.FlatAppearance.BorderSize = 0;
+            this.buttonConnect.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.buttonConnect.Font = new System.Drawing.Font("Nirmala UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.buttonConnect.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(126)))), ((int)(((byte)(249)))));
+            this.buttonConnect.Location = new System.Drawing.Point(3, 184);
+            this.buttonConnect.Name = "buttonConnect";
+            this.buttonConnect.Size = new System.Drawing.Size(112, 23);
+            this.buttonConnect.TabIndex = 2;
+            this.buttonConnect.Text = "Connect";
+            this.buttonConnect.UseVisualStyleBackColor = true;
+            this.buttonConnect.Visible = false;
+            this.buttonConnect.Click += new System.EventHandler(this.buttonConnect_Click);
+            this.buttonConnect.MouseHover += new System.EventHandler(this.buttonConnect_MouseHover);
             // 
-            // rDC_IdTextBox
+            // radioButtonConnected
             // 
-            this.rDC_IdTextBox.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(46)))), ((int)(((byte)(51)))), ((int)(((byte)(60)))));
-            this.rDC_IdTextBox.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.rDC_IdTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.rDCBindingSource, "RDC_Id", true));
-            this.rDC_IdTextBox.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(46)))), ((int)(((byte)(51)))), ((int)(((byte)(60)))));
-            this.rDC_IdTextBox.Location = new System.Drawing.Point(4, 504);
-            this.rDC_IdTextBox.Name = "rDC_IdTextBox";
-            this.rDC_IdTextBox.Size = new System.Drawing.Size(200, 22);
-            this.rDC_IdTextBox.TabIndex = 81;
+            this.radioButtonConnected.AutoSize = true;
+            this.radioButtonConnected.BackColor = System.Drawing.Color.Transparent;
+            this.radioButtonConnected.Font = new System.Drawing.Font("Nirmala UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.radioButtonConnected.ForeColor = System.Drawing.Color.LimeGreen;
+            this.radioButtonConnected.Location = new System.Drawing.Point(25, 218);
+            this.radioButtonConnected.Name = "radioButtonConnected";
+            this.radioButtonConnected.Size = new System.Drawing.Size(14, 13);
+            this.radioButtonConnected.TabIndex = 4;
+            this.radioButtonConnected.TabStop = true;
+            this.radioButtonConnected.UseVisualStyleBackColor = false;
+            this.radioButtonConnected.Visible = false;
+            this.radioButtonConnected.MouseClick += new System.Windows.Forms.MouseEventHandler(this.radioButtonConnected_MouseClick);
+            this.radioButtonConnected.MouseHover += new System.EventHandler(this.radioButtonConnected_MouseHover);
             // 
-            // buttonCancelRDC
+            // ComboBoxBaud
             // 
-            this.buttonCancelRDC.Font = new System.Drawing.Font("Nirmala UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.buttonCancelRDC.Location = new System.Drawing.Point(328, 103);
-            this.buttonCancelRDC.Name = "buttonCancelRDC";
-            this.buttonCancelRDC.Size = new System.Drawing.Size(90, 24);
-            this.buttonCancelRDC.TabIndex = 104;
-            this.buttonCancelRDC.Text = "Cancel";
-            this.buttonCancelRDC.UseVisualStyleBackColor = true;
-            this.buttonCancelRDC.Click += new System.EventHandler(this.buttonCancelRDC_Click);
+            this.ComboBoxBaud.Font = new System.Drawing.Font("Nirmala UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.ComboBoxBaud.FormattingEnabled = true;
+            this.ComboBoxBaud.Items.AddRange(new object[] {
+            "2400",
+            "4800",
+            "9600",
+            "19200",
+            "38400",
+            "76800",
+            "153600"});
+            this.ComboBoxBaud.Location = new System.Drawing.Point(3, 156);
+            this.ComboBoxBaud.Name = "ComboBoxBaud";
+            this.ComboBoxBaud.Size = new System.Drawing.Size(148, 25);
+            this.ComboBoxBaud.TabIndex = 1;
+            this.ComboBoxBaud.Visible = false;
+            this.ComboBoxBaud.Enter += new System.EventHandler(this.ComboBoxBaud_Enter);
             // 
-            // buttonNEWRDC
+            // ComboBoxPorts
             // 
-            this.buttonNEWRDC.Font = new System.Drawing.Font("Nirmala UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.buttonNEWRDC.Location = new System.Drawing.Point(218, 75);
-            this.buttonNEWRDC.Name = "buttonNEWRDC";
-            this.buttonNEWRDC.Size = new System.Drawing.Size(90, 24);
-            this.buttonNEWRDC.TabIndex = 101;
-            this.buttonNEWRDC.Text = "New";
-            this.buttonNEWRDC.UseVisualStyleBackColor = true;
-            this.buttonNEWRDC.Click += new System.EventHandler(this.buttonNEWRDC_Click);
+            this.ComboBoxPorts.Font = new System.Drawing.Font("Nirmala UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.ComboBoxPorts.FormattingEnabled = true;
+            this.ComboBoxPorts.Location = new System.Drawing.Point(3, 187);
+            this.ComboBoxPorts.Name = "ComboBoxPorts";
+            this.ComboBoxPorts.Size = new System.Drawing.Size(148, 25);
+            this.ComboBoxPorts.TabIndex = 0;
+            this.ComboBoxPorts.Visible = false;
+            this.ComboBoxPorts.Enter += new System.EventHandler(this.comboBoxPorts_Enter);
+            this.ComboBoxPorts.MouseHover += new System.EventHandler(this.ComboBoxPorts_MouseHover);
             // 
-            // mCU_IdTextBox
+            // labelBitrate
             // 
-            this.mCU_IdTextBox.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(46)))), ((int)(((byte)(51)))), ((int)(((byte)(60)))));
-            this.mCU_IdTextBox.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.mCU_IdTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.rDCBindingSource, "MCU_Id", true));
-            this.mCU_IdTextBox.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(46)))), ((int)(((byte)(51)))), ((int)(((byte)(60)))));
-            this.mCU_IdTextBox.Location = new System.Drawing.Point(4, 494);
-            this.mCU_IdTextBox.Name = "mCU_IdTextBox";
-            this.mCU_IdTextBox.Size = new System.Drawing.Size(200, 22);
-            this.mCU_IdTextBox.TabIndex = 85;
+            this.labelBitrate.AutoSize = true;
+            this.labelBitrate.Font = new System.Drawing.Font("Nirmala UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelBitrate.Location = new System.Drawing.Point(-9, 162);
+            this.labelBitrate.Name = "labelBitrate";
+            this.labelBitrate.Size = new System.Drawing.Size(48, 17);
+            this.labelBitrate.TabIndex = 6;
+            this.labelBitrate.Text = "Bitrate:";
+            this.labelBitrate.Visible = false;
+            this.labelBitrate.MouseHover += new System.EventHandler(this.labelBitrate_MouseHover);
             // 
-            // buttonChangeRDC
+            // labelCom
             // 
-            this.buttonChangeRDC.Font = new System.Drawing.Font("Nirmala UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.buttonChangeRDC.Location = new System.Drawing.Point(328, 75);
-            this.buttonChangeRDC.Name = "buttonChangeRDC";
-            this.buttonChangeRDC.Size = new System.Drawing.Size(90, 24);
-            this.buttonChangeRDC.TabIndex = 102;
-            this.buttonChangeRDC.Text = "Change";
-            this.buttonChangeRDC.UseVisualStyleBackColor = true;
-            this.buttonChangeRDC.Click += new System.EventHandler(this.buttonChangeRDC_Click);
-            // 
-            // dAU_IdTextBox
-            // 
-            this.dAU_IdTextBox.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(46)))), ((int)(((byte)(51)))), ((int)(((byte)(60)))));
-            this.dAU_IdTextBox.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.dAU_IdTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.dAUBindingSource, "DAU_Id", true));
-            this.dAU_IdTextBox.Font = new System.Drawing.Font("Nirmala UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.dAU_IdTextBox.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(46)))), ((int)(((byte)(51)))), ((int)(((byte)(60)))));
-            this.dAU_IdTextBox.Location = new System.Drawing.Point(3, 507);
-            this.dAU_IdTextBox.Name = "dAU_IdTextBox";
-            this.dAU_IdTextBox.Size = new System.Drawing.Size(200, 18);
-            this.dAU_IdTextBox.TabIndex = 36;
-            // 
-            // comboBoxAReaRDC
-            // 
-            this.comboBoxAReaRDC.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.comboBoxAReaRDC.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
-            this.comboBoxAReaRDC.DataBindings.Add(new System.Windows.Forms.Binding("SelectedValue", this.rDCBindingSource, "Area_Id", true));
-            this.comboBoxAReaRDC.DataSource = this.areaBindingSource1;
-            this.comboBoxAReaRDC.DisplayMember = "Area";
-            this.comboBoxAReaRDC.Enabled = false;
-            this.comboBoxAReaRDC.Font = new System.Drawing.Font("Nirmala UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.comboBoxAReaRDC.ForeColor = System.Drawing.Color.Black;
-            this.comboBoxAReaRDC.FormattingEnabled = true;
-            this.comboBoxAReaRDC.Location = new System.Drawing.Point(218, 201);
-            this.comboBoxAReaRDC.Name = "comboBoxAReaRDC";
-            this.comboBoxAReaRDC.Size = new System.Drawing.Size(200, 25);
-            this.comboBoxAReaRDC.TabIndex = 96;
-            this.comboBoxAReaRDC.ValueMember = "Area_Id";
-            // 
-            // areaBindingSource1
-            // 
-            this.areaBindingSource1.DataMember = "Area";
-            this.areaBindingSource1.DataSource = this.sOFTSENSECONF_DATABASE_FINALDataSet;
-            // 
-            // labelFIND
-            // 
-            this.labelFIND.AutoSize = true;
-            this.labelFIND.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(46)))), ((int)(((byte)(51)))), ((int)(((byte)(60)))));
-            this.labelFIND.Font = new System.Drawing.Font("Nirmala UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelFIND.Location = new System.Drawing.Point(23, 43);
-            this.labelFIND.Name = "labelFIND";
-            this.labelFIND.Size = new System.Drawing.Size(172, 17);
-            this.labelFIND.TabIndex = 100;
-            this.labelFIND.Text = "Find Remote Data Collector:";
-            // 
-            // comboBoxMOdelRDC
-            // 
-            this.comboBoxMOdelRDC.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
-            this.comboBoxMOdelRDC.DataBindings.Add(new System.Windows.Forms.Binding("SelectedValue", this.rDCBindingSource, "Model_Id", true));
-            this.comboBoxMOdelRDC.DataSource = this.modelBindingSource1;
-            this.comboBoxMOdelRDC.DisplayMember = "Model";
-            this.comboBoxMOdelRDC.Enabled = false;
-            this.comboBoxMOdelRDC.Font = new System.Drawing.Font("Nirmala UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.comboBoxMOdelRDC.ForeColor = System.Drawing.Color.Black;
-            this.comboBoxMOdelRDC.FormattingEnabled = true;
-            this.comboBoxMOdelRDC.Location = new System.Drawing.Point(218, 263);
-            this.comboBoxMOdelRDC.Name = "comboBoxMOdelRDC";
-            this.comboBoxMOdelRDC.Size = new System.Drawing.Size(200, 25);
-            this.comboBoxMOdelRDC.TabIndex = 97;
-            this.comboBoxMOdelRDC.ValueMember = "Model_Id";
-            // 
-            // modelBindingSource1
-            // 
-            this.modelBindingSource1.DataMember = "Model";
-            this.modelBindingSource1.DataSource = this.sOFTSENSECONF_DATABASE_FINALDataSet;
-            // 
-            // comboBoxManuRDC
-            // 
-            this.comboBoxManuRDC.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
-            this.comboBoxManuRDC.DataBindings.Add(new System.Windows.Forms.Binding("SelectedValue", this.rDCBindingSource, "Manufactor_Id", true));
-            this.comboBoxManuRDC.DataSource = this.manufactorBindingSource1;
-            this.comboBoxManuRDC.DisplayMember = "Manufactor";
-            this.comboBoxManuRDC.Enabled = false;
-            this.comboBoxManuRDC.Font = new System.Drawing.Font("Nirmala UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.comboBoxManuRDC.ForeColor = System.Drawing.Color.Black;
-            this.comboBoxManuRDC.FormattingEnabled = true;
-            this.comboBoxManuRDC.Location = new System.Drawing.Point(218, 232);
-            this.comboBoxManuRDC.Name = "comboBoxManuRDC";
-            this.comboBoxManuRDC.Size = new System.Drawing.Size(200, 25);
-            this.comboBoxManuRDC.TabIndex = 98;
-            this.comboBoxManuRDC.ValueMember = "Manufactor_Id";
-            // 
-            // manufactorBindingSource1
-            // 
-            this.manufactorBindingSource1.DataMember = "Manufactor";
-            this.manufactorBindingSource1.DataSource = this.sOFTSENSECONF_DATABASE_FINALDataSet;
-            // 
-            // comboBoxFindingDeviceRDC
-            // 
-            this.comboBoxFindingDeviceRDC.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
-            this.comboBoxFindingDeviceRDC.Font = new System.Drawing.Font("Nirmala UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.comboBoxFindingDeviceRDC.ForeColor = System.Drawing.Color.Black;
-            this.comboBoxFindingDeviceRDC.FormattingEnabled = true;
-            this.comboBoxFindingDeviceRDC.Location = new System.Drawing.Point(218, 40);
-            this.comboBoxFindingDeviceRDC.Name = "comboBoxFindingDeviceRDC";
-            this.comboBoxFindingDeviceRDC.Size = new System.Drawing.Size(200, 25);
-            this.comboBoxFindingDeviceRDC.TabIndex = 95;
-            this.comboBoxFindingDeviceRDC.SelectedIndexChanged += new System.EventHandler(this.comboBoxFindingDeviceRDC_SelectedIndexChanged_1);
-            // 
-            // descriptionTextBoxRDC
-            // 
-            this.descriptionTextBoxRDC.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
-            this.descriptionTextBoxRDC.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.rDCBindingSource, "Description", true));
-            this.descriptionTextBoxRDC.Enabled = false;
-            this.descriptionTextBoxRDC.Font = new System.Drawing.Font("Nirmala UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.descriptionTextBoxRDC.ForeColor = System.Drawing.Color.Black;
-            this.descriptionTextBoxRDC.Location = new System.Drawing.Point(218, 170);
-            this.descriptionTextBoxRDC.Multiline = true;
-            this.descriptionTextBoxRDC.Name = "descriptionTextBoxRDC";
-            this.descriptionTextBoxRDC.Size = new System.Drawing.Size(200, 25);
-            this.descriptionTextBoxRDC.TabIndex = 83;
-            // 
-            // configuration_Edit_DateDateTimePickerRDC
-            // 
-            this.configuration_Edit_DateDateTimePickerRDC.CalendarForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(200)))), ((int)(((byte)(200)))), ((int)(((byte)(200)))));
-            this.configuration_Edit_DateDateTimePickerRDC.CalendarMonthBackground = System.Drawing.Color.FromArgb(((int)(((byte)(74)))), ((int)(((byte)(79)))), ((int)(((byte)(99)))));
-            this.configuration_Edit_DateDateTimePickerRDC.CalendarTitleBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(74)))), ((int)(((byte)(79)))), ((int)(((byte)(99)))));
-            this.configuration_Edit_DateDateTimePickerRDC.CalendarTitleForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(200)))), ((int)(((byte)(200)))), ((int)(((byte)(200)))));
-            this.configuration_Edit_DateDateTimePickerRDC.CalendarTrailingForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(200)))), ((int)(((byte)(200)))), ((int)(((byte)(200)))));
-            this.configuration_Edit_DateDateTimePickerRDC.DataBindings.Add(new System.Windows.Forms.Binding("Value", this.rDCBindingSource, "Configuration_Edit_Date", true));
-            this.configuration_Edit_DateDateTimePickerRDC.Enabled = false;
-            this.configuration_Edit_DateDateTimePickerRDC.Font = new System.Drawing.Font("Nirmala UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.configuration_Edit_DateDateTimePickerRDC.Location = new System.Drawing.Point(218, 295);
-            this.configuration_Edit_DateDateTimePickerRDC.Name = "configuration_Edit_DateDateTimePickerRDC";
-            this.configuration_Edit_DateDateTimePickerRDC.Size = new System.Drawing.Size(200, 25);
-            this.configuration_Edit_DateDateTimePickerRDC.TabIndex = 93;
+            this.labelCom.AutoSize = true;
+            this.labelCom.Font = new System.Drawing.Font("Nirmala UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelCom.Location = new System.Drawing.Point(33, 191);
+            this.labelCom.Name = "labelCom";
+            this.labelCom.Size = new System.Drawing.Size(62, 17);
+            this.labelCom.TabIndex = 5;
+            this.labelCom.Text = "ComPort:";
+            this.labelCom.Visible = false;
+            this.labelCom.MouseHover += new System.EventHandler(this.labelCom_MouseHover);
             // 
             // rDCOnlyIdDesBindingSource
             // 
@@ -2628,7 +2562,7 @@ namespace SoftSensConf
             this.tabControl.Controls.Add(this.tabPageCommand);
             this.tabControl.Font = new System.Drawing.Font("Nirmala UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.tabControl.ItemSize = new System.Drawing.Size(500, 30);
-            this.tabControl.Location = new System.Drawing.Point(12, 12);
+            this.tabControl.Location = new System.Drawing.Point(5, 2);
             this.tabControl.Name = "tabControl";
             this.tabControl.Padding = new System.Drawing.Point(115, 5);
             this.tabControl.SelectedIndex = 0;
@@ -2654,12 +2588,14 @@ namespace SoftSensConf
             // 
             // buttonExit
             // 
-            this.buttonExit.Location = new System.Drawing.Point(950, -3);
+            this.buttonExit.BackgroundImage = global::SoftSensConf.Properties.Resources.iconfinder_39_Exit_Arrow_Door_Signout_Out_Close_2142693;
+            this.buttonExit.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.buttonExit.Location = new System.Drawing.Point(955, 2);
             this.buttonExit.Name = "buttonExit";
-            this.buttonExit.Size = new System.Drawing.Size(48, 23);
+            this.buttonExit.Size = new System.Drawing.Size(49, 36);
             this.buttonExit.TabIndex = 1;
-            this.buttonExit.Text = "X";
             this.buttonExit.UseVisualStyleBackColor = true;
+            this.buttonExit.Click += new System.EventHandler(this.buttonExit_Click);
             // 
             // rDCOnlyIdDesTableAdapter
             // 
@@ -2668,70 +2604,6 @@ namespace SoftSensConf
             // innput_OutputTableAdapter
             // 
             this.innput_OutputTableAdapter.ClearBeforeFill = true;
-            // 
-            // buttonAnalogout
-            // 
-            this.buttonAnalogout.Font = new System.Drawing.Font("Nirmala UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.buttonAnalogout.Location = new System.Drawing.Point(272, 67);
-            this.buttonAnalogout.Name = "buttonAnalogout";
-            this.buttonAnalogout.Size = new System.Drawing.Size(82, 26);
-            this.buttonAnalogout.TabIndex = 103;
-            this.buttonAnalogout.Text = "Analog Out";
-            this.buttonAnalogout.UseVisualStyleBackColor = true;
-            // 
-            // buttonDigitalInn
-            // 
-            this.buttonDigitalInn.Font = new System.Drawing.Font("Nirmala UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.buttonDigitalInn.Location = new System.Drawing.Point(360, 67);
-            this.buttonDigitalInn.Name = "buttonDigitalInn";
-            this.buttonDigitalInn.Size = new System.Drawing.Size(82, 26);
-            this.buttonDigitalInn.TabIndex = 104;
-            this.buttonDigitalInn.Text = "Digital Inn";
-            this.buttonDigitalInn.UseVisualStyleBackColor = true;
-            // 
-            // buttonDigitalout
-            // 
-            this.buttonDigitalout.Font = new System.Drawing.Font("Nirmala UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.buttonDigitalout.Location = new System.Drawing.Point(448, 67);
-            this.buttonDigitalout.Name = "buttonDigitalout";
-            this.buttonDigitalout.Size = new System.Drawing.Size(82, 26);
-            this.buttonDigitalout.TabIndex = 105;
-            this.buttonDigitalout.Text = "Digital Out";
-            this.buttonDigitalout.UseVisualStyleBackColor = true;
-            // 
-            // tagNameLabel1
-            // 
-            tagNameLabel1.AutoSize = true;
-            tagNameLabel1.Location = new System.Drawing.Point(536, 83);
-            tagNameLabel1.Name = "tagNameLabel1";
-            tagNameLabel1.Size = new System.Drawing.Size(82, 21);
-            tagNameLabel1.TabIndex = 105;
-            tagNameLabel1.Text = "Tag Name:";
-            // 
-            // tagNameTextBox2
-            // 
-            this.tagNameTextBox2.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.instrument_Measure_IdBindingSource, "TagName", true));
-            this.tagNameTextBox2.Location = new System.Drawing.Point(678, 80);
-            this.tagNameTextBox2.Name = "tagNameTextBox2";
-            this.tagNameTextBox2.Size = new System.Drawing.Size(100, 29);
-            this.tagNameTextBox2.TabIndex = 106;
-            // 
-            // instrument_Log_IdLabel
-            // 
-            instrument_Log_IdLabel.AutoSize = true;
-            instrument_Log_IdLabel.Location = new System.Drawing.Point(536, 118);
-            instrument_Log_IdLabel.Name = "instrument_Log_IdLabel";
-            instrument_Log_IdLabel.Size = new System.Drawing.Size(136, 21);
-            instrument_Log_IdLabel.TabIndex = 107;
-            instrument_Log_IdLabel.Text = "Instrument Log Id:";
-            // 
-            // instrument_Log_IdTextBox2
-            // 
-            this.instrument_Log_IdTextBox2.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.instrument_Measure_IdBindingSource, "Instrument_Log_Id", true));
-            this.instrument_Log_IdTextBox2.Location = new System.Drawing.Point(678, 115);
-            this.instrument_Log_IdTextBox2.Name = "instrument_Log_IdTextBox2";
-            this.instrument_Log_IdTextBox2.Size = new System.Drawing.Size(100, 29);
-            this.instrument_Log_IdTextBox2.TabIndex = 108;
             // 
             // SoftSensConfig
             // 
@@ -2761,9 +2633,6 @@ namespace SoftSensConf
             ((System.ComponentModel.ISupportInitialize)(this.aI_LOGBindingSource)).EndInit();
             this.tabPageCommand.ResumeLayout(false);
             this.tabPageCommand.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.bindingNavigator1)).EndInit();
-            this.bindingNavigator1.ResumeLayout(false);
-            this.bindingNavigator1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.chartPoints)).EndInit();
             this.statusStrip2.ResumeLayout(false);
             this.statusStrip2.PerformLayout();
@@ -2785,17 +2654,18 @@ namespace SoftSensConf
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).EndInit();
             this.tabPageConnection.ResumeLayout(false);
             this.tabPageConnection.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
+            this.panel1.ResumeLayout(false);
+            this.panel1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.areaBindingSource1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.modelBindingSource1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.manufactorBindingSource1)).EndInit();
             this.toolStripback.ResumeLayout(false);
             this.toolStripback.PerformLayout();
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxDisconnected)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxCONNECTED)).EndInit();
-            this.panel1.ResumeLayout(false);
-            this.panel1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.areaBindingSource1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.modelBindingSource1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.manufactorBindingSource1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.rDCOnlyIdDesBindingSource)).EndInit();
             this.tabControl.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.iNSTRUMENTtoComboBoxBindingSource)).EndInit();
@@ -2880,7 +2750,6 @@ namespace SoftSensConf
         private System.Windows.Forms.ToolStrip toolStripback;
         private System.Windows.Forms.ToolStripLabel toolStripLabel1;
         private System.Windows.Forms.Label labelBitrate;
-        private System.Windows.Forms.Label labelCom;
         private System.Windows.Forms.RadioButton radioButtonConnected;
         private System.Windows.Forms.Button buttonDisconnect;
         private System.Windows.Forms.Button buttonConnect;
@@ -2922,7 +2791,6 @@ namespace SoftSensConf
         private System.Windows.Forms.BindingSource modelBindingSource1;
         private System.Windows.Forms.ComboBox comboBoxAReaRDC;
         private System.Windows.Forms.BindingSource areaBindingSource1;
-        private System.Windows.Forms.Label labelheader;
         private System.Windows.Forms.Button buttonView;
         private System.Windows.Forms.Button buttonSending;
         private System.Windows.Forms.TextBox textBoxConnectionP2;
@@ -2972,25 +2840,15 @@ namespace SoftSensConf
         private System.Windows.Forms.PictureBox pictureBoxDisconnected2;
         private System.Windows.Forms.PictureBox pictureBox4;
         private System.Windows.Forms.Button buttonAnalogInn;
-        private System.Windows.Forms.BindingNavigator bindingNavigator1;
-        private System.Windows.Forms.ToolStripButton bindingNavigatorAddNewItem;
-        private System.Windows.Forms.ToolStripLabel bindingNavigatorCountItem;
-        private System.Windows.Forms.ToolStripButton bindingNavigatorDeleteItem;
-        private System.Windows.Forms.ToolStripButton bindingNavigatorMoveFirstItem;
-        private System.Windows.Forms.ToolStripButton bindingNavigatorMovePreviousItem;
-        private System.Windows.Forms.ToolStripSeparator bindingNavigatorSeparator;
-        private System.Windows.Forms.ToolStripTextBox bindingNavigatorPositionItem;
-        private System.Windows.Forms.ToolStripSeparator bindingNavigatorSeparator1;
-        private System.Windows.Forms.ToolStripButton bindingNavigatorMoveNextItem;
-        private System.Windows.Forms.ToolStripButton bindingNavigatorMoveLastItem;
-        private System.Windows.Forms.ToolStripSeparator bindingNavigatorSeparator2;
-        private System.Windows.Forms.Button buttonSAVELOGID;
-        private System.Windows.Forms.Button buttonNEWLOGID;
         private System.Windows.Forms.Button buttonDigitalout;
         private System.Windows.Forms.Button buttonDigitalInn;
         private System.Windows.Forms.Button buttonAnalogout;
         private System.Windows.Forms.TextBox tagNameTextBox2;
         private System.Windows.Forms.TextBox instrument_Log_IdTextBox2;
+        private System.Windows.Forms.DateTimePicker timeDateTimePickerAILOG;
+        private System.Windows.Forms.PictureBox pictureBox2;
+        private System.Windows.Forms.Label labelCom;
+        private System.Windows.Forms.Panel panel3;
     }
 }
 

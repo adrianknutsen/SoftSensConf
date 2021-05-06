@@ -141,9 +141,9 @@ namespace SoftSensConf
 
 
                 }
-                //else
+                
                 {
-                    // MessageBox.Show("Select the Comport and Bitrate");
+                    
 
                 }
             }
@@ -185,12 +185,6 @@ namespace SoftSensConf
         private void tabPageConnection_Enter(object sender, EventArgs e)
         {
             toolStripback.Text = "Ready";
-            int filterRDC = Convert.ToInt32(comboBoxFindingDeviceRDC.SelectedValue.ToString());
-
-            this.dAU_OnlyIdDesTableAdapter.FillByrdc(this.sOFTSENSECONF_DATABASE_FINALDataSet.DAU_OnlyIdDes, filterRDC);
-            comboBoxFindDevice.DisplayMember = "Description";
-            comboBoxFindDevice.ValueMember = "DAU_Id";
-            comboBoxFindDevice.DataSource = sOFTSENSECONF_DATABASE_FINALDataSet.DAU_OnlyIdDes;
 
 
 
@@ -383,20 +377,17 @@ namespace SoftSensConf
                     
 
                     string datetime = DateTime.Now.ToString();
-                    //textBox1.Text = datetime;
-                    timeDateTimePicker.Text = datetime;
+
+                    timeDateTimePickerAILOG.Text = datetime;
                     aI_LOGBindingSource.EndEdit();
                     this.aI_LOGTableAdapter.Update(this.sOFTSENSECONF_DATABASE_FINALDataSet.AI_LOG);
-                    //chartPoints.Series[0].Points.AddXY(DateTime.Now, valuetodb);
 
-
-                    //valueTextBox.Text = analogReadings[0];
                     if (buttonstopgraph.Visible == true)
                     {
                         chartPoints.Series[0].Points.AddXY(DateTime.Now, valuetodb);
                     }
                     
-                    //chartPoints.Series[0].Points.AddXY((listBoxValueAI.Items.Count - 1), (listBoxValueAI.Items[listBoxReading.Items.Count - 1]));
+
                 }
             }
             timerReceive.Enabled = false;
@@ -478,14 +469,7 @@ namespace SoftSensConf
             }
         }
 
-        private void buttonSavetofile_Click(object sender, EventArgs e)
-        {
 
-
-
-
-
-        }
 
         private void timerStatus_Tick(object sender, EventArgs e)
         {
@@ -646,85 +630,14 @@ namespace SoftSensConf
             toolStripStatusLabel2.Text = "Input";
         }
 
-        private void labelInput_MouseHover(object sender, EventArgs e)
-        {
-            //toolTip.Show("Enter the input you want to send to the instrument", labelInput);
-        }
+
 
         private void radioButtonConnected_MouseClick(object sender, MouseEventArgs e)
         {
             radioButtonConnected.Checked = false;
         }
 
-        private void buttonRaw_MouseHover(object sender, EventArgs e)
-        {
-        }
 
-        private void buttonScaled_MouseHover(object sender, EventArgs e)
-        {
-        }
-
-        private void buttonStop_MouseHover(object sender, EventArgs e)
-        {
-        }
-
-        private void buttonClearV_MouseHover(object sender, EventArgs e)
-        {
-        }
-
-        private void buttonSavetofile_MouseHover(object sender, EventArgs e)
-        {
-        }
-
-        private void listBoxReading_SelectedIndexChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void dAUBindingNavigatorSaveItem_Click(object sender, EventArgs e)
-        {
-            this.Validate();
-
-
-
-        }
-
-        private void dAUBindingNavigatorSaveItem_Click_1(object sender, EventArgs e)
-        {
-
-
-        }
-
-        private void dAUBindingNavigatorSaveItem_Click_2(object sender, EventArgs e)
-        {
-
-
-        }
-
-        private void dAUBindingNavigatorSaveItem_Click_3(object sender, EventArgs e)
-        {
-
-        }
-
-        private void dAUBindingNavigatorSaveItem_Click_4(object sender, EventArgs e)
-        {
-
-        }
-
-        private void dAUBindingNavigatorSaveItem_Click_5(object sender, EventArgs e)
-        {
-
-        }
-
-        private void iNSTRUMENTBindingNavigatorSaveItem_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void dAUBindingNavigatorSaveItem_Click_6(object sender, EventArgs e)
-        {
-
-        }
 
         private void dAUBindingNavigatorSaveItem_Click_7(object sender, EventArgs e)
         {
@@ -918,8 +831,7 @@ namespace SoftSensConf
                 try
                 {
                     tagNameTextBox1.Text = tagNameTextBox.Text;
-                    //string TagNamefilterAI = comboBoxFindInstrument.SelectedValue.ToString();
-                    // textBoxTAGNAME.Text = TagNamefilterAI;
+                    
                 }
                 catch (Exception ex)
                 {
@@ -931,35 +843,7 @@ namespace SoftSensConf
             }
         }
 
-        private void valueTextBox_TextChanged(object sender, EventArgs e)
-        {
 
-
-        }
-
-        private void Newtest_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void buttonSavetest_Click(object sender, EventArgs e)
-        {
-        }
-
-        private void buttonReadAnalog_Click(object sender, EventArgs e)
-        {
-            //string tagname = tagNameTextBox1.Text;
-            //instrument_Measure_IdBindingSource.AddNew();
-            //instrument_Measure_IdBindingSource.MoveLast();
-            //tagNameTextBox1.Text = tagname;
-            //instrument_Measure_IdBindingSource.EndEdit();
-            //this.instrument_Measure_IdTableAdapter.Update(this.sOFTSENSECONF_DATABASE_FINALDataSet.Instrument_Measure_Id);
-        }
-
-        private void button1_Click_1(object sender, EventArgs e)
-        {
-            tabControl.Visible = true;
-        }
 
         private void buttonConnectFromDB_Click(object sender, EventArgs e)
         {
@@ -972,6 +856,7 @@ namespace SoftSensConf
                 pictureBoxCONNECTED.Visible = true;
                 pictureBoxDisconnected.Visible = false;
                 buttonRetrieve.Enabled = true;
+                buttonUpdate.Enabled = true;
                 buttonConnectFromDB.Visible = false;
                 buttonDisconnectInstrument.Visible = true;
                 
@@ -1005,10 +890,7 @@ namespace SoftSensConf
             }
         }
 
-        private void tabPageConfiguration_Click(object sender, EventArgs e)
-        {
 
-        }
 
         private void buttonGraphstart_Click(object sender, EventArgs e)
         {
@@ -1027,6 +909,8 @@ namespace SoftSensConf
 
         private void tabPageCommand_Enter(object sender, EventArgs e)
         {
+            
+
             if (comboBoxFindInstrument.SelectedIndex > -1)
             {
                 try
@@ -1044,10 +928,6 @@ namespace SoftSensConf
             }
         }
 
-        private void comboBoxFindingDeviceRDC_SelectedIndexChanged(object sender, EventArgs e)
-        {
-           
-        }
 
         private void comboBoxFindingDeviceRDC_SelectedIndexChanged_1(object sender, EventArgs e)
         {
@@ -1057,6 +937,7 @@ namespace SoftSensConf
                 {
                     int RDC_idFilter = Convert.ToInt32(comboBoxFindingDeviceRDC.SelectedValue.ToString());
                     rDCTableAdapter.FillByRDCID(this.sOFTSENSECONF_DATABASE_FINALDataSet.RDC, RDC_idFilter);
+
                     
                 }
                 catch (Exception ex)
@@ -1064,6 +945,12 @@ namespace SoftSensConf
 
                     MessageBox.Show("ERROR!" + ex);
                 }
+                int filterRDC = Convert.ToInt32(comboBoxFindingDeviceRDC.SelectedValue.ToString());
+                this.dAU_OnlyIdDesTableAdapter.FillByrdc(this.sOFTSENSECONF_DATABASE_FINALDataSet.DAU_OnlyIdDes, filterRDC);
+                comboBoxFindDevice.DisplayMember = "Description";
+                comboBoxFindDevice.ValueMember = "DAU_Id";
+                comboBoxFindDevice.DataSource = sOFTSENSECONF_DATABASE_FINALDataSet.DAU_OnlyIdDes;
+                comboBoxFindDevice.Text = descriptionTextBox.Text;
 
 
             }
@@ -1080,25 +967,23 @@ namespace SoftSensConf
             textBoxReceive.Visible = true;
             buttonSendValuesToInstrument.Visible = true;
             buttonReceive.Visible = true;
-            //labelInput.Visible = true;
+            
         }
 
         private void buttonSendValuestodb_Click(object sender, EventArgs e)
         {
-            
-            
-            //instrument_Measure_IdBindingSource.AddNew();
-            //instrument_Measure_IdBindingSource.MoveLast();
-            //tagNameTextBox2.Text = tagNameTextBox.Text;
-            //textBoxMeasure_ID.Text = "";
-            //this.instrument_Measure_IdTableAdapter.Update(this.sOFTSENSECONF_DATABASE_FINALDataSet.Instrument_Measure_Id);
+            instrument_Measure_IdBindingSource.AddNew();
+            instrument_Measure_IdBindingSource.MoveLast();
+            tagNameTextBox2.Text = tagNameTextBox.Text;
+            instrument_Measure_IdBindingSource.EndEdit();
+            this.instrument_Measure_IdTableAdapter.Update(this.sOFTSENSECONF_DATABASE_FINALDataSet.Instrument_Measure_Id);
+            buttonAnalogInn.Visible = true;
+            buttonAnalogout.Visible = true;
+            buttonDigitalInn.Visible = true;
+            buttonDigitalout.Visible = true;
 
+        
 
-            //timerChartRaw.Enabled = true;
-           // timerStatus.Enabled = false;
-            buttonSTopsendingdata.Enabled = true;
-            buttonSTopsendingdata.Visible = true;
-            buttonSendValuestodb.Visible = false;
 
 
         }
@@ -1206,6 +1091,7 @@ namespace SoftSensConf
             comboBoxInnputOutputInstrument.Enabled = false;
             comboBoxModelinstrument.Enabled = false;
             comboBoxManu_DAU.Enabled = false;
+            comboBoxManuInstrument.Enabled = false;
             frequencyTextBox.Enabled = false;
             configuration_Edit_DateDateTimePickerInstrument.Enabled = false;
             descriptionTextBoxInstrument.Enabled = false;
@@ -1240,6 +1126,7 @@ namespace SoftSensConf
             configuration_Edit_DateDateTimePickerInstrument.Enabled = true;
             descriptionTextBoxInstrument.Enabled = true;
             comboBoxCategoryInstrument.Enabled = true;
+            comboBoxManuInstrument.Enabled = true;
             tagNameTextBox.Enabled = true;
             upper_range_valueTextBox.Enabled = true;
             lower_range_valueTextBox.Enabled = true;
@@ -1299,7 +1186,9 @@ namespace SoftSensConf
             configuration_Edit_DateDateTimePickerInstrument.Enabled = true;
             descriptionTextBoxInstrument.Enabled = true;
             comboBoxCategoryInstrument.Enabled = true;
+            comboBoxManuInstrument.Enabled = true;
             tagNameTextBox.Enabled = true;
+            comboBoxManuInstrument.Enabled = true;
             upper_range_valueTextBox.Enabled = true;
             lower_range_valueTextBox.Enabled = true;
             alarm_highTextBox.Enabled = true;
@@ -1322,21 +1211,21 @@ namespace SoftSensConf
         private void buttonAnalog_Click(object sender, EventArgs e)
         {
             timerChartRaw.Enabled = true;
+            buttonAnalogInn.Visible = false;
+            buttonAnalogout.Visible = false;
+            buttonDigitalInn.Visible = false;
+            buttonDigitalout.Visible = false;
+            buttonSTopsendingdata.Enabled = true;
+            buttonSTopsendingdata.Visible = true;
+            buttonSendValuestodb.Visible = false;
         }
 
-        private void buttonNEWLOGID_Click(object sender, EventArgs e)
+
+        private void buttonExit_Click(object sender, EventArgs e)
         {
-            instrument_Measure_IdBindingSource.AddNew();
-            instrument_Measure_IdBindingSource.MoveLast();
-            tagNameTextBox2.Text = tagNameTextBox.Text;
+            this.Close();
         }
 
-        private void buttonSAVELOGID_Click(object sender, EventArgs e)
-        {
 
-            
-            instrument_Measure_IdBindingSource.EndEdit();
-            this.instrument_Measure_IdTableAdapter.Update(this.sOFTSENSECONF_DATABASE_FINALDataSet.Instrument_Measure_Id);
-        }
     }
 }

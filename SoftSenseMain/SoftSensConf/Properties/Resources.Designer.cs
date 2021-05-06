@@ -63,9 +63,69 @@ namespace SoftSensConf.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap _8c066b5377aa447cb1219435ed984ace {
+            get {
+                object obj = ResourceManager.GetObject("8c066b5377aa447cb1219435ed984ace", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap _8c066b5377aa447cb1219435ed984ace_v3 {
+            get {
+                object obj = ResourceManager.GetObject("8c066b5377aa447cb1219435ed984ace.v3", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap iconfinder_11_Upload_2123924 {
+            get {
+                object obj = ResourceManager.GetObject("iconfinder_11-Upload_2123924", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap iconfinder_16_Input_2123951 {
+            get {
+                object obj = ResourceManager.GetObject("iconfinder_16-Input_2123951", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap iconfinder_39_Exit_Arrow_Door_Signout_Out_Close_2142693 {
+            get {
+                object obj = ResourceManager.GetObject("iconfinder_39_Exit_Arrow_Door_Signout_Out_Close_2142693", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap iconfinder_download_2561424 {
             get {
                 object obj = ResourceManager.GetObject("iconfinder_download_2561424", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap iconfinder_exit_delete_remove_close_x_2931151 {
+            get {
+                object obj = ResourceManager.GetObject("iconfinder_exit-delete-remove-close-x_2931151", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

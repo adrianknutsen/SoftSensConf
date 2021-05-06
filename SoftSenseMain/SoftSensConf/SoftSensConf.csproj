@@ -181,5 +181,23 @@
   <ItemGroup>
     <None Include="Resources\iconfinder_download_2561424.png" />
   </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\iconfinder_exit-delete-remove-close-x_2931151.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\iconfinder_39_Exit_Arrow_Door_Signout_Out_Close_2142693.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\8c066b5377aa447cb1219435ed984ace.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\8c066b5377aa447cb1219435ed984ace.v3.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\iconfinder_16-Input_2123951.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\iconfinder_11-Upload_2123924.png" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
