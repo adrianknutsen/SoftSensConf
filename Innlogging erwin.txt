@@ -1,3 +1,0 @@
-username = 236054 / adrian knutsen
-
-password = Braincooler123!

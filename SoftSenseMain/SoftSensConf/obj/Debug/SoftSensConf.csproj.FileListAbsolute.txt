@@ -1,0 +1,15 @@
+C:\Users\adria\source\repos\SoftSensConfnew\SoftSenseMain\SoftSensConf\bin\Debug\SoftSensConf.exe.config
+C:\Users\adria\source\repos\SoftSensConfnew\SoftSenseMain\SoftSensConf\bin\Debug\SoftSensConf.exe.manifest
+C:\Users\adria\source\repos\SoftSensConfnew\SoftSenseMain\SoftSensConf\bin\Debug\SoftSensConf.application
+C:\Users\adria\source\repos\SoftSensConfnew\SoftSenseMain\SoftSensConf\bin\Debug\SoftSensConf.exe
+C:\Users\adria\source\repos\SoftSensConfnew\SoftSenseMain\SoftSensConf\bin\Debug\SoftSensConf.pdb
+C:\Users\adria\source\repos\SoftSensConfnew\SoftSenseMain\SoftSensConf\obj\Debug\SoftSensConf.csprojAssemblyReference.cache
+C:\Users\adria\source\repos\SoftSensConfnew\SoftSenseMain\SoftSensConf\obj\Debug\SoftSensConf.FormPassword.resources
+C:\Users\adria\source\repos\SoftSensConfnew\SoftSenseMain\SoftSensConf\obj\Debug\SoftSensConf.Properties.Resources.resources
+C:\Users\adria\source\repos\SoftSensConfnew\SoftSenseMain\SoftSensConf\obj\Debug\SoftSensConf.SoftSensConfig.resources
+C:\Users\adria\source\repos\SoftSensConfnew\SoftSenseMain\SoftSensConf\obj\Debug\SoftSensConf.csproj.GenerateResource.cache
+C:\Users\adria\source\repos\SoftSensConfnew\SoftSenseMain\SoftSensConf\obj\Debug\SoftSensConf.csproj.CoreCompileInputs.cache
+C:\Users\adria\source\repos\SoftSensConfnew\SoftSenseMain\SoftSensConf\obj\Debug\SoftSensConf.exe.manifest
+C:\Users\adria\source\repos\SoftSensConfnew\SoftSenseMain\SoftSensConf\obj\Debug\SoftSensConf.application
+C:\Users\adria\source\repos\SoftSensConfnew\SoftSenseMain\SoftSensConf\obj\Debug\SoftSensConf.exe
+C:\Users\adria\source\repos\SoftSensConfnew\SoftSenseMain\SoftSensConf\obj\Debug\SoftSensConf.pdb
